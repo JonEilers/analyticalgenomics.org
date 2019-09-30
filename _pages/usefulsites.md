@@ -25,6 +25,7 @@ feature_row:
     url: "/genomeannotation/"
   - image_path: /assets/images/gene_interaction.png
     title: "Predicted Gene Interaction Tools"
+    excerpt: "Tools and Databases for GRN prediction"
     url: "/gene-interaction/"
     
 
