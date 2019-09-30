@@ -23,6 +23,10 @@ feature_row:
     title: "Genome Annotation"
     excerpt: "Links to tools for Genome Annotation"
     url: "/genomeannotation/"
+  - image_path: /assets/images/gene_interaction
+    title: "Predicted Gene Interaction Tools"
+    url: "/gene-interaction/"
+    
 
 ---
 
