@@ -1,5 +1,6 @@
 ---
 title: "Predicted Gene Interaction Tools"
+permalink: /gene-interaction/
 ---
 
 After annotation of a genome is complete, the real fun begins. Tools and databases are available for predicting how genes will interact with each other and what that might mean. See below for some of those tools and databases. 
