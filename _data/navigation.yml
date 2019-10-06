@@ -41,6 +41,8 @@ sidebar-main:
       url: /genomeassembly/ 
     - title: "Genome Annotation"
       url: /genomeannotation/
+    - title: "Genome Interrogation"
+      url: /genome-interrogation/
   - title: "About"
     url: /about/
  

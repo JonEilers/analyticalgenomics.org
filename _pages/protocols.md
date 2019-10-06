@@ -24,10 +24,10 @@ feature_row:
     title: Phenol preparation
     url: "https://stockingerlab.osu.edu/sites/stockinger/files/imce/PDFs/Protocols/PhenolPrep.pdf"
     excerpt: Protocol for preparing TE saturated phenol for DNA extraction
-  - image_path: /assets/images/aspiration-setup.jpg
-    title: "Aspiration Set Up"
-    url: "https://www.benchfly.com/video/28/creating-an-aspiration-apparatus/"
-    excerpt: How to set up under a fume hood for aspirating phenol
+  - image_path: /assets/images/protocol_images/gel_electrophoresis.jpg
+    title: "DNA gel electrophoresis"
+    url: "https://www.protocols.io/view/agarose-gel-electrophoresis-7zmhp46"
+    excerpt: Protocol for making an agarose gel for gel electrophoresis of DNA
 ---
 
 Having detailed instructions for how to perform procedures in the lab is critical for successful experiments and reproducibility. I use the website [www.protocols.io](https://www.protocols.io/) for writing and storing the protocols I use. Below are the protocols I have used for my thesis research.

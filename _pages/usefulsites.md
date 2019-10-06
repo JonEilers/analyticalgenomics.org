@@ -25,13 +25,13 @@ feature_row:
     url: "/genomeannotation/"
   - image_path: /assets/images/gene_interaction.png
     title: "Predicted Gene Interaction Tools"
-    excerpt: "Tools and Databases for GRN prediction"
-    url: "/gene-interaction/"
+    excerpt: "Tools and Databases for studying genomes"
+    url: "/genome-interrogation/"
     
 
 ---
 
-Research is an information heavy endeavor. Countless hours can be lost scouring papers and the internet for information on how to perform one step in an experiment or troubleshooting. For that reason, sharing information resources is invaluable. Each section below is one aspect of my thesis research. In each you will find a brief explanation and links to resources I found useful when I looking for information.  
+Research is an information heavy endeavor. Countless hours can be lost scouring papers and the internet for information on how to perform one step in an experiment or troubleshooting. For that reason, sharing information and sources is invaluable. Each section below is one aspect of my thesis research. In each you will find a brief explanation and links to resources I found useful during my research.  
 
 {% include feature_row %}
 

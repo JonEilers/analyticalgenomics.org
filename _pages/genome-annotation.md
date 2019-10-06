@@ -5,7 +5,7 @@ toc: true
 toc_label: "Genome Annotation"
 ---
 
-Genome Annotation is a complex and difficult task. Below are some tools for annotation.
+![image-left](/assets/images/resource_images/genome-annotation.gif){: .align-right width="500px" height="500px"} Genome Annotation is a complex and difficult task. The average large genome contains anywhere from 20,000 to 30,000 genes and many duplicates. In addition to genes, genomes contain repetitive elements and non-coding DNA which play instrumental roles in genome organization and function. Finding and identifying each of these genomic elements is a huge undertaking requiring both automatic algorithmic processes and manual curation. After a program has found and identified these genomic features, there are numerous errors and an expert has to manually inspect elements of interest for accuracy before the annotation can be trusted. Below are some tools used in these process.
 
 ### Repeat Annotating and Masking
 
@@ -20,3 +20,7 @@ Genome Annotation is a complex and difficult task. Below are some tools for anno
 [Genemark](http://exon.gatech.edu/GeneMark/) is a family of gene prediction programs.  
 
 [Maker2](http://www.yandell-lab.org/software/maker.html) is a portable and easily configurable genome annotation pipeline.  
+
+### Genome Quality
+
+[PATRIC](https://docs.patricbrc.org/tutorial/genome_quality_report/genome_quality_report.html) is a genome quality tool that looks at the functional roles present in an annotated genome to determine if the genome looks correct. Two separate mechanisms are used to predict the number of times each role should be found in the genome. A role is good if it occurs the predicted number of times; otherwise it is problematic.
