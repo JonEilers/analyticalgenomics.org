@@ -1,6 +1,8 @@
 ---
 title: "26/04/19 Cuke Check"
 author: "Jon Eilers"
+categories:
+  - Sea Cucumber Care
 
 gallery:
   - url: /assets/images/4-26-19/20190426_111629.jpg

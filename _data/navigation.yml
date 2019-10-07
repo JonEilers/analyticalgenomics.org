@@ -2,7 +2,7 @@ main:
   - title: "Parastichopus californicus"
     url: /seacuke/
   - title: "Wet Lab Notebook"
-    url: /posts/
+    url: /wetlab/
   - title: "Dry Lab Notebook"
     url: /drylab/
   - title: "Protocols"
@@ -16,7 +16,7 @@ sidebar-main:
   - title: "Parastichopus californicus"
     url: /seacuke/
   - title: "Wet Lab Notebook"
-    url: /posts/
+    url: /wetlab/
   - title: "Dry Lab Notebook"
     url: /drylab/
     children:
