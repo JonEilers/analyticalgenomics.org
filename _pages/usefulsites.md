@@ -24,7 +24,7 @@ feature_row:
     excerpt: "Links to tools for Genome Annotation"
     url: "/genomeannotation/"
   - image_path: /assets/images/gene_interaction.png
-    title: "Predicted Gene Interaction Tools"
+    title: "Genome Interrogation Tools"
     excerpt: "Tools and Databases for studying genomes"
     url: "/genome-interrogation/"
     
