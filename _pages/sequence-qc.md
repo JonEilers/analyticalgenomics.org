@@ -24,5 +24,7 @@ Below are a list of tools for performing quality control of sequence data. All o
 * [AfterQC](https://github.com/OpenGene/AfterQC)  
 * [AdapterRemoval](https://github.com/MikkelSchubert/adapterremoval)  
 * [Trim Galore!](https://github.com/FelixKrueger/TrimGalore)  
+* [BBDuk](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/)
+* [QC3](https://github.com/slzhao/QC3)
 
 
