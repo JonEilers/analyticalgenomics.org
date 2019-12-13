@@ -19,7 +19,7 @@ toc_label: "Genome Annotation"
 
 [Augustus](http://bioinf.uni-greifswald.de/augustus/) is a program that predicts genes in eukaryotic genomic sequences.  
 
-[Braker](http://exon.gatech.edu/braker1.html) is a pipeline for fully automated prediction of protein coding genes with GeneMark-ES/ET and AUGUSTUS in novel eukaryotic genomes   
+[Braker2](http://exon.gatech.edu/braker1.html) is a pipeline for fully automated prediction of protein coding genes with GeneMark-ES/ET and AUGUSTUS in novel eukaryotic genomes   
 
 [Genemark](http://exon.gatech.edu/GeneMark/) is a family of gene prediction programs.  
 
@@ -30,7 +30,13 @@ toc_label: "Genome Annotation"
 [PATRIC](https://docs.patricbrc.org/tutorial/genome_quality_report/genome_quality_report.html) is a genome quality tool that looks at the functional roles present in an annotated genome to determine if the genome looks correct. Two separate mechanisms are used to predict the number of times each role should be found in the genome. A role is good if it occurs the predicted number of times; otherwise it is problematic.
 
 ### Transcriptome alignment 
+
 [HISAT2](http://ccb.jhu.edu/software/hisat2/manual.shtml#getting-started-with-hisat2) is a fast and sensitive alignment program for mapping next-generation sequencing reads (whole-genome, transcriptome, and exome sequencing data) against the general human population (as well as against a single reference genome).
 
 [STAR](https://github.com/alexdobin/STAR) maps large sets of high-throughput sequencing reads to a reference genome with high levels of accuracy and speed.
 
+### Gene Family Clustering
+
+[OrthoMCL](https://orthomcl.org/orthomcl/)is a genome-scale algorithm for grouping orthologous protein sequences. It provides not only groups shared by two or more species/genomes, but also groups representing species-specific gene expansion families. So it serves as an important utility for automated eukaryotic genome annotation.
+
+[COG](http://archive-dtd.ncbi.nlm.nih.gov/COG/) is another algorithm and database for clustering genes.
