@@ -11,7 +11,9 @@ toc_label: "Genome Annotation"
 
 [RepeatMasker](http://repeatmasker.org/) is a program that screens DNA sequences for interspersed repeats and low complexity DNA sequences. The output of the program is a detailed annotation of the repeats that are present in the query sequence as well as a modified version of the query sequence in which all the annotated repeats have been masked.  
 
-[RepeatModeler2](https://github.com/Dfam-consortium/RepeatModeler) is a de novo transposable element (TE) family identification and modeling package.
+[RepeatModeler2](https://github.com/Dfam-consortium/RepeatModeler) is a de novo transposable element (TE) family identification and modeling package.  
+
+[Repbase](https://www.girinst.org/repbase/update/index.html) is a database of prototypic sequences representing repetitive DNA from different eukaryotic species. Repbase is being used in genome sequencing projects worldwide as a reference collection for masking and annotation of repetitive DNA (e.g. by RepeatMasker or CENSOR).  
 
 ### Gene Annotation 
 
