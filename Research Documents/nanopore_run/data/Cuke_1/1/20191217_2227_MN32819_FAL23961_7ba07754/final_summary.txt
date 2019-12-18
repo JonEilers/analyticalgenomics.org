@@ -1,0 +1,17 @@
+instrument=MN32819
+position=
+flow_cell_id=FAL23961
+sample_id=1
+protocol_group_id=Cuke_1
+protocol=e60eba33481bf59b50f01b85eadd1e96e8bf8f17
+protocol_run_id=7ba07754-79d1-4877-a9c0-8a5c94677bd9
+acquisition_run_id=348b2c433e7508a9c227452bb0269a61f4e0eccf
+started=2019-12-17T14:32:57.660087-08:00
+acquisition_stopped=2019-12-17T18:55:17.129685-08:00
+processing_stopped=2019-12-17T18:55:18.357073-08:00
+basecalling_enabled=1
+sequencing_summary_file=jon-Precision-Tower-5810_20191217_142748_FAL23961_minion_sequencing_run_1_sequencing_summary.txt
+fast5_files_in_final_dest=3
+fast5_files_in_fallback=0
+fastq_files_in_final_dest=3
+fastq_files_in_fallback=0
