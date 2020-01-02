@@ -23,7 +23,9 @@ toc_label: "Genome Annotation"
 
 [Genemark](http://exon.gatech.edu/GeneMark/) is a family of gene prediction programs.  
 
-[Maker2](http://www.yandell-lab.org/software/maker.html) is a portable and easily configurable genome annotation pipeline.  
+[Maker2](http://www.yandell-lab.org/software/maker.html) is a portable and easily configurable genome annotation pipeline. 
+
+[GenSAS](https://www.gensas.org/) is an online platform that provides a pipeline for whole genome structural and functional annotation. Users can upload genome sequences and select from a variety of tools for repeat masking, prediction of gene models and other structural features as well as functional annotation tools. 
 
 ### Genome Quality
 
@@ -34,6 +36,12 @@ toc_label: "Genome Annotation"
 [HISAT2](http://ccb.jhu.edu/software/hisat2/manual.shtml#getting-started-with-hisat2) is a fast and sensitive alignment program for mapping next-generation sequencing reads (whole-genome, transcriptome, and exome sequencing data) against the general human population (as well as against a single reference genome).
 
 [STAR](https://github.com/alexdobin/STAR) maps large sets of high-throughput sequencing reads to a reference genome with high levels of accuracy and speed.
+
+[Infernal](http://eddylab.org/infernal/) is for searching DNA sequence databases for RNA structure and sequence similarities.
+
+[rfam](https://rfam.readthedocs.io/en/latest/genome-annotation.html) can be used to search sequences (including whole genomes) for homologues to known non-coding RNAs, in conjunction with the Infernal software.
+
+[PASA](https://github.com/PASApipeline/PASApipeline/wiki), acronym for Program to Assemble Spliced Alignments (and pronounced 'pass-uh'), is a eukaryotic genome annotation tool that exploits spliced alignments of expressed transcript sequences to automatically model gene structures, and to maintain gene structure annotation consistent with the most recently available experimental sequence data. PASA also identifies and classifies all splicing variations supported by the transcript alignments. 
 
 ### Gene Family Clustering
 
