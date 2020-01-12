@@ -15,7 +15,7 @@ toc_label: "Genome Annotation"
 
 [Repbase](https://www.girinst.org/repbase/update/index.html) is a database of prototypic sequences representing repetitive DNA from different eukaryotic species. Repbase is being used in genome sequencing projects worldwide as a reference collection for masking and annotation of repetitive DNA (e.g. by RepeatMasker or CENSOR).  
 
-### Gene Annotation 
+### Gene Prediction 
 
 [Augustus](http://bioinf.uni-greifswald.de/augustus/) is a program that predicts genes in eukaryotic genomic sequences.  
 
@@ -27,6 +27,22 @@ toc_label: "Genome Annotation"
 
 [GenSAS](https://www.gensas.org/) is an online platform that provides a pipeline for whole genome structural and functional annotation. Users can upload genome sequences and select from a variety of tools for repeat masking, prediction of gene models and other structural features as well as functional annotation tools. 
 
+### Functional Annotation
+
+[Team3-FunctionalAnnotation](https://github.com/compgenomics2019/Team3-FunctionalAnnotation) is a pipeline for functional annotation of prokaryote genomes. However, most of the tools present can also be used in eukaryotic genome functional annotation. 
+
+[Interproscan](https://github.com/ebi-pf-team/interproscan): InterPro is a database which integrates together predictive information about proteins' function from a number of partner resources, giving an overview of the families that a protein belongs to and the domains and sites it contains.   
+
+Users who have novel nucleotide or protein sequences that they wish to functionally characterise can use the software package InterProScan to run the scanning algorithms from the InterPro database in an integrated way.
+
+[Infernal and rfam](https://github.com/Rfam/rfam-docs/blob/master/docs/source/genome-annotation.rst): The Rfam library of covariance models can be used to search sequences (including whole genomes) for homologues to known non-coding RNAs, in conjunction with the Infernal software.
+
+[Diamond])(https://github.com/bbuchfink/diamond) is a sequence aligner for protein and translated DNA searches, designed for high performance analysis of big sequence data. The key features are:
+- Pairwise alignment of proteins and translated DNA at 500x-20,000x speed of BLAST.
+- Frameshift alignments for long read analysis.
+- Low resource requirements and suitable for running on standard desktops or laptops.
+- Various output formats, including BLAST pairwise, tabular and XML, as well as taxonomic classification.
+
 ### Genome Quality
 
 [PATRIC](https://docs.patricbrc.org/tutorial/genome_quality_report/genome_quality_report.html) is a genome quality tool that looks at the functional roles present in an annotated genome to determine if the genome looks correct. Two separate mechanisms are used to predict the number of times each role should be found in the genome. A role is good if it occurs the predicted number of times; otherwise it is problematic.
@@ -36,10 +52,6 @@ toc_label: "Genome Annotation"
 [HISAT2](http://ccb.jhu.edu/software/hisat2/manual.shtml#getting-started-with-hisat2) is a fast and sensitive alignment program for mapping next-generation sequencing reads (whole-genome, transcriptome, and exome sequencing data) against the general human population (as well as against a single reference genome).
 
 [STAR](https://github.com/alexdobin/STAR) maps large sets of high-throughput sequencing reads to a reference genome with high levels of accuracy and speed.
-
-[Infernal](http://eddylab.org/infernal/) is for searching DNA sequence databases for RNA structure and sequence similarities.
-
-[rfam](https://rfam.readthedocs.io/en/latest/genome-annotation.html) can be used to search sequences (including whole genomes) for homologues to known non-coding RNAs, in conjunction with the Infernal software.
 
 [PASA](https://github.com/PASApipeline/PASApipeline/wiki), acronym for Program to Assemble Spliced Alignments (and pronounced 'pass-uh'), is a eukaryotic genome annotation tool that exploits spliced alignments of expressed transcript sequences to automatically model gene structures, and to maintain gene structure annotation consistent with the most recently available experimental sequence data. PASA also identifies and classifies all splicing variations supported by the transcript alignments. 
 
