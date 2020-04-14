@@ -1,0 +1,8 @@
+platanus_allee version: 2.0.2
+./platanus_allee phase -t 70 -c out_contig.fa out_junctionKmer.fa -IP1 ../P_cali_g_1.fq.trimmed ../P_cali_g_2.fq.trimmed 
+
+phase completed!
+
+#### PROCESS INFORMATION ####
+VmPeak:           0.023 GByte
+VmHWM:            0.005 GByte
