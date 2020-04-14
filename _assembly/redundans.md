@@ -7,7 +7,7 @@ layout: single
 gallery:
   - url: /assets/images/redundans/scaffolds.reduced.fa.hist.png
     image_path: /assets/images/redundans/scaffolds.reduced.fa.hist.png
-    title: "Identity between contigs"
+    title: "Identity between scaffolds"
   - url: /assets/images/redundans/contigs.reduced.fa.hist.png
     image_path: /assets/images/redundans/contigs.reduced.fa.hist.png
     title: "Identity between contigs"
@@ -58,8 +58,9 @@ bbmap                     38.73                h516909a_0    bioconda
 ```
 
 ### Commands
+I downloaded the *Apostichopus japonicus* reference genome from ncbi. This was used as the reference genome for scaffolding and improved assembly via redundans.
 
-running redundans
+command
 ```
 ./redundans.py -i ../*.fq -t 40 -f ../Patanus-Allee/assembly/out_contig.fa --reference ../A_jap_genome.fasta --log cali-contig_v_jap.txt -o cali-contig_v_jap
 ```

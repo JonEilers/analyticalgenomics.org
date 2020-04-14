@@ -1,0 +1,5 @@
+## blobtools v1.0
+## cov0=/home/jon/Working_Files/blobtools/output.output.bam.cov
+# name	colour	count_visible	count_visible_perc	span_visible	span_visible_perc	n50	gc_mean	gc_std	cov0_mean	cov0_std	cov0_read_map	cov0_read_map_p
+all	None	684,753	100.0%	838,807,926	100.0%	8,569	0.41	0.091	34.2	199.8	566,582,901	91.8%
+	#9e0142	684,753	100.0%	838,807,926	100.0%	8,569	0.41	0.091	34.2	199.8	566,582,901	91.8%
