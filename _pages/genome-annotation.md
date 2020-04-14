@@ -37,7 +37,7 @@ Users who have novel nucleotide or protein sequences that they wish to functiona
 
 [Infernal and rfam](https://github.com/Rfam/rfam-docs/blob/master/docs/source/genome-annotation.rst): The Rfam library of covariance models can be used to search sequences (including whole genomes) for homologues to known non-coding RNAs, in conjunction with the Infernal software.
 
-[Diamond])(https://github.com/bbuchfink/diamond) is a sequence aligner for protein and translated DNA searches, designed for high performance analysis of big sequence data. The key features are:
+[Diamond](https://github.com/bbuchfink/diamond) is a sequence aligner for protein and translated DNA searches, designed for high performance analysis of big sequence data. The key features are:
 - Pairwise alignment of proteins and translated DNA at 500x-20,000x speed of BLAST.
 - Frameshift alignments for long read analysis.
 - Low resource requirements and suitable for running on standard desktops or laptops.
