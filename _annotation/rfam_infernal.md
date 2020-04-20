@@ -1,5 +1,5 @@
 ---
-title: "rfam/Infernal and tRNAscan-SE: Non-coding RNA Prediction"
+title: "Rfam/Infernal and tRNAscan-SE: Non-coding RNA Prediction"
 toc: true
 toc_sticky: true
 layout: single

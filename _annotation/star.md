@@ -1,5 +1,5 @@
 ---
-title: "Star: RNA-seq Mapping"
+title: "STAR: RNA-seq Mapping"
 toc: true
 toc_sticky: true
 layout: single
