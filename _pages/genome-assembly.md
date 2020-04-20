@@ -34,8 +34,6 @@ Below are links to papers, tutorials, and software used for these various approa
 
 [AlignGraph](https://github.com/baoe/AlignGraph) is a software that extends and joins contigs or scaffolds by reassembling them with help provided by a reference genome of a closely related organism.  
 
-[RGAAT](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6364042/) is a flexible toolkit for resequencing-based consensus building and annotation update.
-
 ### Bioninformatic Visualization Tools
 [T. Reiter](https://taylorreiter.github.io/2019-05-11-Visualizing-NUCmer-Output/) has written some excellent tutorials. One I have used is using mummer4 to align genomes assemblies and then visualize the output in a circos plot. 
 
@@ -50,6 +48,10 @@ Below are links to papers, tutorials, and software used for these various approa
 [Squat](https://github.com/luke831215/SQUAT) is a Sequencing Quality Assessment Tool for Data Assessments before and after Genome Assemblies
 
 [GAAP](https://bigd.big.ac.cn/tools/gaap) is a cGOF (core-gene-defined Genome-organization-framework) Assisted Assembly Pipeline. It is aimed at scaffolding and extending scaffolds and contigs based on de novo assembly of one paired-end library and core gene cluster from multiple related references.
+
+[blobtoolkit](https://blobtoolkit.genomehubs.org/) Filtering raw genomic datasets is essential to avoid chimeric assemblies and to increase the validity of sequence-based biological inference. BlobToolKit extends the BlobTools1/Blobology2 approach to simplify interactive and reproducible filtering.
+
+[BUSCO](https://busco.ezlab.org/) is based on evolutionarily-informed expectations of gene content of near-universal single-copy orthologs, BUSCO metric is complementary to technical metrics like N50.
 
 ### Other Resources
 [This](https://bioinformaticsworkbook.org/) is an excellent website containing information about genome QC, assembly, and annotation

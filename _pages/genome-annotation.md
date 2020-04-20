@@ -11,17 +11,11 @@ toc_label: "Genome Annotation"
 
 [RepeatMasker](http://repeatmasker.org/) is a program that screens DNA sequences for interspersed repeats and low complexity DNA sequences. The output of the program is a detailed annotation of the repeats that are present in the query sequence as well as a modified version of the query sequence in which all the annotated repeats have been masked.  
 
-[RepeatModeler2](https://github.com/Dfam-consortium/RepeatModeler) is a de novo transposable element (TE) family identification and modeling package.  
-
-[Repbase](https://www.girinst.org/repbase/update/index.html) is a database of prototypic sequences representing repetitive DNA from different eukaryotic species. Repbase is being used in genome sequencing projects worldwide as a reference collection for masking and annotation of repetitive DNA (e.g. by RepeatMasker or CENSOR).  
+[RepeatModeler2](https://github.com/Dfam-consortium/RepeatModeler) is a de novo transposable element (TE) family identification and modeling package.   
 
 ### Gene Prediction 
 
-[Augustus](http://bioinf.uni-greifswald.de/augustus/) is a program that predicts genes in eukaryotic genomic sequences.  
-
-[Braker2](http://exon.gatech.edu/braker1.html) is a pipeline for fully automated prediction of protein coding genes with GeneMark-ES/ET and AUGUSTUS in novel eukaryotic genomes   
-
-[Genemark](http://exon.gatech.edu/GeneMark/) is a family of gene prediction programs.  
+[Braker2](http://exon.gatech.edu/braker1.html) is a pipeline for fully automated prediction of protein coding genes with GeneMark-ES/ET and AUGUSTUS in novel eukaryotic genomes    
 
 [Maker2](http://www.yandell-lab.org/software/maker.html) is a portable and easily configurable genome annotation pipeline. 
 
@@ -43,9 +37,17 @@ Users who have novel nucleotide or protein sequences that they wish to functiona
 - Low resource requirements and suitable for running on standard desktops or laptops.
 - Various output formats, including BLAST pairwise, tabular and XML, as well as taxonomic classification.
 
+[tRNAscan](http://lowelab.ucsc.edu/tRNAscan-SE/) scans genome assemblies for tRNA.
+
 ### Genome Quality
 
 [PATRIC](https://docs.patricbrc.org/tutorial/genome_quality_report/genome_quality_report.html) is a genome quality tool that looks at the functional roles present in an annotated genome to determine if the genome looks correct. Two separate mechanisms are used to predict the number of times each role should be found in the genome. A role is good if it occurs the predicted number of times; otherwise it is problematic.
+
+[AEGeAn toolkit](https://aegean.readthedocs.io/en/stable/index.html) started as several distinct but related efforts to build tools for managing and analyzing whole-genome gene structure annotations. AEGeAn has brought these efforts together into a single library that includes executable programs as well as several data structures and modules callable via a C API. The AEGeAn Toolkit leverages a variety of parsers, data structures, and graphics capabilities available from the GenomeTools library 
+
+[Gcluster](https://github.com/Xiangyang1984/Gcluster) is a simple-to-use tool for visualizing and comparing genome contexts for numerous genomes.
+
+[Apollo](https://genomearchitect.readthedocs.io/en/latest/) A collaborative, real-time, genome annotation web-based editor.
 
 ### Transcriptome alignment 
 

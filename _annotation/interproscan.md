@@ -1,5 +1,5 @@
 ---
-title: "Interproscan"
+title: "Interproscan: Functional Annotation"
 toc: true
 toc_sticky: true
 layout: single
