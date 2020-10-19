@@ -20,6 +20,8 @@ sidebar-main:
   - title: "Dry Lab Notebook"
     url: /drylab/
     children:
+    - title: "Notes and Thoughts"
+      url: /drylab_notes/
     - title: "Sequence Data Analysis and QC"
       url: /data-cleaning/
     - title: "Genome Assembly"

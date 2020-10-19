@@ -55,3 +55,6 @@ Below are links to papers, tutorials, and software used for these various approa
 
 ### Other Resources
 [This](https://bioinformaticsworkbook.org/) is an excellent website containing information about genome QC, assembly, and annotation
+
+
+<!--- ned to add haslr, ragtag, whatever the manual genome assembly tool was too -->
