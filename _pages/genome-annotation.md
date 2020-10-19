@@ -6,6 +6,8 @@ toc_label: "Genome Annotation"
 
 ---
 
+<!--- add jbrowse, maybe some notes on how to evaluate gene annotations, transcriptome assembly tools (trinity), gemoma, bitacora, orthofinder -->
+
 ![image-left](/assets/images/resource_images/genome-annotation.gif){: .align-right width="500px" height="500px"} Genome Annotation is a complex and difficult task. The average large genome contains anywhere from 20,000 to 30,000 genes and many duplicates. In addition to genes, genomes contain repetitive elements and non-coding DNA which play instrumental roles in genome organization and function. Finding and identifying each of these genomic elements is a huge undertaking requiring both automatic algorithmic processes and manual curation. After a program has found and identified these genomic features, there are numerous errors and an expert has to manually inspect elements of interest for accuracy before the annotation can be trusted. Below are some tools used in these process.
 
 ### Repeat Annotating and Masking
@@ -55,3 +57,4 @@ Users who have novel nucleotide or protein sequences that they wish to functiona
 [STAR](https://github.com/alexdobin/STAR) maps large sets of high-throughput sequencing reads to a reference genome with high levels of accuracy and speed.
 
 [PASA](https://github.com/PASApipeline/PASApipeline/wiki), acronym for Program to Assemble Spliced Alignments (and pronounced 'pass-uh'), is a eukaryotic genome annotation tool that exploits spliced alignments of expressed transcript sequences to automatically model gene structures, and to maintain gene structure annotation consistent with the most recently available experimental sequence data. PASA also identifies and classifies all splicing variations supported by the transcript alignments. 
+
