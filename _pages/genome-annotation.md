@@ -3,6 +3,7 @@ title: "Genome Annotation"
 permalink: /genomeannotation/
 toc: true
 toc_label: "Genome Annotation"
+
 ---
 
 ![image-left](/assets/images/resource_images/genome-annotation.gif){: .align-right width="500px" height="500px"} Genome Annotation is a complex and difficult task. The average large genome contains anywhere from 20,000 to 30,000 genes and many duplicates. In addition to genes, genomes contain repetitive elements and non-coding DNA which play instrumental roles in genome organization and function. Finding and identifying each of these genomic elements is a huge undertaking requiring both automatic algorithmic processes and manual curation. After a program has found and identified these genomic features, there are numerous errors and an expert has to manually inspect elements of interest for accuracy before the annotation can be trusted. Below are some tools used in these process.
@@ -45,20 +46,12 @@ Users who have novel nucleotide or protein sequences that they wish to functiona
 
 [AEGeAn toolkit](https://aegean.readthedocs.io/en/stable/index.html) started as several distinct but related efforts to build tools for managing and analyzing whole-genome gene structure annotations. AEGeAn has brought these efforts together into a single library that includes executable programs as well as several data structures and modules callable via a C API. The AEGeAn Toolkit leverages a variety of parsers, data structures, and graphics capabilities available from the GenomeTools library 
 
-[Gcluster](https://github.com/Xiangyang1984/Gcluster) is a simple-to-use tool for visualizing and comparing genome contexts for numerous genomes.
-
 [Apollo](https://genomearchitect.readthedocs.io/en/latest/) A collaborative, real-time, genome annotation web-based editor.
 
 ### Transcriptome alignment 
 
-[HISAT2](http://ccb.jhu.edu/software/hisat2/manual.shtml#getting-started-with-hisat2) is a fast and sensitive alignment program for mapping next-generation sequencing reads (whole-genome, transcriptome, and exome sequencing data) against the general human population (as well as against a single reference genome).
+[HISAT2](http://ccb.jhu.edu/software/hisat2/manual.shtml#getting-started-with-hisat2) is a fast and sensitive alignment program for mapping next-generation sequencing reads.
 
 [STAR](https://github.com/alexdobin/STAR) maps large sets of high-throughput sequencing reads to a reference genome with high levels of accuracy and speed.
 
 [PASA](https://github.com/PASApipeline/PASApipeline/wiki), acronym for Program to Assemble Spliced Alignments (and pronounced 'pass-uh'), is a eukaryotic genome annotation tool that exploits spliced alignments of expressed transcript sequences to automatically model gene structures, and to maintain gene structure annotation consistent with the most recently available experimental sequence data. PASA also identifies and classifies all splicing variations supported by the transcript alignments. 
-
-### Gene Family Clustering
-
-[OrthoMCL](https://orthomcl.org/orthomcl/)is a genome-scale algorithm for grouping orthologous protein sequences. It provides not only groups shared by two or more species/genomes, but also groups representing species-specific gene expansion families. So it serves as an important utility for automated eukaryotic genome annotation.
-
-[COG](http://archive-dtd.ncbi.nlm.nih.gov/COG/) is another algorithm and database for clustering genes.
