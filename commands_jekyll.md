@@ -19,3 +19,11 @@ gem install jekyll bundler
 some important things to note for the future. I should not install ruby/jekyll stuff using conda. If for whatever reason it starts throwing errors, the easiest thing is probably to remove ruby/jekyll and then delete the hidden folders/file such as gems and .gems then reinstall per the jekyll website.
 
 On another note: removing anaconda is also a pain and I should be sure to delete the hidden files after removing those too. 
+
+
+# Fri 20 Nov 2020 12:28:49 AM PST
+
+as a reminder for how to run a local instance of the website
+```bash
+bundle exec jekyll serve
+```
