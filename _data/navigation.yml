@@ -1,9 +1,9 @@
 main:
   - title: "Parastichopus californicus"
     url: /seacuke/
-  - title: "Wet Lab Notebook"
+  - title: "Journal"
     url: /wetlab/
-  - title: "Dry Lab Notebook"
+  - title: "Genome"
     url: /drylab/
   - title: "Protocols"
     url: /protocols/
@@ -15,13 +15,11 @@ main:
 sidebar-main:
   - title: "Parastichopus californicus"
     url: /seacuke/
-  - title: "Wet Lab Notebook"
+  - title: "Journal"
     url: /wetlab/
-  - title: "Dry Lab Notebook"
+  - title: "The Genome"
     url: /drylab/
     children:
-    - title: "Notes and Thoughts"
-      url: /drylab_notes/
     - title: "Sequence Data Analysis and QC"
       url: /data-cleaning/
     - title: "Genome Assembly"

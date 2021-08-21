@@ -6,31 +6,20 @@ classes:  wide
 header:
   overlay_image: /assets/images/home/cuke1.jpg
 
-excerpt: "This is a website about my studies of the Sea Cucumber *Parastichopus californicus*. In it you will find my lab notebooks for wet and dry lab work in addition to protocols and resources I have found useful. --Jon Eilers
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/><br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>"
+excerpt: "This is a website about my studies of the Sea Cucumber *Apostichopus californicus*. In it I have detailed the process I went through to assembly and annotate the *A. californicus* genome. --Jon Eilers"
 
 
 feature_row:
-  - image_path: /assets/images/home/wetlab.jpeg
-    title: "Wet Lab Notebook"
+  - image_path: assets/images/journal.jpeg
+    title: "Journal"
     url: "/posts/"
-  - image_path: /assets/images/home/drylab.png
-    title: "Dry Lab Notebook"
+  - image_path: assets/images/redundans_platanus-allee_step10_ajap-reference.fa.snail.png
+    title: "The Genome"
     url: "/drylab/"
-  - image_path: /assets/images/home/Parastichopus_californicus.jpg
+  - image_path: /assets/images/inat_cuke.jpeg
     title: "Sea Cucumbers"
     url: "/seacuke/"
-  - image_path: /assets/images/home/sperm-extract.jpg
+  - image_path: assets/images/dna.png
     title: "Protocols"
     url: "/protocols/"
   - image_path: /assets/images/home/resources.png
@@ -43,5 +32,6 @@ feature_row:
 
 {% include feature_row %}
 
- 
+
+
 

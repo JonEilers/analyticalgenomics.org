@@ -1,12 +1,12 @@
 ---
-title: "Wet Lab"
+title: "Journal"
 permalink: /wetlab/
 author_profile: true
 layout: archive
 
 ---
 
-Below you will find all the wetlab work I have done on this project. This includes my failures, mistakes, and tangents while I was trying to figure out how to surgically remove gonads without killing the sea cucumbers, identify sperm, and extract high molecular weight DNA from sea cucumber sperm. If you want it by experiment categories, click [here](/wetlab-categories/)
+Genomics is a broad field with many fascinating topics and subfields. See below for my thoughts and perspectives on them. click [here](/wetlab-categories/) to sort by category.
 
 {% for post in site.posts %}
   {% include archive-single.html %}

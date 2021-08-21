@@ -1,5 +1,5 @@
 ---
-title: "Dry Lab"
+title: "The Genome"
 permalink: /drylab/
 author_profile: true
 sidebar:
