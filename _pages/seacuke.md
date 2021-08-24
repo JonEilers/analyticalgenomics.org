@@ -3,13 +3,11 @@ permalink: /seacuke/
 title: "The Californian Giant Sea Cucumber"
 layout: single
 author_profile: false
-header:
-  overlay_image: /assets/images/home/cuke1.jpg
 
 ---
-{% include figure image_path="/assets/images/inat_cuke2.jpeg" alt="this is a placeholder image" caption="Life-saving drug or instagram-able cuisine? [Photo credit](https://www.inaturalist.org/observations/27062628)" %}
+In 2018, a man in Washington State was [fined $1.8 million dollars](https://www.seattletimes.com/seattle-news/washington-man-gets-prison-for-overharvesting-sea-cucumbers-must-pay-1-5m/) for underreporting, processing, and selling illegally harvested sea cucumber. In 2017, a father and son in California were [fined $17 million](https://www.nbclosangeles.com/news/local/Father-and-Son-Indicted-for-17M-Sea-Cucumber-Smuggling-Operation-423185264.html) for smuggling sea cucumbers. So what about this strange and unfamiliar creature is so compelling people risk jail time and multi-million dollar fines? Well my friend, let me tell you.
 
-In 2018, a man in Washington State was [fined $1.8 million dollars](https://www.seattletimes.com/seattle-news/washington-man-gets-prison-for-overharvesting-sea-cucumbers-must-pay-1-5m/) for underreporting, processing, and selling illegally harvested sea cucumber. In 2017, a father and son in California were [fined $17 million](https://www.nbclosangeles.com/news/local/Father-and-Son-Indicted-for-17M-Sea-Cucumber-Smuggling-Operation-423185264.html) for smuggling sea cucumbers. So what about this strange and unfamiliar creature is so compelling people risk jail time and multi-million dollar fines? Well my friend, you have come to the right place.
+{% include figure image_path="/assets/images/inat_cuke2.jpeg" alt="this is a placeholder image" caption="Life-saving drug or instagram-able cuisine? [Photo credit](https://www.inaturalist.org/observations/27062628)" %}
 
 ![](/assets/images/cukeimages/foodcuke.jpeg "Sea Cucumber cooked with scallions in a sauce made by soy sauce and sesame oil, served with sugar snap pea puree."){: .align-right .full width="500px" height="400px"}Most people on the West coast will only encounter sea cucumbers at public aquariums and in the occasional tidepool. However, sea cucumbers are a widely sought-after delicacy called [*bêche-de-merin*](https://en.wikipedia.org/wiki/Sea_cucumber_as_food) in Eastern Asia.  This may come as a surprise to many of us. Their spikes and bright colors are reminiscent of poisonous and specificly not tasty animals. While I may study them, I haven't tested their gastronomic properties. But I have heard they are particularly chewy. I can believe this as cutting through their body wall is exceptionally tough for what appears like a squishy animal. This is thanks to tiny "bones" called ossicles embedded throughout their body wall which act as anchors for muscle and connective tissue. Oddly, the thick body wall and muscles are what captures the appetite of many. They are either dried and fermented or served fresh, often with winter melon or shitake mushrooms.
 

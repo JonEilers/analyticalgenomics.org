@@ -10,7 +10,7 @@ header:
 
 ---
 
-There are several different technologies available for genome sequencing. For my research I will be using Illumina's Hiseq X platform for generating short reads and Oxford Nanopore Technologies' MinION for long read sequencing. 
+There are several different technologies available for genome sequencing. For my research I used Illumina's Hiseq X platform for generating short reads and Oxford Nanopore Technologies' MinION for long read sequencing.
 
 
 # Illumina

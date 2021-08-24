@@ -1,6 +1,6 @@
 ---
-title: "KAT: Kmer Analysis of Raw Sequence Data"
-
+title: "KAT"
+excerpt: "Kmer Analysis of Sequence Data"
 toc: true
 toc_sticky: true
 author_profile: false
