@@ -2,6 +2,10 @@
 title: "Protocols"
 permalink: /protocols/
 layout: single
+author_profile: false
+header:
+  overlay_image: /assets/images/home/cuke1.jpg
+
 
 feature_row:
   - image_path: /assets/images/quick-extraction.png

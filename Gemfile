@@ -18,3 +18,5 @@ group :jekyll_plugins do
   gem "jekyll-jupyter-notebook"
   gem 'jekyll-commonmark'
 end
+
+gem "webrick", "~> 1.7"

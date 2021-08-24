@@ -3,6 +3,10 @@ title: "Genome Assembly"
 permalink: /genomeassembly/
 toc: true
 toc_label: "Genome Assembly"
+author_profile: false
+header:
+  overlay_image: /assets/images/home/cuke1.jpg
+
 ---
 
 ![image-left](/assets/images/gassembly.jpg){: .align-right width="500px" height="500px"} Sequencing a genome using sophisticated technology is only half of "Genome Sequencing". Current sequencing technology is capable of sequencing tiny fragments of the genome and assemblying those fragments into useable sequences is one of the primary challenges of genome sequencing. 

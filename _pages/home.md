@@ -12,7 +12,7 @@ excerpt: "This is a website about my studies of the Sea Cucumber *Apostichopus c
 feature_row:
   - image_path: assets/images/journal.jpeg
     title: "Journal"
-    url: "/posts/"
+    url: "/wetlab/"
   - image_path: assets/images/redundans_platanus-allee_step10_ajap-reference.fa.snail.png
     title: "The Genome"
     url: "/drylab/"

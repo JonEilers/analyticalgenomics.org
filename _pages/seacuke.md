@@ -1,6 +1,11 @@
 ---
 permalink: /seacuke/
 title: "The Californian Giant Sea Cucumber"
+layout: single
+author_profile: false
+header:
+  overlay_image: /assets/images/home/cuke1.jpg
+
 ---
 {% include figure image_path="/assets/images/inat_cuke2.jpeg" alt="this is a placeholder image" caption="Life-saving drug or instagram-able cuisine? [Photo credit](https://www.inaturalist.org/observations/27062628)" %}
 
@@ -20,7 +25,7 @@ I would forgive you if you thought sea cucumbers couldn’t possibly be more inc
 
 As an astute reader, you must be asking yourself how they are able to not only survive, but also grow new organs, without being able to eat or breathe. Many sea cucumber researchers would also like an answer to that question. Currently there is some [evidence](https://www.sciencedirect.com/science/article/pii/S0022098115001045) that they are able to absorb nutrients from the surrounding water directly into their tissue in addition to breathing through their skin.
 
-At this point, I hope you are convinced these creatures are not only important, but also interesting. Interesting enough in fact, to be worth studying. Which is what I am doing. The sea cucumber I study is called the Californian Giant Sea Cucumber, or in the lingua scientificia *Parastichopus californicus*. It is a species of sea cucumber found from Baja California up to the farthest western Aleutian Islands and into the Bering sea. Across this range it is found in waters as deep as 1000 feet and as shallow as tide pools.
+At this point, I hope you are convinced these creatures are not only important, but also interesting. Interesting enough in fact, to be worth studying. Which is what I am doing. The sea cucumber I study is called the Californian Giant Sea Cucumber, or in the lingua scientificia *Apostichopus californicus*. It is a species of sea cucumber found from Baja California up to the farthest western Aleutian Islands and into the Bering sea. Across this range it is found in waters as deep as 1000 feet and as shallow as tide pools.
 
 ![](/assets/images/cukeimages/harvest.jpeg){: .align-left width="300px" height="300px" }This species is commercially harvested from the wild across its range. In recent years there has been a growing interest in trying to cultivate them too. In particular, research has found they do quite well when [raised with oysters](https://www.sciencedirect.com/science/article/abs/pii/S0044848607012070) and actually improve the oyster’s health too.
 

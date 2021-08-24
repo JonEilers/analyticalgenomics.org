@@ -54,7 +54,7 @@ Runing star with index
 ```bash
 STAR --runThreadN 75 \
 --genomeDir /home/jon/Working_Files/star/ \
---readFilesIn /home/jon/Working_Files/parastichopus_californicus_rna-seq/SRR1139198_1.trim.fq,/home/jon/Working_Files/parastichopus_californicus_rna-seq/SRR1695477_1.trim.maq15.fq /home/jon/Working_Files/parastichopus_californicus_rna-seq/SRR1139198_2.trim.fq,/home/jon/Working_Files/parastichopus_californicus_rna-seq/SRR1695477_2.trim.maq15.fq \
+--readFilesIn /home/jon/Working_Files/Apostichopus_californicus_rna-seq/SRR1139198_1.trim.fq,/home/jon/Working_Files/Apostichopus_californicus_rna-seq/SRR1695477_1.trim.maq15.fq /home/jon/Working_Files/Apostichopus_californicus_rna-seq/SRR1139198_2.trim.fq,/home/jon/Working_Files/Apostichopus_californicus_rna-seq/SRR1695477_2.trim.maq15.fq \
 --outSAMtype BAM SortedByCoordinate 
 ```
 

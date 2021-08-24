@@ -88,7 +88,7 @@ Read Error Rate               0.218397%         0.218397%
 
 GenomeScope is estimating the genome size of *P. californicus* to be about 50-100 mb larger than the published estimates. Heterozygosity is higher than in *A. japonicuis*.
 
-{% include figure image_path="/assets/images/GenomeScope/apostichopusjaponicus.png" caption="Genome statistics from  the paper [Zhang et al 2017](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2003790)" %}
+{% include figure image_path="/assets/images/GenomeScope/Apostichopusjaponicus.png" caption="Genome statistics from  the paper [Zhang et al 2017](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2003790)" %}
 
 
 #### Model

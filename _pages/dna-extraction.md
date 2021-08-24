@@ -4,6 +4,9 @@ permalink: /dnaextraction/
 toc: true
 toc_label: "DNA Extraction"
 toc_sticky: true
+author_profile: false
+header:
+  overlay_image: /assets/images/home/cuke1.jpg
 
 ---
 

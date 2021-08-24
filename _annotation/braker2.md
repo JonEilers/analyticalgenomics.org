@@ -53,7 +53,7 @@ $_ =~ m/transcript_id \"(.*?)\"
 braker2 *ab initio*
 ```bash
 braker.pl --genome=/home/jon/Working_Files/repeats/repeatmasking_output/pcali_ajap.redundans.platanus.fa.masked \
-   --species=Parastichopus_californicus \
+   --species=Apostichopus_californicus \
    --esmode \
    --makehub \
    --gff3 \
@@ -64,7 +64,7 @@ braker.pl --genome=/home/jon/Working_Files/repeats/repeatmasking_output/pcali_aj
 
 braker2 run with rna-seq
 ```bash
- braker.pl --species=Parastichopus californicus \
+ braker.pl --species=Apostichopus californicus \
   --genome=/home/jon/Working_Files/pcali_ajap.redundans.platanus.masked.filter-1k.fa \
   --bam=/home/jon/Working_Files/star/Aligned.sortedByCoord.out.bam \
   --softmasking \
@@ -75,9 +75,9 @@ braker2 run with rna-seq
   --useexisting
 ```
 
-braker2 run with rna-seq and protein data from apostichopus japonicus
+braker2 run with rna-seq and protein data from Apostichopus japonicus
 ```bash
-braker.pl --species=Parastichopus_californicus \
+braker.pl --species=Apostichopus_californicus \
   --genome=/home/jon/Working_Files/pcali_ajap.redundans.platanus.masked.filter-1k.fa \
   --bam=/home/jon/Working_Files/star/Aligned.sortedByCoord.out.bam  \
   --softmasking \
@@ -85,6 +85,6 @@ braker.pl --species=Parastichopus_californicus \
   --makehub \
   --gff3 \
   --email jon.eilers@wallawalla.edu \
-  --prot_seq=/home/jon/Working_Files/apostichopus_japonicus/ajap_protein_uniprot.fasta \
+  --prot_seq=/home/jon/Working_Files/Apostichopus_japonicus/ajap_protein_uniprot.fasta \
   --prg=gth
 ```

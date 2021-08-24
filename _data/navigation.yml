@@ -1,5 +1,5 @@
 main:
-  - title: "Parastichopus californicus"
+  - title: "Apostichopus californicus"
     url: /seacuke/
   - title: "Journal"
     url: /wetlab/
@@ -13,7 +13,7 @@ main:
     url: /about/
 
 sidebar-main:
-  - title: "Parastichopus californicus"
+  - title: "Apostichopus californicus"
     url: /seacuke/
   - title: "Journal"
     url: /wetlab/

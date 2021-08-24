@@ -4,6 +4,10 @@ permalink: /dnasequencing/
 toc: true
 toc_label: "Genome Sequencing"
 toc_sticky: true
+author_profile: false
+header:
+  overlay_image: /assets/images/home/cuke1.jpg
+
 ---
 
 There are several different technologies available for genome sequencing. For my research I will be using Illumina's Hiseq X platform for generating short reads and Oxford Nanopore Technologies' MinION for long read sequencing. 

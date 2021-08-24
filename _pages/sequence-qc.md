@@ -4,6 +4,10 @@ permalink: /sequenceQC/
 toc: true
 toc_label: "Sequence Quality Control"
 toc_sticky: true
+author_profile: false
+header:
+  overlay_image: /assets/images/home/cuke1.jpg
+
 ---
 
 ![](/assets/images/resource_images/sequenceQC/fastqc.png){: .align-right width="500px" height="300px"} Taking a quick peak at your data is important before spending countless days and weeks on the important bits. Below are a list of tools for performing quality control of sequence data. All of these tools can be downloaded using [conda](https://docs.conda.io/en/latest/). I also want to note that in my trawling of papers and information on genome assembly and rna-seq mapping that the current consensus of actual experts is don't trim your reads. The tools for mapping, aligning, and assembling are better at correcting errors from untrimmed data than we are at trimming the reads correctly. 

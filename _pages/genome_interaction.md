@@ -2,7 +2,11 @@
 title: "Genome Interrogation Tools"
 permalink: /genome-interrogation/
 toc: true
+author_profile: false
 toc_label: "Genome Interrogation"
+header:
+  overlay_image: /assets/images/home/cuke1.jpg
+
 ---
 
 ![image-left](/assets/images/resource_images/enzymology_tools.png){: .align-right width="500px" height="500px"} After annotation of a genome is complete, the real fun begins. Tools and databases are available for predicting how genes will interact with each other and what that might mean. See below for some of those tools and databases.
