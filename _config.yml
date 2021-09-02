@@ -162,7 +162,7 @@ collections:
 analytics:
   provider: "google-gtag"
   google:
-    tracking_id: "UA-1234567-8"
+    tracking_id: "G-LYR33L3G9G"
     anonymize_ip: false # default
 
   
