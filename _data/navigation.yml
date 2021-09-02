@@ -5,12 +5,13 @@ main:
     url: /wetlab/
   - title: "Bioinformatics"
     url: /drylab/
+  - title: "About me"
+    url: /about/ 
   - title: "Lab Protocols"
     url: /protocols/
   - title: "Resources"
     url: /usefulsites/
-  - title: "About"
-    url: /about/
+
 
 sidebar-main:
   - title: "About Sea Cucumbers"
@@ -26,6 +27,8 @@ sidebar-main:
       url: /assembly/
     - title: "Genome Annotation"
       url: /annotation/
+  - title: "About me"
+    url: /about/
   - title: "Wet Lab Protocols"
     url: /protocols/
   - title: "Bioinformatics Resources"
@@ -43,6 +46,5 @@ sidebar-main:
       url: /genomeannotation/
     - title: "Genome Interrogation"
       url: /genome-interrogation/
-  - title: "About"
-    url: /about/
+
  
