@@ -68,9 +68,9 @@ Currently, it is unwise to trust  publically available for gene models of non-mo
 
 [PASA](https://github.com/PASApipeline/PASApipeline/wiki), acronym for Program to Assemble Spliced Alignments (and pronounced 'pass-uh'), is a eukaryotic genome annotation tool that exploits spliced alignments of expressed transcript sequences to automatically model gene structures, and to maintain gene structure annotation consistent with the most recently available experimental sequence data. PASA also identifies and classifies all splicing variations supported by the transcript alignments. 
 
-[Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki) assembles transcript sequences from Illumina RNA-Seq data
+[Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki) assembles transcript sequences from Illumina RNA-Seq data.
 
-[Salmon](https://combine-lab.github.io/salmon/) is a tool for quantifying the expression of transcripts using RNA-seq data
+[Salmon](https://combine-lab.github.io/salmon/) is a tool for quantifying the expression of transcripts using RNA-seq data.
 
 
 ### Genome Feature File Manipulation Tools
