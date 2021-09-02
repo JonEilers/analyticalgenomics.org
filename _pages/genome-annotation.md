@@ -30,7 +30,7 @@ Genome Annotation is a complex and difficult task. The average large genome cont
 [GenSAS](https://www.gensas.org/) is an online platform that provides a pipeline for whole genome structural and functional annotation. Users can upload genome sequences and select from a variety of tools for repeat masking, prediction of gene models and other structural features as well as functional annotation tools. 
 
 ### Targeted Gene Prediction
-Currently, it is unwise to trust non-model organism gene models. Below are tools for identifying and generating gene models for genes of interestion in a genome assembly. 
+Currently, it is unwise to trust  publically available for gene models of non-model organisms. Below are tools for identifying and generating gene models for genes of interestion in a genome assembly. 
 
 [Bitacora](https://github.com/molevol-ub/bitacora) is a comprehensive tool for the identification and annotation of gene families in genome assemblies
 
@@ -40,9 +40,7 @@ Currently, it is unwise to trust non-model organism gene models. Below are tools
 
 [Team3-FunctionalAnnotation](https://github.com/compgenomics2019/Team3-FunctionalAnnotation) is a pipeline for functional annotation of prokaryote genomes. However, most of the tools present can also be used in eukaryotic genome functional annotation. 
 
-[Interproscan](https://github.com/ebi-pf-team/interproscan): InterPro is a database which integrates together predictive information about proteins' function from a number of partner resources, giving an overview of the families that a protein belongs to and the domains and sites it contains.   
-
-Users who have novel nucleotide or protein sequences that they wish to functionally characterise can use the software package InterProScan to run the scanning algorithms from the InterPro database in an integrated way.
+[Interproscan](https://github.com/ebi-pf-team/interproscan): InterPro is a database which integrates together predictive information about proteins' function from a number of partner resources, giving an overview of the families that a protein belongs to and the domains and sites it contains. Users who have novel nucleotide or protein sequences that they wish to functionally characterise can use the software package InterProScan to run the scanning algorithms from the InterPro database in an integrated way.
 
 [Infernal and rfam](https://github.com/Rfam/rfam-docs/blob/master/docs/source/genome-annotation.rst): The Rfam library of covariance models can be used to search sequences (including whole genomes) for homologues to known non-coding RNAs, in conjunction with the Infernal software.
 
@@ -62,13 +60,18 @@ Users who have novel nucleotide or protein sequences that they wish to functiona
 
 [Apollo](https://genomearchitect.readthedocs.io/en/latest/) A collaborative, real-time, genome annotation web-based editor.
 
-### Transcriptome alignment 
+### RNA-seq and Transcriptome Alignment 
 
 [HISAT2](http://ccb.jhu.edu/software/hisat2/manual.shtml#getting-started-with-hisat2) is a fast and sensitive alignment program for mapping next-generation sequencing reads.
 
 [STAR](https://github.com/alexdobin/STAR) maps large sets of high-throughput sequencing reads to a reference genome with high levels of accuracy and speed.
 
 [PASA](https://github.com/PASApipeline/PASApipeline/wiki), acronym for Program to Assemble Spliced Alignments (and pronounced 'pass-uh'), is a eukaryotic genome annotation tool that exploits spliced alignments of expressed transcript sequences to automatically model gene structures, and to maintain gene structure annotation consistent with the most recently available experimental sequence data. PASA also identifies and classifies all splicing variations supported by the transcript alignments. 
+
+[Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki) assembles transcript sequences from Illumina RNA-Seq data
+
+[Salmon](https://combine-lab.github.io/salmon/) is a tool for quantifying the expression of transcripts using RNA-seq data
+
 
 ### Genome Feature File Manipulation Tools
 
