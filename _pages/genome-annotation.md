@@ -13,6 +13,8 @@ header:
 
 ![image-left](/assets/images/resource_images/genome_size_vs_gene_count.png) Genome Annotation is a complex and difficult task. The average large genome contains anywhere from 20,000 to 30,000 genes and many duplicates. In addition to genes, genomes contain repetitive elements and non-coding DNA which play instrumental roles in genome organization and function. Finding and identifying each of these genomic elements is a huge undertaking requiring both automatic algorithmic processes and manual curation. After a program has found and identified these genomic features, there are numerous errors and an expert has to manually inspect elements of interest for accuracy before the annotation can be trusted. Below are some tools used in these process.
 
+{% include figure image_path="/assets/images/resource_images/genome_size_vs_gene_count.png" caption="Genome size vs Number of Predicted Protein Coding Genes. [Credit](https://commons.wikimedia.org/wiki/File:Genome_size_vs_number_of_genes.svg)" %}
+
 ### Repeat Modeling and Masking
 
 [RepeatMasker](http://repeatmasker.org/) is a program that screens DNA sequences for interspersed repeats and low complexity DNA sequences. The output of the program is a detailed annotation of the repeats that are present in the query sequence as well as a modified version of the query sequence in which all the annotated repeats have been masked.  
