@@ -1,5 +1,5 @@
 ---
-title: "How to create a Genome"
+title: "Genome Bioinformatics"
 permalink: /drylab/
 author_profile: false
 sidebar:
