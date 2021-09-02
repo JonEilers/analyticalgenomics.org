@@ -11,7 +11,7 @@ header:
 
 <!--- add jbrowse, maybe some notes on how to evaluate gene annotations, transcriptome assembly tools (trinity), gemoma, bitacora, orthofinder -->
 
-![image-left](/assets/images/resource_images/genome_size_vs_gene_count.png){: .align-right width="500px" height="500px"} Genome Annotation is a complex and difficult task. The average large genome contains anywhere from 20,000 to 30,000 genes and many duplicates. In addition to genes, genomes contain repetitive elements and non-coding DNA which play instrumental roles in genome organization and function. Finding and identifying each of these genomic elements is a huge undertaking requiring both automatic algorithmic processes and manual curation. After a program has found and identified these genomic features, there are numerous errors and an expert has to manually inspect elements of interest for accuracy before the annotation can be trusted. Below are some tools used in these process.
+![image-left](/assets/images/resource_images/genome_size_vs_gene_count.png) Genome Annotation is a complex and difficult task. The average large genome contains anywhere from 20,000 to 30,000 genes and many duplicates. In addition to genes, genomes contain repetitive elements and non-coding DNA which play instrumental roles in genome organization and function. Finding and identifying each of these genomic elements is a huge undertaking requiring both automatic algorithmic processes and manual curation. After a program has found and identified these genomic features, there are numerous errors and an expert has to manually inspect elements of interest for accuracy before the annotation can be trusted. Below are some tools used in these process.
 
 ### Repeat Modeling and Masking
 
@@ -26,6 +26,13 @@ header:
 [Maker2](http://www.yandell-lab.org/software/maker.html) is a portable and easily configurable genome annotation pipeline. 
 
 [GenSAS](https://www.gensas.org/) is an online platform that provides a pipeline for whole genome structural and functional annotation. Users can upload genome sequences and select from a variety of tools for repeat masking, prediction of gene models and other structural features as well as functional annotation tools. 
+
+### Targeted Gene Prediction
+Currently, it is unwise to trust non-model organism gene models. Below are tools for identifying and generating gene models for genes of interestion in a genome assembly. 
+
+[Bitacora](https://github.com/molevol-ub/bitacora) is a comprehensive tool for the identification and annotation of gene families in genome assemblies
+
+[TGFam-Finder](https://github.com/tgfam-finder/scripts_ubuntu) is an annotation tool that works in the Linux OS environment for structural annotation of protein-coding genes containing target domains of interest. It also looks like a pain to set up. 
 
 ### Functional Annotation
 
