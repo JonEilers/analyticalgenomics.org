@@ -1,11 +1,11 @@
 main:
-  - title: "Apostichopus californicus"
+  - title: "About Sea Cucumbers"
     url: /seacuke/
   - title: "Journal"
     url: /wetlab/
-  - title: "Genome"
+  - title: "Bioinformatics"
     url: /drylab/
-  - title: "Protocols"
+  - title: "Lab Protocols"
     url: /protocols/
   - title: "Resources"
     url: /usefulsites/
@@ -13,11 +13,11 @@ main:
     url: /about/
 
 sidebar-main:
-  - title: "Apostichopus californicus"
+  - title: "About Sea Cucumbers"
     url: /seacuke/
-  - title: "Journal"
+  - title: "Journal of Thoughts"
     url: /wetlab/
-  - title: "The Genome"
+  - title: "Genome Bioinformatics"
     url: /drylab/
     children:
     - title: "Sequence Data Analysis and QC"
@@ -26,9 +26,9 @@ sidebar-main:
       url: /assembly/
     - title: "Genome Annotation"
       url: /annotation/
-  - title: "Protocols"
+  - title: "Wet Lab Protocols"
     url: /protocols/
-  - title: "Resources"
+  - title: "Bioinformatics Resources"
     url: /usefulsites/
     children:
     - title: "DNA Extraction"
