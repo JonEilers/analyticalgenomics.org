@@ -37,7 +37,7 @@ feature_row:
     url: "http://www.severnbiotech.com/downloads/Determining_the_pH_of_Water_Saturated.pdf"
 ---
 
-Having detailed instructions for how to perform procedures in the lab is critical for successful experiments and reproducibility. I use the website [www.protocols.io](https://www.protocols.io/) for writing and storing the protocols I use. Below are the protocols I have used for my thesis research.
+Having detailed instructions for how to perform procedures in the lab is critical for successful experiments and reproducibility. I use the website [www.protocols.io](https://www.protocols.io/) for writing and storing the protocols I use. Below are protocols I used for my thesis research.
 
 {% include feature_row %}
 
