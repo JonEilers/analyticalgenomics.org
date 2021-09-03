@@ -6,7 +6,7 @@ classes:  wide
 header:
   overlay_image: /assets/images/home/cuke1.jpg
 
-excerpt: "This is a website about my studies of genomics and work on the Sea Cucumber *Apostichopus californicus*. --Jon Eilers"
+excerpt: "This is a website about my studies of genomics and sea cucumber research. --Jon Eilers"
 
 
 feature_row:
