@@ -7,7 +7,7 @@ layout: archive
 header:
   overlay_image: /assets/images/home/cuke1.jpg
 
-excerpt: "Genomics is a broad field with many fascinating topics and subfields. See below for my thoughts and perspectives on them. click [here](/wetlab-categories/) to sort by category." 
+excerpt: "Genomics is a broad field with many fascinating topics and subfields. See below for my thoughts and perspectives on them." 
 ---
  
 {% for post in site.posts %}
