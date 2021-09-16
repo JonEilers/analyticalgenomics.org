@@ -24,5 +24,3 @@ excerpt: "Garbage in, garbage out."
 </ul>
 
 
-
-[testing](/fastqc/)
