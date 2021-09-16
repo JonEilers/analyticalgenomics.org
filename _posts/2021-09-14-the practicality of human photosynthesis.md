@@ -27,11 +27,9 @@ If we figure keratinocytes have a fifth of the amount of chloroplasts, but rough
 We know that the rate of carbon fixation per a milligram of chlorophyll per an hour is 100 micromoles CO2. We also know the relationship of CO2 to sugar produced which is 6 H2O + 6 CO2 + energy → C6H12O6 + 6 O2. If we have (5274.22 milligrams of chlorophyll)(100 micromoles CO2)= 527,422 micromoles fixed. We know that it takes 6 molecules of CO2 to make 1 glucose so there would be 87903.66 micromoles of glucose produced per an hour. This turns out to be 15.8364 grams per an hour. If we were to run around outside, butt naked in full sun then we would produced our brains daily need in 7-8 hours. 
 
 Some other articles I need to read at a later date, but others might find interesting
-[skin metabolism]
-(https://www.sciencedirect.com/science/article/pii/S0006349512050564)
 
-[cell shape and terminal differentiation of epidermal cells - aka death]
-(https://www.pnas.org/content/85/15/5576.short)
+[skin metabolism](https://www.sciencedirect.com/science/article/pii/S0006349512050564)
 
-[transfer of mitochondria and endosomes in skin]
-(https://onlinelibrary.wiley.com/doi/abs/10.1111/tra.12786)
+[cell shape and terminal differentiation of epidermal cells - aka death](https://www.pnas.org/content/85/15/5576.short)
+
+[transfer of mitochondria and endosomes in skin](https://onlinelibrary.wiley.com/doi/abs/10.1111/tra.12786)
