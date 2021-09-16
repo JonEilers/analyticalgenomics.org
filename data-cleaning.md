@@ -12,7 +12,7 @@ header:
 
 excerpt: "Garbage in, garbage out."
 ---
- <p> Each sequencing technology introduces it own unique artifacts and inaccuracies into the sequencing data. Identifying, analyzing, and removing these artifacts is the first step in preparing the sequence data for assembly. Below you will find the code and results for Illumina Hiseq X and Oxford Nanopore Technologies MinION sequencing of the <i>Apostichopus californicus</i> genome. </p>
+ Each sequencing technology introduces it own unique artifacts and inaccuracies into the sequencing data. Identifying, analyzing, and removing these artifacts is the first step in preparing the sequence data for assembly. Below you will find the code and results for Illumina Hiseq X and Oxford Nanopore Technologies MinION sequencing of the *Apostichopus californicus* genome.
     
 
 <ul>
@@ -22,3 +22,7 @@ excerpt: "Garbage in, garbage out."
        </li>
   {% endfor %}
 </ul>
+
+
+
+[testing](/fastqc/)
