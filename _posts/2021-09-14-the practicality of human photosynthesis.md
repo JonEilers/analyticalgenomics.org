@@ -1,9 +1,18 @@
+---
+title: "Human Photosynthesis"
+type: posts
+header:
+  teaser: /assets/images/2021-09-14/green_human.jpg
+toc: false
+excerpt: "Is it worth it?"
+---
 
-# Is it worth it? 
 
-I was talking with some friends recently about my animal photosynthesis post and the question was raised - "Is it even worth it?". Let's say we somehow do introduce photosynethesis in to humans, would it produce enough sugar/atp to make a dent in our daily metabolic needs? 
+### Is it worth it? 
 
-Let's use the brain as a frame of reference. The brain primarily consumes glucose and can account for up to 30-40% of our daily caloric need. In [childhood](https://www.pnas.org/content/111/36/13010.short), it can consume up to 66% of the resting metabolism. According to NCBI's [Biochemistry](https://www.ncbi.nlm.nih.gov/books/NBK22436/) textbook, the brain needs about 120 grams of glucose daily. 
+I was talking with some friends recently about my animal photosynthesis post and the question was raised - "Is it even worth it?". Let's say we somehow do enable humans to photosynthesize, would it produce enough sugar/atp to make a dent in our daily metabolic needs? 
+
+Let's use the brain as a frame of reference. The brain primarily consumes glucose and can account for up to 30-40% of our daily caloric need. In [childhood](https://www.pnas.org/content/111/36/13010.short), it can consume up to 66% of the resting metabolism. According to this biochemistry textbook on NCBI's [website](https://www.ncbi.nlm.nih.gov/books/NBK22436/), the brain needs about 120 grams of glucose daily. 
 
 Now we need some numbers for skin area, number of whatever cell type we want the chloroplast in, and volume of said cell. According to harvard's [B10Numbers](https://bionumbers.hms.harvard.edu/bionumber.aspx?id=100578&ver=1), humans typically have 1.6-1.8 square meters of skin. This depends on how tall or large you are and for simplicities sake, we are going to say our experimental subject actually had an area of 2 square meters. 
 
@@ -17,14 +26,12 @@ If we figure keratinocytes have a fifth of the amount of chloroplasts, but rough
 
 We know that the rate of carbon fixation per a milligram of chlorophyll per an hour is 100 micromoles CO2. We also know the relationship of CO2 to sugar produced which is 6 H2O + 6 CO2 + energy → C6H12O6 + 6 O2. If we have (5274.22 milligrams of chlorophyll)(100 micromoles CO2)= 527,422 micromoles fixed. We know that it takes 6 molecules of CO2 to make 1 glucose so there would be 87903.66 micromoles of glucose produced per an hour. This turns out to be 15.8364 grams per an hour. If we were to run around outside, butt naked in full sun then we would produced our brains daily need in 7-8 hours. 
 
-
 Some other articles I need to read at a later date, but others might find interesting
+[skin metabolism]
+(https://www.sciencedirect.com/science/article/pii/S0006349512050564)
 
-skin metabolism
-https://www.sciencedirect.com/science/article/pii/S0006349512050564
+[cell shape and terminal differentiation of epidermal cells - aka death]
+(https://www.pnas.org/content/85/15/5576.short)
 
-cell shape and terminal differentiation of epidermal cells - aka death
-https://www.pnas.org/content/85/15/5576.short
-
-transfer of mitochondria and endosomes in skin
-https://onlinelibrary.wiley.com/doi/abs/10.1111/tra.12786
+[transfer of mitochondria and endosomes in skin]
+(https://onlinelibrary.wiley.com/doi/abs/10.1111/tra.12786)
