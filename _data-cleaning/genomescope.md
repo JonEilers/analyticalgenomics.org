@@ -3,6 +3,7 @@ title: "Jellyfish and GenomeScope: Estimation of Genome Characteristics"
 toc: true
 toc_sticky: true
 layout: single
+permalink: /genomescope/
 
 gallery:
   - url: /assets/images/genomescope/plot.png

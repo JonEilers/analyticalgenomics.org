@@ -5,6 +5,7 @@ toc: true
 toc_sticky: true
 author_profile: false
 layout: single
+permalink: /kmergenie/
 
 gallery:
   - url: /assets/images/kmergenie/112/best-k.png

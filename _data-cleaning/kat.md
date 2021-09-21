@@ -5,6 +5,7 @@ toc: true
 toc_sticky: true
 author_profile: false
 layout: single
+permalink: /kat/
 
 gallery:
   - url: /assets/images/kat/kat-gcp.mx.png
@@ -43,6 +44,9 @@ conda create -name kat
 conda activate kat
 conda install -c bioconda kat 
 ```
+
+New tool: [Merqury](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02134-9)
+github: https://github.com/marbl/merqury
 
 ### Commands
 
