@@ -43,6 +43,8 @@ fastqc \
 fastqc
 ```
 
+If FastQC looks like it is having difficulty importing data, it could be due to [hardcoded memory limits](https://githubmemory.com/repo/nf-core/eager/issues/650). An easy fix is adding more threads using the -t followed by the number of cpu threads you want to use.
+
 FastQC also works with long read data generated using PacBio or Oxford Nanopore Technology platforms. So long as the read files are in FastQ format, it should work. 
 
 ## Results
