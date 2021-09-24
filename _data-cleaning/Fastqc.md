@@ -2,8 +2,11 @@
 title: "Adapters and FastQC report"
 layout: single
 permalink: /fastqc/
----
+toc: true 
+toc_sticky: true
 
+excerpt: ""
+---
 ## Introduction
 You have your data, you've checked the file integrity and are confident no data was corrupted during the transfer process. It's now time to take a quick look to see what you'll be working with. Things such as average read length, duplications, base and sequence quality, GC content, sequence length distribution, overrepresented sequences, adapter contamination, the list goes on. Thankfully, someone created a really good tool for checking all those things. It's sort of a one stop shop for read quality analysis and it's called [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/). 
 
