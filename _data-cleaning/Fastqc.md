@@ -15,6 +15,7 @@ You can download it from the website, or you can go use the package manager call
 
 Installing using conda
 ```bash
+ # creating conda environment
  conda create -n fastqc
 
 # installing fastqc
