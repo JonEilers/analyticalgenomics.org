@@ -15,12 +15,13 @@ You can download it from the website, or you can go use the package manager call
 
 Installing using conda
 ```bash
-# create a conda environment. This helps to keep software dependencies isolated from eachother when using a lot of different bioinformatic tools. 
-conda create -n fastqc
+ conda create -n fastqc
 
 # installing fastqc
 conda install -c bioconda fastqc 
 ```
+
+I created a separate conda environment for FastQC ast his helps to keep software dependencies isolated from eachother when using a lot of different bioinformatic tools. An easy example is with the tools that use python 2.7 rather then python 3. They won't be able to be installed in the environment. 
 
 ## Running fastQC
 Fastqc can be used via command line or via its GUI
@@ -41,6 +42,8 @@ fastqc \
 # This will open the GUI
 fastqc
 ```
+
+FastQC also works with long read data generated using PacBio or Oxford Nanopore Technology platforms. So long as the read files are in FastQ format, it should work. 
 
 ## Results
 Results can be found [here](/fastqc1/) and [here](/fastqc2/)

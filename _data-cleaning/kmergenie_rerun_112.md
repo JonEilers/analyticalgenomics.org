@@ -34,16 +34,29 @@ Kmergenie has a kmer size cutoff at 127 bp. This doesn't work well when using re
 Kmergenie was compiled, installed, and run on a different machine that I do not have access to at the moment. This will be updated when I am able to get onto that computer
 
 conda installation
-```
+```bash
+# create conda environment
+conda create -n kmergenie
+
+# adding conda-forge channel to conda
+conda config --add channels conda-forge
+
+# installing kmergenie
 conda install -c bioconda kmergenie 
 ```
 
-conda package information
-```
-```
+I recently noticed that in new installations of miniconda conda-forge was not automatically added to the channels that are checked for packages. A lot of bioinformatic tools in conda require packages in conda-forge otherwise conda won't be able to install the tool. Easy fix though. 
 
 commands
-```
+```bash
+# activating the kmergenie conda environment
+conda activate kmergenie
+
+# running kmergenie
+kmergenie \
+  pcali_1.fastq \
+  -t 75 \
+  -o pcali_1.kmergenie
 ```
 
 ### Results
