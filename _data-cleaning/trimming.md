@@ -25,7 +25,7 @@ conda install -c bioconda bbmap
 ```
 bbmap is another tool in the BBtools suite. In this case, bbduk is bundled with the bbmap conda package and the package is regularly updated. 
  
-```
+```bash
 # running BBduk
 bbduk.sh \
     in1=SRR1695477_1.fq \
@@ -57,9 +57,13 @@ bbduk.sh \
     maq=15
 ```
 
+## Results 
+
+Let's take a look to see how this changed the fastqc analysis. [Here](/cleaned_mapq10/) is the data set with a phred cutoff of 10 and [here](/cleaned_mapq15/) is the data with a phred cutoff of 15. The data is definitely a lot cleaner and good enough to be used for de novo gene prediction and possibly validating gene models later. Unfortunately, the consequences of the aggressive trimming is that almost 70% of the reads were removed. 
+
 Below is an example of what the command line output looks like
 
-```
+```bash
 java -ea -Xmx63784m -Xms63784m -cp /home/jon/anaconda3/envs/biotools/opt/bbmap-38.73-0/current/ jgi.BBDuk in1=SRR1695477_1.fq in2=SRR1695477_2.fq out=clean3.fq out2=clean4.fq ref=adapters.fa ktrim=r k=23 mink=11 hdist=1 tpe tbo maq=15
 Executing jgi.BBDuk [in1=SRR1695477_1.fq, in2=SRR1695477_2.fq, out=clean3.fq, out2=clean4.fq, ref=adapters.fa, ktrim=r, k=23, mink=11, hdist=1, tpe, tbo, maq=15]
 Version 38.73
@@ -87,10 +91,6 @@ Time:                         	54.294 seconds.
 Reads Processed:      52003k 	957.81k reads/sec
 Bases Processed:       5200m 	95.78m bases/sec
 ```
-
-## Results 
-
-Let's take a look to see how this changed the fastqc analysis. [Here](/cleaned_mapq10/) is the data set with a phred cutoff of 10 and [here](/cleaned_mapq15/) is the data with a phred cutoff of 15. The data is definitely a lot cleaner and good enough to be used for de novo gene prediction and possibly validating gene models later. Unfortunately, the consequences of the aggressive trimming is that almost 70% of the reads were removed. 
 
 ## Trimming and Filtering Oxford Nanopore Technology Data
 
