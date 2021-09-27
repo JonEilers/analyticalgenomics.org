@@ -55,6 +55,20 @@ The quality of the data looks pretty darn good. There might be some PCR amplicat
 ## Novogene report
 Novogene also provided a quality report which agrees with what FastQC shows. Here is the [Report](/data-cleaning/Novogene/)
 
+## Oxford Nanopore Technologies MinION sequencing results
+I also had the opportunity to try sequencing using ONT's MinION sequencing platform. I find the technology absolutely incredible. So let's take a look at the results. 
+
+Fastqc can be used for this. [Here](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwi_-NCwzp_zAhUGip4KHYSJApYQFnoECBoQAQ&url=https%3A%2F%2Fzenodo.org%2Frecord%2F1442930%2Ffiles%2FDay_2_practicals_LRDW.pdf%3Fdownload%3D1&usg=AOvVaw2Mz3-BVI3AbVmQR9ge1vMf) is a great walk through on working with long read data. Section 3 contains a brief bit on fastqc and nanopore data. [Here](/nanopore-fastqc/) is the report and oh boy. Whelp, it was good experience and I can put ONT MinION sequencing on my resume right? So it is all really low quality data, GC peak is roughly where it should be, but the shape of the curve is not what it should be. Sequence content is all over the place and the bulk of the reads are not very long. Will have to try fixing this later with a little trimming. Another really neat tool for looking at ONT data is called [nanoplot](https://github.com/wdecoster/NanoPlot). 
+
+[Nanoplot results](/nanoplot/)
+
+To install Nanoplot
+```bash
+conda create -n nanoplot
+conda install -c bioconda nanoplot
+```
+
+I did not use the command line version of nanoplot so I don't have a command to share. However, if you are feeling lazy like I was and have less than 100 mb file size, you can use their webservice availabe [here](http://nanoplot.bioinf.be/)
 
 ## Resources 
 I could go into details about what each of the FastQC graphs mean and how to read them, but others have done a great job. Here is a a good walk through of the different fastqc outputs and their meaning in addition to quality control processing: [FastQC info by open repository](https://openrepository.aut.ac.nz/bitstream/handle/10292/5170/FASTQC%20analysis%20guide.pdf?sequence=5&isAllowed=y)
@@ -64,3 +78,6 @@ Excellent comparisons of bad versus good quality sequence data and the graphs fa
 
 
 Also contains excellent comparisons of bad versus good quality sequence data along with some processing steps: [Bioinformatics Core Training](https://bioinformatics-core-shared-training.github.io/cruk-autumn-school-2017/Introduction/SS_DB/Materials/Lectures/Lecture2_qualityControl_artefactRemoval_DB.pdf)
+
+
+
