@@ -3,6 +3,7 @@ title: "Blobtoolkit: Sea Cucumber Genome Assembly Snail Plots and Eukaryota Busc
 toc: true
 toc_sticky: true
 layout: single
+permalink: /blobtoolkit/
 
 gallery:
   - url: /assets/images/blobtoolkit/californicus_masurca.snail.png

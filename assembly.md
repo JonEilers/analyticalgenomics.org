@@ -21,14 +21,109 @@ Genome Assembly is a [hard](https://journals.plos.org/plosbiology/article?id=10.
 
 Genome assembly approaches largely depend on the type and quality of data you have available to you. Sanger sequencing used to be the golden standard. Then illumina shotgun sequencing took over for awhile. Now we have long read sequencing using either PacBio or Oxford Nanopore Technologies platforms. Additional wetlab techniques such as [Hi-C](https://en.wikipedia.org/wiki/Chromosome_conformation_capture#Hi-C_(all-vs-all)) or [optical mapping](https://en.wikipedia.org/wiki/Optical_mapping) can further bring the assembly pieces together into chromosome length scaffolds. Any combination of the above can be found in most current genome assembly papers. However, if Illumina is all you have and genomes of closely related species are available, then reference assisted genome assebly is a possibility, but with caveats. 
 
-<ul>
-  {% for protocols in site.assembly %}
-    <li>
-      <h2><a href="{{ protocols.url }}">{{ protocols.title }}</a></h2>
-       </li>
-  {% endfor %}
-</ul>
+## Assembly
 
+### Short Read
+
+Illumina sequencing is cheap, relatively speaking. In my case, a mere $1200 got me 100X coverage of the sea cucumber genome. While Illumina data won't get you chromosome length scaffolds, what it will get you is access to the majority of the gene space in a genome. With some caveats of course. You likely won't be seeing a complete [Titin](https://en.wikipedia.org/wiki/Titin) gene and gene counts will likely be inaccurate as a result of gene fragmentation. For example, in my short read sea cucumber genome, the telomerase gene was split into two separate genes. However, if you're interested in shorter genes such as [Mortalin](https://en.wikipedia.org/wiki/HSPA9) or highly conserved genes such as [Survivin](https://en.wikipedia.org/wiki/Survivin) then you'll probably be just fine with a short read assembly. If you are  interested studying gene regulation and how repepetitive elements influence it, you will want chromosome length scaffolds. 
+
+It has been close to two decades since Illumina short read sequencing became accessible and as a result there are innumberable short read assemblers. In recent years though, significant progress has been made in assembly algorithms and the result has been some blazing fast and accurate assembly tools. See below for two that I am partial towards.
+
+- ### [MaSuRCA](/masurca/)
+
+In my case, I am working with organisms that are highly heterozygous. What this means is there is enough variation between the two chromosomes in each chromosome pair to cause problems for a genome assembler that doesn't take this into account. Platanus-Allee was specifically designed to deal with that. The author also created another tool for genomes that have less variation (such as humans) called [Platanus](http://platanus.bio.titech.ac.jp/platanus-assembler). On the Platanus-Allee webpage they state "for low heterozygous species genome (as a guide < 1.0 %), Platanus assembler would mark better performance than Platanus-allee.
+
+- ### [Platanus-Allee](/platanus-allee/)
+
+Also worth noting is that both the above assemblers have the ability to work with long reads, and in MaSuRCA's case, reference genomes.
+
+### Long Read
+
+With the advent of "long-read" sequencing technology, the genome sequencing landscape dramatically changed. It became possible to acquire chromosome long scaffolds with repetetive elements mostly resolved. While certain regions of chromosome were still difficult, such as telomeres and centromeres, the vast majority of the genome was available for assembly. 
+
+paper on long reads [here](https://academic.oup.com/hmg/article/27/R2/R234/4996216?login=true)
+
+sweet article about long read assembly https://www.nature.com/articles/s41592-021-01057-y
+
+download some long read data and assemble it? Use the pacbio
+
+
+HiFi reads using hifiasm?
+
+add links to some papers that only use long read data for chromosome length assemblies
+
+raven and canu
+shasta?
+
+### Hybrid
+
+long read and illumina
+haslr
+platanus-allee
+masurca
+
+reassemble the parvimensis genome using pacbio and illumina
+reassemble japonicus using pacbio and illumina? 
+
+find some hi-c data and go to town? 
+
+coral endosymbiont, looks like a good paper
+https://www.biorxiv.org/content/10.1101/2020.07.01.182477v1
+
+sea urchin genome
+https://academic.oup.com/gbe/article/12/7/1080/5841217?login=true
+
+### Reference Assisted
+
+redundans, masurca, ragout, ragtag, progressive cactus
+
+- ### [Redundans](/redundans/)
+
+### Organelle Assembly
+
+try this for getting the cuke mitochondria
+https://www.biorxiv.org/content/10.1101/256479v3.abstract
+
+
+## Assembly QC
+
+Once an a few assemblies are complete, it's time to determine which one is best and if any further steps need to be taken. There are a few approaches to this each approach has a great tool for it. 
+
+A standard metric for genome contiguity is the N50 value. N50 is a tricky beast to understand and I seen more blogs and discriptions get it wrong then right. Thankfully, [wikipedia](https://en.wikipedia.org/wiki/N50,_L50,_and_related_statistics#N50) get's it right. Without getting into the details on it, the thing that matters when considering the N50 is that the majority of reads in an assembly will be shorter than the N50 value. If you have an N50 of 9kb, then the majority of the assembly will be scaffolds or contigs shorter than 9kb. Having an N50 of 9kb consequently means gene prediction will likely capture the bulk of the genes, but there will likely be a large number of fragmented genes such as [titin](https://en.wikipedia.org/wiki/Titin). While there are a number of tools for acquiring this metric, probably my favorite way to visualize it is the snail plot produced via [Blobtoolkit](https://www.g3journal.org/content/10/4/1361). [Here](https://blobtoolkit.genomehubs.org/) is a link to their website. See the link below for an example. 
+
+- ### [Summary statistics via Blobtoolkit](/blobtoolkit/)
+
+An easy to capture the level of fragmentation and also get idea of what to expect when predicting genes is to check the [BUSCOs](https://pubmed.ncbi.nlm.nih.gov/26059717/). You'll hear BUSCOs thrown around a lot in genome papers and among scientists involved in genome sequencing. It's treated like a holy metric for how good your assembly is and it is a reasonable way to check. In essence, someone took the time to find a number of genes that are highly conserved across the kingdoms and phylums of life. Because of their conserved nature, it is a reasonable assumption that the genome of your organism likely contains these genes. So if the majority of these genes can be found in your assembly and they are not fragmented or unexpectedly duplicated, then it is reasonable to assume that a similar percentage of genes in the genome will likewise be in good shape. It is important to understand though, that BUSCO results do not represent a best case scenario but rather a targeted random sample of the genome assembly. See below for an example
+
+- ### [Assembly quality assessment using BUSCO analysis](/busco/)
+
+In addition to looking at summary statistics and checking BUSCOs, it is also wise to check for contamination. During the sequencing process, DNA from other organisms may be in the sample and it's important to know if that has found its way into the genome assembly. A common method for checking this is to download a uniprot or refseq protein database and blast it against your assembly then check to see what organisms had the highest hit. If those organisms are closely related to the organism of interest, then it is safe to say that's probably solid, but if there are a lot of hits for distantly related organisms, then it might be a good idea to consider preprocessing and filtering the raw data before assembling. [Blobtoolkit](https://www.g3journal.org/content/10/4/1361) produces two different types of graphs, the blobplot and the Cumulative assembly span plot, for visualizing this. 
+
+- ### [Assembly contaminiation via Blobtoolkit](/blobtoolkit/)
+
+Another way to assess the quality of the assembly and to check for contamination is using K-mers. Truely a versatile way to sequence data. One way to check assembly quality using K-mers is by see how many unique K-mers are found in both the assembly and the raw data then visualize it using a [K-mer spectra graph](https://academic.oup.com/view-large/figure/118668344/btw663f1.tif). There are currently two excellent tools for this: [Kat](https://academic.oup.com/bioinformatics/article/33/4/574/2664339?login=true) and [Merqury](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02134-9). To see a feature comparison between the two, click [here](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02134-9/tables/1). See the below links for examples. 
+
+- ### [Assembly contamination assessment using KAT](/kat_assembly/)
+
+- ### [K-mer completeness and consensus quality assessment of genome assemblies](/merqury_assembly/)
+
+mummer4, busco, multiqc, kat, blobtoolkit, merqury
+
+
+
+[Assemblytics](http://assemblytics.com/)
+[Ribbons](https://genomeribbon.com/)
+
+## Polishing and gap closing
+
+
+
+Here is where I rant about shitty genomes and people trying to massage genome assemblies to look better than they are
+
+hapo-g and dentist
+
+such a good paper
+[chasing perfection](https://www.biorxiv.org/content/10.1101/2021.07.02.450803v1)
 <!---
 # Genome Assembly 
 Many of the popular genome assemblers have the ability to do both short, long, and hybrid genome assembly. 

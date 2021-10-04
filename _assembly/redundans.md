@@ -3,6 +3,7 @@ title: "Redundans Reference Assisted Assembly"
 toc: true
 toc_sticky: true
 layout: single
+permalink: /redundans/
 
 gallery:
   - url: /assets/images/redundans/scaffolds.reduced.fa.hist.png

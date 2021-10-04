@@ -3,7 +3,7 @@ title: "Platanus-Allee Assembly"
 toc: true
 toc_sticky: true
 layout: single
-   
+permalink: /platanus-allee/
 ---
 
 ## Platanus-Allee

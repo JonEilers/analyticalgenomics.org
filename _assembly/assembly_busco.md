@@ -3,6 +3,7 @@ title: "BUSCO Analysis of MaSuRCA, Platanus-Allee, and Platanus-Allee + Redundan
 toc: true
 toc_sticky: true
 layout: single
+permalink: /busco/
 
 gallery:
   - url: /assets/images/busco/busco_analysis.png

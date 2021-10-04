@@ -3,6 +3,7 @@ title: "MaSuRCA Assembly"
 toc: true
 toc_sticky: true
 layout: single
+permalink: /masurca/
 ---
 
 ## MaSuRCA
