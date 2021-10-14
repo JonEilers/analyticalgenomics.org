@@ -90,7 +90,70 @@ flye \
 
 ```
 
-Not the fastest assembler out there, although still faster then canu. It started at 2021-10-08 09:47:05 and finished at 2021-10-11 01:51:56. So a few days. Commandline output can be found [here](/flye_output/)
+Not the fastest assembler out there, although still faster then canu. It started at 2021-10-08 09:47:05 and finished at 2021-10-11 01:51:56. So a few days. Commandline output can be 
+found [here](/flye_output/)
 
-consider using quickmerge on all three assemblies?
-https://github.com/mahulchak/quickmerge
+# Summary Statistics
+
+So now that I have three assembly I should do some polishing and quality checking. But for now, I'll leave these basic assembly statistics here. The polishing and QC will happen in a later section.
+
+the bbtools suite has a script  for getting quick genome stats. This happens to be bundled with the bbmap tool on available on conda
+
+```bash
+conda create -n bbmap
+conda activate bbmap
+conda install -c bioconda bbmap 
+
+# running it on a single genome would use stats.sh
+stats.sh genome_of_interest
+
+# but I have three genomes, so
+statswrapper.sh \
+	in=/home/jon/Working_Files/Chiridota_heheva_genome_project/genome_assembly/flye/assembly.fasta\
+	,/home/jon/Working_Files/Chiridota_heheva_genome_project/genome_assembly/raven/raven_c_heheva.fasta\
+	,/home/jon/Working_Files/Chiridota_heheva_genome_project/genome_assembly/shasta/Assembly.fasta format=6
+```
+
+and here is the result in a nice table format. The top entry is the flye assembly, the middle is raven and the bottom is shasta. Right away there are some obvious and interesting differences.  
+
+| #n\_scaffolds | n\_contigs | scaf\_bp   | contig\_bp | gap\_pct | scaf\_N50 | scaf\_L50 | ctg\_N50 | ctg\_L50 | scaf\_N90 | scaf\_L90 | ctg\_N90 | ctg\_L90 | scaf\_max | ctg\_max | scaf\_n\_gt50K | scaf\_pct\_gt50K | gc\_avg | gc\_std | filename                                                                                                  |
+| ------------- | ---------- | ---------- | ---------- | -------- | --------- | --------- | -------- | -------- | --------- | --------- | -------- | -------- | --------- | -------- | -------------- | ---------------- | ------- | ------- | --------------------------------------------------------------------------------------------------------- |
+| 16728         | 16728      | 1540823993 | 1540823993 | 0        | 1145      | 307072    | 1145     | 307072   | 7098      | 38787     | 7098     | 38787    | 3605186   | 3605186  | 5989           | 86.823           | 0.36306 | 0.03967 | /home/jon/Working\_Files/Chiridota\_heheva\_genome\_project/genome\_assembly/flye/assembly.fasta          |
+| 3227          | 3227       | 1221957363 | 1221957363 | 0        | 623       | 606319    | 623      | 606319   | 2072      | 173820    | 2072     | 173820   | 2901347   | 2901347  | 3133           | 99.716           | 0.36128 | 0.01386 | /home/jon/Working\_Files/Chiridota\_heheva\_genome\_project/genome\_assembly/raven/raven\_c\_heheva.fasta |
+| 15199         | 15199      | 1209883028 | 1209883028 | 0        | 1599      | 201222    | 1599     | 201222   | 7021      | 37816     | 7021     | 37816    | 1748484   | 1748484  | 5792           | 85.584           | 0.36212 | 0.04223 | /home/jon/Working\_Files/Chiridota\_heheva\_genome\_project/genome\_assembly/shasta/Assembly.fasta        |
+
+The first is that the flyte assembly is .4gb larger then the other two. The original paper predicted a genome size of 1.2gb using [genomescope](https://academic.oup.com/bioinformatics/article/33/14/2202/3089939) and their assembly size was roughly 1.2gb so this makes me suspect the flye assembler had a difficult time collapsing heterozygous regions. I'll definitely have to take a look at that later. 
+
+The next interesting bit is the number of scaffolds. Shasta and flye had a comparable number, but raven had the least number of scaffolds. Quite impressive. 
+
+Next are the genome summary statistics. Note: the L50 and N50 results are switched here, probably a mistake in the tool output. The raven assembly has the highest N50, which makes sense if it is indeed the most contigious. So half the scaffolds are shorter than 600kbp. The l50 is 623, so half the genome is contained in 623 reads, these are going to be the longest reads. 
+
+Let use another summary stats tool to get a better sense of the distribution of the raven genome: genometools. 
+
+```bash
+conda create -n genometools
+conda activate genometools
+conda install -c bioconda genometools-genometools 
+
+gt seqstat raven_c_heheva.fasta 
+# number of contigs:     3227
+# total contigs length:  1221957363
+# mean contig size:      378666.68
+# contig size first quartile: 129746
+# median contig size:         248456
+# contig size third quartile: 509682
+# longest contig:             2901347
+# shortest contig:            7773
+# contigs > 500 nt:           3227 (100.00 %)
+# contigs > 1K nt:            3227 (100.00 %)
+# contigs > 10K nt:           3223 (99.88 %)
+# contigs > 100K nt:          2709 (83.95 %)
+# contigs > 1M nt:            207 (6.41 %)
+# N50                606319
+# L50                623
+# N80                270244
+# L80                1511
+
+```
+
+So most of the genome is contained in scaffolds longer than 10kbp with all but 500 scaffolds being longer than 100kbp. That looks pretty darn good. To get a better sense of the quality of these genomes I'll need to take a closer look using tools such as mummer4 to compare them or blobtoolkit and merqury to check for completeness and missassemblies. I'll do this in a later section. 
