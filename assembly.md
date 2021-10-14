@@ -118,16 +118,26 @@ Most genome assembly projects try using several different assembly tools and it 
 
 __In Progress__
 
-Once you have an assembly that is as good as it will get, it might be possible to squeeze a little more out of your data using gap closing and polishing tools. However, just like with read trimming, doing either gap closing or polishing can result in an assembly that was worse then what you started with. I also want to add that overzealous use of gap closing can result in extremely poor assemblies. This is a huge problem when these assemblies are then uploaded into NCBI and used as references genomes for other projects. Most researchers do not have the skill, knowledge, or time to check that the assembly or genes from assemblies are trustworthy, potentially resulting in a lot of frustration and wasted time and money. So proceed with caution. Click on the below link for examples of gap closing gone wrong or genome assemblies that look good when looking at just summary statistics but don't hold up when viewed from other angles. 
+Once you have an assembly that is as good as it'll get, it might be possible to squeeze a little more out of your data using gap closing and polishing tools. However, just like with read trimming, doing either gap closing or polishing can result in an assembly that was worse than what you started with. I also want to add that overzealous use of gap closing or polishing can result in poor assemblies. This is a huge problem when these assemblies are then uploaded into NCBI and used as references genomes for other projects. Most researchers do not have the skill, knowledge, or time to check that the assembly or genes from assemblies are trustworthy, potentially resulting in a lot of frustration and wasted time and money. So proceed with caution. Click on the below link for examples of gap closing gone wrong or genome assemblies that look good when looking at just summary statistics but don't hold up when viewed from other angles. 
 
 - [Gap closing gone wrong and misleading genome assemblies](/misleading_genomes/)
+
+## Genome assembly gap closing
 
 Using long read data, it is now possible to close gaps that are produced by genome assembler with a high degree of confidence. This is significantly different from previous tools such as [SSpace](https://academic.oup.com/bioinformatics/article/27/4/578/197626) that relied on paired end short reads to close gaps or extend contigs. There are two problems with this approach, the obvious one is that the reads are too short to accurately span repetitive elements. The second problem is that these tools are haplo-type insensitive, meaning they can't tell if they are actually extending a real contig or just stringing alleles together creating inaccurate duplications. 
 
 - [Gap closing using Dentist]()
-- [Genome assembly polishing using hapo-g]()
 
-Recently, researcher who completed the first 100% complete genome assembly uploaded a [pre-print]((https://www.biorxiv.org/content/10.1101/2021.07.02.450803v1)) to biorxiv detailing their process and advocating for a more manual gap closing process. This is a neat paper and their process will likely feature in many future efforts to create 100% complete telomere to telomere genome assemblies. Although, this process is likely to primarily be used on genome assemblies that are already near completion. Sea cucumber genomes may be waiting awhile before they get this level of treatment. The paper is titled [chasing perfection](https://www.biorxiv.org/content/10.1101/2021.07.02.450803v1).
+## Genome assembly polishing 
+
+It's also important to remove any insertions, deletions, and adapter contamination that may have crept into the genome assembly. This can be accomplished using either long read or short read data. Short read data has a much higher accuracy, but long read data, while full of errors, can produce a consensus sequence that is highly accurate which can allow it to correct longer mistakes than short read data. 
+
+- [Genome assembly polishing using hapo-g](/genome_polishing/)
+
+## Manual genome assembly correction
+
+Recently, researcher who completed the first 100% complete genome assembly uploaded a [pre-print]((https://www.biorxiv.org/content/10.1101/2021.07.02.450803v1)) to biorxiv detailing their process and advocating for a more manual gap closing process. This is a neat paper and their process will likely feature in many future efforts to create 100% complete telomere to telomere genome assemblies. Although, this process is likely to primarily be used on genome assemblies that are already near completion. Sea cucumber genomes may be waiting awhile before they get this level of treatment. The paper is titled [chasing perfection](https://www.biorxiv.org/content/10.1101/2021.07.02.450803v1). 
+
 
 __To Do__
 
