@@ -13,7 +13,7 @@ gallery:
 
 ---
 
-## Introduction
+# Introduction
 
 Long reads allow for assembly of repeats and other genome features that short reads are unable to resolve. This can result in a more contiguous genome assembly and better resolution of repetitive elements. However, until recently long reads have suffered from having relatively high errors rates ranging from 10%-1%. While this may not seem high, consider that this means anywhere from 1 to 10 bases in every hundred bases are likely errors. This number greatly increases when looking at the whole genome. However, if the position of the errors are random, then the long reads can be aligned and the "consensus" sequence used for the genome assembly. Unfortunately, current long read sequencing technologies do not contain purely random errors, but it is possible to generate consensus sequences if the sequencing depth is great enough. See below for a few papers worth reading. 
 
@@ -29,9 +29,9 @@ The three assembler chosen were [raven](https://www.nature.com/articles/s43588-0
 
 The beauty of most modern genome assemblers is how easy they are to use. While you can tweak a large number of parameters if you want, generally using the default setting is preferable, unless you really know what you are doing or have the time and resources to waste fiddling around with the parameters. Otherwise, all you need is the path to the raw data, path to the output directory and you are good to go. 
 
-## Genome Assembling
+# Genome Assembling
 
-### Raven
+## Raven
 
 Raven's github can be found [here](https://github.com/lbcb-sci/raven). They make it pretty easy to install.
 
@@ -52,7 +52,7 @@ raven \
 
 The command line output can be found [here](/raven_output/)
 
-### Shasta
+## Shasta
 
 Shasta is fairly easy to set up. However, as of writing this, the authors are not supporting a conda version. Which means the conda version currently available will likely always remain slightly behind the most up to date version of Shasta. Shasta's github can be found [here](https://github.com/chanzuckerberg/shasta). To install, download the latest release that is specific to your operating system [here](https://github.com/chanzuckerberg/shasta/releases/tag/0.8.0). In my case, I use Ubuntu so that is the version I selected. Unpack it and move the folder to wherever you want it. 
 
@@ -70,7 +70,7 @@ To run it on ubuntu I changed directory to where the shasta executable is locate
 
 It took 1.02795 hours to assemble using about 170gb of memory and 30 cores. That is blazingly fast. The commandline output can be found [here](/shasta_output/)
 
-### Flye
+## Flye
 
 And finally, flye. Their github can be found [here](https://github.com/fenderglass/Flye/). Installation is the same as for Raven, that's to say use conda. 
 
@@ -92,10 +92,5 @@ flye \
 
 Not the fastest assembler out there, although still faster then canu. It started at 2021-10-08 09:47:05 and finished at 2021-10-11 01:51:56. So a few days. Commandline output can be found [here](/flye_output/)
 
-
-
-- do some polishing first
-- use quickmerge to make one assembly 
-- maybe add some merqury assembly qc? 
-
-raven, canu, and shasta
+consider using quickmerge on all three assemblies?
+https://github.com/mahulchak/quickmerge

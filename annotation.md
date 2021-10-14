@@ -4,8 +4,6 @@ permalink: /annotation/
 layout: single
 sidebar:
   nav: sidebar-main
-classes: wide
-entries_layout: grid
 
 header:
   overlay_image: /assets/images/home/cuke1.jpg
@@ -16,7 +14,7 @@ toc: true
 toc_sticky: true
 ---
 
-## Introduction 
+# Introduction 
 
 Genome Annotation has three parts to it. First, algorithms search through the genome assembly for sequences that are known to be part of a genes structure. Second, these predicted gene sequences are compared to databases of known genes and assigned function and identities. Third, scientists manually look at the predicted genes and verify they are indeed correct.
 
