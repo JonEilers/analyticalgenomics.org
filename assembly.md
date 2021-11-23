@@ -62,9 +62,13 @@ __In Progress__
 
 Future pages and content that will be included here are:
 - hybrid long read/short read assembly using platanus-allee, haslr, and masurca of *Apostichopus japonicus* and *Apostichopus parvimensis* genomes
-- incorporation of hi-c data to achieve chromosome scale scaffolds using salsa and hirise on the [sea urchin Lytechinus variegatusgenome](https://academic.oup.com/gbe/article/12/7/1080/5841217?login=true)
+- incorporation of hi-c data to achieve chromosome scale scaffolds using salsa and hirise on the [sea urchin Lytechinus variegatus genome](https://academic.oup.com/gbe/article/12/7/1080/5841217?login=true)
 - examples from papers such as this [one](https://www.biorxiv.org/content/10.1101/2020.07.01.182477v1
 ) on coral endosymbiont genome assembly.
+
+[Hybrid genome assembly of *Apostichopus japonicus* using Platanus-allee and MaSURCA](/hybrid_genome_assembly/)
+
+[Hybrid genome assembly of *Lytechnius veriegatus* using long reads and Hi-C]()
 
 ## Reference Assisted
 
@@ -85,15 +89,15 @@ Future content will include:
 
 # Assembly QC
 
-Once an a few assemblies are complete, it's time to determine which one is best and if any further steps need to be taken. There are a few approaches to this each approach has a great tool for it. 
+Once a few assemblies are complete, it's time to determine which one is best and if any further steps need to be taken. There are a few approaches to this and each approach has a great tool for it. 
 
 ## The N50 and summary statistics
-A standard metric for genome contiguity is the N50 value. N50 is a tricky beast to understand and I seen more blogs and descriptions get it wrong then right. Thankfully, [wikipedia](https://en.wikipedia.org/wiki/N50,_L50,_and_related_statistics#N50) gets it right. Without getting into the details on it, the thing that matters when considering the N50 is that the majority of reads in an assembly will be shorter than the N50 value. If you have an N50 of 9kb, then the majority of the assembly will be scaffolds or contigs shorter than 9kb. Having an N50 of 9kb consequently means gene prediction will likely capture the bulk of the genes, but there will likely be a large number of fragmented genes such as [titin](https://en.wikipedia.org/wiki/Titin). While there are a number of tools for acquiring this metric, probably my favorite way to visualize it is the snail plot produced via [Blobtoolkit](https://www.g3journal.org/content/10/4/1361). [Here](https://blobtoolkit.genomehubs.org/) is a link to their website. See the link below for an example. 
+A standard metric for genome contiguity is the N50 value. N50 is a tricky beast to understand and I've seen more blogs and descriptions get it wrong than right. Thankfully, [wikipedia](https://en.wikipedia.org/wiki/N50,_L50,_and_related_statistics#N50) gets it right. Without getting into the details on it, the thing that matters when considering the N50 is that the majority of reads in an assembly will be shorter than the N50 value. If you have an N50 of 9kb, than the majority of the assembly will be scaffolds or contigs shorter than 9kb. Having an N50 of 9kb consequently means gene prediction will likely capture the bulk of the genes, but there will be a large number of fragmented genes such as [titin](https://en.wikipedia.org/wiki/Titin). While there are a number of tools for acquiring this metric, probably my favorite way to visualize it is the snail plot produced via [Blobtoolkit](https://www.g3journal.org/content/10/4/1361). [Here](https://blobtoolkit.genomehubs.org/) is a link to their website. See the link below for an example. 
 
 - [Summary statistics via Blobtoolkit](/blobtoolkit/)
 
 ## Assembly quality assessment using BUSCOs
-An easy to capture the level of fragmentation and also get idea of what to expect when predicting genes is to check the [BUSCOs](https://pubmed.ncbi.nlm.nih.gov/26059717/). You'll hear BUSCOs thrown around a lot in genome papers and among scientists involved in genome sequencing. It's treated like a holy metric for how good your assembly is and it is a reasonable way to check. In essence, someone took the time to find a number of genes that are highly conserved across the kingdoms and phylum of life. Because of their conserved nature, it is a reasonable assumption that the genome of your organism likely contains these genes. So if the majority of these genes can be found in your assembly and they are not fragmented or unexpectedly duplicated, then it is reasonable to assume that a similar percentage of genes in the genome will likewise be in good shape. It is important to understand though, that BUSCO results do not represent a best case scenario but rather a targeted random sample of the genome assembly. See below for an example
+An easy way to capture the level of fragmentation and also get idea of what to expect when predicting genes is to check the [BUSCOs](https://pubmed.ncbi.nlm.nih.gov/26059717/). You'll hear BUSCOs thrown around a lot in genome papers and among scientists involved in genome sequencing. It's treated like a holy metric for how good your assembly is and it is a reasonable way to check. In essence, someone took the time to find a number of genes that are highly conserved across the kingdoms and phylum of life. Because of their conserved nature, it is a reasonable assumption that the genome of your organism likely contains these genes. So if the majority of these genes can be found in your assembly and they are not fragmented or unexpectedly duplicated, then it is reasonable to assume that a similar percentage of genes in the genome will likewise be in good shape. It is important to understand though, that BUSCO results do not represent a best case scenario but rather a targeted random sample of the genome assembly. See below for an example
 
 - [Assembly quality assessment using BUSCO analysis](/busco/)
 
@@ -126,7 +130,7 @@ Once you have an assembly that is as good as it'll get, it might be possible to 
 
 Using long read data, it is now possible to close gaps that are produced by genome assembler with a high degree of confidence. This is significantly different from previous tools such as [SSpace](https://academic.oup.com/bioinformatics/article/27/4/578/197626) that relied on paired end short reads to close gaps or extend contigs. There are two problems with this approach, the obvious one is that the reads are too short to accurately span repetitive elements. The second problem is that these tools are haplo-type insensitive, meaning they can't tell if they are actually extending a real contig or just stringing alleles together creating inaccurate duplications. 
 
-- [Gap closing using Dentist]()
+- [Gap closing using Dentist, SAMBA and Longstitch]()
 
 ## Genome assembly polishing 
 
