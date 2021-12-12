@@ -2,7 +2,7 @@
 title: "Genome Assembly"
 permalink: /assembly/
 layout: single
-
+type: assembly
 header:
   overlay_image: /assets/images/home/cuke1.jpg
 
@@ -24,6 +24,8 @@ This page is currently under construction with new content and mistakes added re
 Genome Assembly is a [hard](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2005894). Even now with long read sequencing, [there is still a long ways to go](https://www.nature.com/articles/s41592-021-01057-y). In 1999, the human genome sequence was announced. In 2021, a telomere to telomere genome assembly, with no gaps, was announced. Even with the advances in technology and reduction in cost, many genomes cannot realistically be sequenced and assembled without a significant investment. For example, most salamander and newt species have genomes that are estimated to be 100 gigabase. The largest genome sequenced so far was the [lungfish](https://www.nature.com/articles/s41586-021-03198-8?#Sec2), with a genome size of 43 gigabases. Lungfish have a diploid genome, which is fairly normal for a large animal. But plants and many other organisms are not diploid and require extra caution when assembling. One notable example is [wheat](https://www.sciencedirect.com/science/article/pii/S1672022920300590) which has chromosomes from three different genomes and is an [allohexaploid](https://www.nature.com/articles/s41586-020-2961-x0), meaning it has six sets of two chromsomes. Most genome assembler would not know what to do with this and would likely collapse the three sets in a psuedohaploid assembly, loosing a great deal of information in the process. 
 
 Genome assembly approaches largely depend on the type and quality of data you have available to you. Sanger sequencing used to be the golden standard. Then Illumina shotgun sequencing took over for awhile. Now we have long read sequencing using either PacBio or Oxford Nanopore Technologies platforms. Additional wet lab techniques such as [Hi-C](https://en.wikipedia.org/wiki/Chromosome_conformation_capture#Hi-C_(all-vs-all)) or [optical mapping](https://en.wikipedia.org/wiki/Optical_mapping) can further bring the assembly pieces together into chromosome length scaffolds. Any combination of the above can be found in most current genome assembly papers. However, if Illumina is all you have and genomes of closely related species are available, then reference assisted genome assembly is a possibility, but with caveats. 
+
+[Mind the Gap](https://www.sciencedirect.com/science/article/abs/pii/S1087184515300220) reasons to produce gapless genome assemblies
 
 # Assembly
 
@@ -68,7 +70,7 @@ Future pages and content that will be included here are:
 
 [Hybrid genome assembly of *Apostichopus japonicus* using Platanus-allee and MaSURCA](/hybrid_genome_assembly/)
 
-[Hybrid genome assembly of *Lytechnius veriegatus* using long reads and Hi-C]()
+[Hybrid genome assembly of *Lytechnius veriegatus* using long reads and Hi-C](/hi-c/)
 
 ## Reference Assisted
 
@@ -113,6 +115,10 @@ Another way to assess the quality of the assembly and to check for contamination
 
 - [K-mer completeness and consensus quality assessment of genome assemblies](/merqury_assembly/)
 
+## Assembly evaluation using long reads and Inspector
+
+[inspector](https://github.com/ChongLab/Inspector)
+
 ## Assembly comparisons
 Most genome assembly projects try using several different assembly tools and it can be useful to check for differences between them. Additionally, It can be useful to see how many changes were made when gap closing or polishing. Either of those things can be accomplished using a tool called [mummer4](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005944). Mummer4 produces a "delta" file that can then be used in other analysis tools such as [Nucdiff](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1748-z) or visualization tools such as [Assemblytics](https://academic.oup.com/bioinformatics/article/32/19/3021/2196631). It can also output a summary file containing basic counts of indels and other differences in addition to a bam file for loading into a genome browser such as [Ribbons](https://genomeribbon.com/) if a closer look is required. 
 
@@ -137,6 +143,7 @@ Using long read data, it is now possible to close gaps that are produced by geno
 It's also important to remove any insertions, deletions, and adapter contamination that may have crept into the genome assembly. This can be accomplished using either long read or short read data. Short read data has a much higher accuracy, but long read data, while full of errors, can produce a consensus sequence that is highly accurate which can allow it to correct longer mistakes than short read data. 
 
 - [Genome assembly polishing using hapo-g](/genome_polishing/)
+- [Consent for error prone long read polishing](https://www.nature.com/articles/s41598-020-80757-5)
 
 ## Manual genome assembly correction
 

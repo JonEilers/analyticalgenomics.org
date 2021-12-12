@@ -1,18 +1,22 @@
 ---
-title: "Hybrid assembly using Platanus-allee and MaSURCA"
-toc: true
-toc_sticky: true
-layout: single
-permalink: /hybrid_genome_assembly/
 
-gallery:
-  - url: /assets/images/busco/busco_analysis.png
-    image_path: /assets/images/busco/busco_analysis.png
-    title: "Comparison of buscos between genome assemblies"
-    caption: 
+title: "Hybrid assembly using Platanus-allee and MaSURCA"
+permalink: /hybrid_genome_assembly/
+layout: single
+toc: true 
+toc_sticky: true
+
+sidebar:
+  nav: sidebar-main
+header:
+  overlay_image: /assets/images/home/cuke1.jpg
+
+excerpt: "The Short and Long"
 
 ---
 
+
+# Introduction
 two genome assemblies of apostichopus japonicus using data from ncbi - not the original data for the published genome. 
 
 platanus-allee assembly
@@ -22,22 +26,30 @@ compare time, resources, and raw stats.
 
 have links to other comparisons such as mummer4 alignment to the original genome assembly, busco stats, blobtoolkit results. etc
 
-## The Data
+# The Data
 
 The current refseq *Apostichopus japonicus* genome assembly was published in 2017. The authors uploaded the gene expression data they used, but not the data used for the genome assembly. The only other genome assembly dataset on NCBI was published a year later, but oddly they never uploaded their genome assembly.
 
-180bp - SRR6251237
-350bp paired end - SRR6255867
-500bp paired end - SRR6255868
-dunno? - SRR6255869
-450bp paired end - SRR6255870
-5kb long insert mate-pair - SRR6257769
-10kb long insert mate-pair - SRR6257771
-15kb long insert mate-pair - SRR6257773
-20kb long-insert mate-pair  - SRR6257777
-pacbio - SRR6282347
+180bp - SRR6251237  
+350bp paired end - SRR6255867  
+500bp paired end - SRR6255868  
+dunno? - SRR6255869  
+450bp paired end - SRR6255870  
+5kb long insert mate-pair - SRR6257769  
+10kb long insert mate-pair - SRR6257771  
+15kb long insert mate-pair - SRR6257773  
+20kb long-insert mate-pair  - SRR6257777  
+pacbio - SRR6282347  
+
+# Hybrid Genome Assemblers
+
+blah blah about hybrid genome assemblers
 
 ## Platanus-allee assembler
+
+Started platanus-allee assemble: 14 Oct 2021
+Started platanus-allee phase: 19 Oct 2021 
+Started platanus-allee consensus: 02 Nov 2021
 
 ```bash
 ./platanus_allee assemble \
@@ -238,4 +250,131 @@ Sequence 632348718
 Average 436404
 E-size 1.20851e+06
 Count 1449
+```
+
+# Summary Statistics 
+
+## Masurca
+
+```bash
+stats.sh scaffolds.ref.fa 
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.3136	0.1863	0.1865	0.3136	0.0002	0.0000	0.0000	0.3728	0.0308
+
+Main genome scaffold total:         	7683
+Main genome contig total:           	9989
+Main genome scaffold sequence total:	958.223 MB
+Main genome contig sequence total:  	957.992 MB  	0.024% gap
+Main genome scaffold N/L50:         	483/466.004 KB
+Main genome contig N/L50:           	599/349.301 KB
+Main genome scaffold N/L90:         	2778/58.96 KB
+Main genome contig N/L90:           	3831/42.594 KB
+Max scaffold length:                	6.648 MB
+Max contig length:                  	6.587 MB
+Number of scaffolds > 50 KB:        	3065
+% main genome in scaffolds > 50 KB: 	91.63%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	         7,683	         9,989	   958,223,014	   957,992,414	  99.98%
+    500 	         7,683	         9,989	   958,223,014	   957,992,414	  99.98%
+   1 KB 	         7,680	         9,984	   958,221,282	   957,990,882	  99.98%
+ 2.5 KB 	         7,344	         9,645	   957,623,103	   957,393,003	  99.98%
+   5 KB 	         6,931	         9,225	   956,109,886	   955,880,486	  99.98%
+  10 KB 	         6,111	         8,382	   949,880,495	   949,653,395	  99.98%
+  25 KB 	         4,199	         6,379	   918,906,605	   918,688,605	  99.98%
+  50 KB 	         3,065	         5,049	   878,030,062	   877,831,662	  99.98%
+ 100 KB 	         1,983	         3,609	   801,189,709	   801,027,109	  99.98%
+ 250 KB 	           945	         1,899	   635,729,820	   635,634,420	  99.99%
+ 500 KB 	           442	           964	   459,699,482	   459,647,282	  99.99%
+   1 MB 	           145	           353	   254,446,844	   254,426,044	  99.99%
+ 2.5 MB 	            18	            50	    66,147,771	    66,144,571	 100.00%
+   5 MB 	             3	             8	    17,017,011	    17,016,511	 100.00%
+```
+
+```bash
+stats.sh primary.genome.scf.fasta 
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.3139	0.1861	0.1862	0.3138	0.0002	0.0000	0.0000	0.3723	0.0355
+
+Main genome scaffold total:         	1449
+Main genome contig total:           	2535
+Main genome scaffold sequence total:	632.349 MB
+Main genome contig sequence total:  	632.240 MB  	0.017% gap
+Main genome scaffold N/L50:         	214/811.009 KB
+Main genome contig N/L50:           	257/647.248 KB
+Main genome scaffold N/L90:         	737/272.952 KB
+Main genome contig N/L90:           	978/169.229 KB
+Max scaffold length:                	6.648 MB
+Max contig length:                  	6.587 MB
+Number of scaffolds > 50 KB:        	1092
+% main genome in scaffolds > 50 KB: 	99.57%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	         1,449	         2,535	   632,348,718	   632,240,118	  99.98%
+    100 	         1,449	         2,535	   632,348,718	   632,240,118	  99.98%
+    250 	         1,360	         2,446	   632,331,983	   632,223,383	  99.98%
+    500 	         1,322	         2,406	   632,319,759	   632,211,359	  99.98%
+   1 KB 	         1,318	         2,400	   632,317,527	   632,209,327	  99.98%
+ 2.5 KB 	         1,213	         2,292	   632,144,004	   632,036,104	  99.98%
+   5 KB 	         1,185	         2,262	   632,053,323	   631,945,623	  99.98%
+  10 KB 	         1,173	         2,236	   631,958,137	   631,851,837	  99.98%
+  25 KB 	         1,140	         2,163	   631,385,044	   631,282,744	  99.98%
+  50 KB 	         1,092	         2,076	   629,641,715	   629,543,315	  99.98%
+ 100 KB 	         1,021	         1,970	   624,406,589	   624,311,689	  99.98%
+ 250 KB 	           787	         1,589	   582,268,195	   582,187,995	  99.99%
+ 500 KB 	           434	           951	   454,961,728	   454,910,028	  99.99%
+   1 MB 	           145	           353	   254,446,844	   254,426,044	  99.99%
+ 2.5 MB 	            18	            50	    66,147,771	    66,144,571	 100.00%
+   5 MB 	             3	             8	    17,017,011	    17,016,511	 100.00%
+```
+
+
+## Platanus-allee
+
+```bash
+stats.sh ajap_step10_consensus_consensusScaffold.fa 
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.3125	0.1876	0.1877	0.3122	0.1304	0.0000	0.0000	0.3753	0.0718
+
+Main genome scaffold total:         	335252
+Main genome contig total:           	521912
+Main genome scaffold sequence total:	1007.413 MB
+Main genome contig sequence total:  	876.014 MB  	13.043% gap
+Main genome scaffold N/L50:         	823/187.203 KB
+Main genome contig N/L50:           	42739/5.177 KB
+Main genome scaffold N/L90:         	50871/1.845 KB
+Main genome contig N/L90:           	202792/825
+Max scaffold length:                	4.162 MB
+Max contig length:                  	143.859 KB
+Number of scaffolds > 50 KB:        	1654
+% main genome in scaffolds > 50 KB: 	57.98%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	       335,252	       521,912	 1,007,412,658	   876,013,836	  86.96%
+    100 	       335,252	       521,912	 1,007,412,658	   876,013,836	  86.96%
+    250 	       143,319	       329,978	   978,162,844	   846,764,032	  86.57%
+    500 	       112,269	       297,219	   966,875,323	   835,550,998	  86.42%
+   1 KB 	        75,664	       253,918	   940,674,588	   809,552,051	  86.06%
+ 2.5 KB 	        40,173	       200,852	   883,700,280	   752,895,143	  85.20%
+   5 KB 	        21,863	       165,549	   819,428,561	   689,210,290	  84.11%
+  10 KB 	        10,911	       136,784	   743,213,957	   617,284,358	  83.06%
+  25 KB 	         2,684	       102,463	   618,333,236	   512,013,942	  82.81%
+  50 KB 	         1,654	        94,300	   584,064,857	   485,895,706	  83.19%
+ 100 KB 	         1,155	        86,989	   549,010,605	   458,203,116	  83.46%
+ 250 KB 	           678	        73,365	   471,932,927	   394,432,510	  83.58%
+ 500 KB 	           386	        56,855	   368,293,782	   308,210,955	  83.69%
+   1 MB 	           127	        28,445	   185,984,088	   155,605,973	  83.67%
+ 2.5 MB 	             5	         2,418	    16,362,123	    13,709,936	  83.79%
 ```
