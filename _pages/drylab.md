@@ -21,16 +21,26 @@ feature_row:
 header:
   overlay_image: /assets/images/home/cuke1.jpg
 
-excerpt: "Genomes contain life's code. Here are my studies of a sea cucumber's code"
+excerpt: "A gentle introduction to genome assembly and annotation"
 ---
 
 {% include feature_row %}
 
 ## Please note that this section is currently being updated with more comprehensive content and as genome assembly and annotation takes awhile to run it may be some time. 
 
-Here I have detailed the tools I've used and the process I went through to create the genome assembly, predict genes, and analyze results along with other projects I occasionally work on. Additionally, I will try to give an explanation of how these tools function and why it's important to understand how they work. When reading these posts, keep in mind that it's a rare day when everything works the first time. More time is spent troubleshooting installation problems and learning how to use a tool then is spent actually using the tool. So if you find yourself struggling to get things working, rest assured, that's a battle we all fight everyday. 
+## A little background 
+
+This website is intended to be a gentle introduction genome assembly and annotation and also includes some basics with regards to data cleaning and setting your computer up to run bioinformatics. While I will occasionally go into detail regarding how things work, the algorithms and software design of these tools are complex and beyond the scope of this website. I hope this can be a good starting point for those who are interested though. 
+
+In the upcoming years genome assembly is going to explode. There are millions of species and many more individuals of those species that need their genomes sequenced and we are beginning to see the opportunity to do so. This will become especially true once long read sequencing becomes extraordinarily cheap with the advent of solid state nanopore sequencing. However, the tools and knowledge to do so are scattered across scientific papers, github repositories, and academic institutions. My goal is to distill the basics into one website that is understandable and accesible. 
+
+Here I have detailed the tools I've used and the process I went through to create the genome assembly, predict genes, and analyze results along with other projects I occasionally work on. When reading these posts, keep in mind that it's a rare day when everything works the first time. More time is spent troubleshooting installation problems and learning how to use a tool then is spent actually using the tool. So if you find yourself struggling to get things working, rest assured, that's a battle we all fight everyday. 
+
+## Genome Bioinformatics
 
 Genomes do not spontaneously create themselves. At least in silico. Once raw sequence data is acquired, quality and content is checked. Then an assembly tool is selected and run. When assembled, the assembly quality is assessed. If it's "good enough" repetitive element masking and gene prediction are performed. If everything checks out afterwards, the genome is ready for interrogation. Above are three pages containing content on the process for each of these steps. 
+
+## What you will need
 
 Working with large sequence datasets or on genomes requires some computational power. Most laptops or even desktop computers with their configurations maxed will not be able to handle the majority of genome bioinformatics. This is why most biology departments that are serious about incorporating bioinformatics into their program have access to a school computer cluster or purchase computational time on AWS. However, if you are freelance bioinformatician like me, neither of those are good options. My secret is that I realized servers have been around for awhile now and data centers replace them every so many years which means someone somewhere is surplusing them for cheap. For example [Newegg](https://www.newegg.com/p/pl?N=100852105%204016%20600031341) has a lot and they are quite cheap. Cheaper than buying a new shinny workstation or laptop. 
 
