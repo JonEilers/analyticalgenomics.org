@@ -14,42 +14,43 @@ header:
 excerpt: "The Short and Long"
 
 ---
+Note to self: make text files and links to them for the command line output for both. Consider doing it for the masurca script too? 
 
+Add links to assembly analysis so it's easy to jump around
 
 # Introduction
-two genome assemblies of apostichopus japonicus using data from ncbi - not the original data for the published genome. 
 
-platanus-allee assembly
-masurca assembly
+*Apostichopus japonicus*, also called the Japanese sea cucumber is found in the eastern coast of russia, china, korea, and around japan. It is an important fishery and model organism for studying regeneration. The official NCBI reference genome was published in [2017](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2003790) with another lower quality assembly published a year before this.  
 
-compare time, resources, and raw stats. 
+While I was investigating the structure of telomerase in *Apostichopus californicus* I found that the telomerase in *Apostichopus japonicus* was fragmented due to numerous assembly errors. There were enough errors that it was not going to be an easy process to manually correct them. So I decided it would make for a good hybrid genome assembly example. 
 
-have links to other comparisons such as mummer4 alignment to the original genome assembly, busco stats, blobtoolkit results. etc
+I looked for the raw data that the authors should have made publicly available and found that they uploaded the rna-seq expression data but none of the data for the genome assembly. I thought this was rather odd and emailed the authors about it, but never received a reply. Thankfully, another study, [Sea cucumber genome provides insights into saponin biosynthesis and aestivation regulation](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6018497/) published shortly after this one also included a large amount of raw sequence data that they used for genome assembly. Amusingly, they never published their genome assembly. 
+
+Hybrid genome assembly projects use multiple data types in the assembly process. This can range from several different lengths of illumina short read data to oxford nanopore or pacbio long read data, 10x-chromium, optical mapping, hi-c etc. Essentially, if you are using more than one data type you will be doing hybrid assembly. For the last ten or so years, this has been the standard for achieving the best possible genome assembly. 
 
 # The Data
 
-The current refseq *Apostichopus japonicus* genome assembly was published in 2017. The authors uploaded the gene expression data they used, but not the data used for the genome assembly. The only other genome assembly dataset on NCBI was published a year later, but oddly they never uploaded their genome assembly.
+See below for data links and data type. 
 
-180bp - SRR6251237  
-350bp paired end - SRR6255867  
-500bp paired end - SRR6255868  
-dunno? - SRR6255869  
-450bp paired end - SRR6255870  
-5kb long insert mate-pair - SRR6257769  
-10kb long insert mate-pair - SRR6257771  
-15kb long insert mate-pair - SRR6257773  
-20kb long-insert mate-pair  - SRR6257777  
-pacbio - SRR6282347  
+180bp paired end - [SRR6251237](https://www.ncbi.nlm.nih.gov/sra/SRR6251237)  
+350bp paired end - [SRR6255867](https://www.ncbi.nlm.nih.gov/sra/SRR6255867)  
+450bp paired end - [SRR6255870](https://www.ncbi.nlm.nih.gov/sra/SRR6255870) 
+500bp paired end - [SRR6255868](https://www.ncbi.nlm.nih.gov/sra/SRR6255868) 
+5kb long insert mate-pair - [SRR6257769](https://www.ncbi.nlm.nih.gov/sra/SRR6257769)  
+10kb long insert mate-pair - [SRR6257771](https://www.ncbi.nlm.nih.gov/sra/SRR6257771)  
+15kb long insert mate-pair - [SRR6257773](https://www.ncbi.nlm.nih.gov/sra/SRR6257773)  
+20kb long-insert mate-pair - [SRR6257777](https://www.ncbi.nlm.nih.gov/sra/SRR6257777)  
+pacbio clr long read - [SRR6282347](https://www.ncbi.nlm.nih.gov/sra/SRR6282347)  
 
 # Hybrid Genome Assemblers
 
-blah blah about hybrid genome assemblers
+There a number of genome assembly tools that accept more than one data type. Two of my favorite are [platanus-allee](https://www.nature.com/articles/s41467-019-09575-2) and [masurca](https://academic.oup.com/bioinformatics/article/29/21/2669/195975?login=true). Both Masurca and Platanus-allee require at least short read data but also accept long read data, and in the case of platanus-allee, 10x-chromium data. One significant difference between the two assembler is regarding genome phasing. A phased genome is when the assembler is able to distinguish the haplotypes of each chromosome pair. In the past, assemblers were designed to ignore ploidy levels as the sequence data was inadequate for telling chromosomes apart. This is not the case anymore. With long read sequencing and hi-c it is now possible to completely disintangle homologous chromsomes, although this is just beginning to become standard practice. 
+
+Platanus-allee was designed specifically to be able to "phase" a genome assembly and then, if you wanted, collapse the phased assembly into a haploid assembly. To the best of my knowledge Masurca does not have this ability yet. However, Masurca is significantly faster and at least in this project, produced a more contigious assembly. Both tools are designed to be used with heterozygous genomes, which is important as the *Apostichopus japonicus* has a heterzygousity of 1.59%, meaning that both sets of chromosomes are different enough to confuse a genome assembler. This is important to know as genome assemblers will sometimes duplicate heterozygous genes in the haploid genome assembly because it can't tell the genes are variants. 
 
 ## Platanus-allee assembler
 
-Started platanus-allee assemble: 14 Oct 2021
-Started platanus-allee phase: 19 Oct 2021 
-Started platanus-allee consensus: 02 Nov 2021
+[Platanus-allee](http://platanus.bio.titech.ac.jp/platanus2) has three stages. The first stage is diploid contig assembly. The second stage is where the assembly is collapsed into a haploid assembly. The final stage is scaffolding where linkage information is used to stitch pieces together and then gap filled.  
 
 ```bash
 ./platanus_allee assemble \
@@ -112,139 +113,29 @@ Started platanus-allee consensus: 02 Nov 2021
 	-t 70 2>consensus.log
 ```
 
-
-## MaSURCA assembler
-
+Run Time: almost three weeks
 ```bash
-# example configuration file 
-
-# DATA is specified as type {PE,JUMP,OTHER,PACBIO} and 5 fields:
-# 1)two_letter_prefix 2)mean 3)stdev 4)fastq(.gz)_fwd_reads
-# 5)fastq(.gz)_rev_reads. The PE reads are always assumed to be
-# innies, i.e. --->.<---, and JUMP are assumed to be outties
-# <---.--->. If there are any jump libraries that are innies, such as
-# longjump, specify them as JUMP and specify NEGATIVE mean. Reverse reads
-# are optional for PE libraries and mandatory for JUMP libraries. Any
-# OTHER sequence data (454, Sanger, Ion torrent, etc) must be first
-# converted into Celera Assembler compatible .frg files (see
-# http://wgs-assembler.sourceforge.com)
-DATA
-PE=pq 180 27 /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6251237_1.fastq /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6251237_2.fastq
-PE=pw 350 53 /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6255867_1.fastq /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6255867_2.fastq
-PE=pe 500 75 /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6255868_1.fastq /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6255868_2.fastq
-PE=pr 450 68 /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6255870_1.fastq /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6255870_2.fastq
-JUMP = mq 5000 750 /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6257769_1.fastq /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6257769_2.fastq
-JUMP = mw 10000 1500 /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6257771_1.fastq /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6257771_2.fastq
-JUMP = me 15000 2250 /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6257773_1.fastq /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6257773_2.fastq
-JUMP = mr 20000 3000 /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6257777_1.fastq /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6257777_2.fastq
-
-PACBIO=/home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6282347.fasta
-
-
-#Illumina paired end reads supplied as <two-character prefix> <fragment mean> <fragment stdev> <forward_reads> <reverse_reads>
-#if single-end, do not specify <reverse_reads>
-#If mean/stdev are unknown use 500 and 50 -- these are safe values that will work for most runs
-#MUST HAVE Illumina paired end reads to use MaSuRCA
-#PE= pe 500 50  /FULL_PATH/frag_1.fastq  /FULL_PATH/frag_2.fastq
-#Illumina mate pair reads supplied as <two-character prefix> <fragment mean> <fragment stdev> <forward_reads> <reverse_reads>
-#JUMP= sh 3600 200  /FULL_PATH/short_1.fastq  /FULL_PATH/short_2.fastq
-#pacbio OR nanopore reads must be in a single fasta or fastq file with absolute path, can be gzipped
-#if you have both types of reads supply them both as NANOPORE type
-#PACBIO=/FULL_PATH/pacbio.fa
-#NANOPORE=/FULL_PATH/nanopore.fa
-#Legacy reads (Sanger, 454, etc) in one frg file, concatenate your frg files into one if you have many
-#OTHER=/FULL_PATH/file.frg
-#synteny-assisted assembly, concatenate all reference genomes into one reference.fa; works for Illumina-only data
-#REFERENCE=/FULL_PATH/nanopore.fa
-END
-
-PARAMETERS
-#PLEASE READ all comments to essential parameters below, and set the parameters according to your project
-#set this to 1 if your Illumina mate pair (jumping) library reads are shorter than 100bp
-EXTEND_JUMP_READS=0
-#this is k-mer size for deBruijn graph values between 25 and 127 are supported, auto will compute the optimal size based on the read data and GC content
-GRAPH_KMER_SIZE = auto
-#set this to 1 for all Illumina-only assemblies
-#set this to 0 if you have more than 15x coverage by long reads (Pacbio or Nanopore) or any other long reads/mate pairs (Illumina MP, Sanger, 454, etc)
-USE_LINKING_MATES = 0
-#specifies whether to run the assembly on the grid
-USE_GRID=0
-#specifies grid engine to use SGE or SLURM
-GRID_ENGINE=SGE
-#specifies queue (for SGE) or partition (for SLURM) to use when running on the grid MANDATORY
-GRID_QUEUE=all.q
-#batch size in the amount of long read sequence for each batch on the grid
-GRID_BATCH_SIZE=500000000
-#use at most this much coverage by the longest Pacbio or Nanopore reads, discard the rest of the reads
-#can increase this to 30 or 35 if your long reads reads have N50<7000bp
-LHE_COVERAGE=25
-#this parameter is useful if you have too many Illumina jumping library reads. Typically set it to 60 for bacteria and 300 for the other organisms 
-LIMIT_JUMP_COVERAGE = 300
-#these are the additional parameters to Celera Assembler; do not worry about performance, number or processors or batch sizes -- these are computed automatically. 
-#CABOG ASSEMBLY ONLY: set cgwErrorRate=0.25 for bacteria and 0.1<=cgwErrorRate<=0.15 for other organisms.
-CA_PARAMETERS =  cgwErrorRate=0.15
-#CABOG ASSEMBLY ONLY: whether to attempt to close gaps in scaffolds with Illumina  or long read data
-CLOSE_GAPS=1
-#number of cpus to use, set this to the number of CPUs/threads per node you will be using
-NUM_THREADS = 70
-#this is mandatory jellyfish hash size -- a safe value is estimated_genome_size*20
-JF_SIZE = 9000000000
-#ILLUMINA ONLY. Set this to 1 to use SOAPdenovo contigging/scaffolding module.  
-#Assembly will be worse but will run faster. Useful for very large (>=8Gbp) genomes from Illumina-only data
-SOAP_ASSEMBLY=0
-#If you are doing Hybrid Illumina paired end + Nanopore/PacBio assembly ONLY (no Illumina mate pairs or OTHER frg files).  
-#Set this to 1 to use Flye assembler for final assembly of corrected mega-reads.  
-#A lot faster than CABOG, AND QUALITY IS THE SAME OR BETTER.   
-#DO NOT use if you have less than 20x coverage by long reads.
-FLYE_ASSEMBLY=0
-END
-
+Started platanus-allee assemble: 14 Oct 2021
+Started platanus-allee phase: 19 Oct 2021 
+Started platanus-allee consensus: 02 Nov 2021
 ```
 
+Memory usage was surprisingly not bad compared to when I have run it with just short read data. It peaked at 317 gigabytes of ram used. When running with just illumina data is maxed out my server ram (~400gb) and crashed. The author stated they thought it was probably a memory leak. Never figured it out and had to switch to using an older version of platanus-allee. 
+
+## MaSuRCA assembler
+
+MaSuRCA has a different requirement for running it. It requires a configuration bash script. The authors provide a template with some instructions and the user edits the configuration template to suite their needs. See below for the one I tweaked and used.
+
+[MaSuRCA Configuration Script](/masurca_config/)   
+
+After modifying the config file, you then execute it using bash ```./bin/masurca masurca_config_japonicus.txt```. This will output another shell script file called "assemble.sh". You'll do the same to this one: ```./assemble.sh```. And viola - sit back and wait. 
+
+A quick note: I recently reinstalled ubuntu on my server. So some stuff was missing when I tried to run MaSuRCA including numactl, boost, and bzip libraries. 
+
+[MaSuRCA command line output](/masurca_output/)
+
+Final stats 
 ```bash
-./assemble.sh 
-[Thu 11 Nov 2021 09:21:59 PM PST] Processing pe library reads
-[Thu 11 Nov 2021 09:21:59 PM PST] Processing sj library reads
-[Thu 11 Nov 2021 09:21:59 PM PST] Average PE read length 123
-[Thu 11 Nov 2021 09:22:01 PM PST] Using kmer size of 67 for the graph
-[Thu 11 Nov 2021 09:22:01 PM PST] MIN_Q_CHAR: 33
-WARNING: JF_SIZE set too low, increasing JF_SIZE to at least 12191908150, this automatic increase may be not enough!
-[Thu 11 Nov 2021 09:22:01 PM PST] Estimated genome size: 756081379
-[Thu 11 Nov 2021 09:22:01 PM PST] Computing super reads from PE 
-flye 0
-[Thu 11 Nov 2021 09:22:01 PM PST] Using CABOG from /home/jon/Working_Files/japonicus_genome_project/MaSuRCA-4.0.5/bin/../CA8/Linux-amd64/bin
-[Thu 11 Nov 2021 09:22:01 PM PST] Running mega-reads correction/assembly
-[Thu 11 Nov 2021 09:22:01 PM PST] Using mer size 17 for mapping, B=15, d=0.02
-[Thu 11 Nov 2021 09:22:01 PM PST] Estimated Genome Size 756081379
-[Thu 11 Nov 2021 09:22:01 PM PST] Estimated Ploidy 2
-[Thu 11 Nov 2021 09:22:01 PM PST] Using 70 threads
-[Thu 11 Nov 2021 09:22:01 PM PST] Output prefix mr.67.17.15.0.02
-[Thu 11 Nov 2021 09:22:01 PM PST] Pre-correcting long reads
-[Thu 11 Nov 2021 10:09:42 PM PST] Pre-corrected reads are in longest_reads.25x.fa
-[Thu 11 Nov 2021 10:12:07 PM PST] Computing mega-reads
-[Thu 11 Nov 2021 10:12:07 PM PST] Running locally in 1 batch
-[Fri 12 Nov 2021 10:26:15 AM PST] Refining alignments
-[Fri 12 Nov 2021 11:17:49 AM PST] Computing allowed merges
-[Fri 12 Nov 2021 11:21:47 AM PST] Joining
-[Fri 12 Nov 2021 11:30:12 AM PST] Gap consensus
-[Fri 12 Nov 2021 11:39:18 AM PST] Generating assembly input files
-[Fri 12 Nov 2021 01:51:42 PM PST] Coverage threshold for splitting unitigs is 37 minimum ovl 63
-[Fri 12 Nov 2021 01:51:42 PM PST] Running assembly
-[Wed 17 Nov 2021 01:29:06 PM PST] Mega-reads initial assembly complete
-[Wed 17 Nov 2021 01:29:06 PM PST] Closing gaps in scaffolds
-[Wed 17 Nov 2021 01:34:34 PM PST] Aligning the reads to the contigs
-[Wed 17 Nov 2021 01:39:22 PM PST] Filtering alignments
-[Wed 17 Nov 2021 01:39:34 PM PST] Extracting reads for the patches
-[Wed 17 Nov 2021 01:40:04 PM PST] Creating scaffold links
-[Wed 17 Nov 2021 01:40:05 PM PST] Aligning the scaffolding sequences to the contigs
-[Wed 17 Nov 2021 01:40:48 PM PST] Creating scaffold graph and building scaffolds
-[Wed 17 Nov 2021 01:40:52 PM PST] Output scaffold sequences in genome.scf.joined.fa.scaffolds.fa
-[Wed 17 Nov 2021 01:40:53 PM PST] Gap closing done
-[Wed 17 Nov 2021 01:40:53 PM PST] Removing redundant scaffolds
-[Wed 17 Nov 2021 02:37:10 PM PST] Assembly complete, primary scaffold sequences are in CA.mr.67.17.15.0.02/primary.genome.scf.fasta
-[Wed 17 Nov 2021 02:37:10 PM PST] redundant or haplotype variant scaffold sequences are in CA.mr.67.17.15.0.02/alternative.genome.scf.fasta
-[Wed 17 Nov 2021 02:37:10 PM PST] All done
-[Wed 17 Nov 2021 02:37:10 PM PST] Final stats for CA.mr.67.17.15.0.02/primary.genome.scf.fasta
 N50 811009
 Sequence 632348718
 Average 436404
@@ -252,129 +143,71 @@ E-size 1.20851e+06
 Count 1449
 ```
 
+Run time: Started the assembly on Nov 11 and finished on Nov 17 so about 7 days. 
+
 # Summary Statistics 
 
 ## Masurca
 
-```bash
-stats.sh scaffolds.ref.fa 
-A	C	G	T	N	IUPAC	Other	GC	GC_stdev
-0.3136	0.1863	0.1865	0.3136	0.0002	0.0000	0.0000	0.3728	0.0308
-
-Main genome scaffold total:         	7683
-Main genome contig total:           	9989
-Main genome scaffold sequence total:	958.223 MB
-Main genome contig sequence total:  	957.992 MB  	0.024% gap
-Main genome scaffold N/L50:         	483/466.004 KB
-Main genome contig N/L50:           	599/349.301 KB
-Main genome scaffold N/L90:         	2778/58.96 KB
-Main genome contig N/L90:           	3831/42.594 KB
-Max scaffold length:                	6.648 MB
-Max contig length:                  	6.587 MB
-Number of scaffolds > 50 KB:        	3065
-% main genome in scaffolds > 50 KB: 	91.63%
-
-
-Minimum 	Number        	Number        	Total         	Total         	Scaffold
-Scaffold	of            	of            	Scaffold      	Contig        	Contig  
-Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
---------	--------------	--------------	--------------	--------------	--------
-    All 	         7,683	         9,989	   958,223,014	   957,992,414	  99.98%
-    500 	         7,683	         9,989	   958,223,014	   957,992,414	  99.98%
-   1 KB 	         7,680	         9,984	   958,221,282	   957,990,882	  99.98%
- 2.5 KB 	         7,344	         9,645	   957,623,103	   957,393,003	  99.98%
-   5 KB 	         6,931	         9,225	   956,109,886	   955,880,486	  99.98%
-  10 KB 	         6,111	         8,382	   949,880,495	   949,653,395	  99.98%
-  25 KB 	         4,199	         6,379	   918,906,605	   918,688,605	  99.98%
-  50 KB 	         3,065	         5,049	   878,030,062	   877,831,662	  99.98%
- 100 KB 	         1,983	         3,609	   801,189,709	   801,027,109	  99.98%
- 250 KB 	           945	         1,899	   635,729,820	   635,634,420	  99.99%
- 500 KB 	           442	           964	   459,699,482	   459,647,282	  99.99%
-   1 MB 	           145	           353	   254,446,844	   254,426,044	  99.99%
- 2.5 MB 	            18	            50	    66,147,771	    66,144,571	 100.00%
-   5 MB 	             3	             8	    17,017,011	    17,016,511	 100.00%
-```
+MaSuRCA outputs a few different scaffolds. The final results are in primary.genome.scf.fasta. Redundant or haplotype variant scaffold sequences are in alternative.genome.scf.fasta. Then there is scaffolds.ref.fa, which I am not entirely sure what it is, but I included it here as I was curious if it was just the two previously mentioned scaffolds combined. 
 
 ```bash
-stats.sh primary.genome.scf.fasta 
-A	C	G	T	N	IUPAC	Other	GC	GC_stdev
-0.3139	0.1861	0.1862	0.3138	0.0002	0.0000	0.0000	0.3723	0.0355
+conda create -n bbmap
+conda activate bbmap
+conda install -c bioconda bbmap 
 
-Main genome scaffold total:         	1449
-Main genome contig total:           	2535
-Main genome scaffold sequence total:	632.349 MB
-Main genome contig sequence total:  	632.240 MB  	0.017% gap
-Main genome scaffold N/L50:         	214/811.009 KB
-Main genome contig N/L50:           	257/647.248 KB
-Main genome scaffold N/L90:         	737/272.952 KB
-Main genome contig N/L90:           	978/169.229 KB
-Max scaffold length:                	6.648 MB
-Max contig length:                  	6.587 MB
-Number of scaffolds > 50 KB:        	1092
-% main genome in scaffolds > 50 KB: 	99.57%
+# running it on a single genome would use stats.sh
+stats.sh genome_of_interest
 
-
-Minimum 	Number        	Number        	Total         	Total         	Scaffold
-Scaffold	of            	of            	Scaffold      	Contig        	Contig  
-Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
---------	--------------	--------------	--------------	--------------	--------
-    All 	         1,449	         2,535	   632,348,718	   632,240,118	  99.98%
-    100 	         1,449	         2,535	   632,348,718	   632,240,118	  99.98%
-    250 	         1,360	         2,446	   632,331,983	   632,223,383	  99.98%
-    500 	         1,322	         2,406	   632,319,759	   632,211,359	  99.98%
-   1 KB 	         1,318	         2,400	   632,317,527	   632,209,327	  99.98%
- 2.5 KB 	         1,213	         2,292	   632,144,004	   632,036,104	  99.98%
-   5 KB 	         1,185	         2,262	   632,053,323	   631,945,623	  99.98%
-  10 KB 	         1,173	         2,236	   631,958,137	   631,851,837	  99.98%
-  25 KB 	         1,140	         2,163	   631,385,044	   631,282,744	  99.98%
-  50 KB 	         1,092	         2,076	   629,641,715	   629,543,315	  99.98%
- 100 KB 	         1,021	         1,970	   624,406,589	   624,311,689	  99.98%
- 250 KB 	           787	         1,589	   582,268,195	   582,187,995	  99.99%
- 500 KB 	           434	           951	   454,961,728	   454,910,028	  99.99%
-   1 MB 	           145	           353	   254,446,844	   254,426,044	  99.99%
- 2.5 MB 	            18	            50	    66,147,771	    66,144,571	 100.00%
-   5 MB 	             3	             8	    17,017,011	    17,016,511	 100.00%
+# but I have three genome assemblies, so
+statswrapper.sh \
+	in=/home/jon/Working_Files/japonicus_genome_project/MaSuRCA-4.0.5/CA.mr.67.17.15.0.02/primary.genome.scf.fasta,\
+	/home/jon/Working_Files/japonicus_genome_project/MaSuRCA-4.0.5/CA.mr.67.17.15.0.02/scaffolds.ref.fa,\
+	/home/jon/Working_Files/japonicus_genome_project/MaSuRCA-4.0.5/CA.mr.67.17.15.0.02/alternative.genome.scf.fasta \
+	format=6
 ```
 
+and the output
+```bash
+#n_scaffolds	n_contigs	scaf_bp	contig_bp	gap_pct	scaf_N50	scaf_L50	ctg_N50	ctg_L50	scaf_N90	scaf_L90	ctg_N90	ctg_L90	scaf_max	ctg_max	scaf_n_gt50K	scaf_pct_gt50K	gc_avg	gc_std	filename
+1449	2535	632348718	632240118	0.017	214	811009	257	647248	737	272952	978	169229	6648447	6586636	1092	99.572	0.37229	0.03548	/home/jon/Working_Files/japonicus_genome_project/MaSuRCA-4.0.5/CA.mr.67.17.15.0.02/primary.genome.scf.fasta
+7683	9989	958223014	957992414	0.024	483	466004	599	349301	2778	58960	3831	42594	6648447	6586636	3065	91.631	0.37278	0.03083	/home/jon/Working_Files/japonicus_genome_project/MaSuRCA-4.0.5/CA.mr.67.17.15.0.02/scaffolds.ref.fa
+6363	7585	325904099	325781899	0.037	831	111108	1032	86740	3307	21871	4140	18511	692521	692521	1973	76.215	0.37373	0.03116	/home/jon/Working_Files/japonicus_genome_project/MaSuRCA-4.0.5/CA.mr.67.17.15.0.02/alternative.genome.scf.fasta
+```
+
+but the columns are off so let's make it pretty. I pasted the results into a spreadsheet and then copied/pasted into this websites spreadsheet to markdown [converting tool](https://tabletomarkdown.com/convert-spreadsheet-to-markdown/):  
+
+| #n\_scaffolds | n\_contigs | scaf\_bp  | contig\_bp | gap\_pct | scaf\_N50 | scaf\_L50 | ctg\_N50 | ctg\_L50 | scaf\_N90 | scaf\_L90 | ctg\_N90 | ctg\_L90 | scaf\_max | ctg\_max | scaf\_n\_gt50K | scaf\_pct\_gt50K | gc\_avg | gc\_std | filename                                                                                                           |
+| ------------- | ---------- | --------- | ---------- | -------- | --------- | --------- | -------- | -------- | --------- | --------- | -------- | -------- | --------- | -------- | -------------- | ---------------- | ------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
+| 1449          | 2535       | 632348718 | 632240118  | 0.017    | 214       | 811009    | 257      | 647248   | 737       | 272952    | 978      | 169229   | 6648447   | 6586636  | 1092           | 99.572           | 0.37229 | 0.03548 | /home/jon/Working\_Files/japonicus\_genome\_project/MaSuRCA-4.0.5/CA.mr.67.17.15.0.02/primary.genome.scf.fasta     |
+| 7683          | 9989       | 958223014 | 957992414  | 0.024    | 483       | 466004    | 599      | 349301   | 2778      | 58960     | 3831     | 42594    | 6648447   | 6586636  | 3065           | 91.631           | 0.37278 | 0.03083 | /home/jon/Working\_Files/japonicus\_genome\_project/MaSuRCA-4.0.5/CA.mr.67.17.15.0.02/scaffolds.ref.fa             |
+| 6363          | 7585       | 325904099 | 325781899  | 0.037    | 831       | 111108    | 1032     | 86740    | 3307      | 21871     | 4140     | 18511    | 692521    | 692521   | 1973           | 76.215           | 0.37373 | 0.03116 | /home/jon/Working\_Files/japonicus\_genome\_project/MaSuRCA-4.0.5/CA.mr.67.17.15.0.02/alternative.genome.scf.fasta |
+
+Note: as previously noted elsewhere, the N50 and L50 are swapped in this output. I really wish the authors of BBtools would fix this.
+
+So the scaffold count for the first and second entries add up close to the 2nd entry but it's not a perfect match so I am hestitant to say the scaffold.ref.fa assembly is actually just the primary and alternative genomes merged. 
 
 ## Platanus-allee
 
+At the end of the consensus step Platanus-allee outputs a scaffold assembly. See below for how that turned out. 
+
+Quickly comparing the MaSuRCA and Platanus-allee assemlbies.
 ```bash
-stats.sh ajap_step10_consensus_consensusScaffold.fa 
-A	C	G	T	N	IUPAC	Other	GC	GC_stdev
-0.3125	0.1876	0.1877	0.3122	0.1304	0.0000	0.0000	0.3753	0.0718
-
-Main genome scaffold total:         	335252
-Main genome contig total:           	521912
-Main genome scaffold sequence total:	1007.413 MB
-Main genome contig sequence total:  	876.014 MB  	13.043% gap
-Main genome scaffold N/L50:         	823/187.203 KB
-Main genome contig N/L50:           	42739/5.177 KB
-Main genome scaffold N/L90:         	50871/1.845 KB
-Main genome contig N/L90:           	202792/825
-Max scaffold length:                	4.162 MB
-Max contig length:                  	143.859 KB
-Number of scaffolds > 50 KB:        	1654
-% main genome in scaffolds > 50 KB: 	57.98%
-
-
-Minimum 	Number        	Number        	Total         	Total         	Scaffold
-Scaffold	of            	of            	Scaffold      	Contig        	Contig  
-Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
---------	--------------	--------------	--------------	--------------	--------
-    All 	       335,252	       521,912	 1,007,412,658	   876,013,836	  86.96%
-    100 	       335,252	       521,912	 1,007,412,658	   876,013,836	  86.96%
-    250 	       143,319	       329,978	   978,162,844	   846,764,032	  86.57%
-    500 	       112,269	       297,219	   966,875,323	   835,550,998	  86.42%
-   1 KB 	        75,664	       253,918	   940,674,588	   809,552,051	  86.06%
- 2.5 KB 	        40,173	       200,852	   883,700,280	   752,895,143	  85.20%
-   5 KB 	        21,863	       165,549	   819,428,561	   689,210,290	  84.11%
-  10 KB 	        10,911	       136,784	   743,213,957	   617,284,358	  83.06%
-  25 KB 	         2,684	       102,463	   618,333,236	   512,013,942	  82.81%
-  50 KB 	         1,654	        94,300	   584,064,857	   485,895,706	  83.19%
- 100 KB 	         1,155	        86,989	   549,010,605	   458,203,116	  83.46%
- 250 KB 	           678	        73,365	   471,932,927	   394,432,510	  83.58%
- 500 KB 	           386	        56,855	   368,293,782	   308,210,955	  83.69%
-   1 MB 	           127	        28,445	   185,984,088	   155,605,973	  83.67%
- 2.5 MB 	             5	         2,418	    16,362,123	    13,709,936	  83.79%
+statswrapper.sh \
+	in=/home/jon/Working_Files/japonicus_genome_project/MaSuRCA-4.0.5/CA.mr.67.17.15.0.02/primary.genome.scf.fasta,\
+	/home/jon/Working_Files/japonicus_genome_project/platanus-allee/Platanus_allee_v2.2.2_Linux_x86_64/ajap_step10_consensus_consensusScaffold.fa,\
+	format=6
 ```
+
+| n\_scaffolds | n\_contigs | scaf\_bp   | contig\_bp | gap\_pct | scaf\_N50 | scaf\_L50 | ctg\_N50 | ctg\_L50 | scaf\_N90 | scaf\_L90 | ctg\_N90 | ctg\_L90 | scaf\_max | ctg\_max | scaf\_n\_gt50K | scaf\_pct\_gt50K | gc\_avg | gc\_std | filename                                                                                                                                                 |
+| ------------ | ---------- | ---------- | ---------- | -------- | --------- | --------- | -------- | -------- | --------- | --------- | -------- | -------- | --------- | -------- | -------------- | ---------------- | ------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1449         | 2535       | 632348718  | 632240118  | 0.017    | 214       | 811009    | 257      | 647248   | 737       | 272952    | 978      | 169229   | 6648447   | 6586636  | 1092           | 99.572           | 0.37229 | 0.03548 | /home/jon/Working\_Files/japonicus\_genome\_project/MaSuRCA-4.0.5/CA.mr.67.17.15.0.02/primary.genome.scf.fasta                                           |
+| 335252       | 521912     | 1007412658 | 876013836  | 13.043   | 823       | 187203    | 42739    | 5177     | 50871     | 1845      | 202792   | 825      | 4161996   | 143859   | 1654           | 57.977           | 0.37529 | 0.07183 | /home/jon/Working\_Files/japonicus\_genome\_project/platanus-allee/Platanus\_allee\_v2.2.2\_Linux\_x86\_64/ajap\_step10\_consensus\_consensusScaffold.fa |
+
+As I've noted previously when using this tool, the L50 and N50 are switched. So the platanus-allee assembly has over 300k scaffolds, a scaffold n50 of 187k bp but a contig n50 of ~5k. That's not great, especially compared to MaSuRCA assembly. The low n50 might be due to a few hundred megabases of the assembly being reads shorter than 1kb as platanus-allee seems to try to keep enough reads so the assembly represents the whole genome and not just parts that it could assembly. But that's just a guess. I really won't be able to tell until I view these assemblies using a snailplot. 
+
+## Summary
+
+So the platanus-allee assembly has a lot more scaffolds/contigs, aka fragmented, but also contains more data in its assembly. I think this is because it tries to capture the whole genome in the assembly regardless of if it is contigious. MaSuRCA removes stuff shorter than a few hundred base pair or at least doesn't include very many short reads. Some might say that mean it loses information. While this is true, that extra information isn't very useful (I think?) and will greatly slow down steps later during genome masking, gene prediction, and annotation. MaSuRCA was also significantly faster than Platanus-allee. 
+
+Even though it seems fairly obvious which assembly is better, a "best assembly" can't be declared without further evaluation of more assembly characteristics. This includes using tools such as Inspector or Mercury to look at assembly kmer properties, Blobtoolkit for generating graphs to look at genome contiguity and contamination, and Busco to check for gene fragmentation. 

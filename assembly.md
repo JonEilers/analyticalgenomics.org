@@ -54,7 +54,7 @@ While the current state of genetics leaves most researchers interested in the "g
 
 Currently, there are long read sequencing technologies that are duking it out: Pacbio and Oxford Nanopore Technologies. There are dozens of papers arguing about the virtues and sins of each and I won't go into it here. However, [this](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-1935-5) paper does offer a good introduction and insight into the pros and cons of both. 
 
-Now on to long read sequence genome assembly. Because the reads are longer, but contain more errors, genome assemblers use slightly different approaches to handling the "noisy" reads. But the results are usually better then anything achievable using short read data and most genome assembly pipelines include a few rounds of "polishing" post genome assembly. I go into more detail on this further down this page. See the link below for re-assembly of a sea cucumber genome using three different long read assemblers. 
+Now on to long read sequence genome assembly. Because the reads are longer, but contain more errors, genome assemblers use slightly different approaches to handling the "noisy" reads. But the results are usually better than anything achievable using short read data and most genome assembly pipelines include a few rounds of "polishing" post genome assembly. I go into more detail on this further down this page. See the link below for re-assembly of a sea cucumber genome using three different long read assemblers. 
 
 - [Chiridota heheva reassembly using Raven, Flye, and Shasta assemblers](/longread_genome_assembly/)
 
