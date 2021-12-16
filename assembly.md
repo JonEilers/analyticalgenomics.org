@@ -60,17 +60,19 @@ Now on to long read sequence genome assembly. Because the reads are longer, but 
 
 ## Hybrid
 
-__In Progress__
-
-Future pages and content that will be included here are:
-- hybrid long read/short read assembly using platanus-allee, haslr, and masurca of *Apostichopus japonicus* and *Apostichopus parvimensis* genomes
-- incorporation of hi-c data to achieve chromosome scale scaffolds using salsa and hirise on the [sea urchin Lytechinus variegatus genome](https://academic.oup.com/gbe/article/12/7/1080/5841217?login=true)
-- examples from papers such as this [one](https://www.biorxiv.org/content/10.1101/2020.07.01.182477v1
-) on coral endosymbiont genome assembly.
+Hybrid genome assembly is the predominate approach these days. The majority of recent genome publications use a mix of long read, short read (becoming less common), and hi-c. See below for some examples. 
 
 [Hybrid genome assembly of *Apostichopus japonicus* using Platanus-allee and MaSURCA](/hybrid_genome_assembly/)
 
-[Hybrid genome assembly of *Lytechnius veriegatus* using long reads and Hi-C](/hi-c/)
+__In Progress__
+
+Content currently in progress that will be included here are: 
+
+- incorporation of hi-c data to achieve chromosome scale scaffolds using salsa and hirise on the [sea urchin Lytechinus variegatus genome](https://academic.oup.com/gbe/article/12/7/1080/5841217?login=true)
+
+- examples from papers such as this [one](https://www.biorxiv.org/content/10.1101/2020.07.01.182477v1
+) on coral endosymbiont genome assembly.
+
 
 ## Reference Assisted
 
@@ -117,7 +119,7 @@ Another way to assess the quality of the assembly and to check for contamination
 
 ## Assembly evaluation using long reads and Inspector
 
-[inspector](https://github.com/ChongLab/Inspector)
+- [inspector](https://github.com/ChongLab/Inspector)
 
 ## Assembly comparisons
 Most genome assembly projects try using several different assembly tools and it can be useful to check for differences between them. Additionally, It can be useful to see how many changes were made when gap closing or polishing. Either of those things can be accomplished using a tool called [mummer4](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005944). Mummer4 produces a "delta" file that can then be used in other analysis tools such as [Nucdiff](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1748-z) or visualization tools such as [Assemblytics](https://academic.oup.com/bioinformatics/article/32/19/3021/2196631). It can also output a summary file containing basic counts of indels and other differences in addition to a bam file for loading into a genome browser such as [Ribbons](https://genomeribbon.com/) if a closer look is required. 

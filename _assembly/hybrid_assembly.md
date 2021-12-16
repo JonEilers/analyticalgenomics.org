@@ -1,6 +1,6 @@
 ---
 
-title: "Hybrid assembly using Platanus-allee and MaSURCA"
+title: "Hybrid assembly using Platanus-allee and MaSuRCA"
 permalink: /hybrid_genome_assembly/
 layout: single
 toc: true 
@@ -14,9 +14,6 @@ header:
 excerpt: "The Short and Long"
 
 ---
-Note to self: make text files and links to them for the command line output for both. Consider doing it for the masurca script too? 
-
-Add links to assembly analysis so it's easy to jump around
 
 # Introduction
 
@@ -44,9 +41,9 @@ pacbio clr long read - [SRR6282347](https://www.ncbi.nlm.nih.gov/sra/SRR6282347)
 
 # Hybrid Genome Assemblers
 
-There a number of genome assembly tools that accept more than one data type. Two of my favorite are [platanus-allee](https://www.nature.com/articles/s41467-019-09575-2) and [masurca](https://academic.oup.com/bioinformatics/article/29/21/2669/195975?login=true). Both Masurca and Platanus-allee require at least short read data but also accept long read data, and in the case of platanus-allee, 10x-chromium data. One significant difference between the two assembler is regarding genome phasing. A phased genome is when the assembler is able to distinguish the haplotypes of each chromosome pair. In the past, assemblers were designed to ignore ploidy levels as the sequence data was inadequate for telling chromosomes apart. This is not the case anymore. With long read sequencing and hi-c it is now possible to completely disintangle homologous chromsomes, although this is just beginning to become standard practice. 
+There a number of genome assembly tools that accept more than one data type. Two of my favorite are [platanus-allee](https://www.nature.com/articles/s41467-019-09575-2) and [MaSuRCA](https://academic.oup.com/bioinformatics/article/29/21/2669/195975?login=true). Both MaSuRCA and Platanus-allee require at least short read data but also accept long read data, and in the case of platanus-allee, 10x-chromium data. One significant difference between the two assembler is regarding genome phasing. A phased genome is when the assembler is able to distinguish the haplotypes of each chromosome pair. In the past, assemblers were designed to ignore ploidy levels as the sequence data was inadequate for telling chromosomes apart. This is not the case anymore. With long read sequencing and hi-c it is now possible to completely disintangle homologous chromsomes, although this is just beginning to become standard practice. 
 
-Platanus-allee was designed specifically to be able to "phase" a genome assembly and then, if you wanted, collapse the phased assembly into a haploid assembly. To the best of my knowledge Masurca does not have this ability yet. However, Masurca is significantly faster and at least in this project, produced a more contigious assembly. Both tools are designed to be used with heterozygous genomes, which is important as the *Apostichopus japonicus* has a heterzygousity of 1.59%, meaning that both sets of chromosomes are different enough to confuse a genome assembler. This is important to know as genome assemblers will sometimes duplicate heterozygous genes in the haploid genome assembly because it can't tell the genes are variants. 
+Platanus-allee was designed specifically to be able to "phase" a genome assembly and then, if you wanted, collapse the phased assembly into a haploid assembly. To the best of my knowledge MaSuRCA does not have this ability yet. However, MaSuRCA is significantly faster and at least in this project, produced a more contigious assembly. Both tools are designed to be used with heterozygous genomes, which is important as the *Apostichopus japonicus* has a heterzygousity of 1.59%, meaning that both sets of chromosomes are different enough to confuse a genome assembler. This is important to know as genome assemblers will sometimes duplicate heterozygous genes in the haploid genome assembly because it can't tell the genes are variants. 
 
 ## Platanus-allee assembler
 
@@ -126,13 +123,16 @@ Memory usage was surprisingly not bad compared to when I have run it with just s
 
 MaSuRCA has a different requirement for running it. It requires a configuration bash script. The authors provide a template with some instructions and the user edits the configuration template to suite their needs. See below for the one I tweaked and used.
 
-[MaSuRCA Configuration Script](/masurca_config/)   
+[MaSuRCA Configuration Script](/MaSuRCA_config/)   
 
-After modifying the config file, you then execute it using bash ```./bin/masurca masurca_config_japonicus.txt```. This will output another shell script file called "assemble.sh". You'll do the same to this one: ```./assemble.sh```. And viola - sit back and wait. 
+After modifying the config file, you then execute it using bash ```./bin/MaSuRCA MaSuRCA_config_japonicus.txt```. This will output another shell script file called "assemble.sh". You'll do the same to this one: ```./assemble.sh```. And viola - sit back and wait. 
 
-A quick note: I recently reinstalled ubuntu on my server. So some stuff was missing when I tried to run MaSuRCA including numactl, boost, and bzip libraries. 
+Quick notes: 
+- I recently reinstalled ubuntu on my server. So some stuff was missing when I tried to run MaSuRCA including numactl, boost, and bzip libraries. 
+- I also didn't keep track of memory usage, but it roughly matched what the authors say will be required. 
+- Additionally, MaSuRCA will use a lot of hard drive space. For this run it was a little over a terabyte. 
 
-[MaSuRCA command line output](/masurca_output/)
+[MaSuRCA command line output](/MaSuRCA_output/)
 
 Final stats 
 ```bash
@@ -147,7 +147,7 @@ Run time: Started the assembly on Nov 11 and finished on Nov 17 so about 7 days.
 
 # Summary Statistics 
 
-## Masurca
+## MaSuRCA
 
 MaSuRCA outputs a few different scaffolds. The final results are in primary.genome.scf.fasta. Redundant or haplotype variant scaffold sequences are in alternative.genome.scf.fasta. Then there is scaffolds.ref.fa, which I am not entirely sure what it is, but I included it here as I was curious if it was just the two previously mentioned scaffolds combined. 
 
@@ -165,10 +165,7 @@ statswrapper.sh \
 	/home/jon/Working_Files/japonicus_genome_project/MaSuRCA-4.0.5/CA.mr.67.17.15.0.02/scaffolds.ref.fa,\
 	/home/jon/Working_Files/japonicus_genome_project/MaSuRCA-4.0.5/CA.mr.67.17.15.0.02/alternative.genome.scf.fasta \
 	format=6
-```
 
-and the output
-```bash
 #n_scaffolds	n_contigs	scaf_bp	contig_bp	gap_pct	scaf_N50	scaf_L50	ctg_N50	ctg_L50	scaf_N90	scaf_L90	ctg_N90	ctg_L90	scaf_max	ctg_max	scaf_n_gt50K	scaf_pct_gt50K	gc_avg	gc_std	filename
 1449	2535	632348718	632240118	0.017	214	811009	257	647248	737	272952	978	169229	6648447	6586636	1092	99.572	0.37229	0.03548	/home/jon/Working_Files/japonicus_genome_project/MaSuRCA-4.0.5/CA.mr.67.17.15.0.02/primary.genome.scf.fasta
 7683	9989	958223014	957992414	0.024	483	466004	599	349301	2778	58960	3831	42594	6648447	6586636	3065	91.631	0.37278	0.03083	/home/jon/Working_Files/japonicus_genome_project/MaSuRCA-4.0.5/CA.mr.67.17.15.0.02/scaffolds.ref.fa
@@ -206,7 +203,7 @@ statswrapper.sh \
 
 As I've noted previously when using this tool, the L50 and N50 are switched. So the platanus-allee assembly has over 300k scaffolds, a scaffold n50 of 187k bp but a contig n50 of ~5k. That's not great, especially compared to MaSuRCA assembly. The low n50 might be due to a few hundred megabases of the assembly being reads shorter than 1kb as platanus-allee seems to try to keep enough reads so the assembly represents the whole genome and not just parts that it could assembly. But that's just a guess. I really won't be able to tell until I view these assemblies using a snailplot. 
 
-## Summary
+# Summary
 
 So the platanus-allee assembly has a lot more scaffolds/contigs, aka fragmented, but also contains more data in its assembly. I think this is because it tries to capture the whole genome in the assembly regardless of if it is contigious. MaSuRCA removes stuff shorter than a few hundred base pair or at least doesn't include very many short reads. Some might say that mean it loses information. While this is true, that extra information isn't very useful (I think?) and will greatly slow down steps later during genome masking, gene prediction, and annotation. MaSuRCA was also significantly faster than Platanus-allee. 
 
