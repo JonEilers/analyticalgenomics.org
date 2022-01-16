@@ -27,4 +27,4 @@ Once you have ubuntu set up, install some flavor of [conda](https://www.anaconda
 
 Additionally, you will want to keep track of everything you do, what commands you use and what options you tweaked etc. A great text file editor for that is called [sublime](https://www.sublimetext.com/). 
 
-Once you have those tools installed you are basically ready to go! 
+Once you have those tools installed you are basically ready to go! Ready to get your hands dirty learning how to use the command line that is. Typing commands into the command terminal is how I spend most of my time interfacing with bioinformatic tools. You will need to be proficient in the basics of bash. There are numerous introduction tutorials scattered throughout the internet. I don't know which is a good one, but for now I will drop this [link](https://www.javatpoint.com/bash-introduction) to one that looked promising at a glance. 

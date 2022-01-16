@@ -60,6 +60,9 @@ https://www.sciencedirect.com/science/article/pii/S1672022918304339
 
 [juicebox](https://github.com/aidenlab/Juicebox)
 
+[gitbook juicebox tutorial](https://aidenlab.gitbook.io/juicebox/)
+[github juicebox tutorial](https://github.com/aidenlab/Juicebox/wiki)
+
 https://phasegenomics.github.io/2019/09/19/hic-alignment-and-qc.html
 
 has some good info

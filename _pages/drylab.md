@@ -24,10 +24,13 @@ header:
 excerpt: "A gentle introduction to genome assembly and annotation"
 ---
 
-## Please note that this section is currently being updated with more comprehensive content and as genome assembly and annotation takes awhile to run it may be some time. 
-
+# Please note that this section is currently being updated with more comprehensive content and as genome assembly and annotation takes awhile to run it may be some time. 
 
 {% include feature_row %}
+
+## Genome Bioinformatics
+
+Genomes do not spontaneously create themselves. At least in silico. Once raw sequence data is acquired, quality and content is checked. Then an assembly tool is selected and run. When assembled, the assembly quality is assessed. If it's "good enough" repetitive element masking and gene prediction are performed. If everything checks out afterwards, the genome is ready for interrogation. Above are three pages containing content on the process for each of these steps. 
 
 ## A little background 
 
@@ -37,9 +40,7 @@ In the upcoming years genome assembly is going to explode. There are millions of
 
 Here I have detailed the tools I've used and the process I went through to create genome assemblies, predict genes, and analyze results. When reading these walk-throughs, keep in mind that it's a rare day when everything works the first time. More time is spent troubleshooting installation problems and learning how to use a tool then is spent actually using the tool. So if you find yourself struggling to get things working, rest assured, that's a battle we all fight everyday. 
 
-## Genome Bioinformatics
 
-Genomes do not spontaneously create themselves. At least in silico. Once raw sequence data is acquired, quality and content is checked. Then an assembly tool is selected and run. When assembled, the assembly quality is assessed. If it's "good enough" repetitive element masking and gene prediction are performed. If everything checks out afterwards, the genome is ready for interrogation. Above are three pages containing content on the process for each of these steps. 
 
 
 

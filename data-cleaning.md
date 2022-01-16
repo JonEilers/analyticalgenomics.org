@@ -34,14 +34,19 @@ gallery:
 
 
 # Summary Statistics and Data Quality
-Once you can have confidence in the data integrity, it's time to get some rough ideas about what the data looks like. A few things need to be checked: basic statistics such as number of reads and read length, adapter contamination, read quality, overrepresented sequences etc. Thankfully, there is a very popular tool for doing this easily called Fastqc. Fastqc works with any Fastq file, be it pacbio, illumina, or nanopore sequence data. See below for a link to a page that goes into more detail on using Fastqc, adapters, and the raw data report Novogene provided with the data. 
+Once you can have confidence in the data integrity, it's time to get some rough ideas about what the data looks like. A few things need to be checked: basic statistics such as number of reads and read length, adapter contamination, read quality, overrepresented sequences etc. Thankfully, there are a plethora of tools out there for doing just this. One popular one is called Fastqc and works great for short read data. Additional there has been a surge in tools for assessing long read data quality too. Data types such as Hi-C, while technically sequenced using illumina, require special handling as the data is structured differently from standard short reads. See below for a link to pages that go into more detail on how to check for adapter contamination, read summary statistics and quality, and what to look for. 
 
-- [Checking data quality using FastQC](/fastqc/)
+- [Checking Illumina data quality using FastQC](/short_read_quality/)   
+- [Checking Long read data quality using Nanoplot and longqc](/long_read_quality/)   
+- [Checking Hi-C data quality](/hic_read_quality/)   
 
-# Trimming and Filtering Raw Reads
+# Trimming, Filtering, and Error Correcting Raw Reads
 In some cases, there may be problems with the raw sequence data and it needs some cleaning. This can be due to excessive adapter contamination, way too many duplicated sequences, a significiant proportion of the reads are low quality, etc. It is also important to consider how these reads will be used. In some cases you may be able to get away with simply ignoring read quality problems. There are a handful of publications that have looked at how read trimming impacts computation downstream in the pipeline such as during [genome assembly](https://www.mdpi.com/2073-4425/10/10/737). A [paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0085024) from 2013 looked at how trimming impacts different data types and their ultimate uses. In this paper, they note that read trimming negatively impacts assembly quality if the trimmming was performed on a high quality dataset. Additionally, some tool specifically say to not perform read trimming. This is the case with the genome assembler [MaSURCA](https://github.com/alekseyzimin/masurca). In my particular case, the raw Illumina data was already high quality so I did nothing to that dataset. However, the Oxford Nanopore data was terrible. See below for further insight and instruction on how to perform read trimming. 
 
 - [Raw sequence data trimming and filtering](/trimming/)
+- [Trimming and filtering short read data](/short_read_trimming/)
+- [Trimming, filtering, and error correcting long read data](/long_read_trimming/)
+- [Trimming and filtering Hi-C data](/hic_data_trimming/)
 
 # K-mer Analysis of Reads
 Now the data is looking good, all the reads have high phred scores and there appears to be little to no adapter contamination. It is time to take a closer look at the raw sequence data. There are a number of tools for doing this, most relay on the analysis of [K-mers](https://en.wikipedia.org/wiki/K-mer) to estimate different aspects of the data. K-mers are essentially sub-sequences or sub-strings and the distribution of these sub-sequences in the data can be used to estimate parameters. One example is in [choice of k-mer size](https://en.wikipedia.org/wiki/K-mer#Choice_of_k-mer_size) when assembling genomes. Larger k-mer sizes result in more memory usage, but improved genome assembly contiguity. Thus it can be important to find the optimal k-mer size for genome assembly. [Kmergenie](http://kmergenie.bx.psu.edu/) can be used to do this. See below for an example. 
@@ -55,6 +60,8 @@ However, some genome assemblers, such as [MaSURCA](https://github.com/alekseyzim
 
 
 Additionally, k-mer analysis can be used to check for various types of contamination in the raw sequence data. The [K-mer Analysis Toolkit (KAT)](https://kat.readthedocs.io/en/latest/index.html) can be used to check for GC bias which might indicate different kinds of contamination such as from PCR. KAT has a number of differents for analyzying the k-mer distribution and what it might indicate. See below for some examples 
+
+
 - [K-mer Analysis using KAT](/kat/)
 
 If everything looks good or has been cleaned up, the next step is [genome assembly](/assembly/)! 

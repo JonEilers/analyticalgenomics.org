@@ -62,7 +62,7 @@ Now on to long read sequence genome assembly. Because the reads are longer, but 
 
 Hybrid genome assembly is the predominate approach these days. The majority of recent genome publications use a mix of long read, short read (becoming less common), and hi-c. See below for some examples. 
 
-[Hybrid genome assembly of *Apostichopus japonicus* using Platanus-allee and MaSURCA](/hybrid_genome_assembly/)
+- [Hybrid genome assembly of *Apostichopus japonicus* using Platanus-allee and MaSURCA](/hybrid_genome_assembly/)
 
 __In Progress__
 

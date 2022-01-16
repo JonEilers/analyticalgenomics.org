@@ -1,7 +1,7 @@
 ---
 title: "Adapters and FastQC report"
 layout: single
-permalink: /fastqc/
+permalink: /short_read_quality/
 toc: true 
 toc_sticky: true
 

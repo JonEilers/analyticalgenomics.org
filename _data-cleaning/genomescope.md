@@ -17,6 +17,8 @@ gallery:
 
 ---
 
+Note: error correct some long read data and then feed it through genomescope to get some info. 
+
 ## Jellyfish and GenomeScope
 Estimating genome characteristics
 
@@ -87,7 +89,7 @@ Read Error Rate               0.218397%         0.218397%
 
 #### Thoughts
 
-GenomeScope is estimating the genome size of *P. californicus* to be about 50-100 mb larger than the published estimates. Heterozygosity is higher than in *A. japonicuis*.
+GenomeScope is estimating the genome size of *P. californicus* to be about 400 mb smaller than the 900mb published estimates. Heterozygosity is higher than in *A. japonicuis*. Very strange, even after adjusting the max kmer coverage the estimated genome size was still small.
 
 {% include figure image_path="/assets/images/GenomeScope/Apostichopusjaponicus.png" caption="Genome statistics from  the paper [Zhang et al 2017](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2003790)" %}
 

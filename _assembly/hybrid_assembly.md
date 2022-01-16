@@ -31,10 +31,10 @@ See below for data links and data type.
 
 180bp paired end - [SRR6251237](https://www.ncbi.nlm.nih.gov/sra/SRR6251237)  
 350bp paired end - [SRR6255867](https://www.ncbi.nlm.nih.gov/sra/SRR6255867)  
-450bp paired end - [SRR6255870](https://www.ncbi.nlm.nih.gov/sra/SRR6255870) 
-500bp paired end - [SRR6255868](https://www.ncbi.nlm.nih.gov/sra/SRR6255868) 
-5kb long insert mate-pair - [SRR6257769](https://www.ncbi.nlm.nih.gov/sra/SRR6257769)  
-10kb long insert mate-pair - [SRR6257771](https://www.ncbi.nlm.nih.gov/sra/SRR6257771)  
+450bp paired end - [SRR6255870](https://www.ncbi.nlm.nih.gov/sra/SRR6255870)     
+500bp paired end - [SRR6255868](https://www.ncbi.nlm.nih.gov/sra/SRR6255868)     
+5kb long insert mate-pair - [SRR6257769](https://www.ncbi.nlm.nih.gov/sra/SRR6257769)      
+10kb long insert mate-pair - [SRR6257771](https://www.ncbi.nlm.nih.gov/sra/SRR6257771)    
 15kb long insert mate-pair - [SRR6257773](https://www.ncbi.nlm.nih.gov/sra/SRR6257773)  
 20kb long-insert mate-pair - [SRR6257777](https://www.ncbi.nlm.nih.gov/sra/SRR6257777)  
 pacbio clr long read - [SRR6282347](https://www.ncbi.nlm.nih.gov/sra/SRR6282347)  
@@ -123,7 +123,7 @@ Memory usage was surprisingly not bad compared to when I have run it with just s
 
 MaSuRCA has a different requirement for running it. It requires a configuration bash script. The authors provide a template with some instructions and the user edits the configuration template to suite their needs. See below for the one I tweaked and used.
 
-[MaSuRCA Configuration Script](/MaSuRCA_config/)   
+[MaSuRCA Configuration Script](/masurca_config/)   
 
 After modifying the config file, you then execute it using bash ```./bin/MaSuRCA MaSuRCA_config_japonicus.txt```. This will output another shell script file called "assemble.sh". You'll do the same to this one: ```./assemble.sh```. And viola - sit back and wait. 
 
@@ -132,7 +132,7 @@ Quick notes:
 - I also didn't keep track of memory usage, but it roughly matched what the authors say will be required. 
 - Additionally, MaSuRCA will use a lot of hard drive space. For this run it was a little over a terabyte. 
 
-[MaSuRCA command line output](/MaSuRCA_output/)
+[MaSuRCA command line output](/masurca_output/)
 
 Final stats 
 ```bash

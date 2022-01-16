@@ -67,3 +67,6 @@ The new kmergenie build was run using the illumina data with max kmer set to 280
 
 {% include gallery %}
 
+In an ideal result, the left graph would be a nice down-ward opening curve as shown [here](http://kmergenie.bx.psu.edu/sample_report.html). However, as explained in this [link](http://kmergenie.bx.psu.edu/sample_report.html#advhelp), real world cases can be a bit messier. The result I got suggests that there may be higher k-mer values that would could produce better results. Unfortunately, I only have short read data with read length of 150 base pairs which prevents analysis of longer k-mers. This result could be a product of high heterozygosity in the data. When using the genome assembler platanus-allee it selected a max k-mer of 110 which agrees with kmergenie's estimate. What this makes me think is that I should have used long read data for this genome sequencing project. 
+
+Kmergenie predicts a genome size of 938mb. This is actually quite close to genome estimates for *Apostichopus japonicus* which are around 900mb. I am curious why kmergenie was able to get close to this number but genomescope dramatically underestimated it. 
