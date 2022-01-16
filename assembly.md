@@ -68,28 +68,7 @@ __In Progress__
 
 Content currently in progress that will be included here are: 
 
-- incorporation of hi-c data to achieve chromosome scale scaffolds using salsa and hirise on the [sea urchin Lytechinus variegatus genome](https://academic.oup.com/gbe/article/12/7/1080/5841217?login=true)
-
-- examples from papers such as this [one](https://www.biorxiv.org/content/10.1101/2020.07.01.182477v1
-) on coral endosymbiont genome assembly.
-
-
-## Reference Assisted
-
-__In Progress__
-
-Future content to be found here includes:
-- reference assisted genome assembly using tools such as redundans, masurca, ragout, ragtag, progressive cactus, etc. 
-- content explaining the pitfalls and benefits of using reference assisted genome assembly
-- example: [Redundans](/redundans/)
-
-## Organelle Assembly
-
-__In Progress__
-
-Future content will include:
-- how to assemble plastid genomes 
-- examples of tools such as [GetOrganelle](https://www.biorxiv.org/content/10.1101/256479v3.abstract)
+- incorporation of hi-c data to achieve chromosome scale scaffolds using salsa, yahs, 3d-dna and hirise on ***Stichopus chloronotus***
 
 # Assembly QC
 

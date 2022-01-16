@@ -12,3 +12,4 @@ sidebar:
   nav: sidebar-main
 ---
 
+polishing reads using [Hypo](https://github.com/kensung-lab/hypo) or [consent](https://github.com/morispi/CONSENT). It might improve genome assembly quite a bit. 
