@@ -1,11 +1,12 @@
 ---
-title: "KAT"
-excerpt: "Kmer Analysis of Sequence Data"
+title: "K-mer Analysis using KAT"
 toc: true
 toc_sticky: true
 author_profile: false
 layout: single
 permalink: /kat/
+
+excerpt: "It's a kitty kat"
 
 gallery:
   - url: /assets/images/kat/kat-gcp.mx.png
@@ -39,7 +40,7 @@ KAT was installed using conda. Due to dependency conflicts, KAT required creatin
 kat                       2.4.2            py36he1b856b_0    bioconda
 ```
 To install
-```
+```bash
 conda create -name kat
 conda activate kat
 conda install -c bioconda kat 
@@ -51,7 +52,7 @@ github: https://github.com/marbl/merqury
 ### Commands
 
 KAT commands
-```
+```bash
 kat comp -t 70 -n -o P_cali_katcomp ../P_cali_g_1.fq  ../P_cali_g_2.fq
 kat plot spectra-mx -i -x 200 -o P_cali_kat_spectra.png P_cali_katcomp-main.mx
 kat gcp -t 70 -m 32 ../P_cali_g_1.fq  ../P_cali_g_2.fq

@@ -27,6 +27,8 @@ Genome assembly approaches largely depend on the type and quality of data you ha
 
 [Mind the Gap](https://www.sciencedirect.com/science/article/abs/pii/S1087184515300220) reasons to produce gapless genome assemblies
 
+[Errors in long-read assemblies can critically affect protein prediction](https://www.nature.com/articles/s41587-018-0004-z)
+
 # Assembly
 
 ## Short Read

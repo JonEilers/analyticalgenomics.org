@@ -1,11 +1,13 @@
 ---
-title: "Kmergenie: Recompile with higher max kmer value and estimate optimal kmer for data "
+title: "Estimating genome size and best kmer using Kmergenie "
 
 toc: true
 toc_sticky: true
 author_profile: false
 layout: single
 permalink: /kmergenie/
+
+excerpt: "Gotta count them all"
 
 gallery:
   - url: /assets/images/kmergenie/112/best-k.png

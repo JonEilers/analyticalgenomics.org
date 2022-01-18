@@ -1,13 +1,17 @@
 ---
-title: "Using MD5 checksum to verify data integrity"
+title: "Verifying data integrity using MD5 checksum"
 layout: single
 permalink: /checksum/
+
+excerpt: "Are you corrupted?" 
+
 ---
-### Check md5 sum to make sure sequence data downloaded correctly
+# Check md5 sum 
 
 It is important to verify that the data you are using is the same data you wanted. This is easily checked using [md5sum](https://en.wikipedia.org/wiki/Md5sum). Most sequence data files you download from online databases contain an md5 file associated with them. If they don't you might want to consider contacting the admin and requesting one. 
 
-#### md5 check sums provided by Novogene
+# md5 check sums provided by Novogene
+
 As an example, when I downloaded the ~100 gigabytes of raw illumina data from novogene, there was an additional md5 file containing the below hashes 
 
 ```

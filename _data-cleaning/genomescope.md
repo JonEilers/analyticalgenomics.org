@@ -5,6 +5,8 @@ toc_sticky: true
 layout: single
 permalink: /genomescope/
 
+excerpt: "Scoping out a genome"
+
 gallery:
   - url: /assets/images/genomescope/plot.png
     image_path: /assets/images/genomescope/plot.png
@@ -16,8 +18,7 @@ gallery:
     caption: "Log GenomeScope Profile"  
 
 ---
-
-Note: error correct some long read data and then feed it through genomescope to get some info. 
+ 
 
 ## Jellyfish and GenomeScope
 Estimating genome characteristics

@@ -12,4 +12,8 @@ sidebar:
   nav: sidebar-main
 ---
 
-polishing reads using [Hypo](https://github.com/kensung-lab/hypo) or [consent](https://github.com/morispi/CONSENT). It might improve genome assembly quite a bit. 
+[A comprehensive evaluation of long read error correction methods](https://link.springer.com/article/10.1186/s12864-020-07227-0)
+
+polishing reads using [consent](https://github.com/morispi/CONSENT). It might improve genome assembly quite a bit. 
+
+[Scalable long read self-correction and assembly polishing with multiple sequence alignment](https://www.nature.com/articles/s41598-020-80757-5)
