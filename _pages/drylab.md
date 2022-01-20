@@ -24,15 +24,13 @@ header:
 excerpt: "A gentle introduction to genome assembly and annotation"
 ---
 
-# Please note that this section is currently being updated with more comprehensive content and as genome assembly and annotation takes awhile to run it may be some time. 
-
 {% include feature_row %}
 
-## Genome Bioinformatics
+# Genome Bioinformatics
 
 Genomes do not spontaneously create themselves. At least in silico. Once raw sequence data is acquired, quality and content is checked. Then an assembly tool is selected and run. When assembled, the assembly quality is assessed. If it's "good enough" repetitive element masking and gene prediction are performed. If everything checks out afterwards, the genome is ready for interrogation. Above are three pages containing content on the process for each of these steps. 
 
-## A little background 
+# A little background 
 
 This website is intended to be a gentle introduction to genome assembly and annotation. While I will occasionally go into detail regarding how things work, the algorithms and software design of these tools are complex and beyond the scope of this website. I hope this can be a good starting point for those who are interested though. 
 
