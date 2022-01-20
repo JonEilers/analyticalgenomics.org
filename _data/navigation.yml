@@ -7,10 +7,7 @@ main:
     url: /drylab/
   - title: "About me"
     url: /about/ 
-#  - title: "Lab Protocols"
-#    url: /protocols/
-#  - title: "Resources"
-#    url: /usefulsites/
+
 
 
 sidebar-main:
@@ -31,22 +28,3 @@ sidebar-main:
   - title: "About Sea Cucumbers"
     url: /seacuke/  
 
-#  - title: "Wet Lab Protocols"
-#    url: /protocols/
-#  - title: "Bioinformatics Resources"
-#    url: /usefulsites/
-#    children:
-#    - title: "DNA Extraction"
-#      url: /dnaextraction/
-#    - title: "Genome Sequencing"
-#      url: /dnasequencing/
-#    - title: "Sequence Data QC"
-#      url: /sequenceQC/
-#    - title: "Genome Assembly"
-#      url: /genomeassembly/ 
-#    - title: "Genome Annotation"
-#      url: /genomeannotation/
-#    - title: "Genome Interrogation"
-#      url: /genome-interrogation/
-
- 
