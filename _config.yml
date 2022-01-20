@@ -67,7 +67,7 @@ author:
       url: "https://www.inaturalist.org/observations?place_id=any&subview=grid&user_id=jeilers"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/joneilers"
  
     
 defaults:
