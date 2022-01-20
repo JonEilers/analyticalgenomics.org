@@ -146,7 +146,7 @@ tag_archive:
   type: liquid
   path: /tags/
   
-theme: minimal-mistakes-jekyll
+remote_theme: minimal-mistakes-jekyll
 
 collections:
   annotation:
