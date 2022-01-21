@@ -146,8 +146,6 @@ tag_archive:
   type: liquid
   path: /tags/
   
-remote_theme: minimal-mistakes-jekyll
-
 collections:
   annotation:
     output: true
