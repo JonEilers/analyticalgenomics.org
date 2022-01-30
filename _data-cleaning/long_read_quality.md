@@ -42,7 +42,21 @@ gallery_nanoplot_2:
   - url: /assets/images/data_cleaning/long_read_quality/nanoplot/Non_weightedHistogramReadlength.png
     image_path: /assets/images/data_cleaning/long_read_quality/nanoplot/Non_weightedHistogramReadlength.png
 
+gallery_sequeltools: 
+  - url: /assets/images/data_cleaning/long_read_quality/sequel/m54166_180109_064435.readLenHists.pdf.png
+    image_path: /assets/images/data_cleaning/long_read_quality/sequel/m54166_180109_064435.readLenHists.pdf.png
+  - url: /assets/images/data_cleaning/long_read_quality/sequel/n50s.pdf.png
+    image_path: /assets/images/data_cleaning/long_read_quality/sequel/n50s.pdf.png
+  - url: /assets/images/data_cleaning/long_read_quality/sequel/totalBasesBarplot.pdf.png
+    image_path: /assets/images/data_cleaning/long_read_quality/sequel/totalBasesBarplot.pdf.png
 
+gallery_sequeltools_2:    
+  - url: /assets/images/data_cleaning/long_read_quality/sequel/psrs.pdf.png
+    image_path: /assets/images/data_cleaning/long_read_quality/sequel/psrs.pdf.png
+  - url: /assets/images/data_cleaning/long_read_quality/sequel/subreadSizesBoxplots.pdf.png
+    image_path: /assets/images/data_cleaning/long_read_quality/sequel/subreadSizesBoxplots.pdf.png    
+  - url: /assets/images/data_cleaning/long_read_quality/sequel/zors.pdf.png
+    image_path: /assets/images/data_cleaning/long_read_quality/sequel/zors.pdf.png
 
 ---
 
@@ -78,10 +92,10 @@ Conveniently, this downloads both the compressed fastq files in sra format and t
 
 ## SequelTools
 
-Raw pacbio data can be in two formats. The first is a BAM file containing the raw smartbell sequences aligned to themselves. A great tool for checking the stats of the subread bam files is [SequelQC](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7532105/). The github page for this tool can be found [here](https://github.com/ISUgenomics/SequelTools)
+Raw pacbio data can be in two formats. The first is a BAM file containing the raw smartbell sequences aligned to themselves. A great tool for checking the stats of the subread bam files is [SequelTools](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7532105/). The github page for this tool can be found [here](https://github.com/ISUgenomics/SequelTools)
 
 ## Installing sequeltools
-which is a pain. I am always surprised to come across well made tools that don't have conda packages available. There is no version associated with the tool. So whatever was availabe on 17 January 2022. 
+which is a pain. I am always surprised to come across well made tools that don't have conda packages available. There is no version associated with the tool. So whatever was available on 17 January 2022. 
 ```bash
 # downloading the github respository and making the files executable
 git clone https://github.com/ISUgenomics/SequelTools.git
@@ -96,13 +110,14 @@ conda create -n sequeltools
 conda activate sequeltools
 
 conda install -c anaconda python 
-conda install -c conda-forge r-base 
+conda install -c conda-forge r 
 conda install -c bioconda samtools 
 
 # my desktop was missing a ubuntu library
 sudo apt install libncurses5
 
-# requires a text file containing a list of subread.bam file locations
+# requires a text file containing a list of subread.bam file locations.
+# change directory to whereever your subreads.bam files are and run this command
 find $(pwd) -name "*subreads.bam"  > subFiles.txt
 
 # and finally we can run it. 
@@ -110,10 +125,90 @@ SequelTools.sh \
   -p a \
   -n 40 \
   -t Q \
-  -u /home/jon/Working_Files/sea_cuke_species_data/stichopus_chloronotus/pacbio/sra/SRR8499555/subFiles.txt
+  -u /home/jon/Working_Files/sea_cuke_species_data/stichopus_chloronotus/pacbio/sra/SRR8499556/subFiles.txt
+```
+Note: I ran into some dependency troubles when using conda to install python, r, and samtools. If you don't install in the correct order you might end up with incompatible versions and errors such as I was getting below
+
+```bash
+
+# Error number 1 
+Running in NO_SCRAPS mode
+samtools: error while loading shared libraries: libcrypto.so.1.0.0: cannot open shared object file: No such file or directory
+samtools: error while loading shared libraries: libcrypto.so.1.0.0: cannot open shared object file: No such file or directory
+samtools: error while loading shared libraries: libcrypto.so.1.0.0: cannot open shared object file: No such file or directory
+samtools: error while loading shared libraries: libcrypto.so.1.0.0: cannot open shared object file: No such file or directory
+Traceback (most recent call last):
+  File "/home/jon/Working_Files/sea_cuke_species_data/stichopus_chloronotus/SequelTools/Scripts/generateReadLenStats_noScraps.py", line 107, in <module>
+    subMean = Mean(subReadLens)
+  File "/home/jon/Working_Files/sea_cuke_species_data/stichopus_chloronotus/SequelTools/Scripts/generateReadLenStats_noScraps.py", line 37, in Mean
+    mn = float(sum(listx)) / float(len(listx))
+ZeroDivisionError: float division by zero
+ERROR: Calculation of read length statistics failed!
+
+# Error number 2
+Running in NO_SCRAPS mode
+/home/jon/miniconda3/envs/sequeltools/lib/R/bin/exec/R: error while loading shared libraries: libreadline.so.6: cannot open shared object file: No such file or directory
+SequelTools has finished!
+```
+
+The first one is a samtools version problem. The second error is a problem with whatever version of R I had installed. Specifically it didn't like the readline package version. I removed the conda environment, recreated it, and tried various orders of installation until one worked. Not sure why, but the version that is currently working for me can be found below
+
+```bash
+python                    3.10.2          h62f1059_0_cpython    conda-forge
+r                         4.0             r40hd8ed1ab_1004    conda-forge
+r-base                    4.0.5                h9e01966_1    conda-forge
+samtools                  1.14                 hb421002_0    bioconda
 ```
 
 ## Results
+
+| SMRTcell               | numReadsSubread | numReadsLongestSub | totalBasesSubread | totalBasesLongestSub | meanReadLenSubread | meanReadLenLongestSub | medianReadLenSubread | medianReadLenLongestSub | n50Subread | n50LongestSub | l50Subread | l50LongestSub | PSR   | ZOR   |
+| ---------------------- | --------------- | ------------------ | ----------------- | -------------------- | ------------------ | --------------------- | -------------------- | ----------------------- | ---------- | ------------- | ---------- | ------------- | ----- | ----- |
+| m54166\_180112\_151252 | 342839          | 253942             | 3967626665        | 3216719790           | 11573              | 12667                 | 9869                 | 11425                   | 18139      | 19241         | 82260      | 63498         | 0.811 | 0.741 |
+| m54166\_180112\_050112 | 540969          | 390796             | 6225190156        | 4993832435           | 11507              | 12779                 | 9914                 | 11733                   | 17905      | 19095         | 130789     | 99544         | 0.802 | 0.722 |
+| m54166\_180109\_064435 | 463084          | 324653             | 5732596248        | 4500161543           | 12379              | 13861                 | 10966                | 13255                   | 18857      | 20176         | 115263     | 85511         | 0.785 | 0.701 |
+| m54166\_180109\_145019 | 581726          | 411407             | 6655162070        | 5255170929           | 11440              | 12774                 | 9756                 | 11654                   | 17995      | 19314         | 138879     | 103538        | 0.79  | 0.707 |
+| m54166\_180114\_075245 | 935473          | 691954             | 9021774208        | 7336062365           | 9644               | 10602                 | 7589                 | 8742                    | 16108      | 17322         | 203640     | 156836        | 0.813 | 0.74  |
+| m54166\_180113\_214247 | 562226          | 398969             | 6632756065        | 5252789852           | 11797              | 13166                 | 10262                | 12261                   | 18144      | 19391         | 137888     | 103335        | 0.792 | 0.71  |
+| m54166\_180113\_012305 | 461652          | 332441             | 5435691243        | 4322604969           | 11774              | 13003                 | 10243                | 12018                   | 18129      | 19306         | 113126     | 85359         | 0.795 | 0.72  |
+| m54166\_180113\_113301 | 522577          | 381769             | 5829831991        | 4811945344           | 11156              | 12604                 | 9409                 | 11543                   | 17550      | 18821         | 123962     | 97107         | 0.825 | 0.731 |
+| m54166\_180116\_132703 | 752449          | 600806             | 6876918197        | 5894659617           | 9139               | 9811                  | 7012                 | 7775                    | 15502      | 16428         | 160054     | 131656        | 0.857 | 0.798 |
+| m54166\_180116\_031729 | 818020          | 638506             | 7572133454        | 6391055156           | 9257               | 10009                 | 7178                 | 8059                    | 15563      | 16573         | 175768     | 141787        | 0.844 | 0.781 |
+| m54166\_180115\_070217 | 815709          | 638982             | 7613116067        | 6424982643           | 9333               | 10055                 | 7231                 | 8064                    | 15663      | 16616         | 175813     | 142071        | 0.844 | 0.783 |
+| m54166\_180115\_170810 | 802828          | 630239             | 7216850479        | 6109733242           | 8989               | 9694                  | 6893                 | 7700                    | 15214      | 16189         | 170565     | 138198        | 0.847 | 0.785 |
+
+
+The current version of sequeltools only outputs pdf files, that's not very helpful for adding photos to this website so I converted the pdfs to jpeg using poppler per this guy's blog [post](https://jdhao.github.io/2019/11/14/convert_pdf_to_images_pdftoppm/) 
+
+```bash
+conda install -c conda-forge poppler
+
+# and a simple bash loop over all the files in a directory.
+# It will complain about some files not being pdf. that's fine
+
+for file in *;
+do 
+
+pdftoppm -singlefile \
+	-png \
+	$file \
+	$file
+done
+```
+Note: you could also just edit the R script for plotting these graphs and change the pdf to png and tweak the output. I didn't as it felt like more effort. 
+
+
+{% include gallery id="gallery_sequeltools" %}
+
+Cool. So I am only showing graphs from one of the pacbio sra from ncbi. Going from left to right. Subread length ranges from very short to near 50kb long with an N50 sitting near 20kb and the total number of bases produced by each run ranged from 4000b to 7000mb. Just to note these are subreads, meaning they haven't been collapsed into consensus sequence fastq file and represent raw data.
+
+{% include gallery id="gallery_sequeltools_2" %}
+
+"PSR (polymerase to subread ratio) is the total bases from the longest subreads per CLR divided by the total bases from subreads. This is a measure of the effectiveness of library preparation. When PSR is close to one the DNA template is mostly the reads of interest, whereas a total failure of library preparation would result in no reads of interest and a PSR of zero." Based on this excerpt from the sequeltools paper, the PSR of these runs are probably acceptable. 
+
+ZOR (ZMW occupancy ratio) is calculated as the number of CLRs with subreads divided by the number of subreads. This is a measure of the effectiveness of matching DNA templates with ZMW’s. When ZOR is zero there are no DNA templates in ZMWs. When ZOR is above one then there are more than one DNA template per ZMW on average; ideally,
+this value is exactly one." Based on this excerpt from the sequeltools paper, the ZOR is also probably ok.
+
 
 # Oxford Nanopore Technologies' Sequence Data
 

@@ -7,6 +7,7 @@ permalink: /masurca/
 ---
 
 ## MaSuRCA
+
 Assemble the sea cuke genome using the MaSuRCA assembler
 
 ### Background
@@ -22,8 +23,10 @@ More information can be found on their [github page](https://github.com/alekseyz
 MaSuRCA was installed using conda
 
 installation
-```
- conda install -c bioconda masurca 
+```bash
+conda create -n masurca
+conda activate masurca 
+conda install -c bioconda masurca 
 ```
 
 ### Command   
@@ -32,6 +35,3 @@ Running MaSuRCA requires a bit more work then the normal assembler. First, MaSuR
 ```
 ./assemble.sh
 ```
-
-### Results  
-output was 1.4 terabytes of data, but no summary files. For results see Busco, Quast, and other analysis.
