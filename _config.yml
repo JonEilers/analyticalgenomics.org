@@ -13,10 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Eilers Genomics
+title: Eilers Genomics Research
+subtitle: Sea Cucumber genomics
 email: jon.r.eilers@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
-  This website is about sequencing, assembling, and annotating the genome of the California Giant Sea Cucumber, also known as Apostichopus californicus. 
+  This website is about sequencing, assembling, and annotating the genome of Sea Cucumbers.
 baseurl: "/"
 url: https://joneilers.github.io/
 github_username: joneilers
