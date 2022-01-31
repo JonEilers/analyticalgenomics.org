@@ -6,7 +6,7 @@ classes:  wide
 header:
   overlay_image: /assets/images/home/cuke1.jpg
 
-excerpt: "This website is intended to offer a gentle introduction to genome bioinformatics with [Sea Cucumbers](/seacuke/) as the model organism."
+excerpt: "This website is intended to offer a gentle introduction to genome bioinformatics with [Sea Cucumbers](/seacuke/) as the model organism and a place for me to share my thoughts on current genomics research."
 
 
 feature_row:
