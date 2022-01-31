@@ -12,10 +12,10 @@ excerpt: "This website offers a gentle introduction to genome bioinformatics wit
 feature_row:
   - image_path: assets/images/home/redundans_platanus-allee_step10_ajap-reference.fa.snail.png
     title: "Genome Bioinformatics"
-    url: "/drylab/"
+    url: "/bioinformatics/"
   - image_path: assets/images/home/journal.jpeg
-    title: "Journal of thoughts"
-    url: "/wetlab/"
+    title: "Contemplations"
+    url: "/blog/"
   - image_path: /assets/images/home/58382205_575954296244618_3014640770582839296_n.jpg
     title: "About me"
     url: "/about/"

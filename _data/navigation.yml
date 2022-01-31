@@ -1,10 +1,10 @@
 main:
   - title: "About Sea Cucumbers"
     url: /seacuke/
-  - title: "Journal"
-    url: /wetlab/
+  - title: "Genomics Blog"
+    url: /blog/
   - title: "Bioinformatics"
-    url: /drylab/
+    url: /bioinformatics/
   - title: "About me"
     url: /about/ 
 
@@ -13,7 +13,7 @@ main:
 sidebar-main:
 
   - title: "Genome Bioinformatics"
-    url: /drylab/
+    url: /bioinformatics/
     children:
     - title: "Sequence Data Analysis and QC"
       url: /data-cleaning/
@@ -21,8 +21,8 @@ sidebar-main:
       url: /assembly/
     - title: "Genome Annotation"
       url: /annotation/
-  - title: "Journal of Thoughts"
-    url: /wetlab/
+  - title: "Genomics Blog"
+    url: /blog/
   - title: "About me"
     url: /about/
   - title: "About Sea Cucumbers"

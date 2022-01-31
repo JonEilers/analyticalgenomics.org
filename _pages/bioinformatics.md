@@ -1,6 +1,6 @@
 ---
 title: "Genome Bioinformatics"
-permalink: /drylab/
+permalink: /bioinformatics/
 author_profile: false
 sidebar:
   nav: sidebar-main

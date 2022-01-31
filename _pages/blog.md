@@ -1,6 +1,6 @@
 ---
-title: "Journal"
-permalink: /wetlab/
+title: "Genomics Blog"
+permalink: /blog/
 author_profile: false
 layout: archive
 
