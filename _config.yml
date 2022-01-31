@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Sea Cucumber Genome Research
+title: Eilers Genomics
 email: jon.r.eilers@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
   This website is about sequencing, assembling, and annotating the genome of the California Giant Sea Cucumber, also known as Apostichopus californicus. 
@@ -60,7 +60,7 @@ plugins:
 author:
   name   : "Jon Eilers"
   avatar : "/assets/images/58382205_575954296244618_3014640770582839296_n.jpg"
-  bio    : "Studying the genome of Apostichopus californicus"
+  bio    : "Studying the genomes of *Holothuroidea* aka sea cucumbers"
   links:
     - label: "iNaturalist"
       icon: "fas fa-fw fa-link"
