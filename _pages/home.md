@@ -14,7 +14,7 @@ feature_row:
     title: "Genome Bioinformatics"
     url: "/bioinformatics/"
   - image_path: assets/images/home/journal.jpeg
-    title: "Contemplations"
+    title: "Genomics Blog"
     url: "/blog/"
   - image_path: /assets/images/home/58382205_575954296244618_3014640770582839296_n.jpg
     title: "About me"
