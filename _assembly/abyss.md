@@ -129,6 +129,13 @@ spades.py \
     -o /home/jon/Working_Files/californicus_genome_project/spades
 ```
 
+Also, [this](https://github.com/parikls/mem_usage_ui) is a great tool for tracking memory usage. After the command is entered into bash, it will open up a tab in your web browser that will show you all the processors you can monitor memory usage of and has a graph on the right which will track memory usage over time and plot it. 
+
+```bash
+pip install mem_usage_ui
+mem_usage_ui
+```
+
 There is some discussion on what parameters are best for assemblying eukaryote genomes. Github [Issues](https://github.com/ablab/spades/issues/708) can be a useful source of information for finding ways to improve the genome assembly or if there might be problems with your data. Out of curiousity I reran spades using the --isolate option
 
 ```bash
@@ -143,3 +150,14 @@ spades.py \
 
 
 ## Results 
+
+Abyss results
+
+| n       | n:500  | L50    | min | N75  | N50  | N25  | E-size | max    | sum      | name               |
+|---------|--------|--------|-----|------|------|------|--------|--------|----------|--------------------|
+| 1837498 | 462974 | 102780 | 500 | 1092 | 1952 | 3468 | 2761   | 36410  | 7.05E+08 | pcali-unitigs.fa   |
+| 1552900 | 339560 | 57442  | 500 | 2133 | 4119 | 7007 | 5218   | 62580  | 7.98E+08 | pcali-contigs.fa   |
+| 1413122 | 281008 | 41864  | 500 | 2926 | 5628 | 9719 | 7335   | 104106 | 8.07E+08 | pcali-scaffolds.fa |
+
+
+More results and interpretation coming soon
