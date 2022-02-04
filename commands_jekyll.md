@@ -27,3 +27,5 @@ as a reminder for how to run a local instance of the website
 ```bash
 bundle exec jekyll serve
 ```
+
+localhost address: http://127.0.0.1:4000//

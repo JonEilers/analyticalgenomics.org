@@ -143,9 +143,9 @@ spades.py \
     -1 /home/jon/Working_Files/sea_cuke_species_data/pcali_backup_data/raw_data/P_cali_g/P_cali_g_USD16092980L_HKG7CDSXX_L1_1.fq.gz \
     -2 /home/jon/Working_Files/sea_cuke_species_data/pcali_backup_data/raw_data/P_cali_g/P_cali_g_USD16092980L_HKG7CDSXX_L1_2.fq.gz \
     --isolate \
-    -t 70 \
-    -m 400 \
-    -o /home/jon/Working_Files/californicus_genome_project/spades
+    -t 40 \
+    -m 350 \
+    -o /home/jon/Working_Files/californicus_genome_project/spades/with-isolate_spades
 ```
 
 
@@ -160,4 +160,24 @@ Abyss results
 | 1413122 | 281008 | 41864  | 500 | 2926 | 5628 | 9719 | 7335   | 104106 | 8.07E+08 | pcali-scaffolds.fa |
 
 
-More results and interpretation coming soon
+spades doesn't provide a handy stats summary. I am going to use the Seqkit stats tool
+```bash
+conda create -n seqkit
+conda activate seqkit
+conda install seqkit
+
+seqkit stats \
+    -a \
+    -T \
+    /home/jon/Working_Files/californicus_genome_project/spades/no-isolate_spades/scaffolds.fasta \
+    /home/jon/Working_Files/californicus_genome_project/abyss/pcali-scaffolds.fa
+```
+
+The ```-a``` tells it to produce as the summary statistics. The ```-T``` is telling it to output in tsv format. 
+
+| file   | format | type | num_seqs | sum_len    | min_len | avg_len | max_len | Q1  | Q2  | Q3  | sum_gap | N50  | Q20(%) | Q30(%) |
+|--------|--------|------|----------|------------|---------|---------|---------|-----|-----|-----|---------|------|--------|--------|
+| spades | FASTA  | DNA  | 1664980  | 871507886  | 78      | 523.4   | 102456  | 89  | 147 | 383 | 0       | 2003 | 0      | 0      |
+| abyss  | FASTA  | DNA  | 1413122  | 1058699918 | 111     | 749.2   | 104210  | 150 | 224 | 396 | 0       | 3934 | 0      | 0      |
+
+kinda strange, but the abyss N50 is different from the seqkit N50 and from the stats.sh N50. 

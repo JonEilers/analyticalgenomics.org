@@ -64,7 +64,7 @@ Hybrid genome assembly is the predominate approach these days. The majority of r
 
 - [Hybrid genome assembly of *Apostichopus japonicus* using Platanus-allee and MaSURCA](/hybrid_genome_assembly/)
 
-- In progress [Using Hi-C data to achieve chromosome scale scaffolds using salsa, yahs, 3d-dna and hirise for the *Stichopus chloronotus* genome]() 
+- To-do [Using Hi-C data to achieve chromosome scale scaffolds using salsa, yahs, 3d-dna and hirise for the *Stichopus chloronotus* genome]() 
 
 # Assembly QC
 
@@ -73,33 +73,29 @@ Once a few assemblies are complete, it's time to determine which one is best and
 ## Summary Statistics
 A standard metric for genome contiguity is the N50 value. N50 is a tricky beast to understand and I've seen more blogs and descriptions get it wrong than right. Thankfully, [wikipedia](https://en.wikipedia.org/wiki/N50,_L50,_and_related_statistics#N50) gets it right. Without getting into the details on it, the thing that matters when considering the N50 is that the majority of reads in an assembly will be shorter than the N50 value. If you have an N50 of 9kb, than the majority of the assembly will be scaffolds or contigs shorter than 9kb. Having an N50 of 9kb consequently means gene prediction will likely capture the bulk of the genes, but there will be a large number of fragmented genes such as [titin](https://en.wikipedia.org/wiki/Titin). While there are a number of tools for acquiring this metric, probably my favorite way to visualize it is the snail plot produced via [Blobtoolkit](https://www.g3journal.org/content/10/4/1361). [Here](https://blobtoolkit.genomehubs.org/) is a link to their website. See the link below for an example. 
 
-- In progress [Summary statistics via Blobtoolkit](/blobtoolkit/)
+- To-do [Summary statistics via Blobtoolkit](/blobtoolkit/)
 
 ## Assembly QC with BUSCOs
 An easy way to capture the level of fragmentation and also get idea of what to expect when predicting genes is to check the [BUSCOs](https://pubmed.ncbi.nlm.nih.gov/26059717/). You'll hear BUSCOs thrown around a lot in genome papers and among scientists involved in genome sequencing. It's treated like a holy metric for how good your assembly is and it is a reasonable way to check. In essence, someone took the time to find a number of genes that are highly conserved across the kingdoms and phylum of life. Because of their conserved nature, it is a reasonable assumption that the genome of your organism likely contains these genes. So if the majority of these genes can be found in your assembly and they are not fragmented or unexpectedly duplicated, then it is reasonable to assume that a similar percentage of genes in the genome will likewise be in good shape. It is important to understand though, that BUSCO results do not represent a best case scenario but rather a targeted random sample of the genome assembly. See below for an example
 
-- In progress [Assembly quality assessment using BUSCO analysis](/busco/)
+- To-do [Assembly quality assessment using BUSCO analysis](/busco/)
 
 ## Assembly Contamination
 In addition to looking at summary statistics and checking BUSCOs, it is also wise to check for contamination. During the sequencing process, DNA from other organisms may be in the sample and it's important to know if that has found its way into the genome assembly. A common method for checking this is to download a uniprot or refseq protein database and blast it against your assembly then check to see what organisms had the highest hit. If those organisms are closely related to the organism of interest, then it is safe to say that's probably solid, but if there are a lot of hits for distantly related organisms, then it might be a good idea to consider preprocessing and filtering the raw data before assembling. [Blobtoolkit](https://www.g3journal.org/content/10/4/1361) produces two different types of graphs, the blobplot and the Cumulative assembly span plot, for visualizing this. 
 
-- In progress [Assembly contaminiation via Blobtoolkit](/blobtoolkit/)
+- To-do [Assembly contaminiation via Blobtoolkit](/blobtoolkit/)
 
-## K-mer analysis
-Another way to assess the quality of the assembly and to check for contamination is using K-mers. Truly a versatile way to sequence data. One way to check assembly quality using K-mers is by see how many unique K-mers are found in both the assembly and the raw data then visualize it using a [K-mer spectra graph](https://academic.oup.com/view-large/figure/118668344/btw663f1.tif). There are currently two excellent tools for this: [KAT](https://academic.oup.com/bioinformatics/article/33/4/574/2664339?login=true) and [Merqury](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02134-9). To see a feature comparison between the two, click [here](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02134-9/tables/1). See the below links for examples. 
+## K-mer analysis and Assembly Evaluation
+Another way to assess the quality of the assembly and to check for contamination is using K-mers. Truly a versatile way to analyze sequence data. One way to check assembly quality using K-mers is by see how many unique K-mers are found in both the assembly and the raw data then visualize it using a [K-mer spectra graph](https://academic.oup.com/view-large/figure/118668344/btw663f1.tif). There are currently two excellent tools for this: [KAT](https://academic.oup.com/bioinformatics/article/33/4/574/2664339?login=true) and [Merqury](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02134-9). To see a feature comparison between the two, click [here](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02134-9/tables/1). See the below links for examples. Another tool for assembly evaluation is called Inspector which uses long reads to assess assembly quality and correct errors. 
 
-- In progress [Assembly contamination assessment using KAT](/kat_assembly/)
-
-- In progress [K-mer completeness and consensus quality assessment of genome assemblies](/merqury_assembly/)
-
-## Assembly Evaluation using Long Reads
-
+- To-do [Assembly contamination assessment using KAT](/kat_assembly/)
+- To-do [K-mer completeness and consensus quality assessment of genome assemblies](/merqury_assembly/)
 - In progress [inspector](https://github.com/ChongLab/Inspector)
 
 ## Assembly Comparisons
 Most genome assembly projects try using several different assembly tools and it can be useful to check for differences between them. Additionally, It can be useful to see how many changes were made when gap closing or polishing. Either of those things can be accomplished using a tool called [mummer4](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005944). Mummer4 produces a "delta" file that can then be used in other analysis tools such as [Nucdiff](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1748-z) or visualization tools such as [Assemblytics](https://academic.oup.com/bioinformatics/article/32/19/3021/2196631). It can also output a summary file containing basic counts of indels and other differences in addition to a bam file for loading into a genome browser such as [Ribbons](https://genomeribbon.com/) if a closer look is required. 
 
-- In progress [Comparing assemblies using Mummer4](/mummer4/)
+- To-do [Comparing assemblies using Mummer4](/mummer4/)
 
 #  Polishing and Gap Closing
 
@@ -109,14 +105,13 @@ Once you have an assembly that is as good as it'll get, it might be possible to 
 
 Using long read data, it is now possible to close gaps that are produced by genome assembler with a high degree of confidence. This is significantly different from previous tools such as [SSpace](https://academic.oup.com/bioinformatics/article/27/4/578/197626) that relied on paired end short reads to close gaps or extend contigs. There are two problems with this approach, the obvious one is that the reads are too short to accurately span repetitive elements. The second problem is that these tools are haplo-type insensitive, meaning they can't tell if they are actually extending a real contig or just stringing alleles together creating inaccurate duplications. 
 
-- In progress [Gap closing using Dentist, SAMBA and Longstitch]()
+- To-do [Gap closing using Dentist, SAMBA and Longstitch]()
 
 ## Polishing 
 
 It's also important to remove any insertions, deletions, and adapter contamination that may have crept into the genome assembly. This can be accomplished using either long read or short read data. Short read data has a much higher accuracy, but long read data, while full of errors, can produce a consensus sequence that is highly accurate which can allow it to correct longer mistakes than short read data. 
 
-- In progress [Genome assembly polishing using NextPolish and hapo-g](/genome_polishing/)
-- In progress [Consent for error prone long read polishing](https://www.nature.com/articles/s41598-020-80757-5)
+- To-do [Genome assembly polishing using CONSENT, NextPolish and hapo-g](/genome_polishing/)
 
 ## Manual Assembly Correction
 

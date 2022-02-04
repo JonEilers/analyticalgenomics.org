@@ -92,15 +92,3 @@ Reads Processed:      52003k 	957.81k reads/sec
 Bases Processed:       5200m 	95.78m bases/sec
 ```
 
-## Trimming and Filtering Oxford Nanopore Technology Data
-
-I also attempted some ONT MinION sequencing. It didn't go as well as I hoped for a number of reasons. But hey, I still got some data. As I showed in an earlier [section](/fastqc/), it was really bad data. So let's see if there is anything that can be done about that.  
-
-I appear to have misplaced what tools I used for this step, but I believe it was [nanofilt](https://github.com/wdecoster/nanofilt) which is also by the same creator as nanoplot. Seeing as I was a bad bioinformatician and misplaced the commands all I can offer you are the results. 
-
-[NanoPlot of Trimmed and Filtered](/cleaned_nanoplot/)
-
-[FastQC of Trimmed and Filtered](/fastqc_cleaned_nanoplot/)
-
-It sorta looks better, although fastQC is complaining about the GC content in the filtered file, but the overall shape is better. The phred score is also a little higher, although still terrible.  
-
