@@ -30,7 +30,7 @@ gallery:
 
 [Blobtoolkit](https://blobtoolkit.genomehubs.org/) is an amazing suite of tools for analyzing and producing publication grade figures of genome assemblies. There [publication](https://academic.oup.com/g3journal/article/10/4/1361/6026202) contains examples and explanations of the various figures and analysis' that can be performed. This includes snail plots for visulizing genome summary statistics, blobplots of contamination and taxonomy hits, and cumulative assembly span plots of the multiple genome assemblies. 
 
-__In Progress__ 
+__To Do__ 
 
 - blobtoolkit analysis of genomes created using short read, long read, hybrid, and hi-c. 
 

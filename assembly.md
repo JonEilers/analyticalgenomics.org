@@ -38,7 +38,7 @@ Illumina sequencing is cheap, relatively speaking. In my case, a mere $1200 got 
 
 It has been close to two decades since Illumina short read sequencing became accessible and as a result there are innumerable short read assemblers. In recent years though, significant progress has been made in assembly algorithms and the result has been some blazing fast and accurate assembly tools. See below for two popular short read assemblers.
 
-- In progress - [Short read assembly using ABySS and SPAdes](/short-read-assembly/)
+- To Do - [Short read assembly using ABySS and SPAdes](/short-read-assembly/)
 
 In my case, I am working with organisms that are highly heterozygous. What this means is there is enough variation between the two chromosomes in each chromosome pair to cause problems for a genome assembler that doesn't take this into account. Platanus-Allee was specifically designed to deal with that. The author also created another tool for genomes that have less variation (such as humans) called [Platanus](http://platanus.bio.titech.ac.jp/platanus-assembler). On the Platanus-Allee webpage they state "for low heterozygous species genome (as a guide < 1.0 %), Platanus assembler would mark better performance than Platanus-allee. Another genome assembler for heterozygous genomes is [MaSuRCA](https://academic.oup.com/bioinformatics/article/29/21/2669/195975?login=true). Both Platanus-allee and MaSuRCA are hybrid genome assemblers and I go into more detail in the Hybrid genome assembly section. See below for two very brief examples of using these two genome assemblers with just short read data. 
 
@@ -90,7 +90,7 @@ Another way to assess the quality of the assembly and to check for contamination
 
 - To-do [Assembly contamination assessment using KAT](/kat_assembly/)
 - To-do [K-mer completeness and consensus quality assessment of genome assemblies](/merqury_assembly/)
-- In progress [inspector](https://github.com/ChongLab/Inspector)
+- To Do [inspector](https://github.com/ChongLab/Inspector)
 
 ## Assembly Comparisons
 Most genome assembly projects try using several different assembly tools and it can be useful to check for differences between them. Additionally, It can be useful to see how many changes were made when gap closing or polishing. Either of those things can be accomplished using a tool called [mummer4](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005944). Mummer4 produces a "delta" file that can then be used in other analysis tools such as [Nucdiff](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1748-z) or visualization tools such as [Assemblytics](https://academic.oup.com/bioinformatics/article/32/19/3021/2196631). It can also output a summary file containing basic counts of indels and other differences in addition to a bam file for loading into a genome browser such as [Ribbons](https://genomeribbon.com/) if a closer look is required. 

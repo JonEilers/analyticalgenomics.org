@@ -38,14 +38,14 @@ Once you can have confidence in the data integrity, it's time to get some rough 
 
 - [Checking Illumina data quality using FastQC](/short_read_quality/)   
 - [Checking Long read data quality using Nanoplot and SequelTools](/long_read_quality/)   
-- (In progress) [Checking Hi-C data quality using pairtools, qc3C, and HiCExplorer](/hic_read_quality/)   
+- (To Do) [Checking Hi-C data quality using pairtools, qc3C, and HiCExplorer](/hic_read_quality/)   
 
 # Trimming, Filtering, and Error Correcting Raw Reads
 In some cases, there may be problems with the raw sequence data and it needs some cleaning. This can be due to excessive adapter contamination, way too many duplicated sequences, a significiant proportion of the reads are low quality, etc. It is also important to consider how these reads will be used. In some cases you may be able to get away with simply ignoring read quality problems. There are a handful of publications that have looked at how read trimming impacts computation downstream in the pipeline such as during [genome assembly](https://www.mdpi.com/2073-4425/10/10/737). A [paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0085024) from 2013 looked at how trimming impacts different data types and their ultimate uses. In this paper, they note that read trimming negatively impacts assembly quality if the trimmming was performed on a high quality dataset. Additionally, some tool specifically say to not perform read trimming. This is the case with the genome assembler [MaSURCA](https://github.com/alekseyzimin/masurca). With long reads from Pacbio or ONT an additional step can be performed called error correcting in which the long reads are used to correct sequencing errors in each before being used for genome assembly. 
 
 - [Raw sequence data trimming and filtering](/trimming/)
-- (In progress) [Error correcting long read data](/long_read_error_correction/)
-- (In progress) [Trimming and filtering Hi-C data](/hic_data_trimming/)
+- (To Do) [Error correcting long read data](/long_read_error_correction/)
+- (To Do) [Trimming and filtering Hi-C data](/hic_data_trimming/)
 
 # K-mer Analysis of Reads
 Now the data is looking good, all the reads have high phred scores and there appears to be little to no adapter contamination. It is time to take a closer look at the raw sequence data. There are a number of tools for doing this, most relay on the analysis of [K-mers](https://en.wikipedia.org/wiki/K-mer) to estimate different aspects of the data. K-mers are essentially sub-sequences or sub-strings and the distribution of these sub-sequences in the data can be used to estimate parameters. One example is in [choice of k-mer size](https://en.wikipedia.org/wiki/K-mer#Choice_of_k-mer_size) when assembling genomes. Larger k-mer sizes result in more memory usage, but improved genome assembly contiguity. Thus it can be important to find the optimal k-mer size for genome assembly. [Kmergenie](http://kmergenie.bx.psu.edu/) can be used to do this. See below for an example. 
