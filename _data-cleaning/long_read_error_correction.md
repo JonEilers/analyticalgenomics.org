@@ -59,6 +59,16 @@ Use VeChat and Consent for polishing both the Chiridota heheva and stichopus chl
 
 [VeChat](https://github.com/HaploKit/vechat) 
 
+```bash
+conda create -n vechat
+conda activate vechat
+conda install -c bioconda vechat
+
+vechat \
+  
+```
+
+
 Self-correction of sequencing errors using [consent](https://github.com/morispi/CONSENT).
 
 [Scalable long read self-correction and assembly polishing with multiple sequence alignment](https://www.nature.com/articles/s41598-020-80757-5)
