@@ -114,3 +114,5 @@ yada yada
 | QV                                  | 25.2858950332793 | 21.3835831443883 | 34.6460926406124 |
 
 yada yada
+
+Note: need to run this on the original genome too. 

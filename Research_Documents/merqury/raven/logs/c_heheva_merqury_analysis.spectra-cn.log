@@ -1,0 +1,488 @@
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opLessThan
+    c_heheva.rawdata.meryl
+    print to (stdout)
+
+Found 1 command tree.
+Processing file c_heheva.rawdata.hist
+Start sampling here: 5, 1.6444018E7
+Estimated haploid peak here: 15, 3.1894326E7
+Next max here: 15, 3.1894326E7
+Stop sampling here: 35, 1.6386157E7
+Running time : 0 h 0 m 0 sec
+
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opGreaterThan
+    threshold=5
+    c_heheva.rawdata.meryl
+    output to c_heheva.rawdata.gt5.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Counting 1165 (estimated) million canonical 20-mers from 1 input file:
+    sequence-file: raven_c_heheva.fasta
+
+
+SIMPLE MODE
+-----------
+
+  20-mers
+    -> 1099511627776 entries for counts up to 65535.
+    -> 16 Tbits memory used
+
+  1222082420 input bases
+    -> expected max count of 4888329, needing 8 extra bits.
+    -> 8192 Gbits memory used
+
+  3072 GB memory needed
+
+
+COMPLEX MODE
+------------
+
+pr
+# Collect read counts per asm copies
+# Read only
+# Copy 1 ~ 4
+Copy = 1 ..
+
+Copy = 2 ..
+
+Copy = 3 ..
+
+Copy = 4 ..
+
+Copy >4 ..
+
+# Copy numbers in k-mers found only in asm
+
+# Plot c_heheva_merqury_analysis.raven_c_heheva.spectra-cn.hist
+  Rscript /home/jon/miniconda3/envs/merqury/share/merqury/plot/plot_spectra_cn.R -f c_heheva_merqury_analysis.raven_c_heheva.spectra-cn.hist -o c_heheva_merqury_analysis.raven_c_heheva.spectra-cn -z c_heheva_merqury_analysis.raven_c_heheva.only.hist
+[1] "x_max: 72.5"
+[1] "y_max: 206190266.7"
+[1] "## Line graph"
+[1] "## Area under the curve filled"
+[1] "## Stacked"
+
+# QV statistics
+
+# Per seq QV statistics
+
+# k-mer completeness (recoveray rate) with solid k-mers for raven_c_heheva with > 5 counts
+
+# Generate raven_c_heheva_only.wig
+raven_c_heheva_only.wig generated.
+
+No asm2_fa given. Done.
+# raven_c_heheva only
+# Write output
+# Get asm only for spectra-asm
+#	Plot c_heheva_merqury_analysis.spectra-asm.hist
+  Rscript /home/jon/miniconda3/envs/merqury/share/merqury/plot/plot_spectra_cn.R -f c_heheva_merqury_analysis.spectra-asm.hist -o c_heheva_merqury_analysis.spectra-asm -z c_heheva_merqury_analysis.dist_only.hist
+[1] "x_max: 72.5"
+[1] "y_max: 189806702.8"
+[1] "## Line graph"
+[1] "## Area under the curve filled"
+[1] "## Stacked"
+
+# Clean up
+Done!
+9324  M     7  S   256 MB  1792 MB  1997 MB
+    17   128 kP   408 MB  4662  M     4  S   512 MB  2048 MB  2456 MB
+    18   256 kP   812 MB  2331  M     2  S  1024 MB  2048 MB  2860 MB
+    19   512 kP  1620 MB  1166  M     1  S  2048 MB  2048 MB  3668 MB
+    20  1024 kP  3240 MB   583  M     1  S  4096 MB  4096 MB  7336 MB
+    21  2048 kP  6480 MB   292  M     1  S  8192 MB  8192 MB    14 GB
+    22  4096 kP    12 GB   146  M     1  S    16 GB    16 GB    28 GB
+    23  8192 kP    25 GB    73  M     1  S    32 GB    32 GB    57 GB
+    24    16 MP    50 GB    37  M     1  S    64 GB    64 GB   114 GB
+
+
+FINAL CONFIGURATION
+-------------------
+
+Estimated to require 3820 MB memory out of 488 GB allowed.
+Estimated to require 2 batches.
+
+Configured complex mode for 3.731 GB memory per batch, and up to 2 batches.
+
+Start counting with THREADED method.
+Used 0.583 GB / 487.484 GB to store      2096971 kmers; need 0.417 GB to sort       349677 kmers
+Used 0.632 GB / 487.484 GB to store     23067661 kmers; need 0.517 GB to sort       433870 kmers
+Used 0.680 GB / 487.484 GB to store     44038591 kmers; need 0.611 GB to sort       512437 kmers
+Used 0.739 GB / 487.484 GB to store     67106432 kmers; need 0.692 GB to sort       580350 kmers
+Used 0.785 GB / 487.484 GB to store     83883000 kmers; need 0.774 GB to sort       649011 kmers
+Used 0.820 GB / 487.484 GB to store     96465426 kmers; need 0.874 GB to sort       732891 kmers
+Used 0.857 GB / 487.484 GB to store    109047912 kmers; need 0.991 GB to sort       831130 kmers
+Used 0.894 GB / 487.484 GB to store    121630398 kmers; need 1.094 GB to sort       918078 kmers
+Used 0.930 GB / 487.484 GB to store    134212844 kmers; need 1.209 GB to sort      1014141 kmers
+Used 0.967 GB / 487.484 GB to store    146795250 kmers; need 1.312 GB to sort      1100329 kmers
+Used 1.009 GB / 487.484 GB to store    161474767 kmers; need 1.436 GB to sort      1204961 kmers
+Used 1.047 GB / 487.484 GB to store    174057233 kmers; need 1.545 GB to sort      1295852 kmers
+Used 1.065 GB / 487.484 GB to store    180348346 kmers; need 1.655 GB to sort      1388220 kmers
+Used 1.139 GB / 487.484 GB to store    205513098 kmers; need 1.804 GB to sort      1513320 kmers
+Used 1.170 GB / 487.484 GB to store    215998453 kmers; need 1.932 GB to sort      1620417 kmers
+Used 1.201 GB / 487.484 GB to store    226483748 kmers; need 2.053 GB to sort      1722326 kmers
+Used 1.269 GB / 487.484 GB to store    249551509 kmers; need 2.132 GB to sort      1788307 kmers
+Used 1.312 GB / 487.484 GB to store    264230846 kmers; need 2.279 GB to sort      1912161 kmers
+Used 1.367 GB / 487.484 GB to store    283104525 kmers; need 2.384 GB to sort      1999894 kmers
+Used 1.410 GB / 487.484 GB to store    297784062 kmers; need 2.495 GB to sort      2092686 kmers
+Used 1.466 GB / 487.484 GB to store    316657621 kmers; need 2.660 GB to sort      2231019 kmers
+Used 1.522 GB / 487.484 GB to store    335531220 kmers; need 2.740 GB to sort      2298522 kmers
+Used 1.552 GB / 487.484 GB to store    346016595 kmers; need 2.863 GB to sort      2401664 kmers
+Used 1.589 GB / 487.484 GB to store    358598981 kmers; need 2.954 GB to sort      2478085 kmers
+Used 1.639 GB / 487.484 GB to store    375375409 kmers; need 3.033 GB to sort      2544276 kmers
+Used 1.664 GB / 487.484 GB to store    383763673 kmers; need 3.151 GB to sort      2643333 kmers
+Used 1.732 GB / 487.484 GB to store    406831254 kmers; need 3.252 GB to sort      2728258 kmers
+Used 1.763 GB / 487.484 GB to store    417316549 kmers; need 3.350 GB to sort      2810234 kmers
+Used 1.800 GB / 487.484 GB to store    429898955 kmers; need 3.487 GB to sort      2925225 kmers
+Used 1.868 GB / 487.484 GB to store    452966656 kmers; need 3.709 GB to sort      3111511 kmers
+Used 1.948 GB / 487.484 GB to store    480228359 kmers; need 3.829 GB to sort      3212095 kmers
+Used 1.985 GB / 487.484 GB to store    492810625 kmers; need 3.965 GB to sort      3325998 kmers
+Used 2.035 GB / 487.484 GB to store    509587073 kmers; need 4.076 GB to sort      3419581 kmers
+Used 2.079 GB / 487.484 GB to store    524266370 kmers; need 4.163 GB to sort      3492265 kmers
+Used 2.123 GB / 487.484 GB to store    538945767 kmers; need 4.249 GB to sort      3564523 kmers
+Used 2.178 GB / 487.484 GB to store    557819246 kmers; need 4.339 GB to sort      3639844 kmers
+Used 2.197 GB / 487.484 GB to store    564110399 kmers; need 4.456 GB to sort      3737810 kmers
+Used 2.228 GB / 487.484 GB to store    574595634 kmers; need 4.556 GB to sort      3822140 kmers
+Used 2.290 GB / 487.484 GB to store    595566224 kmers; need 4.685 GB to sort      3929983 kmers
+Used 2.346 GB / 487.484 GB to store    614439643 kmers; need 4.797 GB to sort      4023947 kmers
+Used 2.371 GB / 487.484 GB to store    622827807 kmers; need 4.901 GB to sort      4111257 kmers
+Used 2.427 GB / 487.484 GB to store    641701206 kmers; need 4.976 GB to sort      4173879 kmers
+Used 2.458 GB / 487.484 GB to store    652186441 kmers; need 5.078 GB to sort      4259691 kmers
+Used 2.482 GB / 487.484 GB to store    660574605 kmers; need 5.183 GB to sort      4347742 kmers
+Used 2.532 GB / 487.484 GB to store    677350793 kmers; need 5.308 GB to sort      4452572 kmers
+Used 2.588 GB / 487.484 GB to store    696224152 kmers; need 5.381 GB to sort      4513856 kmers
+Used 2.619 GB / 487.484 GB to store    706709487 kmers; need 5.479 GB to sort      4596491 kmers
+Used 2.675 GB / 487.484 GB to store    725582746 kmers; need 5.598 GB to sort      4696008 kmers
+Used 2.712 GB / 487.484 GB to store    738165052 kmers; need 5.690 GB to sort      4773187 kmers
+Used 2.755 GB / 487.484 GB to store    752844169 kmers; need 5.780 GB to sort      4848767 kmers
+Used 2.779 GB / 487.484 GB to store    761232353 kmers; need 5.915 GB to sort      4962275 kmers
+Used 2.828 GB / 487.484 GB to store    778008541 kmers; need 6.021 GB to sort      5050617 kmers
+Used 2.866 GB / 487.484 GB to store    790590727 kmers; need 6.138 GB to sort      5148792 kmers
+Used 2.929 GB / 487.484 GB to store    811560937 kmers; need 6.242 GB to sort      5236131 kmers
+Used 2.966 GB / 487.484 GB to store    824143003 kmers; need 6.341 GB to sort      5319632 kmers
+Used 3.015 GB / 487.484 GB to store    840919451 kmers; need 6.422 GB to sort      5386877 kmers
+Used 3.041 GB / 487.484 GB to store    849307495 kmers; need 6.537 GB to sort      5484043 kmers
+Used 3.090 GB / 487.484 GB to store    866083783 kmers; need 6.673 GB to sort      5597849 kmers
+Used 3.158 GB / 487.484 GB to store    889150684 kmers; need 6.734 GB to sort      5648959 kmers
+Used 3.189 GB / 487.484 GB to store    899635779 kmers; need 6.834 GB to sort      5733069 kmers
+Used 3.220 GB / 487.484 GB to store    910120914 kmers; need 6.937 GB to sort      5818852 kmers
+Used 3.257 GB / 487.484 GB to store    922703100 kmers; need 7.031 GB to sort      5898053 kmers
+Used 3.313 GB / 487.484 GB to store    941576139 kmers; need 7.176 GB to sort      6020039 kmers
+Used 3.356 GB / 487.484 GB to store    956255116 kmers; need 7.277 GB to sort      6104503 kmers
+Used 3.419 GB / 487.484 GB to store    977225266 kmers; need 7.356 GB to sort      6170657 kmers
+Used 3.463 GB / 487.484 GB to store    991904103 kmers; need 7.458 GB to sort      6256383 kmers
+Used 3.507 GB / 487.484 GB to store   1006583020 kmers; need 7.562 GB to sort      6343175 kmers
+Used 3.544 GB / 487.484 GB to store   1019164926 kmers; need 7.669 GB to sort      6433542 kmers
+Used 3.587 GB / 487.484 GB to store   1033843783 kmers; need 7.751 GB to sort      6502334 kmers
+Used 3.643 GB / 487.484 GB to store   1052716462 kmers; need 7.846 GB to sort      6581529 kmers
+Used 3.686 GB / 487.484 GB to store   1067395319 kmers; need 7.939 GB to sort      6659468 kmers
+Used 3.742 GB / 487.484 GB to store   1086267818 kmers; need 8.061 GB to sort      6762155 kmers
+Used 3.797 GB / 487.484 GB to store   1105140157 kmers; need 8.135 GB to sort      6824521 kmers
+Used 3.841 GB / 487.484 GB to store   1119818594 kmers; need 8.225 GB to sort      6899438 kmers
+Used 3.923 GB / 487.484 GB to store   1147078177 kmers; need 8.283 GB to sort      6947903 kmers
+Used 4.003 GB / 487.484 GB to store   1174337440 kmers; need 8.336 GB to sort      6992606 kmers
+Used 4.083 GB / 487.484 GB to store   1201595783 kmers; need 8.382 GB to sort      7031311 kmers
+
+Input complete.  Writing results to 'raven_c_heheva.meryl', using 80 threads.
+finishIteration()--
+
+Finished counting.
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opDifference
+    c_heheva.rawdata.meryl
+    raven_c_heheva.meryl
+    output to read.k20.raven_c_heheva.0.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opIntersect
+    c_heheva.rawdata.meryl
+    opEqualTo
+      threshold=1
+      raven_c_heheva.meryl
+    output to read.k20.raven_c_heheva.1.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opIntersect
+    c_heheva.rawdata.meryl
+    opEqualTo
+      threshold=2
+      raven_c_heheva.meryl
+    output to read.k20.raven_c_heheva.2.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opIntersect
+    c_heheva.rawdata.meryl
+    opEqualTo
+      threshold=3
+      raven_c_heheva.meryl
+    output to read.k20.raven_c_heheva.3.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opIntersect
+    c_heheva.rawdata.meryl
+    opEqualTo
+      threshold=4
+      raven_c_heheva.meryl
+    output to read.k20.raven_c_heheva.4.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opIntersect
+    c_heheva.rawdata.meryl
+    opGreaterThan
+      threshold=4
+      raven_c_heheva.meryl
+    output to read.k20.raven_c_heheva.gt4.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opDifference
+    raven_c_heheva.meryl
+    c_heheva.rawdata.meryl
+    output to raven_c_heheva.0.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+Loading required package: argparse
+Loading required package: ggplot2
+Loading required package: scales
+
+Found 1 command tree.
+
+Found 1 command tree.
+--
+-- Estimating memory usage for 'raven_c_heheva.0.meryl/'.
+--
+
+ p       prefixes             bits gigabytes (allowed: 488 GB)
+-- -------------- ---------------- ---------
+18         262144       5710978300     0.665
+19         524288       5555203968     0.647
+20        1048576       5416206852     0.631
+21        2097152       5310764168     0.618
+22        4194304       5272430348     0.614 (smallest)
+23        8388608       5368314256     0.625
+24       16777216       5732633620     0.667
+25       33554432       6633823896     0.772 (faster)
+26       67108864       8608755996     1.002
+27      134217728      12731171744     1.482
+28      268435456      21148554788     2.462
+29      536870912      38155872424     4.442
+-- -------------- ---------------- ---------
+        172551548 total kmers
+
+--
+-- Minimal memory needed: 0.614 GB
+-- Optimal memory needed: 0.772 GB  enabled
+-- Memory limit           488.109 GB
+--
+--
+-- Loading kmers from 'raven_c_heheva.0.meryl/' into lookup table.
+--
+
+For 172551548 distinct 20-mers (with 25 bits used for indexing and 15 bits for tags):
+    0.250 GB memory for kmer indices -     33554432 elements 64 bits wide)
+    0.301 GB memory for kmer tags    -    172551548 elements 15 bits wide)
+    0.221 GB memory for kmer values  -    172551548 elements 11 bits wide)
+    0.772 GB memory
+
+Will load 172551548 kmers.  Skipping 0 (too low) and 0 (too high) kmers.
+Allocating space for 172567676 suffixes of 15 bits each -> 2588515140 bits (0.301 GB) in blocks of 32.000 MB
+                     172567676 values   of 11 bits each -> 1898244436 bits (0.221 GB) in blocks of 32.000 MB
+Loaded 172551548 kmers.  Skipped 0 (too low) and 0 (too high) kmers.
+-- Opening input sequences 'raven_c_heheva.fasta'.
+-- Opening output file '-'.
+Bye!
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opIntersect
+    raven_c_heheva.meryl
+    c_heheva.rawdata.gt5.meryl
+    output to raven_c_heheva.solid.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+--
+-- Estimating memory usage for 'raven_c_heheva.0.meryl'.
+--
+
+ p       prefixes             bits gigabytes (allowed: 488 GB)
+-- -------------- ---------------- ---------
+18         262144       5710978300     0.665
+19         524288       5555203968     0.647
+20        1048576       5416206852     0.631
+21        2097152       5310764168     0.618
+22        4194304       5272430348     0.614 (smallest)
+23        8388608       5368314256     0.625
+24       16777216       5732633620     0.667
+25       33554432       6633823896     0.772 (faster)
+26       67108864       8608755996     1.002
+27      134217728      12731171744     1.482
+28      268435456      21148554788     2.462
+29      536870912      38155872424     4.442
+-- -------------- ---------------- ---------
+        172551548 total kmers
+
+--
+-- Minimal memory needed: 0.614 GB
+-- Optimal memory needed: 0.772 GB  enabled
+-- Memory limit           488.109 GB
+--
+--
+-- Loading kmers from 'raven_c_heheva.0.meryl' into lookup table.
+--
+
+For 172551548 distinct 20-mers (with 25 bits used for indexing and 15 bits for tags):
+    0.250 GB memory for kmer indices -     33554432 elements 64 bits wide)
+    0.301 GB memory for kmer tags    -    172551548 elements 15 bits wide)
+    0.221 GB memory for kmer values  -    172551548 elements 11 bits wide)
+    0.772 GB memory
+
+Will load 172551548 kmers.  Skipping 0 (too low) and 0 (too high) kmers.
+Allocating space for 172567676 suffixes of 15 bits each -> 2588515140 bits (0.301 GB) in blocks of 32.000 MB
+                     172567676 values   of 11 bits each -> 1898244436 bits (0.221 GB) in blocks of 32.000 MB
+Loaded 172551548 kmers.  Skipped 0 (too low) and 0 (too high) kmers.
+-- Opening input sequences 'raven_c_heheva.fasta'.
+-- Opening output file '-'.
+Bye!
+--
+-- Estimating memory usage for 'raven_c_heheva.0.meryl'.
+--
+
+ p       prefixes             bits gigabytes (allowed: 488 GB)
+-- -------------- ---------------- ---------
+18         262144       5710978300     0.665
+19         524288       5555203968     0.647
+20        1048576       5416206852     0.631
+21        2097152       5310764168     0.618
+22        4194304       5272430348     0.614 (smallest)
+23        8388608       5368314256     0.625
+24       16777216       5732633620     0.667
+25       33554432       6633823896     0.772 (faster)
+26       67108864       8608755996     1.002
+27      134217728      12731171744     1.482
+28      268435456      21148554788     2.462
+29      536870912      38155872424     4.442
+-- -------------- ---------------- ---------
+        172551548 total kmers
+
+--
+-- Minimal memory needed: 0.614 GB
+-- Optimal memory needed: 0.772 GB  enabled
+-- Memory limit           488.109 GB
+--
+--
+-- Loading kmers from 'raven_c_heheva.0.meryl' into lookup table.
+--
+
+For 172551548 distinct 20-mers (with 25 bits used for indexing and 15 bits for tags):
+    0.250 GB memory for kmer indices -     33554432 elements 64 bits wide)
+    0.301 GB memory for kmer tags    -    172551548 elements 15 bits wide)
+    0.221 GB memory for kmer values  -    172551548 elements 11 bits wide)
+    0.772 GB memory
+
+Will load 172551548 kmers.  Skipping 0 (too low) and 0 (too high) kmers.
+Allocating space for 172567676 suffixes of 15 bits each -> 2588515140 bits (0.301 GB) in blocks of 32.000 MB
+                     172567676 values   of 11 bits each -> 1898244436 bits (0.221 GB) in blocks of 32.000 MB
+Loaded 172551548 kmers.  Skipped 0 (too low) and 0 (too high) kmers.
+-- Opening input sequences 'raven_c_heheva.fasta'.
+-- Opening output file '-'.
+Bye!
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opIntersect
+    c_heheva.rawdata.meryl
+    raven_c_heheva.meryl
+    output to read.k20.raven_c_heheva.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+Found 1 command tree.
+Loading required package: argparse
+Loading required package: ggplot2
+Loading required package: scales

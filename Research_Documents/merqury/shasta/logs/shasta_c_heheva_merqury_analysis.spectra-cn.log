@@ -1,0 +1,506 @@
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opLessThan
+    c_heheva.rawdata.meryl
+    print to (stdout)
+
+Found 1 command tree.
+Processing file c_heheva.rawdata.hist
+Start sampling here: 5, 1.6444018E7
+Estimated haploid peak here: 15, 3.1894326E7
+Next max here: 15, 3.1894326E7
+Stop sampling here: 35, 1.6386157E7
+Running time : 0 h 0 m 0 sec
+
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opGreaterThan
+    threshold=5
+    c_heheva.rawdata.meryl
+    output to c_heheva.rawdata.gt5.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Counting 1154 (estimated) million canonical 20-mers from 1 input file:
+    sequence-file: Assembly.fasta
+
+
+SIMPLE MODE
+-----------
+
+  20-mers
+    -> 1099511627776 entries for counts up to 65535.
+    -> 16 Tbits memory used
+
+  1210195910 input bases
+    -> expected max count of 4840783, needing 8 extra bits.
+    -> 8192 Gbits memory used
+
+  3072 GB memory needed
+
+
+COMPLEX MODE
+------------
+
+pr
+# Collect read counts per asm copies
+# Read only
+# Copy 1 ~ 4
+Copy = 1 ..
+
+Copy = 2 ..
+
+Copy = 3 ..
+
+Copy = 4 ..
+
+Copy >4 ..
+
+# Copy numbers in k-mers found only in asm
+
+# Plot shasta_c_heheva_merqury_analysis.Assembly.spectra-cn.hist
+  Rscript /home/jon/miniconda3/envs/merqury/share/merqury/plot/plot_spectra_cn.R -f shasta_c_heheva_merqury_analysis.Assembly.spectra-cn.hist -o shasta_c_heheva_merqury_analysis.Assembly.spectra-cn -z shasta_c_heheva_merqury_analysis.Assembly.only.hist
+[1] "x_max: 40"
+[1] "y_max: 315816530.7"
+[1] "## Line graph"
+[1] "## Area under the curve filled"
+[1] "## Stacked"
+
+# QV statistics
+
+# Per seq QV statistics
+
+# k-mer completeness (recoveray rate) with solid k-mers for Assembly with > 5 counts
+
+# Generate Assembly_only.wig
+Assembly_only.wig generated.
+
+No asm2_fa given. Done.
+# Assembly only
+# Write output
+# Get asm only for spectra-asm
+#	Plot shasta_c_heheva_merqury_analysis.spectra-asm.hist
+  Rscript /home/jon/miniconda3/envs/merqury/share/merqury/plot/plot_spectra_cn.R -f shasta_c_heheva_merqury_analysis.spectra-asm.hist -o shasta_c_heheva_merqury_analysis.spectra-asm -z shasta_c_heheva_merqury_analysis.dist_only.hist
+[1] "x_max: 40"
+[1] "y_max: 295293930.8"
+[1] "## Line graph"
+[1] "## Area under the curve filled"
+[1] "## Stacked"
+
+# Clean up
+Done!
+  M     7  S   256 MB  1792 MB  1997 MB
+    17   128 kP   408 MB  4617  M     4  S   512 MB  2048 MB  2456 MB
+    18   256 kP   812 MB  2309  M     2  S  1024 MB  2048 MB  2860 MB
+    19   512 kP  1620 MB  1155  M     1  S  2048 MB  2048 MB  3668 MB
+    20  1024 kP  3240 MB   578  M     1  S  4096 MB  4096 MB  7336 MB
+    21  2048 kP  6480 MB   289  M     1  S  8192 MB  8192 MB    14 GB
+    22  4096 kP    12 GB   145  M     1  S    16 GB    16 GB    28 GB
+    23  8192 kP    25 GB    73  M     1  S    32 GB    32 GB    57 GB
+    24    16 MP    50 GB    37  M     1  S    64 GB    64 GB   114 GB
+
+
+FINAL CONFIGURATION
+-------------------
+
+Estimated to require 3833 MB memory out of 488 GB allowed.
+Estimated to require 2 batches.
+
+Configured complex mode for 3.744 GB memory per batch, and up to 2 batches.
+
+Start counting with THREADED method.
+Used 0.421 GB / 487.484 GB to store      2097071 kmers; need 0.426 GB to sort       357312 kmers
+Used 0.433 GB / 487.484 GB to store      6291193 kmers; need 0.553 GB to sort       463861 kmers
+Used 0.462 GB / 487.484 GB to store     18873039 kmers; need 0.683 GB to sort       572934 kmers
+Used 0.501 GB / 487.484 GB to store     33551956 kmers; need 0.809 GB to sort       678340 kmers
+Used 0.537 GB / 487.484 GB to store     46134002 kmers; need 0.930 GB to sort       780063 kmers
+Used 0.581 GB / 487.484 GB to store     60812999 kmers; need 1.025 GB to sort       860211 kmers
+Used 0.619 GB / 487.484 GB to store     73394845 kmers; need 1.148 GB to sort       962623 kmers
+Used 0.669 GB / 487.484 GB to store     90170693 kmers; need 1.233 GB to sort      1034239 kmers
+Used 0.701 GB / 487.484 GB to store    100655488 kmers; need 1.367 GB to sort      1146786 kmers
+Used 0.752 GB / 487.484 GB to store    117431536 kmers; need 1.447 GB to sort      1213671 kmers
+Used 0.772 GB / 487.484 GB to store    123722489 kmers; need 1.559 GB to sort      1308011 kmers
+Used 0.798 GB / 487.484 GB to store    132110413 kmers; need 1.693 GB to sort      1420050 kmers
+Used 0.829 GB / 487.484 GB to store    142595308 kmers; need 1.855 GB to sort      1556109 kmers
+Used 0.868 GB / 487.484 GB to store    155177014 kmers; need 1.984 GB to sort      1664312 kmers
+Used 0.894 GB / 487.484 GB to store    163565018 kmers; need 2.111 GB to sort      1770795 kmers
+Used 0.933 GB / 487.484 GB to store    176146744 kmers; need 2.227 GB to sort      1868010 kmers
+Used 0.959 GB / 487.484 GB to store    184534548 kmers; need 2.345 GB to sort      1967262 kmers
+Used 1.017 GB / 487.484 GB to store    203407127 kmers; need 2.413 GB to sort      2023820 kmers
+Used 1.037 GB / 487.484 GB to store    209697960 kmers; need 2.533 GB to sort      2124574 kmers
+Used 1.068 GB / 487.484 GB to store    220182755 kmers; need 2.694 GB to sort      2259988 kmers
+Used 1.101 GB / 487.484 GB to store    230667650 kmers; need 2.789 GB to sort      2339802 kmers
+Used 1.139 GB / 487.484 GB to store    243249396 kmers; need 3.039 GB to sort      2549323 kmers
+Used 1.190 GB / 487.484 GB to store    260025084 kmers; need 3.198 GB to sort      2682416 kmers
+Used 1.216 GB / 487.484 GB to store    268412908 kmers; need 3.312 GB to sort      2778634 kmers
+Used 1.248 GB / 487.484 GB to store    278897783 kmers; need 3.412 GB to sort      2862062 kmers
+Used 1.274 GB / 487.484 GB to store    287285527 kmers; need 3.516 GB to sort      2949845 kmers
+Used 1.313 GB / 487.484 GB to store    299867313 kmers; need 3.635 GB to sort      3049001 kmers
+Used 1.358 GB / 487.484 GB to store    314545910 kmers; need 3.758 GB to sort      3152185 kmers
+Used 1.397 GB / 487.484 GB to store    327127616 kmers; need 3.844 GB to sort      3224572 kmers
+Used 1.430 GB / 487.484 GB to store    337612391 kmers; need 4.022 GB to sort      3373580 kmers
+Used 1.474 GB / 487.484 GB to store    352291128 kmers; need 4.104 GB to sort      3442289 kmers
+Used 1.506 GB / 487.484 GB to store    362775863 kmers; need 4.222 GB to sort      3541983 kmers
+Used 1.520 GB / 487.484 GB to store    366969765 kmers; need 4.388 GB to sort      3681338 kmers
+Used 1.585 GB / 487.484 GB to store    387939255 kmers; need 4.485 GB to sort      3762609 kmers
+Used 1.603 GB / 487.484 GB to store    394229988 kmers; need 4.618 GB to sort      3874040 kmers
+Used 1.680 GB / 487.484 GB to store    419393340 kmers; need 4.784 GB to sort      4013411 kmers
+Used 1.726 GB / 487.484 GB to store    434071897 kmers; need 4.945 GB to sort      4147939 kmers
+Used 1.784 GB / 487.484 GB to store    452944176 kmers; need 5.016 GB to sort      4207873 kmers
+Used 1.809 GB / 487.484 GB to store    461331980 kmers; need 5.134 GB to sort      4306703 kmers
+Used 1.862 GB / 487.484 GB to store    478107248 kmers; need 5.239 GB to sort      4394580 kmers
+Used 1.908 GB / 487.484 GB to store    492785545 kmers; need 5.368 GB to sort      4502593 kmers
+Used 1.946 GB / 487.484 GB to store    505367131 kmers; need 5.459 GB to sort      4579752 kmers
+Used 1.972 GB / 487.484 GB to store    513754855 kmers; need 5.617 GB to sort      4711978 kmers
+Used 2.030 GB / 487.484 GB to store    532627074 kmers; need 5.707 GB to sort      4786982 kmers
+Used 2.062 GB / 487.484 GB to store    543111669 kmers; need 5.802 GB to sort      4866800 kmers
+Used 2.094 GB / 487.484 GB to store    553596024 kmers; need 5.912 GB to sort      4959566 kmers
+Used 2.107 GB / 487.484 GB to store    557789886 kmers; need 6.025 GB to sort      5053843 kmers
+Used 2.151 GB / 487.484 GB to store    572468003 kmers; need 6.109 GB to sort      5124770 kmers
+Used 2.190 GB / 487.484 GB to store    585049269 kmers; need 6.230 GB to sort      5226514 kmers
+Used 2.223 GB / 487.484 GB to store    595533564 kmers; need 6.324 GB to sort      5305369 kmers
+Used 2.274 GB / 487.484 GB to store    612308432 kmers; need 6.417 GB to sort      5383191 kmers
+Used 2.294 GB / 487.484 GB to store    618599105 kmers; need 6.530 GB to sort      5477828 kmers
+Used 2.339 GB / 487.484 GB to store    633277102 kmers; need 6.614 GB to sort      5548417 kmers
+Used 2.359 GB / 487.484 GB to store    639567715 kmers; need 6.748 GB to sort      5660496 kmers
+Used 2.385 GB / 487.484 GB to store    647955119 kmers; need 6.848 GB to sort      5744490 kmers
+Used 2.430 GB / 487.484 GB to store    662633036 kmers; need 6.945 GB to sort      5825836 kmers
+Used 2.462 GB / 487.484 GB to store    673117011 kmers; need 7.053 GB to sort      5916488 kmers
+Used 2.501 GB / 487.484 GB to store    685698257 kmers; need 7.159 GB to sort      6005675 kmers
+Used 2.546 GB / 487.484 GB to store    700376014 kmers; need 7.274 GB to sort      6101877 kmers
+Used 2.565 GB / 487.484 GB to store    706666487 kmers; need 7.407 GB to sort      6213614 kmers
+Used 2.610 GB / 487.484 GB to store    721344004 kmers; need 7.559 GB to sort      6340823 kmers
+Used 2.642 GB / 487.484 GB to store    731828219 kmers; need 7.667 GB to sort      6431797 kmers
+Used 2.675 GB / 487.484 GB to store    742312074 kmers; need 7.760 GB to sort      6509521 kmers
+Used 2.707 GB / 487.484 GB to store    752796069 kmers; need 7.862 GB to sort      6594744 kmers
+Used 2.765 GB / 487.484 GB to store    771666728 kmers; need 7.939 GB to sort      6659688 kmers
+Used 2.791 GB / 487.484 GB to store    780053932 kmers; need 8.083 GB to sort      6780920 kmers
+Used 2.837 GB / 487.484 GB to store    794731649 kmers; need 8.167 GB to sort      6850665 kmers
+Used 2.862 GB / 487.484 GB to store    803118473 kmers; need 8.304 GB to sort      6965901 kmers
+Used 2.900 GB / 487.484 GB to store    815698359 kmers; need 8.458 GB to sort      7095092 kmers
+Used 2.959 GB / 487.484 GB to store    834569158 kmers; need 8.593 GB to sort      7208404 kmers
+Used 3.005 GB / 487.484 GB to store    849245975 kmers; need 8.688 GB to sort      7287876 kmers
+Used 3.043 GB / 487.484 GB to store    861825641 kmers; need 8.776 GB to sort      7361659 kmers
+Used 3.069 GB / 487.484 GB to store    870212085 kmers; need 8.876 GB to sort      7445316 kmers
+Used 3.101 GB / 487.484 GB to store    880695340 kmers; need 8.991 GB to sort      7541973 kmers
+Used 3.127 GB / 487.484 GB to store    889081804 kmers; need 9.101 GB to sort      7634568 kmers
+Used 3.172 GB / 487.484 GB to store    903757861 kmers; need 9.223 GB to sort      7737157 kmers
+Used 3.224 GB / 487.484 GB to store    920531169 kmers; need 9.350 GB to sort      7842984 kmers
+Used 3.277 GB / 487.484 GB to store    937304137 kmers; need 9.429 GB to sort      7909281 kmers
+Used 3.309 GB / 487.484 GB to store    947786812 kmers; need 9.575 GB to sort      8031823 kmers
+Used 3.354 GB / 487.484 GB to store    962462409 kmers; need 9.686 GB to sort      8124987 kmers
+Used 3.393 GB / 487.484 GB to store    975040955 kmers; need 9.845 GB to sort      8258264 kmers
+Used 3.425 GB / 487.484 GB to store    985523090 kmers; need 9.989 GB to sort      8379151 kmers
+Used 3.476 GB / 487.484 GB to store   1002294718 kmers; need 10.101 GB to sort      8473101 kmers
+Used 3.508 GB / 487.484 GB to store   1012776513 kmers; need 10.241 GB to sort      8590647 kmers
+Used 3.566 GB / 487.484 GB to store   1031643492 kmers; need 10.381 GB to sort      8707911 kmers
+Used 3.605 GB / 487.484 GB to store   1044221298 kmers; need 10.502 GB to sort      8809398 kmers
+Used 3.631 GB / 487.484 GB to store   1052605902 kmers; need 10.651 GB to sort      8934384 kmers
+Used 3.676 GB / 487.484 GB to store   1067278379 kmers; need 10.736 GB to sort      9005960 kmers
+Used 3.714 GB / 487.484 GB to store   1079854250 kmers; need 10.835 GB to sort      9089211 kmers
+Used 3.753 GB / 487.484 GB to store   1092429856 kmers; need 10.929 GB to sort      9168252 kmers
+Used 3.818 GB / 487.484 GB to store   1113389066 kmers; need 10.992 GB to sort      9221172 kmers
+Used 3.870 GB / 487.484 GB to store   1130154714 kmers; need 11.072 GB to sort      9287468 kmers
+Used 3.921 GB / 487.484 GB to store   1146919162 kmers; need 11.151 GB to sort      9354354 kmers
+Used 3.992 GB / 487.484 GB to store   1169966823 kmers; need 11.217 GB to sort      9409852 kmers
+Used 4.083 GB / 487.484 GB to store   1199285462 kmers; need 11.257 GB to sort      9443022 kmers
+
+Input complete.  Writing results to 'Assembly.meryl', using 80 threads.
+finishIteration()--
+
+Finished counting.
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opDifference
+    c_heheva.rawdata.meryl
+    Assembly.meryl
+    output to read.k20.Assembly.0.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opIntersect
+    c_heheva.rawdata.meryl
+    opEqualTo
+      threshold=1
+      Assembly.meryl
+    output to read.k20.Assembly.1.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opIntersect
+    c_heheva.rawdata.meryl
+    opEqualTo
+      threshold=2
+      Assembly.meryl
+    output to read.k20.Assembly.2.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opIntersect
+    c_heheva.rawdata.meryl
+    opEqualTo
+      threshold=3
+      Assembly.meryl
+    output to read.k20.Assembly.3.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opIntersect
+    c_heheva.rawdata.meryl
+    opEqualTo
+      threshold=4
+      Assembly.meryl
+    output to read.k20.Assembly.4.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opIntersect
+    c_heheva.rawdata.meryl
+    opGreaterThan
+      threshold=4
+      Assembly.meryl
+    output to read.k20.Assembly.gt4.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opDifference
+    Assembly.meryl
+    c_heheva.rawdata.meryl
+    output to Assembly.0.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+Loading required package: argparse
+Loading required package: ggplot2
+Loading required package: scales
+
+Found 1 command tree.
+
+Found 1 command tree.
+--
+-- Estimating memory usage for 'Assembly.0.meryl/'.
+--
+
+ p       prefixes             bits gigabytes (allowed: 488 GB)
+-- -------------- ---------------- ---------
+19         524288       8355474300     0.973
+20        1048576       8120579704     0.945
+21        2097152       7919239540     0.922
+22        4194304       7785008240     0.906
+23        8388608       7784994668     0.906 (smallest)
+24       16777216       8053416552     0.938
+25       33554432       8858709348     1.031
+26       67108864      10737743968     1.250 (faster)
+27      134217728      14764262236     1.719
+28      268435456      23085747800     2.688
+29      536870912      39997167956     4.656
+30     1073741824      74088457296     8.625
+-- -------------- ---------------- ---------
+        268449028 total kmers
+
+--
+-- Minimal memory needed: 0.906 GB
+-- Optimal memory needed: 1.250 GB  enabled
+-- Memory limit           488.109 GB
+--
+--
+-- Loading kmers from 'Assembly.0.meryl/' into lookup table.
+--
+
+For 268449028 distinct 20-mers (with 26 bits used for indexing and 14 bits for tags):
+    0.500 GB memory for kmer indices -     67108864 elements 64 bits wide)
+    0.438 GB memory for kmer tags    -    268449028 elements 14 bits wide)
+    0.313 GB memory for kmer values  -    268449028 elements 10 bits wide)
+    1.250 GB memory
+
+Will load 268449028 kmers.  Skipping 0 (too low) and 0 (too high) kmers.
+Allocating space for 268465156 suffixes of 14 bits each -> 3758512184 bits (0.438 GB) in blocks of 32.000 MB
+                     268465156 values   of 10 bits each -> 2684651560 bits (0.313 GB) in blocks of 32.000 MB
+Loaded 268449028 kmers.  Skipped 0 (too low) and 0 (too high) kmers.
+-- Opening input sequences 'Assembly.fasta'.
+-- Opening output file '-'.
+Bye!
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opIntersect
+    Assembly.meryl
+    c_heheva.rawdata.gt5.meryl
+    output to Assembly.solid.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+--
+-- Estimating memory usage for 'Assembly.0.meryl'.
+--
+
+ p       prefixes             bits gigabytes (allowed: 488 GB)
+-- -------------- ---------------- ---------
+19         524288       8355474300     0.973
+20        1048576       8120579704     0.945
+21        2097152       7919239540     0.922
+22        4194304       7785008240     0.906
+23        8388608       7784994668     0.906 (smallest)
+24       16777216       8053416552     0.938
+25       33554432       8858709348     1.031
+26       67108864      10737743968     1.250 (faster)
+27      134217728      14764262236     1.719
+28      268435456      23085747800     2.688
+29      536870912      39997167956     4.656
+30     1073741824      74088457296     8.625
+-- -------------- ---------------- ---------
+        268449028 total kmers
+
+--
+-- Minimal memory needed: 0.906 GB
+-- Optimal memory needed: 1.250 GB  enabled
+-- Memory limit           488.109 GB
+--
+--
+-- Loading kmers from 'Assembly.0.meryl' into lookup table.
+--
+
+For 268449028 distinct 20-mers (with 26 bits used for indexing and 14 bits for tags):
+    0.500 GB memory for kmer indices -     67108864 elements 64 bits wide)
+    0.438 GB memory for kmer tags    -    268449028 elements 14 bits wide)
+    0.313 GB memory for kmer values  -    268449028 elements 10 bits wide)
+    1.250 GB memory
+
+Will load 268449028 kmers.  Skipping 0 (too low) and 0 (too high) kmers.
+Allocating space for 268465156 suffixes of 14 bits each -> 3758512184 bits (0.438 GB) in blocks of 32.000 MB
+                     268465156 values   of 10 bits each -> 2684651560 bits (0.313 GB) in blocks of 32.000 MB
+Loaded 268449028 kmers.  Skipped 0 (too low) and 0 (too high) kmers.
+-- Opening input sequences 'Assembly.fasta'.
+-- Opening output file '-'.
+Bye!
+--
+-- Estimating memory usage for 'Assembly.0.meryl'.
+--
+
+ p       prefixes             bits gigabytes (allowed: 488 GB)
+-- -------------- ---------------- ---------
+19         524288       8355474300     0.973
+20        1048576       8120579704     0.945
+21        2097152       7919239540     0.922
+22        4194304       7785008240     0.906
+23        8388608       7784994668     0.906 (smallest)
+24       16777216       8053416552     0.938
+25       33554432       8858709348     1.031
+26       67108864      10737743968     1.250 (faster)
+27      134217728      14764262236     1.719
+28      268435456      23085747800     2.688
+29      536870912      39997167956     4.656
+30     1073741824      74088457296     8.625
+-- -------------- ---------------- ---------
+        268449028 total kmers
+
+--
+-- Minimal memory needed: 0.906 GB
+-- Optimal memory needed: 1.250 GB  enabled
+-- Memory limit           488.109 GB
+--
+--
+-- Loading kmers from 'Assembly.0.meryl' into lookup table.
+--
+
+For 268449028 distinct 20-mers (with 26 bits used for indexing and 14 bits for tags):
+    0.500 GB memory for kmer indices -     67108864 elements 64 bits wide)
+    0.438 GB memory for kmer tags    -    268449028 elements 14 bits wide)
+    0.313 GB memory for kmer values  -    268449028 elements 10 bits wide)
+    1.250 GB memory
+
+Will load 268449028 kmers.  Skipping 0 (too low) and 0 (too high) kmers.
+Allocating space for 268465156 suffixes of 14 bits each -> 3758512184 bits (0.438 GB) in blocks of 32.000 MB
+                     268465156 values   of 10 bits each -> 2684651560 bits (0.313 GB) in blocks of 32.000 MB
+Loaded 268449028 kmers.  Skipped 0 (too low) and 0 (too high) kmers.
+-- Opening input sequences 'Assembly.fasta'.
+-- Opening output file '-'.
+Bye!
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opIntersect
+    c_heheva.rawdata.meryl
+    Assembly.meryl
+    output to read.k20.Assembly.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+Found 1 command tree.
+Loading required package: argparse
+Loading required package: ggplot2
+Loading required package: scales
