@@ -29,3 +29,17 @@ bundle exec jekyll serve
 ```
 
 localhost address: http://127.0.0.1:4000//
+
+
+Note to self: contact Billie swalla about funding the sea  cucumber genome. keep it short, ask for a video meeting. Also mention website and pacific shellfish institutes willingness to assist with finding funding. 
+
+
+# Notes 
+
+Use graphviz to generate the first flow charts to bounce off alyssa
+
+Create a flow chart that will be the overlay image for each part of genome assembly and annotation. It'll be a nice reference as people scroll through the different sub parts. Eventually change the overlay image to reflect the results from each tool? Or maybe highlight what part each tool is in. 
+
+add a page with a glossary of terms and file formats 
+
+For polishing the genome assembly - use inspector/merqury to get an idea of how the assembly changes. Maybe mummer also? So once a tool is introduced continue to use it later on. 

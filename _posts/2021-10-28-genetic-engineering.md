@@ -2,7 +2,7 @@
 title: "Escaping Evolution"
 layout: posts
 header:
-  teaser: /assets/images/2021-10-28/escape.jpg
+  teaser: /assets/images/blog/2021-10-28/escape.jpg
 toc: false
 excerpt: "I'm Free!"
 ---

@@ -2,7 +2,7 @@
 title: "From Sea Cucumbers to Humans"
 type: posts
 header:
-  teaser: /assets/images/2022-02-02/seacuke_cream.jpeg
+  teaser: /assets/images/blog/2022-02-02/seacuke_cream.jpeg
 toc: false
 excerpt: "Translating sea cucumber healing abilities to humans"
 

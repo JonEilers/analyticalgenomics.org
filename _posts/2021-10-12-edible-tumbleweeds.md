@@ -2,7 +2,7 @@
 title: "Edible Tumbleweeds"
 excerpt: "engineering weeds into food"
 header:
-  teaser: /assets/images/2021-10-15/tumbleweed.jpg
+  teaser: /assets/images/blog/2021-10-15/tumbleweed.jpg
 toc: false
 ---
 

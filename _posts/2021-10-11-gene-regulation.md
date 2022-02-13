@@ -4,7 +4,7 @@ permalink: /genereg/
 excerpt: "The butterfly effect in gene regulation"
 type: posts
 header:
-  teaser: /assets/images/2021-10-11/chromatin.png
+  teaser: /assets/images/blog/2021-10-11/chromatin.png
 toc: false
 
 ---

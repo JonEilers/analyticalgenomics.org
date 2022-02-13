@@ -2,7 +2,7 @@
 title: "Down the Rabbit hole"
 excerpt: "Distractions in bioinformatics"
 header:
-  teaser: /assets/images/2022-01-20/rabbit-hole.jpeg
+  teaser: /assets/images/blog/2022-01-20/rabbit-hole.jpeg
 toc: false
 ---
 

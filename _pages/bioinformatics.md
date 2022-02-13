@@ -8,13 +8,13 @@ classes: wide
 entries_layout: grid
 
 feature_row:
-  - image_path: /assets/images/datacleaning.jpg
+  - image_path: /assets/images/bioinformatics_page/datacleaning.jpg
     title: "Data Cleaning"
     url: "/data-cleaning/"
-  - image_path: /assets/images/genomeassembly.png
+  - image_path: /assets/images/bioinformatics_page/genomeassembly.png
     title: "Genome Assembly"
     url: "/assembly/"
-  - image_path: /assets/images/geneannotation.jpg
+  - image_path: /assets/images/bioinformatics_page/geneannotation.jpg
     title: "Genome Annotation"
     url: "/annotation/"
 

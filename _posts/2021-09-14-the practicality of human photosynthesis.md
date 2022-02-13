@@ -2,7 +2,7 @@
 title: "Human Photosynthesis"
 type: posts
 header:
-  teaser: /assets/images/2021-09-14/green_human.jpg
+  teaser: /assets/images/blog/2021-09-14/green_human.jpg
 toc: false
 excerpt: "Is it worth it?"
 ---

@@ -2,7 +2,7 @@
 title: "Synthetic Plastids in animals"
 type: posts
 header:
-  teaser: /assets/images/21-09-07/chloroplast.jpg
+  teaser: /assets/images/blog/21-09-07/chloroplast.jpg
 toc: false
 excerpt: "Someday humans will photosynthesize"
 ---

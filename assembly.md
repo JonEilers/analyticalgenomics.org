@@ -68,6 +68,8 @@ Hybrid genome assembly is the predominate approach these days. The majority of r
 
 # Assembly QC
 
+Add info from this website: https://ucdavis-bioinformatics-training.github.io/2020-Genome_Assembly_Workshop/kmers/QAQC
+
 Once a few assemblies are complete, it's time to determine which one is best and if any further steps need to be taken. There are a few approaches to this and each approach has a great tool for it. 
 
 ## Summary Statistics
@@ -81,16 +83,14 @@ An easy way to capture the level of fragmentation and also get idea of what to e
 - To-do [Assembly quality assessment using BUSCO analysis](/busco/)
 
 ## Assembly Contamination
-In addition to looking at summary statistics and checking BUSCOs, it is also wise to check for contamination. During the sequencing process, DNA from other organisms may be in the sample and it's important to know if that has found its way into the genome assembly. A common method for checking this is to download a uniprot or refseq protein database and blast it against your assembly then check to see what organisms had the highest hit. If those organisms are closely related to the organism of interest, then it is safe to say that's probably solid, but if there are a lot of hits for distantly related organisms, then it might be a good idea to consider preprocessing and filtering the raw data before assembling. [Blobtoolkit](https://www.g3journal.org/content/10/4/1361) produces two different types of graphs, the blobplot and the Cumulative assembly span plot, for visualizing this. 
+In addition to looking at summary statistics and checking BUSCOs, it is also wise to check for contamination. During the sequencing process, DNA from other organisms may be in the sample and it's important to know if that has found its way into the genome assembly. A common method for checking this is to download a uniprot or refseq protein database and blast it against your assembly then check to see what organisms had the highest hit. If those organisms are closely related to the organism of interest, then it is safe to say that's probably solid, but if there are a lot of hits for distantly related organisms, then it might be a good idea to consider preprocessing and filtering the raw data before assembling. [Blobtoolkit](https://www.g3journal.org/content/10/4/1361) produces two different types of graphs, the blobplot and the Cumulative assembly span plot, for visualizing this. Additionally, [KAT](https://academic.oup.com/bioinformatics/article/33/4/574/2664339?login=true) can be used to check for k-mer contamination in an assembly. 
 
-- To-do [Assembly contaminiation via Blobtoolkit](/blobtoolkit/)
+- To-do [Assembly contaminiation via Blobtoolkit and KAT](/blobtoolkit/)
 
-## K-mer analysis and Assembly Evaluation
-Another way to assess the quality of the assembly and to check for contamination is using K-mers. Truly a versatile way to analyze sequence data. One way to check assembly quality using K-mers is by see how many unique K-mers are found in both the assembly and the raw data then visualize it using a [K-mer spectra graph](https://academic.oup.com/view-large/figure/118668344/btw663f1.tif). There are currently two excellent tools for this: [KAT](https://academic.oup.com/bioinformatics/article/33/4/574/2664339?login=true) and [Merqury](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02134-9). To see a feature comparison between the two, click [here](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02134-9/tables/1). See the below links for examples. Another tool for assembly evaluation is called Inspector which uses long reads to assess assembly quality and correct errors. 
+## Assembly Evaluation using k-mers and long reads
+It is important to get a quantifiable picture of the assembly quality. One way to check assembly quality is using K-mers to see how many unique K-mers are found in both the assembly and the raw data then visualize it using a [K-mer spectra graph](https://academic.oup.com/view-large/figure/118668344/btw663f1.tif). A great tool for this is [Merqury](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02134-9). Another tool for assembly evaluation is called [Inspector](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02527-4) which uses long reads to identify, quantify, and correct errors. 
 
-- To-do [Assembly contamination assessment using KAT](/kat_assembly/)
-- To-do [K-mer completeness and consensus quality assessment of genome assemblies](/merqury_assembly/)
-- [Assembly Quality Assessment using inspector](/inspector/)
+- [Assembly Quality Assessment using Inspector and Merqury](/genome_quality/)
 
 ## Assembly Comparisons
 Most genome assembly projects try using several different assembly tools and it can be useful to check for differences between them. Additionally, It can be useful to see how many changes were made when gap closing or polishing. Either of those things can be accomplished using a tool called [mummer4](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005944). Mummer4 produces a "delta" file that can then be used in other analysis tools such as [Nucdiff](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1748-z) or visualization tools such as [Assemblytics](https://academic.oup.com/bioinformatics/article/32/19/3021/2196631). It can also output a summary file containing basic counts of indels and other differences in addition to a bam file for loading into a genome browser such as [Ribbons](https://genomeribbon.com/) if a closer look is required. 

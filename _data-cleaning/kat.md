@@ -9,16 +9,16 @@ permalink: /kat/
 excerpt: "It's a kitty kat"
 
 gallery:
-  - url: /assets/images/kat/kat-gcp.mx.png
-    image_path: /assets/images/kat/kat-gcp.mx.png
+  - url: /assets/images/data_cleaning/kat/kat-gcp.mx.png
+    image_path: /assets/images/data_cleaning/kat/kat-gcp.mx.png
     title: "Comparison of GC content and K-mer coverage from the input"
     caption: "Comparison of GC content and K-mer coverage from the input"
-  - url: /assets/images/kat/P_cali_katcomp-main.mx.density.png
-    image_path: /assets/images/kat/P_cali_katcomp-main.mx.density.png
+  - url: /assets/images/data_cleaning/kat/P_cali_katcomp-main.mx.density.png
+    image_path: /assets/images/data_cleaning/kat/P_cali_katcomp-main.mx.density.png
     title: "Model curve placed over data showing how well it fits the kmer distribution"
     caption: "Model curve placed over data showing how well it fits the kmer distribution"
-  - url: /assets/images/kat/P_cali_kat_spectra.png
-    image_path: /assets/images/kat/P_cali_kat_spectra.png
+  - url: /assets/images/data_cleaning/kat/P_cali_kat_spectra.png
+    image_path: /assets/images/data_cleaning/kat/P_cali_kat_spectra.png
     title: "kmer distribution in data. Predicted Best kmer value denoted by red dashed line"
     caption: "Linear GenomeScope Profile"    
 ---

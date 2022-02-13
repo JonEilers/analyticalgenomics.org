@@ -10,12 +10,12 @@ permalink: /kmergenie/
 excerpt: "Gotta count them all"
 
 gallery:
-  - url: /assets/images/kmergenie/112/best-k.png
-    image_path: /assets/images/kmergenie/112/best-k.png
+  - url: /assets/images/data_cleaning/kmergenie/112/best-k.png
+    image_path: /assets/images/data_cleaning/kmergenie/112/best-k.png
     title: "kmer distribution in data. Predicted Best kmer value denoted by red dashed line"
     caption: "Linear GenomeScope Profile"
-  - url: /assets/images/kmergenie/112/model.png
-    image_path: /assets/images/kmergenie/112/model.png
+  - url: /assets/images/data_cleaning/kmergenie/112/model.png
+    image_path: /assets/images/data_cleaning/kmergenie/112/model.png
     title: "Model curve placed over data showing how well it fits the kmer distribution"
     caption: "Model curve placed over data showing how well it fits the kmer distribution"
 ---

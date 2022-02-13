@@ -2,7 +2,7 @@
 title: "Pangenomes"
 type: posts
 header:
-  teaser: /assets/images/2021-01-02/pangenome.png
+  teaser: /assets/images/blog/2021-01-02/pangenome.png
 
 ---
 ### [The Need for a Human Pangenome Reference Sequence](https://www.annualreviews.org/doi/abs/10.1146/annurev-genom-120120-081921)

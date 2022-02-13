@@ -8,12 +8,12 @@ permalink: /genomescope/
 excerpt: "Scoping out a genome"
 
 gallery:
-  - url: /assets/images/genomescope/plot.png
-    image_path: /assets/images/genomescope/plot.png
+  - url: /assets/images/data_cleaning/genomescope/plot.png
+    image_path: /assets/images/data_cleaning/genomescope/plot.png
     title: "Linear GenomeScope Profile"
     caption: "Linear GenomeScope Profile"
-  - url: /assets/images/genomescope/plot.log.png
-    image_path: /assets/images/genomescope/plot.log.png
+  - url: /assets/images/data_cleaning/genomescope/plot.log.png
+    image_path: /assets/images/data_cleaning/genomescope/plot.log.png
     title: "Log GenomeScope Profile"
     caption: "Log GenomeScope Profile"  
 
@@ -92,7 +92,7 @@ Read Error Rate               0.218397%         0.218397%
 
 GenomeScope is estimating the genome size of *P. californicus* to be about 400 mb smaller than the 900mb published estimates. Heterozygosity is higher than in *A. japonicuis*. Very strange, even after adjusting the max kmer coverage the estimated genome size was still small.
 
-{% include figure image_path="/assets/images/GenomeScope/Apostichopusjaponicus.png" caption="Genome statistics from  the paper [Zhang et al 2017](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2003790)" %}
+{% include figure image_path="/assets/images/data_cleaning/GenomeScope/Apostichopusjaponicus.png" caption="Genome statistics from  the paper [Zhang et al 2017](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2003790)" %}
 
 
 #### Model

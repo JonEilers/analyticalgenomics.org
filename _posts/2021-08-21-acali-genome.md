@@ -2,7 +2,7 @@
 title: "The genome of Apostichopus californicus"
 type: posts
 header:
-  teaser: /assets/images/redundans_platanus-allee_step10_ajap-reference.fa.snail.png
+  teaser: assets/images/blog/21-08-21/redundans_platanus-allee_step10_ajap-reference.fa.snail.png
 
 ---
 
