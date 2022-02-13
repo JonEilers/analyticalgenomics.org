@@ -6,8 +6,8 @@ layout: single
 permalink: /busco/
 
 gallery:
-  - url: /assets/images/busco/busco_analysis.png
-    image_path: /assets/images/busco/busco_analysis.png
+  - url: /assets/images/assembly/busco/busco_analysis.png
+    image_path: /assets/images/assembly/busco/busco_analysis.png
     title: "Comparison of buscos between genome assemblies"
     caption: 
 

@@ -68,9 +68,23 @@ Hybrid genome assembly is the predominate approach these days. The majority of r
 
 # Assembly QC
 
-Add info from this website: https://ucdavis-bioinformatics-training.github.io/2020-Genome_Assembly_Workshop/kmers/QAQC
-
 Once a few assemblies are complete, it's time to determine which one is best and if any further steps need to be taken. There are a few approaches to this and each approach has a great tool for it. 
+
+Additionally, the Earth Bio Genome project has published genome assembly standards to strive towards: More information can be found [here](https://www.earthbiogenome.org/assembly-standards). I have listed a few of them below. 
+
+```
+< 5% false duplications 
+
+> 90% kmer completeness 
+
+> 90% sequence assigned to candidate chromosomal sequences
+
+> 90% single copy conserved genes (e.g. BUSCO) complete and single copy
+
+> 90% transcripts from the same organism mappable
+```
+
+A paper titled [Towards complete and error-free genome assemblies of all vertebrate species](https://www.nature.com/articles/s41586-021-03451-0) was published in 2021 and offers more information on the difficulties and challenges they faced while sequencing and assembling six vertebrate genomes to the level of quality set by the international Genome 10K (G10K) consortium. 
 
 ## Summary Statistics
 A standard metric for genome contiguity is the N50 value. N50 is a tricky beast to understand and I've seen more blogs and descriptions get it wrong than right. Thankfully, [wikipedia](https://en.wikipedia.org/wiki/N50,_L50,_and_related_statistics#N50) gets it right. Without getting into the details on it, the thing that matters when considering the N50 is that the majority of reads in an assembly will be shorter than the N50 value. If you have an N50 of 9kb, than the majority of the assembly will be scaffolds or contigs shorter than 9kb. Having an N50 of 9kb consequently means gene prediction will likely capture the bulk of the genes, but there will be a large number of fragmented genes such as [titin](https://en.wikipedia.org/wiki/Titin). While there are a number of tools for acquiring this metric, probably my favorite way to visualize it is the snail plot produced via [Blobtoolkit](https://www.g3journal.org/content/10/4/1361). [Here](https://blobtoolkit.genomehubs.org/) is a link to their website. See the link below for an example. 
