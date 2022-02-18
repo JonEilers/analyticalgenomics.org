@@ -1,5 +1,5 @@
 ---
-title: "Pacbio and Oxford Nanopore data Quality Check"
+title: "Hi-C raw data filtering"
 permalink: /hic_data_trimming/
 layout: single
 

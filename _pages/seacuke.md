@@ -3,6 +3,8 @@ permalink: /seacuke/
 title: "The Californian Giant Sea Cucumber"
 layout: single
 author_profile: false
+toc: false
+classes: wide
 excerpt: "*Apostichopus californicus*"
 ---
 
@@ -10,7 +12,7 @@ In 2018, a man in Washington State was [fined $1.8 million dollars](https://www.
 
 Most people on the West coast will only encounter sea cucumbers at public aquariums and in the occasional tidepool. However, sea cucumbers are a widely sought-after delicacy called [*bêche-de-merin*](https://en.wikipedia.org/wiki/Sea_cucumber_as_food) in Eastern Asia.  This may come as a surprise to many of us. Their spikes and bright colors are reminiscent of poisonous and specificly not tasty animals. While I may study them, I haven't tested their gastronomic properties. But I have heard they are particularly chewy. I can believe this as cutting through their body wall is exceptionally tough for what appears like a squishy animal. This is thanks to tiny "bones" called ossicles embedded throughout their body wall which act as anchors for muscle and connective tissue. Oddly, the thick body wall and muscles are what captures the appetite of many. They are either dried and fermented or served fresh, often with winter melon or shitake mushrooms.
 
-![](/assets/images/cukeimages/foodcuke.jpeg "Sea Cucumber cooked with scallions in a sauce made by soy sauce and sesame oil, served with sugar snap pea puree.)"){: .align-right width="500px" height="500px" }
+![](/assets/images/cukeimages/foodcuke.jpeg "Sea Cucumber cooked with scallions in a sauce made by soy sauce and sesame oil, served with sugar snap pea puree."){: .align-right width="500px" height="500px" }
 
 In addition to their gastronomic uses, sea cucumbers are also believed to possess [medicinal properties](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6035309/) and there is some [science](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4446612/) to back that up. Numerous studies have found sea cucumber extracts to have cancer fighting properties. What compounds are responsible for those properties are yet to be discovered.
 
@@ -20,7 +22,7 @@ Aside from their economical and medicinal importance, sea cucumber also possess 
 
 For most “normal” animals, literally pooping their guts and lungs out would result in rapid death. For sea cucumbers, it's a mere inconvenience. In about three weeks, they will have completely regrown those internal organs. In addition to this already incredible superpower, they are also able to heal any deep cuts within a day or two of the injury. Imagine being stabbed and being completely healed in two days with barely any scars.
 
-![](/assets/images/cukeimages/ossicles.jpg "Sea cucumber ossicles (here wheels and anchors)"){: .align-left width="250px" height="250px" } I would forgive you if you thought sea cucumbers couldn’t possibly be more incredible. But they have another superpower up their figurative sleeve. During extreme weather conditions, such as when the water temperature is too hot or too cold for sea cucumbers, they will enter a period of dormancy. During this time, they stop moving and completely absorb their internal organs. During this time, they have close to zero metabolic activity. When the water temperature swings back to tolerable, they then regrow the internal organs.
+![](/assets/images/cukeimages/ossicles.jpg "Sea cucumber ossicles (here wheels and anchors"){: .align-left width="250px" height="250px" } I would forgive you if you thought sea cucumbers couldn’t possibly be more incredible. But they have another superpower up their figurative sleeve. During extreme weather conditions, such as when the water temperature is too hot or too cold for sea cucumbers, they will enter a period of dormancy. During this time, they stop moving and completely absorb their internal organs. During this time, they have close to zero metabolic activity. When the water temperature swings back to tolerable, they then regrow the internal organs.
 
 As an astute reader, you must be asking yourself how they are able to not only survive, but also grow new organs, without being able to eat or breathe. Many sea cucumber researchers would also like an answer to that question. Currently there is some [evidence](https://www.sciencedirect.com/science/article/pii/S0022098115001045) that they are able to absorb nutrients from the surrounding water directly into their tissue in addition to breathing through their skin.
 

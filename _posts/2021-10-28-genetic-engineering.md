@@ -23,5 +23,5 @@ The authors introduced a gene overlap into E. coli and tested their predictions 
 
 See below for a figure outlining their approach.
 
-{% include figure image_path="/assets/images/2021-10-28/overlapping_genes.png" %}
+{% include figure image_path="/assets/images/blog/2021-10-28/overlapping_genes.png" %}
 

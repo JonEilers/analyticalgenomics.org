@@ -88,12 +88,12 @@ defaults:
       read_time: true
       comments: true
       share: true
+      show_date: true
       author_profile: false
       related: true
       toc_sticky: true
       sidebar:
         nav: sidebar-main
-      classes: wide
       header:
           overlay_image: /assets/images/home/cuke1.jpg
       
@@ -102,10 +102,12 @@ defaults:
       path: "_pages"
       type: pages
     values:
+      show_date: true
+      toc: true
+      toc_sticky: true
       layout: single
       sidebar:
         nav: sidebar-main
-      classes: wide
       header:
           overlay_image: /assets/images/home/cuke1.jpg
             
@@ -114,10 +116,12 @@ defaults:
       path: ""
       type: data-cleaning
     values:
+      show_date: true
+      toc: true
+      toc_sticky: true
       layout: single
       sidebar:
         nav: sidebar-main
-      classes: wide
       header:
           overlay_image: /assets/images/home/cuke1.jpg
 
@@ -126,10 +130,12 @@ defaults:
       path: ""
       type: assembly
     values:
+      show_date: true
+      toc: true
+      toc_sticky: true
       layout: single
       sidebar:
         nav: sidebar-main
-      classes: wide
       header:
           overlay_image: /assets/images/home/cuke1.jpg
 
@@ -138,10 +144,12 @@ defaults:
       path: ""
       type: annotation
     values:
+      show_date: true
+      toc: true
+      toc_sticky: true
       layout: single
       sidebar:
         nav: sidebar-main
-      classes: wide
       header:
           overlay_image: /assets/images/home/cuke1.jpg
 

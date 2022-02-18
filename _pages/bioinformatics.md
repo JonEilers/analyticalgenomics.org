@@ -5,7 +5,7 @@ author_profile: false
 sidebar:
   nav: sidebar-main
 classes: wide
-entries_layout: grid
+toc: false
 
 feature_row:
   - image_path: /assets/images/bioinformatics_page/datacleaning.jpg
