@@ -134,13 +134,15 @@ Now for the juicy part. The raven assembly, by a large margin, has the most larg
 | QV                                  | 25.2858950332793 | 21.3835831443883 | 34.6460926406124 |
 
 
-This is probably the most important section regarding genome quality. In my experience, small scale errors such as insertions, deletions, and base substitutions significantly impact gene prediction. These small errors can change the reading frames of the gene which results in gene truncations or wrong gene models. Keeping that in mind, Flye is the clear winner with regards to genome quality. This is reflected in the much higher QV score than the other two. The QV score is a PHRED score assigned to the genome which tells you how frequently errors occur in the genome. In this case a phred score of 20 corresponds to roughly 1 error every 100 bases and a phred score of 30 suggests an error every 1000 bases. For context, the best human genome has a phred score somewhere around 60 to 70. 
+This is probably the most important section regarding genome quality. In my experience, small scale errors such as insertions, deletions, and base substitutions significantly impact gene prediction. These small errors can change the reading frames of the gene which results in gene truncations or wrong gene models. Keeping that in mind, Flye is the clear winner with regards to genome quality. This is reflected in the much higher QV score than the other two. The QV score is a [PHRED score](https://en.wikipedia.org/wiki/Phred_quality_score) assigned to the genome which tells you how frequently errors occur in the genome. In this case a phred score of 20 corresponds to roughly 1 error every 100 bases and a phred score of 30 suggests an error every 1000 bases. For context, the best human genome has a phred score somewhere around 60 to 70. 
 
-While the raven assembly is longer and more contigious, it contains a large number of errors whereas the Flye assembly is more fragmented, suspciously longer, but contains fewer errors. Before declaring a winning genome assembly though we need to do more analysis. Next up is Merqury. 
+To summarize the results: While the raven assembly is longer and more contigious, it contains a large number of errors whereas the Flye assembly is more fragmented, suspciously longer, but contains fewer errors. Before declaring a winning genome assembly though we need to do more analysis. Next up is Merqury. 
 
 Note: need to run this on the original genome too. 
 
 # Merqury 
+
+[Merqury](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02134-9) compares assembly k-mers to k-mers found in the short-read data that was used in creating the assembly. It is able to estimate assembly accuracy and completeness in addition to phase block continuity and haplotype switch errors. It also provides a phred score (QV) that is similar to the one produced by Inspector.
 
 ## Installation
 
@@ -210,14 +212,59 @@ merqury.sh \
 | Raven           | 187445697           | 1221896050   | 20.8134 | 0.00829211 |
 | Shasta          | 287105937           | 1209594249   | 18.7105 | 0.0134569  |
 
-Shared kmers are those kmers that are found in both the read dataset and the genome assembly. QV is the Mercury Phred quality score. The error rate 
-
+Shared kmers are those kmers that are found in both the read dataset and the genome assembly. Consensus quality (QV) is the Mercury Phred quality score. The error rate is calculated using presense/absence of k-mers in the assembly vs raw data. See the Merqury vs Inspector QV scores section for more info on this is calculated. It looks like shasta has a lower QV and higher error rate than the Raven assembly. This agrees with the Inspector results. Although they are a little off from each other. 
 
 | Genome Assembly | Assembly K-mers | Read K-mers | Completeness Percent |
 |-----------------|-----------------|-------------|----------------------|
 | raven_c_heheva  | 597225562       | 904653194   | 66.0171              |
 | Shasta          | 545857355       | 904653194   | 60.3389              |
 
-Completeness 
+Per the [paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02134-9#Sec10), completeness is defined as the "the fraction of reliable k-mers in the read set that are also found in the assembly. For repetitive genomes, erroneous read set k-mers can sometimes appear above this threshold due to recurring errors in high-copy repeat families, but this is rare."
 
 {% include gallery id="gallery_merqury" caption="Merqury Spectra graphs of the Raven and Shasta assemblies"  %}
+
+Per the [paper](), "A typical k-mer spectrum for a heterozygous diploid genome consists of two primary peaks, one representing k-mers that are 1-copy in the diploid genome (heterozygous, on a single haplotype) and one representing those that are 2-copy in the diploid genome (homozygous, on both haplotypes or two copies on one haplotype). The 2-copy k-mers appear with a frequency approximately equal to the average depth of sequencing coverage, where the 1-copy k-mers appear with frequency approximately equal to half the sequencing coverage. **If a genome is entirely homozygous, only the 2-copy peak may appear, and if the genome is extremely heterozygous, only the 1-copy peak may appear**. With sufficient sequencing coverage (to separate the peaks along the axis), and a proper choice of k, both peaks are visible for most genomes."
+
+So it appears, not suprisingly, that this sea cucumber genome is highly hetrozygous. When comparing the graphs, note that the axis scales are different. I need to see if this can be fixed so the scales are the same, otherwise it is hard to determine how different the kmer distribution is between assemblies. 
+
+# Merqury vs Inspector QV scores
+
+QV scores are [Phred quality scores](https://en.wikipedia.org/wiki/Phred_quality_score) assigned to a genome assembly and are traditionally calculated using
+
+$$\mathrm{QV}=-10{\log}_{10}\ E$$
+
+Where E is the error rate per a base in the genome assembly or data being sequenced. Both Inspector and Merqury have different ways of calculating the error rate in an assembly. Merqury compares the presence of k-mers in the assembly to those in the raw data. Inspector aligns long reads to the assembly, identifies and sums the assembly errors which is then used to create a probability of error per a base. See below for a more detailed look at the math behind these calculations. 
+
+## Inspector QV
+
+Inspector calculates the Phred score differently than Merqury. Although they state is correlates well with Merqury QV results. 
+
+$${N}_{Err}={N}_{Exp}+{N}_{Col}+{N}_{Her}+{N}_{Small}+{n}_{Inv}$$
+
+$${N}_{Err}$$ is the sum total of errors (number of bases) inspector found. 
+
+$$E=\frac{N_{\mathrm{Err}}}{N_{\mathrm{asm}}}=\frac{N_{\mathrm{Exp}}+{N}_{\mathrm{Col}}+{N}_{\mathrm{Her}}+{N}_{\mathrm{Small}}+{n}_{\mathrm{Inv}}}{N_{\mathrm{asm}}}$$
+
+$$E$$ or error rate is the number of incorrect bases over the total number bases in the assembly.
+
+$$\mathrm{QV}=-10{\log}_{10}\ E$$
+
+Phred scores (QV) are the log of the error rate as shown above. For more detailed information, check out the methods section of the inspector [paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02527-4#Sec12)
+
+## Merqury QV
+
+$$\mathrm{QV}=-10{\log}_{10}\ E$$
+
+As stated earlier, a phred score is the -10log of the error rate as shown above. The probability that a base is correct is calculated as shown below where E is
+
+$$E=1-P=1-{\left(1-\frac{K_{\mathrm{asm}}}{K_{\mathrm{total}}}\right)}^{\frac{1}{\mathrm{k}}}$$
+
+which is 1 minus the probability that a base is correct. The probability that is a base is correct is calculated as 
+
+$$P={\left(\frac{K_{\mathrm{shared}}}{K_{\mathrm{total}}}\right)}^{\frac{1}{\mathrm{k}}}$$
+
+As noted in the [paper](), "the read set is assumed to completely cover the genome, any k-mer found only in the assembly $${(K_{asm} = K_{total} − K_{shared})}$$ likely reflects a base error in the assembly consensus." Some basic math is done to rearrange the equation with $${(K_{asm} = K_{total} − K_{shared})}$$ plugged in and viola
+
+$$P={\left(1-\frac{K_{\mathrm{asm}}}{K_{\mathrm{total}}}\right)}^{\frac{1}{\mathrm{k}}}$$
+
+While Inspector ane Merqury have very different methods of calculating error rates, the Inspector paper notes they correlate well. Although in this example, the QV for the assemblies is lower than that calculated using Inspector, but fairly close. For more information on Merqury methods see their [paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02134-9#Sec10)
