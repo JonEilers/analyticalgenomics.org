@@ -3,6 +3,7 @@ title: "Genomics Blog"
 permalink: /blog/
 author_profile: false
 layout: archive
+classes: wide
 
 header:
   overlay_image: /assets/images/home/cuke1.jpg
