@@ -7,7 +7,7 @@ classes: wide
 ---
 
 
-![](/assets/images/about/IMG_9855.jpg){: .align-right width="300px" height="300px"}  While a masters graduate student at Walla Walla University. My topic of study was the sea cucumber *Apostichopus californicus*. The goal of my thesis was to sequence, assembly, and annotate the genome of *Apostichopus californicus* in order to provide a critical tool for future research into this species' genetics. 
+![](/assets/images/about/IMG_9855.jpg){: .align-right width="300px" height="300px"}  While a masters student at Walla Walla University, my topic of study was the sea cucumber *Apostichopus californicus*. The goal of my thesis was to sequence, assembly, and annotate the genome of *Apostichopus californicus* in order to provide a critical tool for future research into this species' genetics. 
 
 At first, I wanted to investigate the expression of specific genes involved in their regenerative abilities. However, this enthusiasm was quickly stymied when I found little genetic information in the literature. That is when I decided it was time to remedy this problem and lay the foundation for future research. I sequenced and assembled a draft genome of *Apostichopus californicus* for my master's thesis.
 
