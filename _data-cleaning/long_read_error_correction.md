@@ -62,11 +62,29 @@ Use VeChat and Consent for polishing both the Chiridota heheva and stichopus chl
 ```bash
 conda create -n vechat
 conda activate vechat
-conda install -c bioconda vechat
+# installing dependencies
+conda install -c bioconda minimap2 yacrd fpa=0.5
 
-vechat \
+# cloning git repository
+git clone https://github.com/HaploKit/vechat.git
+cd vechat
+mkdir build;cd build;cmake -DCMAKE_BUILD_TYPE=Release -Dspoa_optimize_for_portability=ON ..;make
+
+# exporting path
+export PATH=/home/jon/Working_Files/vechat/scripts:$PATH
   
 ```
+
+running vechat
+```bash
+vechat \
+  /home/jon/Working_Files/sea_cuke_species_data/Chiridota_heheva/SRR15466781/SRR15466781.fastq \
+  --platform ont \
+  --split \
+  -t 60
+
+```
+
 
 
 Self-correction of sequencing errors using [consent](https://github.com/morispi/CONSENT).
@@ -74,3 +92,8 @@ Self-correction of sequencing errors using [consent](https://github.com/morispi/
 [Scalable long read self-correction and assembly polishing with multiple sequence alignment](https://www.nature.com/articles/s41598-020-80757-5)
 
 
+```bash
+conda create -n consent
+conda activate consent
+conda install -c bioconda consent 
+```

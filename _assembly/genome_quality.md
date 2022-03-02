@@ -1,6 +1,6 @@
 ---
 
-title: "Genome Assembly Quality Assessment using Inspector"
+title: "Genome Assembly Quality Assessment using Inspector and Merqury"
 permalink: /genome_quality/
 layout: single
 toc: true 
@@ -10,12 +10,18 @@ excerpt: "Good day Sir, I am here to inspect your assembly."
 
 
 gallery_merqury:
-  - url: assets/images/assembly/assembly_evaluation/c_heheva_merqury_analysis.raven_c_heheva.spectra-cn.fl.png
-    image_path: assets/images/assembly/assembly_evaluation/c_heheva_merqury_analysis.raven_c_heheva.spectra-cn.fl.png
+  - url: /assets/images/assembly/assembly_evaluation/c_heheva_merqury_analysis.raven_c_heheva.spectra-cn.fl.png
+    image_path: /assets/images/assembly/assembly_evaluation/c_heheva_merqury_analysis.raven_c_heheva.spectra-cn.fl.png
     title: "Raven Assembly K-mer Spectra"
-  - url: assets/images/assembly/assembly_evaluation/shasta_c_heheva_merqury_analysis.Assembly.spectra-cn.fl.png
-    image_path: assets/images/assembly/assembly_evaluation/shasta_c_heheva_merqury_analysis.Assembly.spectra-cn.fl.png
+  - url: /assets/images/assembly/assembly_evaluation/shasta_c_heheva_merqury_analysis.Assembly.spectra-cn.fl.png
+    image_path: /assets/images/assembly/assembly_evaluation/shasta_c_heheva_merqury_analysis.Assembly.spectra-cn.fl.png
     title: "Shasta Assembly K-mer Spectra"
+  - url: /assets/images/assembly/assembly_evaluation/flye_c_heheva_merqury_analysis.assembly.spectra-cn.fl.png
+    image_path: /assets/images/assembly/assembly_evaluation/flye_c_heheva_merqury_analysis.assembly.spectra-cn.fl.png
+    title: "Flye Assembly K-mer Spectra"
+  - url: /assets/images/assembly/assembly_evaluation/og_c_heheva_merqury_analysis.Chiridota_heheva.spectra-cn.fl.png
+    image_path: /assets/images/assembly/assembly_evaluation/og_c_heheva_merqury_analysis.Chiridota_heheva.spectra-cn.fl.png
+    title: "Published Genome Assembly K-mer Spectra"
 
 ---
 
@@ -71,6 +77,12 @@ inspector.py \
     -t 40 
 
 # Published assembly
+inspector.py \
+    -c /home/jon/Working_Files/sea_cuke_species_data/Chiridota_heheva/15302229/Chiridota_heheva.fa \
+    -r /home/jon/Working_Files/sea_cuke_species_data/Chiridota_heheva/SRR15466781/SRR15466781.fastq \
+    -o /home/jon/Working_Files/Chiridota_heheva_genome_project/inspector/published \
+    --datatype nanopore \
+    -t 40 
 
 ```
 
@@ -80,30 +92,32 @@ Note: Minimap uses a lot of power and will max out the UPS at 70 cpus (because m
 
 Inspector outputs a text document containing a summary of the results. Copying and pasting into excel and then into [excel to markdown table converter website](https://tableconvert.com/excel-to-markdown) generates the below table. 
 
-| Statics of contigs:                | Raven Assembly | Shasta Assembly | Flye Assembly |
-|------------------------------------|----------------|-----------------|---------------|
-| Number of contigs                  | 3227           | 15199           | 16728         |
-| Number of contigs > 10000 bp       | 3223           | 11941           | 13396         |
-| Number of contigs >1000000 bp      | 207            | 28              | 179           |
-| Total length                       | 1221957363     | 1209883028      | 1540823993    |
-| Total length of contigs > 10000 bp | 1221922362     | 1196342865      | 1521394030    |
-| Total length of contigs >1000000bp | 290685476      | 36833854        | 267358448     |
-| Longest contig                     | 2901347        | 1748484         | 3605186       |
-| Second longest contig length       | 2793378        | 1705511         | 3518942       |
-| N50                                | 606319         | 201222          | 307072        |
-| N50 of contigs >1Mbp               | 606319         | 201222          | 307072        |
+| Stastics of contigs:                | Published  | Raven Assembly | Shasta Assembly | Flye Assembly |
+|------------------------------------|------------|----------------|-----------------|---------------|
+| Number of contigs                  | 4610       | 3227           | 15199           | 16728         |
+| Number of contigs > 10000 bp       | 3746       | 3223           | 11941           | 13396         |
+| Number of contigs >1000000 bp      | 335        | 207            | 28              | 179           |
+| Total length                       | 1106937763 | 1221957363     | 1209883028      | 1540823993    |
+| Total length of contigs > 10000 bp | 1101305091 | 1221922362     | 1196342865      | 1521394030    |
+| Total length of contigs >1000000bp | 626006340  | 290685476      | 36833854        | 267358448     |
+| Longest contig                     | 6953784    | 2901347        | 1748484         | 3605186       |
+| Second longest contig length       | 5776503    | 2793378        | 1705511         | 3518942       |
+| N50                                | 1221604    | 606319         | 201222          | 307072        |
+| N50 of contigs >1Mbp               | 1221604    | 606319         | 201222          | 307072        |
+
 
 The raven assembly is clearly the winner with regards to assembly contiguity and N50. The shasta and raven assemblies more or less agree on the size of the genome with Flye having a significantly larger assembly, which is suspicious. However, Flye also has the first and second longest contig. With just this information, Raven seems like it is probably the better assembly and the Flye assembly is suspect. But let's take a look at some more information output by Inspector.
 
 
-| Read to Contig alignment:           | Raven Assembly | Shasta Assembly | Flye Assembly |
-|-------------------------------------|----------------|-----------------|---------------|
-| Mapping rate /%                     | 98.43          | 98.38           | 98.75         |
-| Split-read rate /%                  | 27.4           | 30.49           | 21            |
-| Depth                               | 34.5491        | 35.2633         | 27.7466       |
-| Mapping rate in large contigs /%    | 21.93          | 2.89            | 18.42         |
-| Split-read rate in large contigs /% | 23.79          | 20.73           | 16.53         |
-| Depth in large contigs               | 32.8825        | 34.2379         | 29.7275       |
+| Read to Contig alignment:           | Published | Raven Assembly | Shasta Assembly | Flye Assembly |
+|-------------------------------------|-----------|----------------|-----------------|---------------|
+| Mapping rate /%                     | 98.51     | 98.43          | 98.38           | 98.75         |
+| Split-read rate /%                  | 28.97     | 27.4           | 30.49           | 21            |
+| Depth                               | 38.3654   | 34.5491        | 35.2633         | 27.7466       |
+| Mapping rate in large contigs /%    | 47.77     | 21.93          | 2.89            | 18.42         |
+| Split-read rate in large contigs /% | 24.5      | 23.79          | 20.73           | 16.53         |
+| Depth in large contigs              | 33.2755   | 32.8825        | 34.2379         | 29.7275       |
+
 
 Long read mapping rate was close to the same for all three. Split-read rate, which I am interpreting as long read sequences that had to be split in order to map successfully is honestly kinda high for all three. Flye has the lowest, but 21% seems like a lot of the reads are having to be split in order to map successfully and they probably shouldn't need to be at all. For high quality genomes I would expect that number to be low. This indicates to me two things: First that splitting might be due to genome fragmentation, and second that there are a significant number of errors in the assembly that are causing the reads to not map well, resulting in needing to split the reads. Split read rate in large contigs is lower than for the whole assembly and likely has a similar explanation. 
 
@@ -112,26 +126,27 @@ Long read mapping rate was close to the same for all three. Split-read rate, whi
 Mapping rate in large contigs I am assuming means percentage of total reads that mapped to large contigs. This metric is likely constrained by how many "large contigs" are in the assembly. So Shasta having fewer might be a result of not having very many "large contigs". It could also be a consequence of there being a lot of assembly errors in the the shasta assembly. 
 
 
-| Error type       | Raven Assembly | Shasta Assembly | Flye Assembly |
-|------------------|----------------|-----------------|---------------|
-| Structural error | 4587           | 347             | 729           |
-| Expansion        | 379            | 220             | 38            |
-| Collapse         | 288            | 48              | 4             |
-| Haplotype switch | 3920           | 79              | 686           |
-| Inversion        | 0              | 0               | 1             |
+| Error type       | Published | Raven Assembly | Shasta Assembly | Flye Assembly |
+|------------------|-----------|----------------|-----------------|---------------|
+| Structural error | 8086      | 4587           | 347             | 729           |
+| Expansion        | 381       | 379            | 220             | 38            |
+| Collapse         | 376       | 288            | 48              | 4             |
+| Haplotype switch | 7323      | 3920           | 79              | 686           |
+| Inversion        | 6         | 0              | 0               | 1             |
 
 
 Now for the juicy part. The raven assembly, by a large margin, has the most large scale errors in the assembly. However, the majority of these errors are "haplotype switchs". Once those are removed from the total, it appears that the raven assembly is not that much worse than the others, but still worse. These errors can also be easily corrected using polishing tools such as Hapo-g or the one built into Inspector. 
 
-| Indels                              | Raven Assembly   | Shasta Assembly  | Flye Assembly    |
-|-------------------------------------|------------------|------------------|------------------|
-| Small-scale assembly error /per Mbp | 2161.13566796317 | 6993.43411054656 | 188.174131326123 |
-| Total small-scale assembly error    | 2640740          | 8366545          | 286287           |
-| Base substitution                   | 1240424          | 2714250          | 134786           |
-| Small-scale expansion               | 818823           | 4165783          | 103520           |
-| Small-scale collapse                | 581493           | 1486512          | 47981            |
-|                                     |                  |                  |                  |
-| QV                                  | 25.2858950332793 | 21.3835831443883 | 34.6460926406124 |
+| Indels                              | Published       | Raven Assembly   | Shasta Assembly  | Flye Assembly    |
+|-------------------------------------|-----------------|------------------|------------------|------------------|
+| Small-scale assembly error /per Mbp | 1650.4273110638 | 2161.13566796317 | 6993.43411054656 | 188.174131326123 |
+| Total small-scale assembly error    | 1817624         | 2640740          | 8366545          | 286287           |
+| Base substitution                   | 344520          | 1240424          | 2714250          | 134786           |
+| Small-scale expansion               | 1418895         | 818823           | 4165783          | 103520           |
+| Small-scale collapse                | 54209           | 581493           | 1486512          | 47981            |
+|                                     |                 |                  |                  |                  |
+| QV                                  | 24.887180495927 | 25.2858950332793 | 21.3835831443883 | 34.6460926406124 |
+
 
 
 This is probably the most important section regarding genome quality. In my experience, small scale errors such as insertions, deletions, and base substitutions significantly impact gene prediction. These small errors can change the reading frames of the gene which results in gene truncations or wrong gene models. Keeping that in mind, Flye is the clear winner with regards to genome quality. This is reflected in the much higher QV score than the other two. The QV score is a [PHRED score](https://en.wikipedia.org/wiki/Phred_quality_score) assigned to the genome which tells you how frequently errors occur in the genome. In this case a phred score of 20 corresponds to roughly 1 error every 100 bases and a phred score of 30 suggests an error every 1000 bases. For context, the best human genome has a phred score somewhere around 60 to 70. 
@@ -207,21 +222,25 @@ merqury.sh \
 ## Results
 
 
-| Genome Assembly | Assembly only kmers | Shared Kmers | QV      | Error Rate |
-|-----------------|---------------------|--------------|---------|------------|
-| Raven           | 187445697           | 1221896050   | 20.8134 | 0.00829211 |
-| Shasta          | 287105937           | 1209594249   | 18.7105 | 0.0134569  |
+| Genome Assembly  | Assembly only kmers | Shared Kmers | QV      | Error Rate |
+|------------------|---------------------|--------------|---------|------------|
+| Raven            | 187445697           | 1221896050   | 20.8134 | 0.00829211 |
+| Shasta           | 287105937           | 1209594249   | 18.7105 | 0.0134569  |
+| Flye             | 139046663           | 1540506161   | 23.2618 | 0.00471867 |
+| Published genome | 45930005            | 1106849963   | 26.7431 | 0.00211684 |
 
 Shared kmers are those kmers that are found in both the read dataset and the genome assembly. Consensus quality (QV) is the Mercury Phred quality score. The error rate is calculated using presense/absence of k-mers in the assembly vs raw data. See the Merqury vs Inspector QV scores section for more info on this is calculated. It looks like shasta has a lower QV and higher error rate than the Raven assembly. This agrees with the Inspector results. Although they are a little off from each other. 
 
-| Genome Assembly | Assembly K-mers | Read K-mers | Completeness Percent |
-|-----------------|-----------------|-------------|----------------------|
-| raven_c_heheva  | 597225562       | 904653194   | 66.0171              |
-| Shasta          | 545857355       | 904653194   | 60.3389              |
+| Genome Assembly  | Assembly K-mers | Read K-mers | Completeness Percent |
+|------------------|-----------------|-------------|----------------------|
+| Raven            | 597225562       | 904653194   | 66.0171              |
+| Shasta           | 545857355       | 904653194   | 60.3389              |
+| Flye             | 702337152       | 904653194   | 77.6361              |
+| Published genome | 645834340       | 904653194   | 71.3903 
 
 Per the [paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02134-9#Sec10), completeness is defined as the "the fraction of reliable k-mers in the read set that are also found in the assembly. For repetitive genomes, erroneous read set k-mers can sometimes appear above this threshold due to recurring errors in high-copy repeat families, but this is rare."
 
-{% include gallery id="gallery_merqury" caption="Merqury Spectra graphs of the Raven and Shasta assemblies"  %}
+{% include gallery id="gallery_merqury" layout="half" caption="Merqury Spectra graphs of the published genome, Raven, Flye, and Shasta assemblies"  %}
 
 Per the [paper](), "A typical k-mer spectrum for a heterozygous diploid genome consists of two primary peaks, one representing k-mers that are 1-copy in the diploid genome (heterozygous, on a single haplotype) and one representing those that are 2-copy in the diploid genome (homozygous, on both haplotypes or two copies on one haplotype). The 2-copy k-mers appear with a frequency approximately equal to the average depth of sequencing coverage, where the 1-copy k-mers appear with frequency approximately equal to half the sequencing coverage. **If a genome is entirely homozygous, only the 2-copy peak may appear, and if the genome is extremely heterozygous, only the 1-copy peak may appear**. With sufficient sequencing coverage (to separate the peaks along the axis), and a proper choice of k, both peaks are visible for most genomes."
 

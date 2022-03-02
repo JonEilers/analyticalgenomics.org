@@ -1,0 +1,178 @@
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opLessThan
+    c_heheva.rawdata.meryl
+    print to (stdout)
+
+Found 1 command tree.
+Processing file c_heheva.rawdata.hist
+Start sampling here: 5, 1.6444018E7
+Estimated haploid peak here: 15, 3.1894326E7
+Next max here: 15, 3.1894326E7
+Stop sampling here: 35, 1.6386157E7
+Running time : 0 h 0 m 0 sec
+
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 80 threads.
+  opGreaterThan
+    threshold=5
+    c_heheva.rawdata.meryl
+    output to c_heheva.rawdata.gt5.meryl
+
+Failed with 'Interrupt'; backtrace (libbacktrace):
+
+Failed with 'Segmentation fault'; backtrace (libbacktrace):
+/home/jon/miniconda3/envs/merqury/share/merqury/build/filt.sh: line 33: 39611 Segmentation fault      (core dumped) meryl greater-than $filt output $db.gt$filt.meryl $db.meryl
+
+Found 1 command tree.
+
+Counting 1494 (estimated) million canonical 20-mers from 1 input file:
+    sequence-file: assembly.fasta
+
+
+SIMPLE MODE
+-------
+# Collect read counts per asm copies
+# Read only
+# Copy 1 ~ 4
+5535.
+    -> 16 Tbits memory used
+
+  1566740630 input bases
+    -> expected max count of 6266962, needing 8 extra bits.
+    -> 8192 Gbits memory used
+
+  3072 GB memory needed
+
+
+COMPLEX MODE
+------------
+
+prefix     # of   struct   kmers/    segs/      min     data    total
+  bits   prefix   memory   prefix   prefix   memory   memory   memory
+------  -------  -------  -------  -------  -------  -------  -------
+     1     2  P  7292 kB   373 MM   455 kS  8192  B  3642 MB  3650 MB
+     2     4  P  7112 kB   186 MM   221 kS    16 kB  3549 MB  3556 MB
+     3     8  P  6940 kB    93 MM   108 kS    32 kB  3457 MB  3464 MB
+     4    16  P  6775 kB    46 MM    52 kS    64 kB  3362 MB  3369 MB
+     5    32  P  6639 kB    23 MM    25 kS   128 kB  3269 MB  3275 MB
+     6    64  P  6557 kB    11 MM    12 kS   256 kB  3177 MB  3184 MB
+     7   128  P  6574 kB  5976 kM  6170  S   512 kB  3085 MB  3091 MB
+     8   256  P  6786 kB  2988 kM  2989  S  1024 kB  2989 MB  2995 MB
+     9   512  P  7408 kB  1494 kM  1448  S  2048 kB  2896 MB  2903 MB
+    10  1024  P  8840 kB   747 kM   701  S  4096 kB  2804 MB  2812 MB
+    11  2048  P    11 MB   373 kM   339  S  8192 kB  2712 MB  2723 MB
+    12  4096  P    17 MB   186 kM   164  S    16 MB  2624 MB  2641 MB
+    13  8192  P    30 MB    93 kM    79  S    32 MB  2528 MB  2558 MB
+    14    16 kP    55 MB    46 kM    38  S    64 MB  2432 MB  2487 MB
+    15    32 kP   105 MB    23 kM    19  S   128 MB  2432 MB  2537 MB  Best Value!
+    16    64 kP   206 MB    11 kM     9  S   256 MB  2304 MB  2510 MB
+    17   128 kP   409 MB  5977  M     5  S   512 MB  2560 MB  2969 MB
+    18   256 kP   814 MB  2989  M     3  S  1024 MB  3072 MB  3886 MB
+    19   512 kP  1620 MB  1495  M     1  S  2048 MB  2048 MB  3668 MB
+    20  1024 kP  3240 MB   748  M     1  S  4096 MB  4096 MB  7336 MB
+    21  2048 kP  6480 MB   374  M     1  S  8192 MB  8192 MB    14 GB
+    22  4096 kP    12 GB   187  M     1  S    16 GB    16 GB    28 GB
+    23  8192 kP    25 GB    94  M     1  S    32 GB    32 GB    57 GB
+    24    16 MP    50 GB    47  M     1  S    64 GB    64 GB   114 GB
+
+
+FINAL CONFIGURATION
+-------------------
+
+Estimated to require 4846 MB memory out of 488 GB allowed.
+Estimated to require 2 batches.
+
+Configured complex mode for 4.733 GB memory per batch, and up to 2 batches.
+
+Start counting with THREADED method.
+
+Failed with 'Interrupt'; backtrace (libbacktrace):
+
+Failed with 'Segmentation fault'; backtrace (libbacktrace):
+/home/jon/miniconda3/envs/merqury/share/merqury/eval/spectra-cn.sh: line 58: 39722 Segmentation fault      (core dumped) meryl count k=$k output ${asm}.meryl $asm_fa
+
+Failed with 'Interrupt'; backtrace (libbacktrace):
+
+Failed with 'Segmentation fault'; backtrace (libbacktrace):
+/home/jon/miniconda3/envs/merqury/share/merqury/eval/spectra-cn.sh: line 58: 39808 Segmentation fault      (core dumped) meryl difference output read.k$k.$asm.0.meryl $read $asm.meryl
+usage: meryl ...
+
+  A meryl command line is formed as a series of commands and files, possibly
+  grouped using square brackets.  Each command operates on the file(s) that
+  are listed after it.
+
+  COMMANDS:
+
+    statistics           display total, unique, distnict, present number of the kmers on the screen.  accepts exactly one input.
+    histogram            display kmer frequency on the screen as 'frequency<tab>count'.  accepts exactly one input.
+    print                display kmers on the screen as 'kmer<tab>count'.  accepts exactly one input.
+
+    count                Count the occurrences of canonical kmers in the input.  must have 'output' specified.
+    count-forward        Count the occurrences of forward kmers in the input.  must have 'output' specified.
+    count-reverse        Count the occurrences of reverse kmers in the input.  must have 'output' specified.
+      k=<K>              create mers of size K bases (mandatory).
+      n=<N>              expect N mers in the input (optional; for precise memory sizing).
+      memory=M           use no more than (about) M GB memory.
+      threads=T          use no more than T threads.
+      compress           compress homopolymer runs to a single letter.
+
+    less-than N          return kmers that occur fewer than N times in the input.  accepts exactly one input.
+    greater-than N       return kmers that occur more than N times in the input.  accepts exactly one input.
+    equal-to N           return kmers that occur exactly N times in the input.  accepts exactly one input.
+    not-equal-to N       return kmers that do not occur exactly N times in the input.  accepts exactly one input.
+
+    increase X           add X to the count of each kmer.
+    decrease X           subtract X from the count of each kmer.
+    multiply X           multiply the count of each kmer by X.
+    divide X             divide the count of each kmer by X.
+    divide-round X       divide the count of each kmer by X and round results. count < X will become 1.
+    modulo X             set the count of each kmer to the remainder of the count divided by X.
+
+    union                return kmers that occur in any input, set the count to the number of inputs with this kmer.
+    union-min            return kmers that occur in any input, set the count to the minimum count
+    union-max            return kmers that occur in any input, set the count to the maximum count
+    union-sum            return kmers that occur in any input, set the count to the sum of the counts
+
+    intersect            return kmers that occur in all inputs, set the count to the count in the first input.
+    intersect-min        return kmers that occur in all inputs, set the count to the minimum count.
+    intersect-max        return kmers that occur in all inputs, set the count to the maximum count.
+    intersect-sum        return kmers that occur in all inputs, set the count to the sum of the counts.
+
+    subtract             return kmers that occur in the first input, subtracting counts from the other inputs
+
+    difference           return kmers that occur in the first input, but none of the other inputs
+    symmetric-difference return kmers that occur in exactly one input
+
+  MODIFIERS:
+
+    output O             write kmers generated by the present command to an output  meryl database O
+                         mandatory for count operations.
+
+  EXAMPLES:
+
+  Example:  Report 22-mers present in at least one of input1.fasta and input2.fasta.
+            Kmers from each input are saved in meryl databases 'input1' and 'input2',
+            but the kmers in the union are only reported to the screen.
+
+            meryl print \
+                    union \
+                      [count k=22 input1.fasta output input1] \
+                      [count k=22 input2.fasta output input2]
+
+  Example:  Find the highest count of each kmer present in both files, save the kmers to
+            database 'maxCount'.
+
+            meryl intersect-max input1 input2 output maxCount
+
+  Example:  Find unique kmers common to both files.  Brackets are necessary
+            on the first 'equal-to' command to prevent the second 'equal-to' from
+            being used as an input to the first 'equal-to'.
+
+            meryl intersect [equal-to 1 input1] equal-to 1 input2
+
+Can't interpret 'read.k20.assembly.0.meryl': not a meryl command, option, or recognized input file.
