@@ -62,6 +62,8 @@ blobtools create \
 
 ```
 
+Note: the taxid and taxdump are not required to run the above commands. However, they will be used later when running other blobtools commands. 
+
 viewing the results locally
 ```bash
 blobtools view --local /home/jon/Working_Files/blobtoolkit/
