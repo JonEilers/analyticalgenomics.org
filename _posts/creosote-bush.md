@@ -1,6 +1,7 @@
 
-# Introduction 
-I am in eastern Mojave desert visiting my Fiance while she does a emergency medicine rotation in Arizona. While she is at work I am roaming the deserts with an eye for understanding life at extremes and also looking for scorpions. While scouring google maps for interesting locations in the region I noticed something odd: industrial farming. google maps revealed large scale irrigation pivots in the middle of the mojave desert. These pivots were right next to an area that I was interested in so off I went to investigate. 
+# Introduction
+ 
+I am in eastern Mojave desert visiting my Fiance while she does a emergency medicine rotation in Arizona. While she is at work I roam the deserts with an eye for understanding life at extremes and also looking for scorpions. While scouring google maps for interesting locations in the region I noticed something odd: industrial farming. google maps revealed large scale irrigation pivots in the middle of the mojave desert. These pivots were right next to an area that I was interested in so off I went to investigate. 
 
 (insert photo of the irrigation pivot)
 
@@ -11,15 +12,11 @@ While this approach to farming the desert is absolute idiocracy, deserts are not
 The key to changing the weather and ecosystem of a region is complexity. This can be seen in the Amazon rainforest where the trees transpire so much they create their own [rain and climate](https://www.researchsquare.com/article/rs-71039/latest.pdf). However, it requires a large number of trees to generate "moisture recycling". But the simply act of planting trees or shrubs with complex architecture can have significant impacts on the ecosystem. For example Saugoro cactus practically require a ["nurse plant"](https://www.tandfonline.com/doi/full/10.1111/0033-0124.5504008?casa_token=pWUYTkaHKW4AAAAA%3ATOB63C0dgIb6L8I0wcw29AGNnJS7G5_ok_l73TmkUFP0B2YijphRJz2HyovXf3gMY8Lp7pi5H1RaMQ) to grow under in order for them to become established and reach maturity due to the extreme environment they grow in. 
 amazon rainforest self producing rain, creating its own weather
 
-Deserts are sources of 
+There are a number of ways a desert landscape can be modified. One is to dig [crescents](https://weseedchange.org/how-to-turn-the-desert-green-bringing-soil-back-in-burkina-faso/) into the soil to trap moisture and sediment. Another to build structures that [pull moisture from the air](https://www.science.org/doi/full/10.1126/sciadv.aat3198) and funnel it to the ground. Thousands of these located relatively close to eachother in a desert basin would generate enough water to introduce plants that would generate further complexity such as tall branching trees that could also sink their roots deep into the water table. 
 
-talk about growing plants in the desert
-talk about terraforming/greening deserts using plants
-talk about the amazon collapsing and how the sahara was once a jungle
+Which brings us to the more interestin question - how to genetically modify plants to grow in the desert. Deserts are the most inhospitable places on earth. Any plant growing in them must contend with all the elements - extreme heat, extreme light, high winds, little water, freezing nights. I will consider all of these as I look for genes that confer tolerance to the extremes in addition to highlighting the adaptations of native desert plants such as the creosote bush which is so good at pulling water out of the soil that no other plants can compete for water. 
 
 
-the holy grail: engineering a plant to pull water from the desert air
-[Practical water production from desert air](https://www.science.org/doi/full/10.1126/sciadv.aat3198)
 
 genetically modifying plants to be better adapted to the desert - give the creosote bush as an example
 

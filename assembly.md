@@ -94,7 +94,7 @@ A paper titled [Towards complete and error-free genome assemblies of all vertebr
 ## Summary Statistics
 A standard metric for genome contiguity is the N50 value. N50 is a tricky beast to understand and I've seen more blogs and descriptions get it wrong than right. Thankfully, [wikipedia](https://en.wikipedia.org/wiki/N50,_L50,_and_related_statistics#N50) gets it right. Without getting into the details on it, the thing that matters when considering the N50 is that the majority of reads in an assembly will be shorter than the N50 value. If you have an N50 of 9kb, than the majority of the assembly will be scaffolds or contigs shorter than 9kb. Having an N50 of 9kb consequently means gene prediction will likely capture the bulk of the genes, but there will be a large number of fragmented genes such as [titin](https://en.wikipedia.org/wiki/Titin). While there are a number of tools for acquiring this metric, probably my favorite way to visualize it is the snail plot produced via [Blobtoolkit](https://www.g3journal.org/content/10/4/1361). [Here](https://blobtoolkit.genomehubs.org/) is a link to their website. See the link below for an example. 
 
-To-do [Summary statistics via Blobtoolkit](/blobtoolkit/)
+To-do [Summary statistics via Blobtoolkit](/summary-stats/)
 {: .notice--warning}
 
 ## Assembly QC with BUSCOs
@@ -106,7 +106,7 @@ To-do [Assembly quality assessment using BUSCO analysis](/busco/)
 ## Assembly Contamination
 In addition to looking at summary statistics and checking BUSCOs, it is also wise to check for contamination. During the sequencing process, DNA from other organisms may be in the sample and it's important to know if that has found its way into the genome assembly. A common method for checking this is to download a uniprot or refseq protein database and blast it against your assembly then check to see what organisms had the highest hit. If those organisms are closely related to the organism of interest, then it is safe to say that's probably solid, but if there are a lot of hits for distantly related organisms, then it might be a good idea to consider preprocessing and filtering the raw data before assembling. [Blobtoolkit](https://www.g3journal.org/content/10/4/1361) produces two different types of graphs, the blobplot and the Cumulative assembly span plot, for visualizing this. Additionally, [KAT](https://academic.oup.com/bioinformatics/article/33/4/574/2664339?login=true) can be used to check for k-mer contamination in an assembly. 
 
-To-do [Assembly contaminiation via Blobtoolkit and KAT](/blobtoolkit/)
+To-do [Assembly contaminiation via Blobtoolkit and KAT](/contamination/)
 {: .notice--warning}
 
 ## Assembly Evaluation using k-mers and long reads
