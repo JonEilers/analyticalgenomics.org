@@ -103,11 +103,11 @@ An easy way to capture the level of fragmentation and also get idea of what to e
 To-do [Assembly quality assessment using BUSCO analysis](/busco/)
 {: .notice--warning}
 
-## Assembly Contamination
+## Assembly Contamination and quality
 In addition to looking at summary statistics and checking BUSCOs, it is also wise to check for contamination. During the sequencing process, DNA from other organisms may be in the sample and it's important to know if that has found its way into the genome assembly. A common method for checking this is to download a uniprot or refseq protein database and blast it against your assembly then check to see what organisms had the highest hit. If those organisms are closely related to the organism of interest, then it is safe to say that's probably solid, but if there are a lot of hits for distantly related organisms, then it might be a good idea to consider preprocessing and filtering the raw data before assembling. [Blobtoolkit](https://www.g3journal.org/content/10/4/1361) produces two different types of graphs, the blobplot and the Cumulative assembly span plot, for visualizing this. Additionally, [KAT](https://academic.oup.com/bioinformatics/article/33/4/574/2664339?login=true) can be used to check for k-mer contamination in an assembly. 
 
-To-do [Assembly contaminiation via Blobtoolkit and KAT](/contamination/)
-{: .notice--warning}
+In progress [Assembly contaminiation and quality via Blobtoolkit](/contamination/)
+{: .notice--info}
 
 ## Assembly Evaluation using k-mers and long reads
 It is important to get a quantifiable picture of the assembly quality. One way to check assembly quality is using K-mers to see how many unique K-mers are found in both the assembly and the raw data then visualize it using a [K-mer spectra graph](https://academic.oup.com/view-large/figure/118668344/btw663f1.tif). A great tool for this is [Merqury](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02134-9). Another tool for assembly evaluation is called [Inspector](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02527-4) which uses long reads to identify, quantify, and correct errors. 
