@@ -172,3 +172,13 @@ Metazoa
 	|954	Total BUSCO groups searched               |
 	--------------------------------------------------
 ```
+
+
+
+# to do
+
+April 2022 - the latest conda busco version is being a butt and not installing. So I may have to redo this section using docker. ugh.  
+
+https://busco.ezlab.org/busco_userguide.html#docker-image
+
+

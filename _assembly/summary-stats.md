@@ -46,19 +46,19 @@ blobtools create \
   --fasta /home/jon/Working_Files/genome_assemblies/japonicus/Ajap_genome.fasta \
   --taxid 307972 \
   --taxdump /home/jon/Working_Files/blobtoolkit/taxdump \
-  /home/jon/Working_Files/blobtoolkit/ajap
+  /home/jon/Working_Files/blobtoolkit/datasets/ajap
 
 blobtools create \
   --fasta /home/jon/Working_Files/japonicus_genome_project/MaSuRCA-4.0.5/masurca_results/primary.genome.scf.fasta \
   --taxid 307972 \
   --taxdump /home/jon/Working_Files/blobtoolkit/taxdump \
-  /home/jon/Working_Files/blobtoolkit/ajap-masurca
+  /home/jon/Working_Files/blobtoolkit/datasets/ajap-masurca
 
 blobtools create \
   --fasta /home/jon/Working_Files/japonicus_genome_project/MaSuRCA-4.0.5/masurca_results/scaffolds.ref.fa \
   --taxid 307972 \
   --taxdump /home/jon/Working_Files/blobtoolkit/taxdump \
-  /home/jon/Working_Files/blobtoolkit/ajap-masurca-scaffolds.ref.fa
+  /home/jon/Working_Files/blobtoolkit/datasets/ajap-masurca-scaffolds.ref
 
 ```
 
@@ -83,6 +83,6 @@ So what do I see here? The first thing is that the published genome has some gap
 
 Looking at the top left you'll see abunch more numbers. Most of those are self explanatory. What's cool about those numbers though is they are easily seen in the image. The red line in the plot is the longest contig. The grey represents the assembly scaffolds and the "height" or distance to the center of the circle represents the length of those scaffolds. There is a scale line in the center of the circle that goes up. The dark orange represents the scaffolds contained in the N50 metric and the light orange are the scaffolds in the N90. In highly contigious assemblies there will usually be less than a hundred scaffolds so the snail swirl thingy will look very jagged. When there are a lot of scaffolds the grey line will appear smooth such as in this case. 
 
-The outer light and dark blue represent the GC/AT content. In an ideal assembly that should be fairly consistent - meaning the line between the two colors shouldn't be squigglely. However, you'll notice that near the end of the assembly there is a little squiggle. This could be because they are contamination from other organisms or maybe the assemblers have some bias in assembling reads and the short unassembled ones are difficult to place? Not sure. Additionally, if there are a lot of gaps in the assembly they will show up in the light/dark blue as white. This a good way to check how contigious the assembly is. 
+The outer light and dark blue represent the GC/AT content. In an ideal assembly that should be fairly consistent - meaning the line between the two colors shouldn't be squigglely. However, you'll notice that near the end of the assembly there is a little squiggle. This could be because they are contamination from other organisms or maybe the assemblers have some bias in assembling reads and the short unassembled ones are difficult to place? It could also be short reads have more variance in the GC content and these are the shortest reads. Not sure. Additionally, if there are a lot of gaps in the assembly they will show up in the light/dark blue as white. This a good way to check how contigious the assembly is. 
 
 The published assembly is more complete (contains more nucleotides) than the final masurca assembly, but not as complete as the masurca assembly containing lower confidence contigs/scaffolds. However, the published assembly is significantly more contiguous than the masurca assembly containing lower confidence contigs. It is interesting that the masurca assembly does have way more gapless scaffolds longer than 1 megabase. This makes me think the Masurca assemblies are likely of higher quality. However, I won't know until I take a look at how many assembly errors are in it using [Inspector and Merqury](/genome_quality/) and check [busco](busco/) content.  
