@@ -31,67 +31,67 @@ gallery_blobtoolkit_best_snail:
 gallery_blobtoolkit_best_blob:
   - url:   /assets/images/assembly/contamination/high_quality/patiria_miniata.blob.circle.png 
     image_path:   /assets/images/assembly/contamination/high_quality/patiria_miniata.blob.circle.png 
-    title: Snail plot of the bat star Patiria miniata genome assembly
+    title: blob plot of the bat star Patiria miniata genome assembly
   - url:   /assets/images/assembly/contamination/high_quality/Asterias_rubens.blob.circle.png 
     image_path:   /assets/images/assembly/contamination/high_quality/Asterias_rubens.blob.circle.png 
-    title: Snail plot of the common sea star Asterias rubens genome assembly
+    title: blob plot of the common sea star Asterias rubens genome assembly
   - url:   /assets/images/assembly/contamination/high_quality/Marthasterias_glacialis.blob.circle.png 
     image_path:   /assets/images/assembly/contamination/high_quality/Marthasterias_glacialis.blob.circle.png 
-    title: Snail plot of the Spiny starfish Marthasterias glacialis genome assembly
+    title: blob plot of the Spiny starfish Marthasterias glacialis genome assembly
 gallery_blobtoolkit_best_length:
   - url:   /assets/images/assembly/contamination/high_quality/patiria_miniata.blob.length.png
     image_path:   /assets/images/assembly/contamination/high_quality/patiria_miniata.blob.length.png
-    title: Snail plot of the bat star Patiria miniata genome assembly
+    title: blob plot of the bat star Patiria miniata genome assembly
   - url:   /assets/images/assembly/contamination/high_quality/Asterias_rubens.blob.length.png
     image_path:   /assets/images/assembly/contamination/high_quality/Asterias_rubens.blob.length.png 
-    title: Snail plot of the common sea star Asterias rubens genome assembly
+    title: blob plot of the common sea star Asterias rubens genome assembly
   - url:   /assets/images/assembly/contamination/high_quality/Marthasterias_glacialis.blob.length.png
     image_path:   /assets/images/assembly/contamination/high_quality/Marthasterias_glacialis.blob.length.png
-    title: Snail plot of the Spiny starfish Marthasterias glacialis genome assembly
+    title: blob plot of the Spiny starfish Marthasterias glacialis genome assembly
 
 gallery_blobtoolkit_medium_snail:
   - url:   /assets/images/assembly/contamination/medium_quality/acanthaster_planci.snail.png
     image_path:   /assets/images/assembly/contamination/medium_quality/acanthaster_planci.snail.png
-    title:
+    title: 'Snail plot of sunflower sea star genome assembly'
   - url:   /assets/images/assembly/contamination/medium_quality/strongylocentrotus_purpuratus.snail.png
     image_path:   /assets/images/assembly/contamination/medium_quality/strongylocentrotus_purpuratus.snail.png
-    title:
+    title: 'Snail plot of purple sea urchin genome assembly'
 gallery_blobtoolkit_medium_blob:  
   - url:   /assets/images/assembly/contamination/medium_quality/acanthaster_planci.blob.circle.png
     image_path:   /assets/images/assembly/contamination/medium_quality/acanthaster_planci.blob.circle.png
-    title: 
+    title: 'blob plot of sunflower sea star genome assembly'
   - url:   /assets/images/assembly/contamination/medium_quality/strongylocentrotus_purpuratus.blob.circle.png
     image_path:   /assets/images/assembly/contamination/medium_quality/strongylocentrotus_purpuratus.blob.circle.png
-    title:
+    title: 'blob plot of purple sea urchin genome assembly'
 gallery_blobtoolkit_medium_length:
   - url:   /assets/images/assembly/contamination/medium_quality/acanthaster_planci.blob.length.png
     image_path:   /assets/images/assembly/contamination/medium_quality/acanthaster_planci.blob.length.png
-    title:
+    title: 'blob plot of length vs gc content of sunflower sea star genome assembly'
   - url:   /assets/images/assembly/contamination/medium_quality/strongylocentrotus_purpuratus.blob.length.png
     image_path:   /assets/images/assembly/contamination/medium_quality/strongylocentrotus_purpuratus.blob.length.png
-    title:
+    title: 'blob plot of length vs gc content of purple sea urchin genome assembly'
 
 gallery_blobtoolkit_sus_snail:
   - url:   /assets/images/assembly/contamination/bad_quality/JAAAKB01.snail.png
     image_path:   /assets/images/assembly/contamination/bad_quality/JAAAKB01.snail.png
-    title:
+    title: "snail plot of apostichopus leukothele genome assembly"
   - url:   /assets/images/assembly/contamination/bad_quality/CZLG01.snail.png 
     image_path:   /assets/images/assembly/contamination/bad_quality/CZLG01.snail.png 
-    title:
+    title: 'snail plot of Ophionereis fasciata genome assembly'
 gallery_blobtoolkit_sus_blob:  
   - url:   /assets/images/assembly/contamination/bad_quality/JAAAKB01.blob.circle.png 
     image_path:   /assets/images/assembly/contamination/bad_quality/JAAAKB01.blob.circle.png 
-    title: 
+    title: " blob plot of Apostichopus leukothele genome assembly"
   - url:   /assets/images/assembly/contamination/bad_quality/CZLG01.blob.circle.png
     image_path:   /assets/images/assembly/contamination/bad_quality/CZLG01.blob.circle.png
-    title:
+    title: 'blob plot of Ophionereis fasciata genome assembly'
 gallery_blobtoolkit_sus_length:
   - url:   /assets/images/assembly/contamination/bad_quality/JAAAKB01.blob.length.png
     image_path:   /assets/images/assembly/contamination/bad_quality/JAAAKB01.blob.length.png
-    title:
+    title: 'blob plot of scaffold length vs gc content of Apostichopus leukothele genome assembly'
   - url:   /assets/images/assembly/contamination/bad_quality/CZLG01.blob.length.png
     image_path:   /assets/images/assembly/contamination/bad_quality/CZLG01.blob.length.png
-    title:
+    title: 'blob plot of scaffold length vs gc content of Ophionereis fasciata'
 
 ---
 
@@ -254,6 +254,12 @@ minimap2 -ax map-pb \
          /home/jon/Working_Files/japonicus_genome_project/MaSuRCA-4.0.5/masurca_results/scaffolds.ref.fa \
          /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6282347.fasta \
 | samtools sort -@20 -O BAM -o Aajap-masurca-scaffolds.ref.bam -
+
+minimap2 -ax map-pb \
+         -t 30 \
+         /home/jon/Working_Files/genome_assemblies/japonicus/Ajap_genome.fasta \
+         /home/jon/Working_Files/sea_cuke_species_data/apostichopus_japonicus/apostichopus_japonicus_raw_genome_seq_data/SRR6282347.fastq \
+| samtools sort -@30 -O BAM -o Ajap.bam -
 ```
 
 blasting NCBI nucleotide database against the genomes
@@ -337,12 +343,13 @@ Adding coverage, blastn, and blastx hits for each assembly
 blobtools add \
     --hits /home/jon/Working_Files/blobtoolkit/blastn_results/ajap.ncbi.blastn.out \
     --hits /home/jon/Working_Files/blobtoolkit/diamond_results/ajap.ncbi.diamond.blastx.out \
+    --cov /home/jon/Working_Files/blobtoolkit/minimap_results/Ajap.bam
     --taxrule bestsum \ 
     --taxdump /home/jon/Working_Files/blobtoolkit/taxdump \ 
     /home/jon/Working_Files/blobtoolkit/datasets/ajap            
 
 
-blobtools add --hits /home/jon/Working_Files/blobtoolkit/blastn_results/ajap.ncbi.blastn.out --hits /home/jon/Working_Files/blobtoolkit/diamond_results/ajap.ncbi.diamond.blastx.out --taxrule bestsum --taxdump /home/jon/Working_Files/blobtoolkit/taxdump /home/jon/Working_Files/blobtoolkit/datasets/ajap  
+blobtools add --hits /home/jon/Working_Files/blobtoolkit/blastn_results/ajap.ncbi.blastn.out --hits /home/jon/Working_Files/blobtoolkit/diamond_results/ajap.ncbi.diamond.blastx.out --cov /home/jon/Working_Files/blobtoolkit/minimap_results/Ajap.bam --taxrule bestsum --taxdump /home/jon/Working_Files/blobtoolkit/taxdump --replace /home/jon/Working_Files/blobtoolkit/datasets/ajap  
 
 #ajap-masurca.scaffolds.ref
 blobtools add \
@@ -425,13 +432,13 @@ Lower quality genome assemblies are essentially worse versions of these too. So 
 In my experience, people who get "creative" with their assembly process tend to get some weird assemblies. That's fine if they keep it to themselves, but when they publish it to NCBI then it becomes a problem because few people actually check the quality of an assembly before trying to use it. 
 
 
-{% include gallery id="gallery_blobtoolkit_sus_snail" layout="half" caption="Blobtoolkit plots of medium quality echinoderm genome assemblies" %}
+{% include gallery id="gallery_blobtoolkit_sus_snail" layout="half" caption="Blobtoolkit snail plots of suspicious quality echinoderm genome assemblies" %}
 
 These two examples are from the assemblies: *Apostichopus leukothele* a sea cucumber and *Ophionereis fasciata* a brittle star. Wow these are bad. The sea cucumber one should not have a single scaffold that is 110 megabases long. Surprisingly the GC content is pretty close to what is expected for this species. But notice how the scaffold length quickly drops from ~100 megabases to a N90 of 2.5 kilobases. That makes no sense for a genome assembly. I haven't talked about Buscos, but suffice to say if you have scaffolds that are in the 100 megabase range you should not be getting a busco percentage less than 90%, let alone below 50%. 
 
 The brittle star assembly is more like what I'd expect to see for a highly fragmented genome. As in something with a very large number of scaffolds and low N50. However, if your N50 is 500 base pairs, you shouldn't be publishing it. That's not useful for anything. Also notice a "N" of 12.4% which is really high for such a fragmented genome. If something is this fragmented, there probably shouldn't be any gaps. Also strange is the GC content in the largest scaffolds, but maybe that is to be expected for short scaffolds. The busco score is atrocious. Again, probably shouldn't be publishing something that has a busco score less than 70% or so, let alone 7%. This means single copy genes that are found in almost all organisms are either fragmented or missing from your assembly, which means your assembly is garbage. 
 
-{% include gallery id="gallery_blobtoolkit_sus_length" layout="half" caption="Blobtoolkit plots of medium quality echinoderm genome assemblies" %}
+{% include gallery id="gallery_blobtoolkit_sus_length" layout="half" caption="Blobtoolkit blob plots of suspicious quality echinoderm genome assemblies" %}
 
 Looking at the length  vs gc content we see some weird stuff in the sea cucumber assembly. This is an example of someone getting creative with their assembly process and it has created a strange pattern. The blast hits are weird though. I can't tell, but it sorta looks like one of the largest scaffolds has a majority hits from flat worms. That's bad. 
 
