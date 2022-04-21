@@ -479,7 +479,7 @@ The brittle star assembly has a lot wrong in the blob plot. First, if you ever s
 
 # Results
 
-A high quality genome (at the time) of *Apostichopus japonicus* was published in 2017. While working on my masters thesis I stumbled across some gene model problems. Upon closer inspection using mapped rna-seq data and Apollo it became apparent that there were numerous insertion and deletion errors in the assembly itself. The original raw sequencing data was not made publicly available which prevented a standard genome assembly polishing to fix the errors. Thankfully, another group uploaded their sequencing data for a different project and I was able to create a genome assembly using the assembler Masurca. See below for a comparison between the two assemblies. 
+A medium quality genome of *Apostichopus japonicus* was published in 2017. While working on my masters thesis I stumbled across some gene model problems. Upon closer inspection using mapped rna-seq data and Apollo it became apparent that there were numerous insertion and deletion errors in the assembly itself. The original raw sequencing data was not made publicly available which prevented a standard genome assembly polishing to fix the errors. Thankfully, another group uploaded their sequencing data for a different project and I was able to create a genome assembly using the assembler Masurca. See below for a comparison between the two assemblies. 
 
 Masurca creates several assemblies one which includes lower confidence scaffolds. I have included it here because it spans the predicted length of the genome and because the high confidence assembly is shorter than the published genome assembly. Including both provides and interesting insight into both the tool and the assemblies. 
 
