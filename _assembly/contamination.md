@@ -93,6 +93,38 @@ gallery_blobtoolkit_sus_length:
     image_path:   /assets/images/assembly/contamination/bad_quality/CZLG01.blob.length.png
     title: 'blob plot of scaffold length vs gc content of Ophionereis fasciata'
 
+
+gallery_blobtoolkit_ajap_snail:
+  - url:   assets/images/assembly/contamination/apostichopus_japonicus/ajap/ajap.snail.png
+    image_path:   assets/images/assembly/contamination/apostichopus_japonicus/ajap/ajap.snail.png
+    title: Snail plot of the published Japanese Sea Cucumber genome assembly
+  - url:   assets/images/assembly/contamination/apostichopus_japonicus/ajap_masurca/ajapmasurca.snail.png
+    image_path:   assets/images/assembly/contamination/apostichopus_japonicus/ajap_masurca/ajapmasurca.snail.png
+    title: Snail plot of the Japanese sea cucumber genome assembled using Masurca
+  - url:   assets/images/assembly/contamination/apostichopus_japonicus/ajap_masurca-scaffolds.ref/ajapmasurcascaffoldsref.snail.png
+    image_path:   assets/images/assembly/contamination/apostichopus_japonicus/ajap_masurca-scaffolds.ref/ajapmasurcascaffoldsref.snail.png
+    title: Snail plot of the Japanse sea cucumber genome assembled using Masurca and including low confidence scaffolds
+gallery_blobtoolkit_ajap_blob:  
+  - url:   assets/images/assembly/contamination/apostichopus_japonicus/ajap/ajap.blob.circle.png
+    image_path:   assets/images/assembly/contamination/apostichopus_japonicus/ajap/ajap.blob.circle.png
+    title: Blob plot of the published Japanese Sea Cucumber genome assembly
+  - url:   assets/images/assembly/contamination/apostichopus_japonicus/ajap_masurca/ajapmasurca.blob.circle.png
+    image_path:   assets/images/assembly/contamination/apostichopus_japonicus/ajap_masurca/ajapmasurca.blob.circle.png
+    title: Blob plot of the Japanese sea cucumber genome assembled using Masurca
+  - url:   assets/images/assembly/contamination/apostichopus_japonicus/ajap_masurca-scaffolds.ref/ajapmasurcascaffoldsref.blob.circle.png
+    image_path:   assets/images/assembly/contamination/apostichopus_japonicus/ajap_masurca-scaffolds.ref/ajapmasurcascaffoldsref.blob.circle.png
+    title: Blob plot of the Japanse sea cucumber genome assembled using Masurca and including low confidence scaffolds
+gallery_blobtoolkit_ajap_length:
+  - url:   assets/images/assembly/contamination/apostichopus_japonicus/ajap/ajap.blob.length.png
+    image_path:   assets/images/assembly/contamination/apostichopus_japonicus/ajap/ajap.blob.length.png
+    title: Blob plot of Length vs GC content of the published Japanese Sea Cucumber genome assembly
+  - url:   assets/images/assembly/contamination/apostichopus_japonicus/ajap_masurca/ajapmasurca.blob.length.png
+    image_path:   assets/images/assembly/contamination/apostichopus_japonicus/ajap_masurca/ajapmasurca.blob.length.png
+    title: Blob plot of length vs GC convent of the Japanese sea cucumber genome assembled using Masurca
+  - url:   assets/images/assembly/contamination/apostichopus_japonicus/ajap_masurca-scaffolds.ref/ajapmasurcascaffoldsref.blob.length.png
+    image_path:   assets/images/assembly/contamination/apostichopus_japonicus/ajap_masurca-scaffolds.ref/ajapmasurcascaffoldsref.blob.length.png
+    title: Blob plot of length vs GC content of the Japanse sea cucumber genome assembled using Masurca and including low confidence scaffolds
+
 ---
 
 # Introduction
@@ -447,4 +479,15 @@ The brittle star assembly has a lot wrong in the blob plot. First, if you ever s
 
 # Results
 
-To be added soon - results from earlier sea cucumber assemblies
+A high quality genome (at the time) of *Apostichopus japonicus* was published in 2017. While working on my masters thesis I stumbled across some gene model problems. Upon closer inspection using mapped rna-seq data and Apollo it became apparent that there were numerous insertion and deletion errors in the assembly itself. The original raw sequencing data was not made publicly available which prevented a standard genome assembly polishing to fix the errors. Thankfully, another group uploaded their sequencing data for a different project and I was able to create a genome assembly using the assembler Masurca. See below for a comparison between the two assemblies. 
+
+Masurca creates several assemblies one which includes lower confidence scaffolds. I have included it here because it spans the predicted length of the genome and because the high confidence assembly is shorter than the published genome assembly. Including both provides and interesting insight into both the tool and the assemblies. 
+
+{% include gallery id="gallery_blobtoolkit_ajap_snail" caption="Blobtoolkit snail plots of *Apostichopus japonicus* genome assemblies" %}
+
+
+
+{% include gallery id="gallery_blobtoolkit_ajap_blob" caption="Blobtoolkit snail plots of *Apostichopus japonicus* genome assemblies" %}
+
+{% include gallery id="gallery_blobtoolkit_ajap_length" caption="Blobtoolkit snail plots of *Apostichopus japonicus* genome assemblies" %}
+
