@@ -1,9 +1,11 @@
 ---
-title: "BUSCO Analysis of MaSuRCA, Platanus-Allee, and Platanus-Allee + Redundans Assemblies"
+title: "Checking genome assembly quality using BUSCO"
 toc: true
 toc_sticky: true
 layout: single
 permalink: /busco/
+
+excerpt: "Sir, I think we've found them"
 
 gallery:
   - url: /assets/images/assembly/busco/busco_analysis.png

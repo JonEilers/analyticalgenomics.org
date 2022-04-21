@@ -481,13 +481,24 @@ The brittle star assembly has a lot wrong in the blob plot. First, if you ever s
 
 A medium quality genome of *Apostichopus japonicus* was published in 2017. While working on my masters thesis I stumbled across some gene model problems. Upon closer inspection using mapped rna-seq data and Apollo it became apparent that there were numerous insertion and deletion errors in the assembly itself. The original raw sequencing data was not made publicly available which prevented a standard genome assembly polishing to fix the errors. Thankfully, another group uploaded their sequencing data for a different project and I was able to create a genome assembly using the assembler Masurca. See below for a comparison between the two assemblies. 
 
-Masurca creates several assemblies one which includes lower confidence scaffolds. I have included it here because it spans the predicted length of the genome and because the high confidence assembly is shorter than the published genome assembly. Including both provides and interesting insight into both the tool and the assemblies. 
+Masurca creates several assemblies one which includes lower confidence scaffolds. I have included it here because it spans the predicted length of the genome and because the high confidence assembly is shorter than the published genome assembly. Including both provides an interesting insight into both the tool and the assemblies. 
 
 {% include gallery id="gallery_blobtoolkit_ajap_snail" caption="Blobtoolkit snail plots of *Apostichopus japonicus* genome assemblies" %}
 
+Comparing the snail plots of the published and the masurca assembly, one might think the orginal has longer scaffolds based off the thickness of the orange and grey lines. However, looking at the legend in the center of the circle shows that the masurca assembly has much longer scaffolds. In fact, the masurca assembly has a largest scaffold that is almost three times as long and an N50 that is almost twice that of the published assembly. But the published version has another 130 megabases fo assembly in it then the masurca assembly. 
 
+The masurca assembly has roughly 250 megabases of scaffolds that are longer than one megabase whereas the published version has about 100 megabases of scaffolds longer than one megabase. Amusingly, when looking at the low confidence masurca assembly, it's summary stats are very similar to the published version, however, it has an additional 160 megabases of scaffolds included in its assembly. It is also worth noting the GC content of the low confidence assembly gets highly variable when scaffolds are shorter than 100kb. 
 
 {% include gallery id="gallery_blobtoolkit_ajap_blob" caption="Blobtoolkit snail plots of *Apostichopus japonicus* genome assemblies" %}
 
+There is some weird stuff in the published version. There is 6.5 megabases of sequences in the published assembly that have the majority of blast hits coming from streptophyta. The only reason plant sequences should be getting blast hits against an animal genome is if there is contamination. There may have been some algae that the sea cuke was eating or on its body that found itself in the dna extraction process and into the assembly. 
+
+I will note- for the blob plots of the published assembly I had to use long read sequence data from a different sea cucumber project as there was no sequence data available from the original project. However, the only thing that should be impact is the coverage metrics. The blast hits are from uniprot and ncbi databases against the original genome. 
+
+The masurca assemblies are interesting. There is some skewing to a higher GC content in shorter scaffolds. This becomes especially apparent in the low confidence assembly where there are vertical lines of blobs at specific GC values. I have no idea what that means. There appears to be one at ~50%, ~55%, and ~45% if you squint. The majority are no-hits and echinodermata. It could be assemnbly artifacts or repetetive elements. 
+
 {% include gallery id="gallery_blobtoolkit_ajap_length" caption="Blobtoolkit snail plots of *Apostichopus japonicus* genome assemblies" %}
 
+The streptophyta in the published assembly really pops out when looking at scaffold length vs GC content. The mean GC content for those scaffolds appears to be a little lower than the overall mean GC content. This could suggest those are contamination. 
+
+When comparing the masurca and low confidence masura assemblies, those lines I mentioned earliar appear to be primarily in shorter scaffolds. While the masurca assembly is cleaner, there are enough scaffolds in the low confidence assembly that could contain genes that I would be hesitant to toss it. I would also say that based off the blobtoolkit results, I have higher confidence in the masurca assemblies than the published assembly. So with that said - let's go look at the BUSCO results to get a sense of how fragmented our gene models would be between the three. 
