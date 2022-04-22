@@ -6,7 +6,7 @@ type: data-cleaning
 toc: true 
 show_date: true
 
-excerpt: "there be whales"
+excerpt: "There be whales here"
 
 sidebar:
   nav: sidebar-main

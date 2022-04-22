@@ -2,6 +2,9 @@
 title: "Trimming and Filtering"
 layout: single
 permalink: /trimming/
+
+excerpt: To trim or not to trim
+
 ---
 
 ## Introduction
