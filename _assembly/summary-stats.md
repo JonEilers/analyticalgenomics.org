@@ -22,10 +22,13 @@ gallery:
 
 # Introduction
 
-[Blobtoolkit](https://blobtoolkit.genomehubs.org/) is an amazing suite of tools for analyzing and producing publication grade figures of genome assemblies. There [publication](https://academic.oup.com/g3journal/article/10/4/1361/6026202) contains examples and explanations of the various figures and analysis' that can be performed. This includes snail plots for visualizing genome summary statistics, blobplots of contamination, taxonomy hits, and cumulative assembly span plots of multiple genome assemblies. 
+Summary statistics are a great way to get a broad sense of genome assembly quality. They also lack a lot of important information that is critical to deciding if a genome assembly can be useful or not. However, as a starting point for evaluating an assembly, they are great. 
 
+Most tools such as genometools [seqstat](http://genometools.org/tools/gt_seqstat.html) and bbduk's [stats.sh](https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/statistics-guide/) will produce numbers arranged in an easy to read format, but they aren't great for getting a holistics view of what the assembly actually looks like. This is where snail plots produced by blobtoolkit really shine. 
 
-# Installing
+[Blobtoolkit](https://blobtoolkit.genomehubs.org/) is an amazing suite of tools for analyzing and producing publication grade figures of genome assemblies. There [publication](https://academic.oup.com/g3journal/article/10/4/1361/6026202) contains examples and explanations of the various figures and analysis' that can be performed. This includes snail plots for visualizing genome summary statistics, blobplots of contamination, taxonomy hits, and cumulative assembly span plots of multiple genome assemblies. Below I have use blobtoolkit to produce snail plots of three sea cucumber genome assemblies. One is published, the other two are a high and low confidence masurca assemblies. 
+
+# Installing Blobtoolkit
 
 There are a number of options for how to install blobtoolkit. There is a [docker image](https://blobtoolkit.genomehubs.org/install/use-docker/) available. Additionally, you can install it directly by following these [instruction](https://blobtoolkit.genomehubs.org/install/), they also note you can make your life easier by installing most of the dependencies using conda. 
 
@@ -38,7 +41,7 @@ pip install blobtoolkit
 
 So easy. Love it.
 
-# Running
+# Running Blobtoolkit
 
 Generating snail plots of the genome assemblies
 ```bash
@@ -71,7 +74,7 @@ blobtools view --local /home/jon/Working_Files/blobtoolkit/
 
 This will load an interactive locally host webpage in your browser. This is a great way to explore the genome assembly and also tweak the graphs to your liking. It also lets you download the images for use in publications, or in my case, uploading to websites. 
 
-# Results
+# Snail plot Results
 
 I love snail plots for visualizing genome assemblies. It offers much more information than just looking at numbers such as the N50. Unfortunately, blobtools isn't set up to view multiple snail plots side by side. If they did, I would likely host the interactive version of these images. 
 
@@ -85,4 +88,4 @@ Looking at the top left you'll see abunch more numbers. Most of those are self e
 
 The outer light and dark blue represent the GC/AT content. In an ideal assembly that should be fairly consistent - meaning the line between the two colors shouldn't be squigglely. However, you'll notice that near the end of the assembly there is a little squiggle. This could be because they are contamination from other organisms or maybe the assemblers have some bias in assembling reads and the short unassembled ones are difficult to place? It could also be short reads have more variance in the GC content and these are the shortest reads. Not sure. Additionally, if there are a lot of gaps in the assembly they will show up in the light/dark blue as white. This a good way to check how contigious the assembly is. 
 
-The published assembly is more complete (contains more nucleotides) than the final masurca assembly, but not as complete as the masurca assembly containing lower confidence contigs/scaffolds. However, the published assembly is significantly more contiguous than the masurca assembly containing lower confidence contigs. It is interesting that the masurca assembly does have way more gapless scaffolds longer than 1 megabase. This makes me think the Masurca assemblies are likely of higher quality. However, I won't know until I take a look at how many assembly errors are in it using [Inspector and Merqury](/genome_quality/) and check [busco](busco/) content.  
+The published assembly is more complete (contains more nucleotides) than the final masurca assembly, but not as complete as the masurca assembly containing lower confidence contigs/scaffolds. However, the published assembly is significantly more contiguous than the masurca assembly containing lower confidence contigs. It is interesting that the masurca assembly does have way more gapless scaffolds longer than 1 megabase. This makes me think the Masurca assemblies are likely of higher quality. However, I won't know until I take a look at how many assembly errors are in it using [Inspector and Merqury](/genome_quality/), check for [contamination](/contamination/) using blobtoolkit, and check [busco](busco/) content.  
