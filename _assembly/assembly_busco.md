@@ -144,15 +144,26 @@ There are no busco databases available specifically for echinoderms. So the next
 
 # Results
 
-Looks like the Masurca assembly may contain a lot of duplicated buscos, but also had more fragmented and missing buscos.
-
-## Figures
+Let's dive into the results. A few things to note though. First, the tools has four categories. Complete buscos includes both duplicated and single copy buscos. Another important detail is that buscos do not represent a best case scenario regarding gene presence or fragmentation. Rather, they represent a rough average for what you can expect to see in your genome assembly. So if you have 80% complete, 15% fragemented, and 5% missing buscos, then you will likely see roughly find that 80% of the genes from your assembly are complete (with some being duplicated), 15% are fragmented, and 5% are likely completely missing. This is based off the assumption that the distribution of BUSCO gene structures follows a normal curve or is at least representative of what you would find in a random genome. Is this true? I don't know and I have asked the authors this question. 
 
 {% include gallery layout="half" caption="BUSCO analysis results (percents) of A. californicus genome assemblies. Left one is Eukaryota, right one is Metazoa" %}
 
- 
+You will recall that the *A. californicus* assembly was created using short paired end reads. So this is actually an impressive results when compared against other short read assemblies. In an ideal world the BUSCO would be in the 90% complete category, however, high 70% to low 80% complete is respectable. This implies to me that the majority of genes are present and complete with a relatively small percent missing or fragmented. This roughly corresponds to what I observed when looking at gene model predictions. In particular I looked at two gene familes HSP70 and PSP94-like and found that they were largely present and complete with a few fragmented or missing. 
 
+It is interesting to note that using a reference genome did improve the results some, but not much. In fact, when compared with the busco results from the reference genome, redundans essentially mirrored it which suggests that it may be introducing artifacts from the reference genome assembly into the redundans assembly. 
+
+Also interesting, masurca did worse than platanus-allee. I recently re-assembled the *A. japonicus* genome using masurca and platanus-allee using short and long read data and the masurca assembly was significantly better than the platanus-allee assembly to the point that I didn't even include it in the below analysis. Only goes to show it is important to try a few different assemblers. 
 
 {% include gallery id="gallery_euk" layout="half" caption=" Eukaryota BUSCO analysis of A. japonicus genome assemblies.  Left one is total count, right one is percentages" %}
 
+I have included both percent and total count here because I think it is important to know how many buscos are actually be searched for. Keep in mind the average genome has 20,000 to 30,000 genes. 
+
+So the original published assembly for *A. japonicus* had quite a few duplicated buscos which is a little suspicious. The high quality assembly looks really good with a much smaller proportion of duplicated buscos but also doesn't have as many complete buscos as the the original. This could be because the assembly is about 100 megabases smaller than the published one. The low confidence assembly is more complete and in fact has no missing eukaryota buscos, but a very large percentage of duplicated buscos. This isn't surprising as masurca probably struggled to figure out what to do with some of heterozygosity in the genome. Apparently it figured it out for a large percentage though for the high confidence assembly. 
+
 {% include gallery id="gallery_met" layout="half" caption="Metazoa BUSCO analysis of A. japonicus genome assemblies. Left one is total count, right one is percentages" %}
+
+The story is largely the same here. The high confidence masurca assembly has the best results, the published assembled has a lot of duplicated buscos and the low confidence assembly has a ton of duplicated buscos but also more complete buscos relative to the other two assemblies. 
+
+Based off this, I am feeling pretty good about the high confidence masurca assembly. It may be quite a bit smaller than the estimated genome size of 900mb and smaller than the 800mb published assembly, but it contains more genes and is higher quality. This is also reflected in the blobtoolkit analysis. 
+
+With that decided, I will probably move onto polishing to remove any assembly errors and then on to gene modeling and annotation. 
