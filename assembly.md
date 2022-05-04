@@ -115,12 +115,6 @@ It is important to get a quantifiable picture of the assembly quality. One way t
 **[Assembly Quality Assessment using Inspector and Merqury](/genome_quality/)** 
 {: .notice--info}
 
-## Assembly Comparisons
-Most genome assembly projects try using several different assembly tools and it can be useful to check for differences between them. Additionally, It can be useful to see how many changes were made when gap closing or polishing. Either of those things can be accomplished using a tool called [mummer4](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005944). Mummer4 produces a "delta" file that can then be used in other analysis tools such as [Nucdiff](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-017-1748-z) or visualization tools such as [Assemblytics](https://academic.oup.com/bioinformatics/article/32/19/3021/2196631). It can also output a summary file containing basic counts of indels and other differences in addition to a bam file for loading into a genome browser such as [Ribbons](https://genomeribbon.com/) if a closer look is required. 
-
-To-do [Comparing assemblies using Mummer4](/mummer4/)
-{: .notice--warning}
-
 #  Polishing and Gap Closing
 
 Once you have an assembly that is as good as it'll get, it might be possible to squeeze a little more out of your data using gap closing and polishing tools. However, just like with read trimming, doing either gap closing or polishing can result in an assembly that was worse than what you started with. I also want to add that overzealous use of gap closing or polishing can result in poor assemblies. This is a huge problem when these assemblies are then uploaded into NCBI and used as references genomes for other projects. Most researchers do not have the skill, knowledge, or time to check that the assembly or genes from assemblies are trustworthy, potentially resulting in a lot of frustration and wasted time and money. So proceed with caution. 
@@ -136,8 +130,8 @@ To-do [Gap closing using Dentist, SAMBA and Longstitch]()
 
 It's also important to remove any insertions, deletions, and adapter contamination that may have crept into the genome assembly. This can be accomplished using either long read or short read data. Short read data has a much higher accuracy, but long read data, while full of errors, can produce a consensus sequence that is highly accurate which can allow it to correct longer mistakes than short read data. 
 
-To-do [Genome assembly polishing using CONSENT, NextPolish and hapo-g](/genome_polishing/)
-{: .notice--warning}
+[Genome assembly polishing using hapo-g](/genome_polishing/)
+{: .notice--info}
 
 ## Manual Assembly Correction
 
