@@ -24,7 +24,7 @@ gallery:
 
  Each sequencing technology introduces it own unique artifacts and inaccuracies into the sequencing data. Identifying, removing the artifacts, and then analyzing the raw data are the first steps in preparing the sequence data for assembly. If this is the first time dipping your toes into bioinformatics check out this introduction to getting set-up for genome bioinformatics
 
- **[Getting set up](/setup/)**
+ **[A brief introduction to what you will need if you are serious about getting into bioinformatics](/setup/)**
  {: .notice--info}
 
 # Checking Data Integrity
