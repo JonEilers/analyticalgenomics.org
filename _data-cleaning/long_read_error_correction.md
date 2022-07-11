@@ -55,6 +55,10 @@ Seems like a lot of the long read correction using short read tools are no longe
 
 # Long read self-correction
 
+Use [Medaka](https://github.com/nanoporetech/medaka) on the chiridota nanopore data. 
+
+Use [consent]() for apostichopus japonicus pacbio reads? 
+
 Use VeChat and Consent for polishing both the Chiridota heheva and stichopus chloronotus reads
 
 [VeChat](https://github.com/HaploKit/vechat) 
@@ -81,7 +85,8 @@ vechat \
   /home/jon/Working_Files/sea_cuke_species_data/Chiridota_heheva/SRR15466781/SRR15466781.fastq \
   --platform ont \
   --split \
-  -t 60
+  -t 60 \
+  --overwrite
 
 ```
 
