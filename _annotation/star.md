@@ -25,28 +25,22 @@ gallery_multiqc:
     title: masurca assembly - low quality and unpolished
 
 ---
-
-
-To-do
-- download one to two sra per a tissue type and development stage
-- map to the five assemblies: the published, masurca high confidence, masurca low confidence, masurca polished short read, masurca polished long read
-- detailed explanation of all aspects of star output and what it means 
-
+ 
 # Introduction
 
-Excerpt from the bbtools [website](https://jgi.doe.gov/data-and-tools/bbtools/)
+Gene expression data is critical to creating high quality and high confidence gene models. Reads mapped to genome assembly provide evidence of where genes can be found and the structure of the gene such as the splices sites of introns and exons. Without it, gene model prediction can only be accomplished using homology-based methods and looking for open readings frames and cannonical splice sites. Homology-based methods are sensitive to differences in the genes. Meaning that this will only work well on conserved sequences and will miss recently evolved genes and mutations that significantly impact the structure and sequence of the gene. Predicting genes using just open reading frames and cannonical splice sites is even more fraught because start and stop codons appear frequently throughtout the genome without being associated with any gene. Using open reading frames only will result in a large number of spurious genes. 
 
-BBTools is a suite of fast, multithreaded bioinformatics tools designed for analysis of DNA and RNA sequence data. BBTools can handle common sequencing file formats such as fastq, fasta, sam, scarf, fasta+qual, compressed or raw, with autodetection of quality encoding and interleaving. It is written in Java and works on any platform supporting Java, including Linux, MacOS, and Microsoft Windows and Linux; there are no dependencies other than Java (version 7 or higher). Program descriptions and options are shown when running the shell scripts with no parameters.
+Mapping rna-seq data to a genome assembly is also a useful way to evaulate the genome assembly. For example, STAR outputs a summary file contains various statistics related to the mapping rates. This includes stats on deletions/insertions which can be suggestive of a low quality assembly, high heterozygousity, or low quality reads. Seeing high deltion/insertions stats is a good reason to investigate which of those is true. Additionally, uniquely mapping reads is also an important number as high quality assembly should achieve a high unique mapping rate, but this will also be species specific. However, if the percentage of reads mapping to multiple places is higher than or close to the same as the unique mapping rate then there is reason to be suspicious of the genome assembly. 
 
-Excerpt from the STAR [publication](https://www.ncbi.nlm.nih.gov/pubmed/23104886)
+In recent years Oxford Nanopore Technologies and Pacbio have both released long read rna sequencing. In the case of Oxford Nanopore Technologies, the platform directly sequences the rna without needing any conversion to DNA or amplification. Meaning you can potentially get an accurate picture of the rna modifications and expression levels. Unfortunately, to the best of my knowledge there is no long read rna data available for sea cucumbers - yet. 
 
-To align our large (>80 billon reads) ENCODE Transcriptome RNA-seq dataset, we developed the Spliced Transcripts Alignment to a Reference (STAR) software based on a previously undescribed RNA-seq alignment algorithm that uses sequential maximum mappable seed search in uncompressed suffix arrays followed by seed clustering and stitching procedure. STAR outperforms other aligners by a factor of >50 in mapping speed, aligning to the human genome 550 million 2 × 76 bp paired-end reads per hour on a modest 12-core server, while at the same time improving alignment sensitivity and precision. In addition to unbiased de novo detection of canonical junctions, STAR can discover non-canonical splices and chimeric (fusion) transcripts, and is also capable of mapping full-length RNA sequences. Using Roche 454 sequencing of reverse transcription polymerase chain reaction amplicons, we experimentally validated 1960 novel intergenic splice junctions with an 80-90% success rate, corroborating the high precision of the STAR mapping strategy.
+There is however a large amount of rna-seq data for *Apostichopus japonicus* from a number of developmental stages and tissues. This is perfect for gene model prediction. See below for how I mapped this data to several genome assemblies. 
 
 # Downloading Datasets
 
 downloading rna-seq datasets for *Apostichopus japonicus*. Two datasets for each tissue type and for each developmental stage
 
-SRA list:
+SRA list:   
 SRR6192935 - blastula    
 SRR6192939 - gastrula     
 SRR6192940 - pre-auricularia     
@@ -72,7 +66,8 @@ conda activate sratools
 fasterq-dump SRR6192935 SRR6192939 SRR6192940 SRR6192942 SRR6192946 SRR6192947 SRR6192948 SRR6192949 SRR6192951 SRR6192953 SRR6251590 SRR6251597 SRR6251614 SRR6251618 
 ```
 
-# checking data quality using fastqc 
+
+# Checking data quality using fastqc 
 
 It's always a good idea to do a quick quality check on the raw data before using it. 
 ```bash
@@ -85,27 +80,29 @@ conda activate fastqc
 fastqc
 ```
 
-Fastqc results for muscle and bodywall look weird are a little strange, but not worth trimming. Fastqc is showing some over represented sequences, that's not concerning to me as this is rna-seq and not genome data so I expect some over represented sequences. There is the usual 10 bases at the beginning of most reads that are highly variable, that's fine. I could trim that but recent publications have shown that aggressive trimming can mess with mapping results and differential gene expression analysis. So unless the data is particularly bad, I usually do not trim it. 
+Fastqc results for muscle and bodywall are a little strange, but not worth trimming. Fastqc is showing some over represented sequences, that's not concerning to me as this is rna-seq and not genome data so I expect some over represented sequences. There is the usual 10 bases at the beginning of most reads that are highly variable, that's fine. I could trim that but recent publications have shown that aggressive trimming can mess with mapping results and differential gene expression analysis. So unless the data is particularly bad, I usually do not trim it. 
 
-Some resources regarding this:
+Some resources regarding whether you should trim/filter rna-seq data:
 - [Micheal's  blog](https://www.michaelchimenti.com/2016/06/trim-rna-seq-reads/)   
 - [basepairtech.com](https://www.basepairtech.com/blog/trimming-for-rna-seq-data/)    
 - [Trimming of sequence reads alters RNA-Seq gene expression estimates](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4766705/)    
 - [Read trimming is not required for mapping and quantification of RNA-seq reads at the gene level](https://academic.oup.com/nargab/article/2/3/lqaa068/5901066?login=true)
 
-# mapping rna-seq data to genome assemblies
+# Mapping rna-seq data to genome assemblies
 
-Thee are a number of rna-seq mapping tools available. The two popular ones that I am aware of are [STAR](https://academic.oup.com/bioinformatics/article/29/1/15/272537?login=true) and [HiSAT2](https://www.nature.com/articles/nmeth.3317?report=reader). For a more indepth look at what's available and the conveats see this paper titled [Comparison of Short-Read Sequence Aligners Indicates Strengths and Weaknesses for Biologists to Consider](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8087178/)
+Thee are a number of rna-seq mapping tools available. The two popular ones that I am aware of are [STAR](https://academic.oup.com/bioinformatics/article/29/1/15/272537?login=true) and [HiSAT2](https://www.nature.com/articles/nmeth.3317?report=reader). For a more indepth look at what's available and the caveats see this paper titled [Comparison of Short-Read Sequence Aligners Indicates Strengths and Weaknesses for Biologists to Consider](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8087178/)
 
 ```bash
 mamba create -n star star
-
-
-conda create -n star star
 conda activate star
 ```
 
-generating genome indexes for the five genome assemblies to be check
+Most rna-seq mapping tools require the genomes to be indexed. Without getting into the details of how it works, indexes speed up the mapping tools ability to locate scaffolds/contigs in the genome. Without an index, the mapping speed would be dramatically slower. 
+See below for how I generated indices using STAR.
+
+Generating genome indexes for the five genome assemblies to be checked
+
+Because I have several genome assemblies to index and I don't want to do manually do it five times, I created a simple bash "for loop". 
 ```bash
 for assembly in *
 do
@@ -120,9 +117,11 @@ do
 done
 ```
 
-running star
-```bash
+In ubuntu, the ulimit value for the number of files that can be open at any one time is often too low when trying to run STAR and needs to be set higher. 
 
+Mapping rna-seq reads to the genome assemblies using STAR
+```bash
+# increasing number of files that can be open at any one time to 100,000
 ulimit -n 100000
 
 rna=('SRR6192935' 'SRR6192939' 'SRR6192940' 'SRR6192942' 'SRR6192946' 'SRR6192947' 'SRR6192948' 'SRR6192949' 'SRR6192951' 'SRR6192953' 'SRR6251590' 'SRR6251597' 'SRR6251614' 'SRR6251618')
@@ -153,7 +152,13 @@ do
 done
 ```
 
-Note to self: I removed the alignmatemax and added twopassmode. It did slightly improve things. So I will have to come back to this at some point and change stuff. Maybe actually make some more graphs too or put it into pandas and analyze it. 
+While the above command might look complex, it is just a normal STAR command wrapped into a bash "for loop" and added some file naming and bash verbosity to it. A folder is created for each assembly and then each rna-seq file will get its own results folder. 
+
+In hindsight, I probably should have binned the rna-seq results together by tissue type and included the assembly in the result file names. Would have made using multiqc easier. 
+
+Some important details about the above STAR command that I had to figure out the hard way. First is always set --alignIntronMax so something that is reasonable for your species. The default is 100kb. This means that STAR will look 100kb in either direction for putative splice sites and places where the read maps. In mammals this makes sense, in sea cucumbers it does not. The best way to get an idea of what is reasonable is to look at sequencing projects of closely related species and see what the average intron/exon length or gene length was. In sea cucumbers, the average gene length was 5kbp. While theorectically there could be some really long introns, the likelihood is very small. If this parameter isn't modified the results will not only mess up the gene model prediction tools but will make visualizing the mapping results difficult because STAR will find intron sizes far exceeding what would be expected for your species. 
+
+--twopassMode Basic improves the general overall stats and confidence in the mapping results. Generally a good thing to include. 
 
 # Running multiqc
 
@@ -171,7 +176,7 @@ multiqc --module star published_Ajap_genome.fasta
 multiqc --module star scaffolds.ref.fa
 ```
 
-I was hoping it would be able to compile all the results into one graph, but multiqc does not appear to be that sophisticated. It wouldn't difficult, just tidious, but this could easily be accomplished using excel pivot tables or pandas/R but that's more time than I want to put into this. So I just used multiqc on each assembly directory that I had star mapping results in. 
+I was hoping it would be able to compile all the results into one graph, but multiqc does not appear to be that sophisticated. It wouldn't be difficult, just tidious, but this could easily be accomplished using excel pivot tables or pandas/R but that's more time than I want to put into this. So I just used multiqc on each assembly directory that I had star mapping results in. 
 
 # Results
 
