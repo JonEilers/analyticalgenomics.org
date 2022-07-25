@@ -24,18 +24,21 @@ There are two approaches to creating an assembly specific repetitive element lib
 
 With that in mind I will cover the manual curation of transposable elements in a separate section and focus primarily on generating repetitive elements libraries and masking a genome assembly in this section. 
 
-Two fantastic tools for generating de novo libraries are [EDTA](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1905-y) and [repeatmodeler](https://www.pnas.org/doi/abs/10.1073/pnas.1921046117). For masking a genome assembly, [RepeatMasker](https://repeatmasker.org/) is a stalwart See below for installation. 
+Two fantastic tools for generating de novo libraries are [EDTA](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1905-y) and [repeatmodeler](https://www.pnas.org/doi/abs/10.1073/pnas.1921046117). For masking a genome assembly, [RepeatMasker](https://repeatmasker.org/) is a stalwart. See below for installation. 
 
 # Installation
 
+
+EDTA includes tools such as repeatmodeler and repeatmasker and is intended to be a standalone repeat identification, annotation, and masking tool. More information can be found at EDTA [github](https://github.com/oushujun/EDTA#introduction).
+
+EDTA is also available for docker/singularity. For this walk through I use mamba to install it into a conda environment. 
 ```bash
 # installing EDTA
-conda create -n edta
-conda activate edta
-conda install -c bioconda edta 
+mamba create -n edta -c conda-forge -c bioconda edta python=3.6 tensorflow=1.14 'h5py<3'
 ```
 
-installing [TETools](https://github.com/Dfam-consortium/TETools)
+Additionally, the DFAM consortium has created a docker/singularity image containing the minimum requirements for identifying and masking repetitive elements in a genome assembly. Installing repeatmasker and repeatmodeler and their dependencies can be a headache so this docker image is a useful way to save yourself the pain. More information is available at the Dfam-consortium's [TETools github](https://github.com/Dfam-consortium/TETools)
+
 ```bash
 # downloads the scripts
 curl -sSLO https://github.com/Dfam-consortium/TETools/raw/master/dfam-tetools.sh
@@ -43,17 +46,11 @@ curl -sSLO https://github.com/Dfam-consortium/TETools/raw/master/dfam-tetools.sh
 # makes the script executable
 chmod +x dfam-tetools.sh
 
-# creating conda environment and installing singularity 
-conda create -n singularity singularity
-conda activate singularity
-
 # runs the script which pulls the container image and runs it
 ./dfam-tetools.sh 
 ```
 
-It is preferred to run this container using singularity as that will prevent the headache of mounting folders and other nonsense that docker makes you do. Unfortunately I wasn't able to get singularity working with conda and I didn't feel like going through the hasle of installing all the dependencies and compiling it so I ended up using Docker. 
-
-# Downloading Database
+It is preferred to run this container using singularity, however docker will work just as well.  
 
 # Running Tetools
 
@@ -68,21 +65,17 @@ BuildDatabase \
     -name ajapmasurca \
     /work/japonicus_genome_project/MaSuRCA-4.0.5/masurca_results/primary.genome.scf.fasta
 
+# running repeatmodeler on the ajapmasurca database
 RepeatModeler -database database/ajapmasurca -LTRStruct -pa 8
 
-
-# realizing I may have used the wrong assembly for running repeatmodeler. Going to rerun using the assembly that EDTA renamed.
-
-BuildDatabase \
-    -name edta_ajapmasurca \
-    /work/edta/primary.genome.scf.fasta.mod
-
-
-RepeatModeler -database edta_database/edta_ajapmasurca -LTRStruct -pa 8
-
-# nevermind. EDTA only needed the repeat library which doesn't have scaffold/contig names
-
+# using the non-curated repeatmodeler output as an input library for repeatmasker
 RepeatMasker genome1.fa [-lib library.fa] -pa 8
+
+RepeatMasker primary.genome.scf.fasta -xsmall -html -source -gff -pa 10 -lib database/ajapmasurca-families.fa
+
+# repeatmasker didn't like the length of some scaffold names so I used regex in sublime to rename some. See the regex pattern I used below
+(?<header>>scf.*):F:.*
+
 
 RepeatMasker /work/edta/primary.genome.scf.fasta.mod -species Deuterostomia -xsmall -html -source -gff -pa 8
 
