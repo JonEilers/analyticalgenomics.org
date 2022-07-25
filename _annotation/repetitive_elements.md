@@ -12,30 +12,19 @@ excerpt: “The genome is a book that wrote itself, continually adding, deleting
 
 # Introduction
 
-https://www.jstage.jst.go.jp/article/ggs/advpub/0/advpub_18-00024/_pdf/-char/ja
-Class 2 transposable elements
+Repetitive elements are integral parts of genomes and can represent a significant majority of a genome assembly. When preparing to identify genes in an assembly it is critical to first identify the repetitive elements. Once they are identified they can be studied further and annotated or "masked" so that the gene model prediction software doesn't misidentify genes found in transpons or gene fragments and other repetitive elements. 
 
-[Helitron](https://en.wikipedia.org/wiki/Helitron_(biology))
+Repetitive elements in a genome consist of two primary classes: [Tandem repeats](https://en.wikipedia.org/wiki/Tandem_repeat) and [transposable elements](https://en.wikipedia.org/wiki/Transposable_element). Tandem repeats such as [satellites](https://en.wikipedia.org/wiki/Satellite_DNA) are unique sequences which are consectively repetititve. One such example that is critical the genome is the [centromere](https://en.wikipedia.org/wiki/Centromere). Transposable elements are ancient genomic "viruses" that are able to replicate themselves and jump around the genome. They are integral to genome evolution and in some instances have been demostrated to be responsible for world changing evolutionary events such as the creation of [placental mammals](https://www.nature.com/articles/s41576-021-00385-1). 
 
-[Polinton](https://en.wikipedia.org/wiki/Polinton) - largest and most complex 
+Tranposons can be classified into two major groups: Class I retrotransposons and Class II DNA transposons. Without getting into the gritty details Class I has an rna intermediate and Class II does not. Another important detail is that Class I primarily "jumps" around the genome whereas Class II duplicates itself and the duplicate is inserted elsewhere in the genome.
 
+Actual distribution of repetitive elements varies wildly between species and even between individuals of the same species due to [transposon expression during embryogenesis](https://rep.bioscientifica.com/view/journals/rep/156/4/REP-18-0218.xml). For this reason a de novo repetitive element "library" is required for non-model organisms prior to identifying and masking repetitive elements in a genome assembly. 
 
-- eukaryotic TEs are divided into two classes: Class I and Class II
-- Class I includes retrotransposons, which transpose through an RNA inter-
-mediate
-- Class I is subdivided into two large categories that are distinguished by the presence of long terminal repeats (LTRs): LTR retrotransposons and non-LTR retrotransposons.
-- Class II includes DNA transposons, which do not use RNA as
-transposition intermediates
+There are two approaches to creating an assembly specific repetitive element library: The quick and dirty method and the correct method. Both require the same first step - using a tool, such as repeatmodeler or [EDTA](https://github.com/oushujun/EDTA), to identify repetitive elements *de novo*. The first difference between the two approaches is that automated tools such as repeatmodeler and EDTA require manual curation of the results in order to have complete confidence in the library quality. Most genome sequencing projects do not have the time and man power to perform that quality control so they often take the results from repeatmodeler and directly input them into repeatmasker without any QC. 
 
-**What we should expect to see**
-https://www.mdpi.com/1422-0067/22/4/2072/htm
-(LINEs: 6–8 kb unit length) and ‘short interspersed nuclear elements’ (SINEs: 0.1–0.4 kb unit length). Furthermore, there are long terminal repeats that account for 8.3% of human genomes (0.2–3 kb unit length) [34].
+With that in mind I will cover the manual curation of transposable elements in a separate section and focus primarily on generating repetitive elements libraries and masking a genome assembly in this section. 
 
-    LINEs are formed by a group of mostly truncated retrotransposons and constitute >20% of the human genome. Three types of LINEs have been identified: LINE1 (~516,000 copies), LINE2 (~315,000 copies) and LINE3 (~37,000 copies). In fact, in humans, there are ~100 active LINEs per genome, which can still amplify and integrate at new genomic sites, as they comprise reverse transcriptase [26,27,28].
-    Furthermore, SINEs derived from another subclass of retrotransposons provide ~13% of the human genome, with the feature that they can normally only become transcriptionally active if induced during infection of the human carrier by 
-    multiple DNA viruses or supported by LINE1 elements [35,36,37,38].
-
- Accordingly, satellite DNAs (including classes 2 and 4) make up about 8–10% of the human genome; e.g., α-satellites are annotated at 44,058 loci covering 0.1% of the genome [42]. Interestingly, although these α- and γ-satellite sequences have been cloned, sequenced and known for decades, the majority of them are not included in genome browsers. Their sizes are variable between individuals; however, the ranges of the regions that they span have been previously reported to be between ~0.1 and 5 Mb [1]. At least some of these satellite DNAs are transcribed into RNA, but their role is yet unresolved. The fact that α-satellite DNA, for example, is expressed under cellular stress supports the idea that the alteration of heterochromatic to transcriptionally active regions could be correlated with genomic instability and oncogenesis; further supporting this notion is the fact that the tumor suppressor PKNOX1 inhibits such satellite expression. Thus, histone methylation is important for satellite DNA expression, too. As the methylation status is also altered by heat shock treatment, it is not surprising that α-satellite sequences in chromosomes 12 and 15 were proven to be expressed after a heat shock in 2004 [1]. 
+Two fantastic tools for generating de novo libraries are [EDTA](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1905-y) and [repeatmodeler](https://www.pnas.org/doi/abs/10.1073/pnas.1921046117). For masking a genome assembly, [RepeatMasker](https://repeatmasker.org/) is a stalwart See below for installation. 
 
 # Installation
 
