@@ -76,11 +76,10 @@ RepeatMasker primary.genome.scf.fasta -xsmall -html -source -gff -pa 10 -lib dat
 # repeatmasker didn't like the length of some scaffold names so I used regex in sublime to rename some. See the regex pattern I used below
 (?<header>>scf.*):F:.*
 
+```
 
-RepeatMasker /work/edta/primary.genome.scf.fasta.mod -species Deuterostomia -xsmall -html -source -gff -pa 8
+when running either repeatmasker or repeatmodeler keep in mind that the default alignment tool, RMalign, using 4 cpu thread for each thread you specify. As in, "-pa 10" would use 40 cpu threads. 
 
-
-runcoseg.pl -d -m 50 -c ALU.cons -s ALU.seqs -i ALU.ins
 
 ```
 
@@ -132,12 +131,7 @@ The results have been saved to:
 
 ```
 
-https://www.clementgoubert.com/post/a-simple-pipeline-for-te-annotation-in-an-assembled-genome
 
-
-https://www.biostars.org/p/411101/
-
-https://github.com/Dfam-consortium/RepeatModeler/issues/40
 
 # Running EDTA
 
