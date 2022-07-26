@@ -52,7 +52,9 @@ chmod +x dfam-tetools.sh
 
 It is preferred to run this container using singularity, however docker will work just as well.  
 
-# Running Tetools
+# Commands
+
+## Tetools
 
 When using docker to run TETools it mounts the current working directory. So if you will be pulling files from numerous directories you can go to the highest level and run it from there if you don't want to mount abunch of directories. 
 
@@ -60,7 +62,7 @@ When using docker to run TETools it mounts the current working directory. So if 
 # this sets up the singularity container and allows you to run stuff inside it
 sudo ./dfam-tetools.sh
 
-# once in use the below commands
+# making a genome assembly database to use with repeatmodeler
 BuildDatabase \
     -name ajapmasurca \
     /work/japonicus_genome_project/MaSuRCA-4.0.5/masurca_results/primary.genome.scf.fasta
@@ -69,8 +71,6 @@ BuildDatabase \
 RepeatModeler -database database/ajapmasurca -LTRStruct -pa 8
 
 # using the non-curated repeatmodeler output as an input library for repeatmasker
-RepeatMasker genome1.fa [-lib library.fa] -pa 8
-
 RepeatMasker primary.genome.scf.fasta -xsmall -html -source -gff -pa 10 -lib database/ajapmasurca-families.fa
 
 # repeatmasker didn't like the length of some scaffold names so I used regex in sublime to rename some. See the regex pattern I used below
@@ -78,62 +78,17 @@ RepeatMasker primary.genome.scf.fasta -xsmall -html -source -gff -pa 10 -lib dat
 
 ```
 
-when running either repeatmasker or repeatmodeler keep in mind that the default alignment tool, RMalign, using 4 cpu thread for each thread you specify. As in, "-pa 10" would use 40 cpu threads. 
+when running either repeatmasker or repeatmodeler keep in mind that the default alignment tool, RMalign, uses 4 cpu threads for each thread you specify. As in, "-pa 10" would use 40 cpu threads. 
 
 
 ```
-
-Repeatmodeler results
-```bash
-Processing RECON family: 6233
-  - Saving 16 elements
-  - Refining family-6233 model...
-Family Refinement: 03:50:14 (hh:mm:ss) Elapsed Time
-Round Time: 26:36:57 (hh:mm:ss) Elapsed Time
-
-RepeatScout/RECON discovery complete: 2449 families found
-
-
-LTR Structural Analysis
-=======================
-Running LtrHarvest...     : 00:34:31 (hh:mm:ss) Elapsed Time
-Running Ltr_retriever...  : 00:31:58 (hh:mm:ss) Elapsed Time
-Aligning instances...     : 00:24:46 (hh:mm:ss) Elapsed Time
-Clustering...             : 00:00:12 (hh:mm:ss) Elapsed Time
-Refining families...      : 00:16:17 (hh:mm:ss) Elapsed Time
-Program Time: 01:47:44 (hh:mm:ss) Elapsed Time
-  -- Clustering results with previous rounds...
-       - 2449 RepeatScout/RECON families
-       - 267 LTRPipeline families
-       - Removed 83 redundant LTR families.
-       - Final family count = 2633
-LTRPipeline Time: 01:50:20 (hh:mm:ss) Elapsed Time
-
-
-RepeatClassifier Version 2.0.3
-======================================
-Search Engine = rmblast
-  - Looking for Simple and Low Complexity sequences..
-  - Looking for similarity to known repeat proteins..
-  - Looking for similarity to known repeat consensi..
-Classification Time: 02:29:39 (hh:mm:ss) Elapsed Time
-
-
-Program Time: 40:46:51 (hh:mm:ss) Elapsed Time
-Working directory:  /work/japonicus_genome_project/repeats/tetools/RM_79.MonMay160329402022
-may be deleted unless there were problems with the run.
-
-The results have been saved to:
-  database/ajapmasurca-families.fa  - Consensus sequences for each family identified.
-  database/ajapmasurca-families.stk - Seed alignments for each family identified.
-  database/ajapmasurca-rmod.log     - Execution log.  Useful for reproducing results.
 
 
 ```
 
 
 
-# Running EDTA
+## EDTA
 
 ```bash
 EDTA.pl \
@@ -145,7 +100,9 @@ EDTA.pl \
     --overwrite 0
 ```
 
-## Viewing results
+# Results
+
+## Visualizing results
 
 download jbrowse2
 
@@ -157,7 +114,86 @@ conda activate samtools
 samtools faidx primary.genome.scf.fasta
 ```
 
-# results
+## Repeatmodeler
+
+```bash
+RepeatScout/RECON discovery complete: 2449 families found
+
+
+LTR Structural Analysis
+=======================
+  -- Clustering results with previous rounds...
+       - 2449 RepeatScout/RECON families
+       - 267 LTRPipeline families
+       - Removed 83 redundant LTR families.
+       - Final family count = 2633
+LTRPipeline Time: 01:50:20 (hh:mm:ss) Elapsed Time
+
+
+Classification Time: 02:29:39 (hh:mm:ss) Elapsed Time
+
+
+Program Time: 40:46:51 (hh:mm:ss) Elapsed Time
+```
+
+## RepeatMasker
+
+| Retroelements |               | 84900 | 36669727 bp | 5.8 %  |
+|---------------|---------------|-------|-------------|--------|
+|               | SINEs:        | 4342  | 734663 bp   | 0.12 % |
+|               | Penelope      | 15313 | 4664183 bp  | 0.74 % |
+|               | LINEs:        | 51761 | 19910911 bp | 3.15 % |
+|               | CRE/SLACS     | 0     | 0 bp        | 0 %    |
+|               | L2/CR1/Rex    | 26022 | 9397503 bp  | 1.49 % |
+|               | R1/LOA/Jockey | 0     | 0 bp        | 0 %    |
+|               | R2/R4/NeSL    | 0     | 0 bp        | 0 %    |
+|               | RTE/Bov-B     | 1890  | 838698 bp   | 0.13 % |
+|               | L1/CIN4       | 0     | 0 bp        | 0 %    |
+|               | LTR elements: | 28797 | 16024153 bp | 2.53 % |
+|               | BEL/Pao       | 1598  | 1246057 bp  | 0.2 %  |
+|               | Ty1/Copia     | 122   | 169182 bp   | 0.03 % |
+|               | Gypsy/DIRS1   | 13852 | 10059761 bp | 1.59 % |
+|               | Retroviral    | 201   | 114432 bp   | 0.02 % |
+
+
+| DNA transposons  |                   | 40162 | 13472419 bp | 2.13 % |
+|------------------|-------------------|-------|-------------|--------|
+|                  | hobo-Activator    | 17290 | 4162041 bp  | 0.66 % |
+|                  | Tc1-IS630-Pogo    | 534   | 120054 bp   | 0.02 % |
+|                  | En-Spm            | 0     | 0 bp        | 0 %    |
+|                  | MuDR-IS905        | 0     | 0 bp        | 0 %    |
+|                  | PiggyBac          | 107   | 61946 bp    | 0.01 % |
+|                  | Tourist/Harbinger | 7460  | 1910919 bp  | 0.3 %  |
+
+
+|                                     |        |              |         |
+|-------------------------------------|--------|--------------|---------|
+| Other (Mirage, P-element, Transib)  | 235    | 238763 bp    | 0.04 %  |
+| Rolling-circles                     | 1207   | 526201 bp    | 0.08 %  |
+| Unclassified:                       | 571376 | 161042674 bp | 25.47 % |
+| ***Total interspersed  repeats:***        |        | 211184820 bp | 33.4 %  |
+
+
+
+
+## EDTA
+
+| Class              |               | Count  | bpMasked  | %masked |
+|--------------------|---------------|--------|-----------|---------|
+| LTR                |               | --     | --        | --      |
+|                    | Copia         | 188    | 170861    | 0.03%   |
+|                    | Gypsy         | 17632  | 11882728  | 1.88%   |
+|                    | unknown       | 111259 | 32756289  | 5.18%   |
+| TIR                |               | --     | --        | --      |
+|                    | CACTA         | 80003  | 22098925  | 3.50%   |
+|                    | Mutator       | 79045  | 24589315  | 3.89%   |
+|                    | PIF_Harbinger | 15340  | 3876612   | 0.61%   |
+|                    | Tc1_Mariner   | 5918   | 1626430   | 0.26%   |
+|                    | hAT           | 80702  | 34364496  | 5.44%   |
+| nonTIR             |               | --     | --        | --      |
+|                    | helitron      | 24439  | 7195101   | 1.14%   |
+| total interspersed |               | 414526 | 138560757 | 21.92%  |
+
 
 # References
 
