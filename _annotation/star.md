@@ -51,7 +51,7 @@ SRR6192948 - pentactula
 SRR6192949 - juvenile    
 SRR6192951 - post-auricularia    
 SRR6192953 - doliolaria    
-SRR6251590 - muscle
+SRR6251590 - muscle   
 SRR6251597 - bodywall    
 SRR6251614 - intestine    
 SRR6251618 - respiratory tree    
@@ -212,9 +212,15 @@ hird is how little difference there is between the polished and unpolished high 
 
 For Illumina sequencing, presently the typical mismatch error rate are <0.5% and indel error rates <0.05%. 
 
-avg lengh: 199
-avg mapped length: 194
+According to the creators of STAR: Uniquely mapped reads % is the most important metric. It is essentially sayins how many reads mapped to only one location. For high quality datasets and assemblies that should be greater than 90%. For good datasets/assemblies that should be above 80%. Anything less than 50% suggests there were problems with library prep or data processing. Unfortunately, all of the above mapping results are below 70%. So that is not great, but still usable. 
 
-Most of the rRNA contain multiple highly sequence-similar paralogs, and hence RNA-seq reads will be mapped to multiple loci. Therefore, high percentage (>15%) of multi-mapping reads “% of reads mapped to multiple loci” is indicative of insufficient depletion of rRNA.
+However, when looking at the multiQC graphs above, you will notice a large chunk of the results are mapping to too many loci. This suggests that the rna samples did not have ribosomal RNA removed or "depleted" duing sample prep. rRNA has many paralogs (duplicates) in the genome and also makes up a large percent of RNA present in a cell at any one time. So failling to remove that will result in skewed mapping results and wasted effort when generating gene models or other downstream analysis. 
 
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4631051/
+
+Mismatch rate per base %, Deletion rate per base, Insertion rate per base are usually from sequencing errors but also includes genotypic variation. For highly heterozygous species such as sea cucumbers this number would be expected to be higher. Illumina has a mismatch error rate of <0.5% and indel error rates <0.05%. The insertion error rate for the published assembly is over twice what would be expected, whereas the new assemblies are closer to the acceptable rate. This does suggest the published assembly could have used some polishing. The deletion rates were consistent between assemblies and roughly twice what would be expected. Not sure what to think about that. The mismatch rate though is quite a bit higher than what would be expected. Without further visualization to verify, I would say this is likely genotypic variance. However, it is fairly easy to check this using a genome browser. 
+
+A good reference can be found in the paper: [Mapping RNA-seq Reads with STAR](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4631051/) which is writen by the creators of STAR. 
+
+## Visualization
+
+A quick look at the data is always a good idea. If you have an already annotated genome then it is quite easy. But even a non-annotated genome can provide some insite into the mapping results. 

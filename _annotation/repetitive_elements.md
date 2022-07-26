@@ -54,7 +54,9 @@ It is preferred to run this container using singularity, however docker will wor
 
 # Commands
 
-## Tetools
+There many many tools for repetitive sequence identification, annotation, masking, etc. By far the most commonly used are RepeatModeler and RepeatMasker. However, in the past few years there has been an effort to create more streamlined and improved tools such as EDTA which output better more information and require less expertise in repetitive elements and bioinformatics. 
+
+## TETools
 
 When using docker to run TETools it mounts the current working directory. So if you will be pulling files from numerous directories you can go to the highest level and run it from there if you don't want to mount abunch of directories. 
 
@@ -76,6 +78,10 @@ RepeatMasker primary.genome.scf.fasta -xsmall -html -source -gff -pa 10 -lib dat
 ```
 
 when running either repeatmasker or repeatmodeler keep in mind that the default alignment tool, RMalign, uses 4 cpu threads for each thread you specify. As in, "-pa 10" would use 40 cpu threads. 
+
+For repeatmasker - `-xsmall` changes the bases in an assembly to be all capitals and then changes repetititve elements to lower case. This allows retention of the sequence information but also tells any gene prediction software that the lower case has been "masked" and should be ignored. 
+
+It is also good to use the `-gff` otpion so the resulting predicted repetitive elements can be visualized in a genome browser such as jbrowse2. 
 
 ## EDTA
 
@@ -105,6 +111,8 @@ samtools faidx primary.genome.scf.fasta
 
 ## Repeatmodeler
 
+RepeatModeler doesn't output any summary files of the results. The most you get is a brief count of how many "families" were found and how long it took. See below for an example. 
+
 ```bash
 RepeatScout/RECON discovery complete: 2449 families found
 
@@ -125,7 +133,11 @@ Classification Time: 02:29:39 (hh:mm:ss) Elapsed Time
 Program Time: 40:46:51 (hh:mm:ss) Elapsed Time
 ```
 
+However, repeatmodeler outputs a number of files which can be used in downstream analysis. For example, it creates a file containing all the predicted transposon "families". This file can then be manually curated and refined into high confidence families containing sequences that have been trimmed and manually inspected. However, this is time intensive and requires a great deal of knowledge about transposon structure. This transponson families file can be directly inputed into repeatmasker without any manual curation and used to hopefully mask most of the repetitive content in a genome assembly, albeit with significiantly higher error rates than if a manually curated family fasta was to be used. 
+
 ## RepeatMasker
+
+RepeatMasker outputs your masked genome and a nice summary file of what it found in the genome assembly. This summary file can be quite informative about the quality of your assembly if you already have some background information on what to expect. For example, there are transposons that are species specific such as the CRE/SLACS transposon which is only found in trypanosoma brucei. So you should be raising an eyebrow if some are showing up in a sea cucumber genome. Below I have delved a little deeper into each of the below transposon families, what they are, and what I expect to see in a sea cucumber genome. 
 
 | Retroelements |               | 84900 | 36669727 bp | 5.8 %  |
 |---------------|---------------|-------|-------------|--------|
