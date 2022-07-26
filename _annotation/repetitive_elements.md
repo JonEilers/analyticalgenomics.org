@@ -73,20 +73,9 @@ RepeatModeler -database database/ajapmasurca -LTRStruct -pa 8
 # using the non-curated repeatmodeler output as an input library for repeatmasker
 RepeatMasker primary.genome.scf.fasta -xsmall -html -source -gff -pa 10 -lib database/ajapmasurca-families.fa
 
-# repeatmasker didn't like the length of some scaffold names so I used regex in sublime to rename some. See the regex pattern I used below
-(?<header>>scf.*):F:.*
-
 ```
 
 when running either repeatmasker or repeatmodeler keep in mind that the default alignment tool, RMalign, uses 4 cpu threads for each thread you specify. As in, "-pa 10" would use 40 cpu threads. 
-
-
-```
-
-
-```
-
-
 
 ## EDTA
 
