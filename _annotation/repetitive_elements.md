@@ -139,6 +139,10 @@ However, repeatmodeler outputs a number of files which can be used in downstream
 
 RepeatMasker outputs your masked genome and a nice summary file of what it found in the genome assembly. This summary file can be quite informative about the quality of your assembly if you already have some background information on what to expect. For example, there are transposons that are species specific such as the CRE/SLACS transposon which is only found in trypanosoma brucei. So you should be raising an eyebrow if some are showing up in a sea cucumber genome. Below I have delved a little deeper into each of the below transposon families, what they are, and what I expect to see in a sea cucumber genome. 
 
+Sources for echinoderm repetitive element composition can be found in genome publications and papers specifically published on transposons. A paper published in 2019 titled [The Transposons of the Sea Urchin Strongylocentrotus intermedius Agassiz, 1863: In Silico Versus In Vitro](https://link.springer.com/article/10.1134/S1063074019060051) does a good job of analyzing transposable elements in sea urchins. While sea urchins are not sea cucumbers, they are related and this paper is probably the best analysis on echinoderm transposable elements. Additionally, the original *A. japonicus* genome publication provides their transposon findings [here](https://doi.org/10.1371/journal.pbio.2003790.s029). Chiridota Heheva genome publication also has some good [graphics](https://www.nature.com/articles/s42003-022-03176-4/figures/2) detailing transposable element landscape in sea cucumbers. 
+
+All of these resources and results have to be taken with a large grain of salt. Unless the genome assembly complete  (as in telomere to telomere) then there will be repetitive element content missing. For example, the genome size of A. japonicus is estimated to be around 900mb. The published genome has a size of ~800mb. A full 100mb of content is missing. Additionally, the contig/scaffold size distribution will be informative about how fragmented the assembly is and assemblies tend to be fragmented at regions containing repetitive elements. So the numbers reported in the papers and below are not accurate, but they can paint a rough picture of the relative proportions of the repetitive elements in the genome and provide a lower bound regarding percentage of the genome that is repetitive elements. 
+
 | Retroelements |               | 84900 | 36669727 bp | 5.8 %  |
 |---------------|---------------|-------|-------------|--------|
 |               | SINEs:        | 4342  | 734663 bp   | 0.12 % |
@@ -155,6 +159,9 @@ RepeatMasker outputs your masked genome and a nice summary file of what it found
 |               | Ty1/Copia     | 122   | 169182 bp   | 0.03 % |
 |               | Gypsy/DIRS1   | 13852 | 10059761 bp | 1.59 % |
 |               | Retroviral    | 201   | 114432 bp   | 0.02 % |
+
+
+[SINEs](https://en.wikipedia.org/wiki/Short_interspersed_nuclear_element) (Short Interspersed Nuclear Elements) are non-autonomous, non-coding transposable elements (wikipedia). 
 
 
 | DNA transposons  |                   | 40162 | 13472419 bp | 2.13 % |
