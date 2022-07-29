@@ -160,9 +160,10 @@ All of these resources and results have to be taken with a large grain of salt. 
 |               | Gypsy/DIRS1   | 13852 | 10059761 bp | 1.59 % |
 |               | Retroviral    | 201   | 114432 bp   | 0.02 % |
 
+Let's start with the [retrotransposons](https://en.wikipedia.org/wiki/Retrotransposon). As a reminder, these are transposons that have an rna intermediate form. The human genome is about 42% retrotransposon, maize is 49%-78% ()
 
-[SINEs](https://en.wikipedia.org/wiki/Short_interspersed_nuclear_element) (Short Interspersed Nuclear Elements) are non-autonomous, non-coding transposable elements (wikipedia). 
-
+https://github.com/caballero/RepeatLandscape for creating the repeatmasker kimura distance graphs?
+repeatmasker has a tool for generating the kimura distance plots: https://github.com/rmhubley/RepeatMasker/blob/master/util/createRepeatLandscape.pl called repeatlandscape
 
 | DNA transposons  |                   | 40162 | 13472419 bp | 2.13 % |
 |------------------|-------------------|-------|-------------|--------|
