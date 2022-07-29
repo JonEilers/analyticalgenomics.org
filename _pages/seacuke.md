@@ -45,8 +45,8 @@ Genomes contain really really long sequences of DNA. Modern DNA sequencing machi
 
 ![](/assets/images/cukeimages/cukemedicine.png "Compounds extracted from sea cucumbers and their potential applications"){: .align-right width="500px" height="500px" }
 
-If the assembly goes well, then we need to identify the important parts of the genome. Genomes contain a lot of repetitive regions which do nothing interesting. Hidden between those regions are genes and other useful bits. Identifying and assigning function to those interesting bits is called annotating. Genomes without annotations are simply strings of meaningless letters. But once annotated, then scientists can begin using the genome to study sea cucumbers.
+If the assembly goes well, then we need to identify the important parts of the genome. Genomes contain a lot of repetitive regions which do nothing interesting. Hidden between those regions are genes and other useful bits. Identifying and assigning function to those interesting bits is called annotating. Genomes without annotations are simply strings of meaningless letters. But once annotated, scientists can then begin using the genome to study sea cucumbers.
 
-My project is to sequence, assemble, and annotate the genome of the Californian Giant Sea Cucumber so that those studying its incredible abilities can have access to the code that gives the Californian Sea Cucumber its superpowers.
+My goal is to sequence, assemble, and annotate the genome of the Californian Giant Sea Cucumber so that those studying its incredible abilities can have access to the code that gives the Californian Sea Cucumber its superpowers.
 
 *The photo that was used for the front page icon can be found [here](https://www.inaturalist.org/observations/53271755)*

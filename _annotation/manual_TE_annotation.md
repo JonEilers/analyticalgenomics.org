@@ -12,7 +12,9 @@ excerpt: “The genome is a book that wrote itself, continually adding, deleting
 
 # Introduction
 
-blah blah about manual curation of transposable element library
+Insert about manual curation of transposable element library
+
+The below set of protocols are taken from [A beginner’s guide to manual curation of transposable elements](https://mobilednajournal.biomedcentral.com/articles/10.1186/s13100-021-00259-7) with some minor modifications
 
 # Summary of Approach
 
