@@ -17,7 +17,7 @@ feature_row:
     title: "Genomics Blog"
     url: "/blog/"
   - image_path: /assets/images/home/58382205_575954296244618_3014640770582839296_n.jpg
-    title: "About me"
+    title: "About Me"
     url: "/about/"
   
 

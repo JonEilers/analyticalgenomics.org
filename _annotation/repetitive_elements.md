@@ -7,6 +7,10 @@ permalink: /repeats/
 
 excerpt: “The genome is a book that wrote itself, continually adding, deleting and amending over four billion years.” ~ Matt Ridley
 
+gallery:
+  - url: assets/images/annotation/repetitive_elements/TE_distribution_across_life.png
+    image_path: assets/images/annotation/repetitive_elements/TE_distribution_across_life.png
+    title: Source - A Field Guide to Eukaryotic Transposable Elements - Wells and Feschotte 2020
 
 ---
 
@@ -18,9 +22,11 @@ Repetitive elements in a genome consist of two primary classes: [Tandem repeats]
 
 Tranposons can be classified into two major groups: Class I retrotransposons and Class II DNA transposons. Without getting into the gritty details Class I has an rna intermediate and Class II does not. Another important detail is that Class I primarily "jumps" around the genome whereas Class II duplicates itself and the duplicate is inserted elsewhere in the genome.
 
-Actual distribution of repetitive elements varies wildly between species and even between individuals of the same species due to [transposon expression during embryogenesis](https://rep.bioscientifica.com/view/journals/rep/156/4/REP-18-0218.xml). For this reason a de novo repetitive element "library" is required for non-model organisms prior to identifying and masking repetitive elements in a genome assembly. 
+{% include gallery caption=" Source - [A Field Guide to Eukaryotic Transposable Elements](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8293684/)" %}
 
-There are two approaches to creating an assembly specific repetitive element library: The quick and dirty method and the correct method. Both require the same first step - using a tool, such as repeatmodeler or [EDTA](https://github.com/oushujun/EDTA), to identify repetitive elements *de novo*. The first difference between the two approaches is that automated tools such as repeatmodeler and EDTA require manual curation of the results in order to have complete confidence in the library quality. Most genome sequencing projects do not have the time and man power to perform that quality control so they often take the results from repeatmodeler and directly input them into repeatmasker without any QC. 
+Actual distribution of repetitive elements varies wildly between species and even between individuals of the same species due to [transposon expression during embryogenesis](https://rep.bioscientifica.com/view/journals/rep/156/4/REP-18-0218.xml). This variation within individuals of a population can significantly contribute to [adaptation and fitness](https://www.mdpi.com/2073-4425/10/6/419/htm) For this reason a de novo repetitive element "library" is required for non-model organisms prior to identifying and masking repetitive elements in a genome assembly. 
+
+There are two approaches to creating an assembly specific repetitive element library: The quick and dirty method and the correct method. Both require the same first step - using a tool, such as repeatmodeler or [EDTA](https://github.com/oushujun/EDTA), to identify repetitive elements *de novo*. The main difference between the two approaches is that automated tools such as repeatmodeler and EDTA create a lot of false positives. Manual curation of the results is required in order to have complete confidence in the library quality.  Most genome sequencing projects do not have the time and man power to perform that quality control so they often take the results from repeatmodeler/EDTA and directly input them into repeatmasker without any QC. 
 
 With that in mind I will cover the manual curation of transposable elements in a separate section and focus primarily on generating repetitive elements libraries and masking a genome assembly in this section. 
 
@@ -85,6 +91,8 @@ It is also good to use the `-gff` otpion so the resulting predicted repetitive e
 
 ## EDTA
 
+EDTA is intended to be a one stop shop for transposable element identification and annotation. 
+
 ```bash
 EDTA.pl \
     --genome /home/jon/Working_Files/japonicus_genome_project/MaSuRCA-4.0.5/masurca_results/primary.genome.scf.fasta \
@@ -95,19 +103,11 @@ EDTA.pl \
     --overwrite 0
 ```
 
+```--sensitive 1``` uses repeatmodeler to help identify any remaining TEs. ```--anno 1``` creates annotations for the identified TEs. ```--evaluate 1``` is a qc step and probably a good idea. 
+
+After setting the parameters and hitting the enter key, sit back and relax. In a bit you will have a masked genome assembly and annotated transposable elements. 
+
 # Results
-
-## Visualizing results
-
-download jbrowse2
-
-creating genome assembly index using samtools
-```bash
-mamba create -n samtools samtools
-conda activate samtools
-
-samtools faidx primary.genome.scf.fasta
-```
 
 ## Repeatmodeler
 
@@ -133,7 +133,9 @@ Classification Time: 02:29:39 (hh:mm:ss) Elapsed Time
 Program Time: 40:46:51 (hh:mm:ss) Elapsed Time
 ```
 
-However, repeatmodeler outputs a number of files which can be used in downstream analysis. For example, it creates a file containing all the predicted transposon "families". This file can then be manually curated and refined into high confidence families containing sequences that have been trimmed and manually inspected. However, this is time intensive and requires a great deal of knowledge about transposon structure. This transponson families file can be directly inputed into repeatmasker without any manual curation and used to hopefully mask most of the repetitive content in a genome assembly, albeit with significiantly higher error rates than if a manually curated family fasta was to be used. 
+However, repeatmodeler outputs a number of files which can be used in downstream analysis. For example, it creates a file containing all the predicted transposon "families". This file can then be manually curated and refined into high confidence families containing sequences that have been trimmed and manually inspected. However, this is time intensive and requires a great deal of knowledge about transposon structure. 
+
+The transponson families file can be directly inputed into repeatmasker without any manual curation and used to hopefully mask most of the repetitive content in a genome assembly, albeit with significiantly higher error rates than if a manually curated family fasta was to be used. 
 
 ## RepeatMasker
 
@@ -143,24 +145,153 @@ Sources for echinoderm repetitive element composition can be found in genome pub
 
 All of these resources and results have to be taken with a large grain of salt. Unless the genome assembly complete  (as in telomere to telomere) then there will be repetitive element content missing. For example, the genome size of A. japonicus is estimated to be around 900mb. The published genome has a size of ~800mb. A full 100mb of content is missing. Additionally, the contig/scaffold size distribution will be informative about how fragmented the assembly is and assemblies tend to be fragmented at regions containing repetitive elements. So the numbers reported in the papers and below are not accurate, but they can paint a rough picture of the relative proportions of the repetitive elements in the genome and provide a lower bound regarding percentage of the genome that is repetitive elements. 
 
+[A unified classification system for eukaryotic transposable elements](https://www.nature.com/articles/nrg2165)
+
+### Retrotransposons
+
 | Retroelements |               | 84900 | 36669727 bp | 5.8 %  |
 |---------------|---------------|-------|-------------|--------|
-|               | SINEs:        | 4342  | 734663 bp   | 0.12 % |
+|               | **SINEs:**        | 4342  | 734663 bp   | 0.12 % |
 |               | Penelope      | 15313 | 4664183 bp  | 0.74 % |
-|               | LINEs:        | 51761 | 19910911 bp | 3.15 % |
+|               | **LINEs:**        | 51761 | 19910911 bp | 3.15 % |
 |               | CRE/SLACS     | 0     | 0 bp        | 0 %    |
 |               | L2/CR1/Rex    | 26022 | 9397503 bp  | 1.49 % |
 |               | R1/LOA/Jockey | 0     | 0 bp        | 0 %    |
 |               | R2/R4/NeSL    | 0     | 0 bp        | 0 %    |
 |               | RTE/Bov-B     | 1890  | 838698 bp   | 0.13 % |
 |               | L1/CIN4       | 0     | 0 bp        | 0 %    |
-|               | LTR elements: | 28797 | 16024153 bp | 2.53 % |
+|               | **LTR elements:** | 28797 | 16024153 bp | 2.53 % |
 |               | BEL/Pao       | 1598  | 1246057 bp  | 0.2 %  |
 |               | Ty1/Copia     | 122   | 169182 bp   | 0.03 % |
 |               | Gypsy/DIRS1   | 13852 | 10059761 bp | 1.59 % |
 |               | Retroviral    | 201   | 114432 bp   | 0.02 % |
 
 Let's start with the [retrotransposons](https://en.wikipedia.org/wiki/Retrotransposon). As a reminder, these are transposons that have an rna intermediate form. The human genome is about 42% retrotransposon, maize is 49%-78% ()
+
+<details>
+  <summary> <strong>SINEs</strong>: Count: 4342 &emsp; Bases: 734663 bp &emsp; Percent: 0.12 %</summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/Sine_structure.png"  caption="Source - Wikipedia." %}
+
+  stuff about SINEs, distribution, and structure
+</details>
+{: .notice--info}
+
+write about what I would expect for SINEs in the sea cucumber genome
+
+<details>
+  <summary> <b>Penelope</b>:  Count: 15313 &emsp; Bases: 4664183 bp &emsp; Percent: 0.74 %</summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/penelope_structure.gif"  caption="Source - Figure 1 from I. Arkhipova 2006 " %}
+
+  Source - <a href="https://academic.oup.com/sysbio/article/55/6/875/1694421?login=false">Distribution and Phylogeny of Penelope-Like Elements in Eukaryotes</a>: ORF structure of Penelope-like elements. The RT moiety consists of the core RT domain that includes the seven highly conserved motifs, followed by the thumb domain and the C-terminal extension. In Penelope-Poseidon–like elements, the GIY-YIG EN domain is immediately adjacent to the C-terminal extension; in Neptune-like and Nematis-like elements, a Zn finger–like domain appears between RT and EN. The long N-terminal extension is characteristic of both Penelope-like RTs and telomerase RTs. Some of the Neptune-like elements may also contain an additional upstream ORF, usually of simple amino acid composition 
+  stuff about distribution, and structure
+</details>
+{: .notice--info}
+
+write about what I would expect for Penelopes in the sea cucumber genome
+
+<details>
+  <summary><b>LINEs</b> Count: 51761 &emsp; 	Bases: 19910911 bp &emsp; 	Percent: 3.15 %</summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/line_structure_variation.png"  caption="Source - Deniz et al 2019: ORF1 - open reading frame 1, APE - apurinic endonuclease, RT - reverse transcriptase, EN - endonuclase, TR - terminal repeat " %}
+
+Image is from the paper: <a href = "https://www.nature.com/articles/s41576-019-0106-6">Regulation of transposable elements by DNA modifications </a> <br>
+<a href = "https://en.wikipedia.org/wiki/Long_interspersed_nuclear_element">LINE</a> stands for Long Interspersed Nuclear Elements. It conatains a group of non-LTR (long terminal repeat) retrotransposons that are widespread in the genome of many eukaryotes. There are five main groups - L1, RTE, R2, CR1 and Jockey.
+
+  {% include figure image_path="assets/images/annotation/repetitive_elements/line_structure.png"  caption="Source - wikipedia: EN - endonuclease domain, RT - reverse transcriptase, IRES - internal ribosomal entry site, TSD - tandem site duplication, TSS - transcription start site " %}
+
+All LINEs contain at least one open reading frame (ORF2) which codes for a reverse transcriptase (RT) and endonuclease (EN). Many also have a second open reading (ORF1) coding for an additional protein such as Gag-knuckle. The most common LINE in humans is LINE1
+
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>CRE/SLACS</b> Count: 0 &emsp; 	Bases: 0 bp &emsp; 	Percent: 0 %</summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+  stuff about distribution, and structure
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>L2/CR1/Rex</b> Count: 26022 &emsp; 	Bases: 9397503 bp &emsp; 	Percent: 1.49 %</summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+  stuff about distribution, and structure
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>R1/LOA/Joecky</b>  	Count: 0 &emsp; 	Bases: 0 bp &emsp; 	Percent: 0 %</summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+  stuff about distribution, and structure
+</details>
+{: .notice--info}
+
+ <details>
+  <summary><b>R2/R4/NeSL</b>  	Count: 0 &emsp; 	Bases: 0 bp &emsp; 	Percent: 0 %</summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+  stuff about distribution, and structure
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>RTE/Bov-B</b> Count: 1890 &emsp; 	Bases: 838698 bp &emsp; 	Percent: 0.13 %</summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+  stuff about distribution, and structure
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>L1/CIN4</b> Count: 0 &emsp; 	Bases: 0 bp &emsp; 	Percent: 0 %</summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+  stuff about distribution, and structure
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>LTR elements</b>  	Count: 28797 &emsp; 	Bases: 16024153 bp &emsp; 	Percent: 2.53 %</summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+  stuff about distribution, and structure
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>BEL/Pao</b>  	Count: 1598 &emsp; 	Bases: 1246057 bp &emsp; 	Percent: 0.2 %</summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+  stuff about distribution, and structure
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>Ty1/Copia</b> Count: 122 &emsp; 	Bases: 169182 bp &emsp; 	Percent: 0.03 %</summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+  stuff about distribution, and structure
+</details>
+{: .notice--info}
+
+ <details>
+  <summary><b>Gypsy/DIRS1</b> Count: 13852 &emsp; 	Bases: 10059761 bp &emsp; 	Percent: 1.59 %</summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+  stuff about distribution, and structure
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>Retroviral</b>  	Count: 201 &emsp; 	Bases: 114432 bp &emsp; 	Percent: 0.02 %</summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+  stuff about distribution, and structure
+</details>
+{: .notice--info}
+
+### DNA transposons
 
 https://github.com/caballero/RepeatLandscape for creating the repeatmasker kimura distance graphs?
 repeatmasker has a tool for generating the kimura distance plots: https://github.com/rmhubley/RepeatMasker/blob/master/util/createRepeatLandscape.pl called repeatlandscape
@@ -174,6 +305,15 @@ repeatmasker has a tool for generating the kimura distance plots: https://github
 |                  | PiggyBac          | 107   | 61946 bp    | 0.01 % |
 |                  | Tourist/Harbinger | 7460  | 1910919 bp  | 0.3 %  |
 
+<details>
+  <summary></summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+  stuff about distribution, and structure
+</details>
+{: .notice--info}
+
+### Other transposable elements
 
 |                                     |        |              |         |
 |-------------------------------------|--------|--------------|---------|
@@ -182,6 +322,13 @@ repeatmasker has a tool for generating the kimura distance plots: https://github
 | Unclassified:                       | 571376 | 161042674 bp | 25.47 % |
 | ***Total interspersed  repeats:***        |        | 211184820 bp | 33.4 %  |
 
+<details>
+  <summary></summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+  stuff about distribution, and structure
+</details>
+{: .notice--info}
 
 
 
