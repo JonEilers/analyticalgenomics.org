@@ -12,6 +12,11 @@ gallery:
     image_path: assets/images/annotation/repetitive_elements/TE_distribution_across_life.png
     title: Source - A Field Guide to Eukaryotic Transposable Elements - Wells and Feschotte 2020
 
+gallery_2:
+  - url: assets/images/annotation/repetitive_elements/echinoderm_TE.webp
+    image_path: assets/images/annotation/repetitive_elements/echinoderm_TE.webp
+    title: Figure 2 - Landscape of transposable elements in echinoderm genomes - Zhang et al 2022
+
 ---
 
 # Introduction
@@ -166,6 +171,9 @@ Before I dive into brief explanations of each row in the repeatmasker results - 
 |               | Gypsy/DIRS1   | 13852 | 10059761 bp | 1.59 % |
 |               | Retroviral    | 201   | 114432 bp   | 0.02 % |
 
+
+ {% include gallery id="gallery_2" caption="Figure 2 - Landscape of transposable elements in echinoderm genomes - Zhang et al 2022" %}
+
 ### Retrotransposons
 
 Let's start with the [retrotransposons](https://en.wikipedia.org/wiki/Retrotransposon). As a reminder, these are transposons that have an rna intermediate form. The human genome is about 42% retrotransposon, maize is 49%-78% ()
@@ -221,7 +229,7 @@ CRE/SLACS are not found outside Trypanosomatida unicellular organisms so they sh
   
   CR1 (chicken repeat 1), L2 (Line-2), and Rex transposable elements are considered sister classes to each (dfam). 
 
-<a href="https://dfam.org/family/DF0000358/summary">L2 (LINE2)</a> spread before the mammalian radiation, and copies are only 65-75% similar to the consensus. The 5' end is probably incomplete. The 3' end is also incomplete, but this terminus is extended by three model variants: L2a_3end, L2b_3end, and L2c_3end. Note that, whereas L1 is A- and purine-rich in the coding strand, L2 is C- and pyrimidine-rich.
+<a href="https://dfam.org/family/DF0000358/summary">L2 (LINE2)</a> spread before the mammalian radiation, and copies are only 65-75% similar to the consensus.  
   
 {% include figure image_path="assets/images/annotation/repetitive_elements/rex_structure.png"  caption="Source - Figure  3 Carducci et al 2018" %}
 
@@ -241,10 +249,24 @@ CR1 is an abbreviation for Chicken-repeat 1. The original paper can be found <a 
 
 <br>
 
+
+{% include figure image_path="assets/images/annotation/repetitive_elements/line2_structure.png"  caption="Source - Figure 1b Zebra Fish Line 2 structure - Sugano et al 2006" %}
+
+(B) Schematic representation of ZfL2-1 and ZfL2-2. ZfL2-1 is
+approximately 5.0 kbp long and has two ORFs, ORF1 and ORF2. ZfL2-1 ORF1 encodes a protein composed of a putative coiled-coil (CC) motif and the esterase (ES)
+domain. The protein encoded by ZfL2-1 ORF2 is composed of an endonuclease (EN) domain and a reverse transcriptase (RT) domain. ZfL2-2 is approximately 4.2
+kbp long and has one ORF. Horizontal arrowheads indicate repeat units of the repeat sequence in the 5′ untranslated region (UTR) of ZfL2-2. The protein encoded by
+ZfL2-2 ORF is composed of EN and RT domains. The probe sequences used to isolate the full-length LINEs are indicated by black bars. - <a href="https://www.sciencedirect.com/science/article/abs/pii/S0378111905006542">Isolation and characterization of retrotransposition-competent LINEs from zebrafish</a>
+
+<br>
+<br>
+
 L2, CR1 rex-baber - [Evolution of the Australian Lungfish (Neoceratodus forsteri) Genome: A Major Role for CR1 and L2 LINE Elements](https://academic.oup.com/mbe/article/29/11/3529/1153659)
   stuff about distribution, and structure
 </details>
 {: .notice--info}
+
+LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significantly to that number in other animal genomes. Due to echinoderma's relation to deuterostomes it shouldn't be a surprise that there are a number of L2/CR1/Rex elements in the the sea cucumber genome. 
 
 <details>
   <summary><b>R1/LOA/Joecky</b>  	Count: 0 &emsp; 	Bases: 0 bp &emsp; 	Percent: 0 %</summary>
