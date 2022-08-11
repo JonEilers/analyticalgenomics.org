@@ -145,9 +145,9 @@ Sources for echinoderm repetitive element composition can be found in genome pub
 
 All of these resources and results have to be taken with a large grain of salt. Unless the genome assembly complete  (as in telomere to telomere) then there will be repetitive element content missing. For example, the genome size of A. japonicus is estimated to be around 900mb. The published genome has a size of ~800mb. A full 100mb of content is missing. Additionally, the contig/scaffold size distribution will be informative about how fragmented the assembly is and assemblies tend to be fragmented at regions containing repetitive elements. So the numbers reported in the papers and below are not accurate, but they can paint a rough picture of the relative proportions of the repetitive elements in the genome and provide a lower bound regarding percentage of the genome that is repetitive elements. 
 
-[A unified classification system for eukaryotic transposable elements](https://www.nature.com/articles/nrg2165)
+Before I dive into brief explanations of each row in the repeatmasker results - please note that the current classification schemes for repetitive elements is a complete mess. Each paper has its own preference with how to display the groups and their relationship. For example, it will require really digging into the literature in order to figure out the what L2, CR1, and Rex elements have in common and why they are grouped together. When reading other papers, L2 and CR1 won't even show up, etc. That is the struggle when dealing with repettitive element classification. For the sake of this section I have stuck with what repeatmasker outputs. 
 
-### Retrotransposons
+[A unified classification system for eukaryotic transposable elements](https://www.nature.com/articles/nrg2165)
 
 | Retroelements |               | 84900 | 36669727 bp | 5.8 %  |
 |---------------|---------------|-------|-------------|--------|
@@ -165,6 +165,8 @@ All of these resources and results have to be taken with a large grain of salt. 
 |               | Ty1/Copia     | 122   | 169182 bp   | 0.03 % |
 |               | Gypsy/DIRS1   | 13852 | 10059761 bp | 1.59 % |
 |               | Retroviral    | 201   | 114432 bp   | 0.02 % |
+
+### Retrotransposons
 
 Let's start with the [retrotransposons](https://en.wikipedia.org/wiki/Retrotransposon). As a reminder, these are transposons that have an rna intermediate form. The human genome is about 42% retrotransposon, maize is 49%-78% ()
 
@@ -200,21 +202,46 @@ Image is from the paper: <a href = "https://www.nature.com/articles/s41576-019-0
 
 All LINEs contain at least one open reading frame (ORF2) which codes for a reverse transcriptase (RT) and endonuclease (EN). Many also have a second open reading (ORF1) coding for an additional protein such as Gag-knuckle. The most common LINE in humans is LINE1
 
+LINE elements are majority of most animal genome transposable elements
+
 </details>
 {: .notice--info}
 
-<details>
-  <summary><b>CRE/SLACS</b> Count: 0 &emsp; 	Bases: 0 bp &emsp; 	Percent: 0 %</summary>
-  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
 
-  stuff about distribution, and structure
-</details>
+**CRE/SLACS**: Count: 0  	Bases: 0 bp   	Percent: 0 %
 {: .notice--info}
+
+CRE/SLACS are not found outside Trypanosomatida unicellular organisms so they shouldn't be showing up in echinoderms or in other organisms. Papers can be found [here](https://www.tandfonline.com/doi/full/10.1080/2159256X.2016.1240747) and [here](https://pubmed.ncbi.nlm.nih.gov/26693517/) regarding their structure and presence. 
+
+
+
 
 <details>
   <summary><b>L2/CR1/Rex</b> Count: 26022 &emsp; 	Bases: 9397503 bp &emsp; 	Percent: 1.49 %</summary>
-  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+  
+  CR1 (chicken repeat 1), L2 (Line-2), and Rex transposable elements are considered sister classes to each (dfam). 
 
+<a href="https://dfam.org/family/DF0000358/summary">L2 (LINE2)</a> spread before the mammalian radiation, and copies are only 65-75% similar to the consensus. The 5' end is probably incomplete. The 3' end is also incomplete, but this terminus is extended by three model variants: L2a_3end, L2b_3end, and L2c_3end. Note that, whereas L1 is A- and purine-rich in the coding strand, L2 is C- and pyrimidine-rich.
+  
+{% include figure image_path="assets/images/annotation/repetitive_elements/rex_structure.png"  caption="Source - Figure  3 Carducci et al 2018" %}
+
+Figure 3: Main features of the Rex1 retroelement (A/P*, apurinic/apyrimidinic site that can be located upstream or downstream the RT-encoding region; RT, reverse transcriptase-encoding region; 3′UTR), Rex3 (EN, endonuclease-encoding region; TSD, target site duplication; RT, reverse transcriptase-encoding region; Ct, C-terminal domain–encoding region; tail consisting of tandem repeats of the sequence GCG (GAA)2 (GATG)n, where n = 8–17, and Rex6 (RT, reverse transcriptase-encoding region; EN, endonuclease-encoding region). - taken from <a href="https://www.mdpi.com/1422-0067/19/11/3653/htm#B35-ijms-19-03653"> Rex Retroelements and Teleost Genomes: An Overview </a>  
+
+Rex transposable elements were were discovered in the fish model Xiphophorus and are found throughout teleost genomes. They share many features with CR1 and L2 elements. 
+
+<br>
+<br>
+
+{% include figure image_path="assets/images/annotation/repetitive_elements/CR1_structure.jpeg"  caption="Source - Figure 1 CR1 structure - Kapitonov and Jurka 2003" %}
+
+Figure 1: Schematic structure of complete CR1-like retrotransposons from fishes and insects. CR1-1_DR, CR1-2_DR and CR1-3_DR—are consensus sequences of retrotransposons that belong to the three families of retrotransposons identified in the Danio rerio genome. Maui and Rex1 are the consensus sequences of two retrotransposons from CR1-like families present in the Fugu rubripes genome. CR1_OL is a slightly damaged element identified in the Oryzias latipes genome. Horizontally shaded boxes mark ORF1s and ORF2s. ORF2s encode proteins composed of the apurinic/apyrimidinic endonuclease (APE) and reverse transcriptase (RT) domains. Proteins encoded by ORF1s are composed of putative zinc finger/leucine zipper (ZL) motifs, the plant homeodomain (PHD) and the esterase (ES) domains. Black squares, diamonds and hexagons indicate different unclassified domains. The 3′ termini of all retrotransposons, excluding CR1-2_DR and CR1_DM, are shown starting from the polyadenylation signal, followed by terminal microsatellite repeats composed of different 4–7-bp units repeated 2–8 times. The average number of the repetitions is shown as a subscript index - <a href="https://academic.oup.com/mbe/article/20/1/38/1016286">The Esterase and PHD Domains in CR1-Like Non-LTR Retrotransposons</a>
+
+CR1 is an abbreviation for Chicken-repeat 1. The original paper can be found <a href= "https://www.sciencedirect.com/science/article/abs/pii/S037811199700276X">here</a>. Like most LINE elements it is characterized by two open reading frames and is usually located near a TATA box. A 2005 paper -
+<a href="https://genome.cshlp.org/content/15/1/126.full">The repetitive landscape of the chicken genome</a> - 
+
+<br>
+
+L2, CR1 rex-baber - [Evolution of the Australian Lungfish (Neoceratodus forsteri) Genome: A Major Role for CR1 and L2 LINE Elements](https://academic.oup.com/mbe/article/29/11/3529/1153659)
   stuff about distribution, and structure
 </details>
 {: .notice--info}
