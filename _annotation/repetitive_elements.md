@@ -193,7 +193,7 @@ write about what I would expect for SINEs in the sea cucumber genome
   {% include figure image_path="assets/images/annotation/repetitive_elements/penelope_structure.gif"  caption="Source - Figure 1 from I. Arkhipova 2006 " %}
 
   Source - <a href="https://academic.oup.com/sysbio/article/55/6/875/1694421?login=false">Distribution and Phylogeny of Penelope-Like Elements in Eukaryotes</a>: ORF structure of Penelope-like elements. The RT moiety consists of the core RT domain that includes the seven highly conserved motifs, followed by the thumb domain and the C-terminal extension. In Penelope-Poseidon–like elements, the GIY-YIG EN domain is immediately adjacent to the C-terminal extension; in Neptune-like and Nematis-like elements, a Zn finger–like domain appears between RT and EN. The long N-terminal extension is characteristic of both Penelope-like RTs and telomerase RTs. Some of the Neptune-like elements may also contain an additional upstream ORF, usually of simple amino acid composition 
-  stuff about distribution, and structure
+
 </details>
 {: .notice--info}
 
@@ -203,7 +203,9 @@ write about what I would expect for Penelopes in the sea cucumber genome
   <summary><b>LINEs</b> Count: 51761 &emsp; 	Bases: 19910911 bp &emsp; 	Percent: 3.15 %</summary>
   {% include figure image_path="assets/images/annotation/repetitive_elements/line_structure_variation.png"  caption="Source - Deniz et al 2019: ORF1 - open reading frame 1, APE - apurinic endonuclease, RT - reverse transcriptase, EN - endonuclase, TR - terminal repeat " %}
 
-Image is from the paper: <a href = "https://www.nature.com/articles/s41576-019-0106-6">Regulation of transposable elements by DNA modifications </a> <br>
+Image is from the paper: <a href = "https://www.nature.com/articles/s41576-019-0106-6">Regulation of transposable elements by DNA modifications </a>
+<br>
+<br>
 <a href = "https://en.wikipedia.org/wiki/Long_interspersed_nuclear_element">LINE</a> stands for Long Interspersed Nuclear Elements. It conatains a group of non-LTR (long terminal repeat) retrotransposons that are widespread in the genome of many eukaryotes. There are five main groups - L1, RTE, R2, CR1 and Jockey.
 
   {% include figure image_path="assets/images/annotation/repetitive_elements/line_structure.png"  caption="Source - wikipedia: EN - endonuclease domain, RT - reverse transcriptase, IRES - internal ribosomal entry site, TSD - tandem site duplication, TSS - transcription start site " %}
@@ -271,16 +273,36 @@ LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significant
 <details>
   <summary><b>R1/LOA/Joecky</b>  	Count: 0 &emsp; 	Bases: 0 bp &emsp; 	Percent: 0 %</summary>
   {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
-
-  stuff about distribution, and structure
+  <br>
+  <br>
+  <a href="https://onlinelibrary.wiley.com/doi/abs/10.1128/9781555817954.ch34">R2 and Related Site-Specific Non-Long Terminal Repeat Retrotransposons</a>
+  <br>
+  <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
+  <br>
+  "Originally the I group included five clades (I, Ingi, R1, LOA and Tad1) (Eickbush and Malik, 2002). The distinctive feature of this group is an RNase H that is downstream of RT, although many elements have lost the RNase H. It had been considered that the last common ancestor of the I group acquired an RNase H domain, but recent findings for RNase H domains from the Dualen, L1 and Proto1 families indicate that the acquisition of RNase H was an earlier event (Kojima and Fujiwara, 2005a; Kapitonov et al., 2009)"
+  <br>
+  "The I group has also been found in animals, fungi and trypanosomatids."
+  <br>
+  The Jockey clade is one of the original clades proposed (Malik et al., 1999). Its members do not have an RNase H domain in their ORF2 protein. Some elements belong- ing to the Jockey clade (TART, TAHRE and HeT-A) are specifically transposed onto the telomere (Abad et al., 2004).
 </details>
 {: .notice--info}
 
  <details>
   <summary><b>R2/R4/NeSL</b>  	Count: 0 &emsp; 	Bases: 0 bp &emsp; 	Percent: 0 %</summary>
   {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+ <br>
+  <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
+  <br>
 
-  stuff about distribution, and structure
+  "The R2 group is one of the five original groups (Eickbush and Malik, 2002). The R2 group includes the clades R2, R4, NeSL and Hero."
+  <br>
+  <br>
+  The R2 group and CRE group share one fea- ture, namely that an RLE is encoded downstream of the RT. The other structures are not conserved through- out the group, although members often have zinc-finger motif(s) at the N-terminus of their encoded protein. Some families encode a Ulp1-type protease upstream of the RT. Some have two open reading frames (ORFs), while others have only one.
+
+   <br>
+  <a href="https://journals.asm.org/doi/abs/10.1128/microbiolspec.MDNA3-0011-2014">Integration, Regulation, and Long-Term Stability of R2 Retrotransposons</a>
+  <br>
+
 </details>
 {: .notice--info}
 
@@ -288,7 +310,22 @@ LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significant
   <summary><b>RTE/Bov-B</b> Count: 1890 &emsp; 	Bases: 838698 bp &emsp; 	Percent: 0.13 %</summary>
   {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
 
-  stuff about distribution, and structure
+  <br>
+  <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
+  <br>
+  <br>
+  "The RTE group is also one of the five origi- nal groups (Eickbush and Malik, 2002). It originally included a single clade, RTE, but now includes several more (RTEX, RTETP and Proto2). The RTE group has been found in animals, fungi, plants and algae. How- ever, the distribution of clades, except for RTE and RTEX, are is quite restricted. The RTETP clade has been only found in diatoms."
+  <br>
+  <br>
+  "Bov-B from the bovine Bos taurus, Expander from the pufferfish T. rubripes, and SR2 from the blood- fluke Schistosoma mansoni belong to this clade. Ele- ments belonging to the RTE clade are generally short and encode a protein with two functional domains: APE and RT."
+
+  <br>
+  <a href="https://link.springer.com/article/10.3103/S0891416816010043">Structure and distribution of the retrotransposon Bov-B LINE</a>
+  <br>
+  <br>
+  <a href="https://www.sciencedirect.com/science/article/abs/pii/S0959437X17301089">The Retrotransposon storm and the dangers of a Collyer's genomeE</a>
+  <br>
+  <br>
 </details>
 {: .notice--info}
 
@@ -296,15 +333,25 @@ LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significant
   <summary><b>L1/CIN4</b> Count: 0 &emsp; 	Bases: 0 bp &emsp; 	Percent: 0 %</summary>
   {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
 
-  stuff about distribution, and structure
+  <br>
+  <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
+  <br>
+  <br>
+  "The L1 group is one of the five original groups (Eickbush and Malik, 2002)....Canonical elements that belong to the L1 group encode two proteins. The sequence of the ORF1 pro- tein is highly diverged: the ORF1 protein of human L1 has a leucine-zipper motif, while others have zinc-finger motifs. The second protein (ORF2) includes an APE, RT, and often a CCHC-type zinc finger motif. The L1 group does not encode an RLE, but some lineages of L1, especially L1 families from plants, encode an RNase H domain downstream of the RT domain. 
+  <br>
+  The L1 clade is represented by LINE1 (long inter- spersed element 1), found in various mammals. L1 is the only active autonomous non-LTR retrotransposon family in the human genome and causes cancers and genetic dis- eases by transposition."
+
 </details>
 {: .notice--info}
 
 <details>
   <summary><b>LTR elements</b>  	Count: 28797 &emsp; 	Bases: 16024153 bp &emsp; 	Percent: 2.53 %</summary>
   {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
-
-  stuff about distribution, and structure
+  <br>
+  <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
+  <br>
+  <br>
+  "LTR retrotransposons contain LTRs at both ends, and between these ends there are protein-coding regions. Proteins may contain several catalytic domains: protease, RT, ribonuclease H (RNase H) and integrase; there are also structural proteins called Gag and occasionally Env. LTR retrotransposons mobi- lize through reverse transcription of their own mRNA, catalyzed by RT. cDNA is generated as extrachromo- somal DNA and is then integrated into the genome by integrase. Integrase of LTR retrotransposons shows similarity to the transposase of some DNA transposons, especially the Ginger1 and Ginger2 superfamilies, which indicates the composite origin of LTR retrotransposons (Bao et al., 2010). LTR retrotransposons are subdivided into four superfamilies: Copia, Gypsy, BEL and endog- enous retroviruses (ERVs) (Table 2). The International Committee on Taxonomy of Viruses (ICTV) classifies some LTR retrotransposons as virus families."
 </details>
 {: .notice--info}
 
