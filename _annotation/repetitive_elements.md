@@ -272,7 +272,7 @@ LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significant
 
 <details>
   <summary><b>R1/LOA/Joecky</b>  	Count: 0 &emsp; 	Bases: 0 bp &emsp; 	Percent: 0 %</summary>
-  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+  {% include figure image_path="assets/images/annotation/repetitive_elements/schematic_strucuture_site_specific_non-LTR.png"  caption="Source: Haruhiko Fujiwara 2015 - FIGURE 2 Schematic structure of each clade of site-specific non-LTR retrotransposons. The ORF1 in APE-encoding elements is shown as a short rectangle. An ORF2 in APE- encoding elements or ORF in RLE-encoding elements is shown as a long rectangle. A ZF-like structure is shown as a vertical bold line. A ZF-like structure in ORF1 of APE- encoding elements is shown as a zinc knuckle: Cx2Cx4Hx4Cx5-8Cx2Cx3Hx4C. In R2 clade elements, some elements have an additional ZF-like structure shown as a dotted vertical line. Myb-like (Myb) domains are found in R2 clade-elements and in TRAS families in the R1-clade. https://doi.org/10.1128/microbiolspec.MDNA3-0001-2014" %}
   <br>
   <br>
   <a href="https://onlinelibrary.wiley.com/doi/abs/10.1128/9781555817954.ch34">R2 and Related Site-Specific Non-Long Terminal Repeat Retrotransposons</a>
@@ -282,14 +282,17 @@ LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significant
   "Originally the I group included five clades (I, Ingi, R1, LOA and Tad1) (Eickbush and Malik, 2002). The distinctive feature of this group is an RNase H that is downstream of RT, although many elements have lost the RNase H. It had been considered that the last common ancestor of the I group acquired an RNase H domain, but recent findings for RNase H domains from the Dualen, L1 and Proto1 families indicate that the acquisition of RNase H was an earlier event (Kojima and Fujiwara, 2005a; Kapitonov et al., 2009)"
   <br>
   "The I group has also been found in animals, fungi and trypanosomatids."
+<br>
+<br>
+  <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
   <br>
-  The Jockey clade is one of the original clades proposed (Malik et al., 1999). Its members do not have an RNase H domain in their ORF2 protein. Some elements belong- ing to the Jockey clade (TART, TAHRE and HeT-A) are specifically transposed onto the telomere (Abad et al., 2004).
+  Originally the I group included five clades (I, Ingi, R1, LOA and Tad1) (Eickbush and Malik, 2002). The distinctive feature of this group is an RNase H that is downstream of RT, although many elements have lost the RNase H. It had been considered that the last common ancestor of the I group acquired an RNase H domain, but recent findings for RNase H domains from the Dualen, L1 and Proto1 families indicate that the acquisition of RNase H was an earlier event (Kojima and Fujiwara, 2005a; Kapitonov et al., 2009). The Jockey clade was considered a representative of the “Jockey group”; however, there is an accumulation of evidence that the Jockey clade is more closely related to the I group than the CR1 clade (Kojima and Fujiwara, 2005a; Putnam et al., 2007). Thus, here, the Jockey clade is proposed to be included in the I group,
 </details>
 {: .notice--info}
 
  <details>
   <summary><b>R2/R4/NeSL</b>  	Count: 0 &emsp; 	Bases: 0 bp &emsp; 	Percent: 0 %</summary>
-  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+  {% include figure image_path="assets/images/annotation/repetitive_elements/schematic_strucuture_site_specific_non-LTR.png"  caption="Source: Haruhiko Fujiwara 2015 - FIGURE 2 Schematic structure of each clade of site-specific non-LTR retrotransposons. The ORF1 in APE-encoding elements is shown as a short rectangle. An ORF2 in APE- encoding elements or ORF in RLE-encoding elements is shown as a long rectangle. A ZF-like structure is shown as a vertical bold line. A ZF-like structure in ORF1 of APE- encoding elements is shown as a zinc knuckle: Cx2Cx4Hx4Cx5-8Cx2Cx3Hx4C. In R2 clade elements, some elements have an additional ZF-like structure shown as a dotted vertical line. Myb-like (Myb) domains are found in R2 clade-elements and in TRAS families in the R1-clade. https://doi.org/10.1128/microbiolspec.MDNA3-0001-2014" %}
  <br>
   <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
   <br>
@@ -359,7 +362,18 @@ LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significant
   <summary><b>BEL/Pao</b>  	Count: 1598 &emsp; 	Bases: 1246057 bp &emsp; 	Percent: 0.2 %</summary>
   {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
 
-  stuff about distribution, and structure
+  <br>
+  <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
+  <br>
+  <br>
+
+ Belpaoviridae includes only one genus, Semotivirus, in the taxonomy of ICTV. Semoti- virus corresponds to the BEL superfamily of LTR ret- rotransposons. GyDB divided BEL into three branches and further into five clades (BEL, Tas, Suzu, Sinbad and Pao) (Llorens et al., 2011).
+
+   <br>
+  <a href="https://bmcecolevol.biomedcentral.com/articles/10.1186/1471-2148-11-154">BEL/Pao retrotransposons in metazoan genomes</a>
+  <br>
+  <br>
+
 </details>
 {: .notice--info}
 
@@ -367,7 +381,13 @@ LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significant
   <summary><b>Ty1/Copia</b> Count: 122 &emsp; 	Bases: 169182 bp &emsp; 	Percent: 0.03 %</summary>
   {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
 
-  stuff about distribution, and structure
+  <br>
+  <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
+  <br>
+  <br>
+
+One feature that distinguishes Copia from other LTR retrotransposons is the position of the integrase domain, which is upstream of the RT domain. With some exceptions, Gypsy, BEL and retrovi- ruses encode an integrase downstream of RT.
+
 </details>
 {: .notice--info}
 
@@ -375,7 +395,17 @@ LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significant
   <summary><b>Gypsy/DIRS1</b> Count: 13852 &emsp; 	Bases: 10059761 bp &emsp; 	Percent: 1.59 %</summary>
   {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
 
-  stuff about distribution, and structure
+  <br>
+  <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
+  <br>
+  <br>
+
+The taxonomy of ICTV contains two genera under the family Metaviridae: Errantivirus and Metavirus. The representative family of Errantivi- rus is Gypsy from the fruit fly D. melanogaster. Metavi- rus corresponds to most of the Gypsy superfamily of LTR retrotransposons.
+
+  <br>
+  <a href="https://journals.asm.org/doi/full/10.1128/mbio.00187-22">A Missing Link between Retrotransposons and Retroviruses</a>
+  <br>
+  <br>
 </details>
 {: .notice--info}
 
@@ -383,14 +413,23 @@ LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significant
   <summary><b>Retroviral</b>  	Count: 201 &emsp; 	Bases: 114432 bp &emsp; 	Percent: 0.02 %</summary>
   {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
 
-  stuff about distribution, and structure
+  <br>
+  <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
+  <br>
+  <br>
+Retroviruses are a specialized branch inside LTR retrotransposons. Retroviruses generally have an envelope protein gene, env, in addition to other genes encoded in LTR retrotransposons. Env typically contains two domains: a transmembrane domain and a host receptor- binding domain. ERVs are retroviruses that omit the extracellular stage of their life cycle and replicate them- selves in germ cells. Some retain the coding ability for Env, but most do not. The loss of env and the expansion of ERVs by intracellular retrotransposition are strongly correlated (Magiorkinis et al., 2012).
+  <br>
+  <br>
+  <a href="https://journals.asm.org/doi/full/10.1128/mbio.00187-22">A Missing Link between Retrotransposons and Retroviruses</a>
+  <br>
+  <br>
 </details>
 {: .notice--info}
 
 ### DNA transposons
 
-https://github.com/caballero/RepeatLandscape for creating the repeatmasker kimura distance graphs?
-repeatmasker has a tool for generating the kimura distance plots: https://github.com/rmhubley/RepeatMasker/blob/master/util/createRepeatLandscape.pl called repeatlandscape
+[RepeatLandscape](https://github.com/caballero/RepeatLandscape) for creating the repeatmasker kimura distance graphs?
+repeatmasker has a tool for generating the kimura distance plots: [createRepeatLandscape](https://github.com/rmhubley/RepeatMasker/blob/master/util/createRepeatLandscape.pl) called repeatlandscape
 
 | DNA transposons  |                   | 40162 | 13472419 bp | 2.13 % |
 |------------------|-------------------|-------|-------------|--------|
@@ -402,10 +441,86 @@ repeatmasker has a tool for generating the kimura distance plots: https://github
 |                  | Tourist/Harbinger | 7460  | 1910919 bp  | 0.3 %  |
 
 <details>
-  <summary></summary>
+  <summary><b>DNA transposons </b>  	Count: 40162 &emsp; 	Bases: 13472419bp &emsp; 	Percent: 2.13% </summary>
   {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
 
-  stuff about distribution, and structure
+  <br>
+  <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
+  <br>
+  <br>
+
+ The dominant group of DNA transposons is the TEs that encode DDD/E transposase as an enzyme for mobilization, both in eukaryotes and prokaryotes (Siguier et al., 2006; Bao et al., 2015). As of January 2018, Repbase contains 23 Class II TE super- families (Bao et al., 2015). Among them, 21 (Mariner/ Tc1, hAT, MuDR, EnSpm/CACTA, piggyBac, P, Merlin, Harbinger, Transib, Polinton, Kolobok, ISL2EU, Sola, Zator, Zisupton, Ginger1, Ginger2/TDD, Academ, Novosib, IS3EU and Dada) are known to encode DDD/E transposase for catalysis during integration.
+
+Similarities between eukaryotic and prokaryotic DDD/E transposases are sometimes observed
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>hobo-Activator (hAT)</b>  	Count: 17290 &emsp; 	Bases: 4162041 bp &emsp; 	Percent: 0.66% </summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+  <br>
+  <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
+  <br>
+  <br>
+
+The hAT superfamily is one of the most abundant DNA transposon superfamilies.
+Although no hAT DNA transposons are active in the human genome, many ancient hAT transposons, Charlie and its non-autonomous derivatives, preserve their traces on the human genome (Kojima, 2018a).
+In general, hAT families encode a single protein that includes a transposase domain. TIRs of hAT families are usually short, up to 50 bp. The majority of hAT families generate 8-bp TSDs. However, hAT5 families generate 5-bp TSDs, hAT6 families generate 6-bp TSDs and hATw generates 7-bp TSDs. hATm and hATx are distinct lin- eages inside the hAT superfamily of DNA transposons.
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>Tc1-IS630-Pogo</b>  	Count: 534 &emsp; 	Bases: 120054bp &emsp; 	Percent: .02% </summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+ <br>
+  <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
+  <br>
+  <br>
+The eukaryotic superfamily Mariner/ Tc1 is related to the bacterial IS630 family (Doak et al., 1994). This group is also referred to as the IS630-Tc1- Mariner (ITm) family. Many subdivisions in the Mariner/ Tc1 superfamily have been proposed. These include Tc1, Mariner, Pogo, MaT, ITmD37D, ITmD37E, and so on (Shao and Tu, 2001; Claudianos et al., 2002; Coy and Tu, 2005; Tellier et al., 2015).
+
+The centromeric protein CENP-B is a Pogo transposase that acquired a biological function (Tudor et al., 1992; Smit, 1996  
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>En-Spm</b>  	Count: 0 &emsp; 	Bases: 0bp &emsp; 	Percent: 0% </summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+ <br>
+  <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
+  <br>
+  <br>
+Peterson characterized an autonomous TE insertion designated Enhancer (En) (Peterson, 1953). McClintock independently characterized a TE inser- tion and designated it as Suppressor-Mutator (Spm) (McClintock, 1954). These two TE insertions were sequenced and revealed to be almost identical, and we now refer to this family of TEs as Enhancer/Suppressor- Mutator (En/Spm). The EnSpm superfamily is also called the CACTA superfamily because many plant EnSpm family sequences begin with the pentanucleotide CACTA. EnSpm families usually encode two proteins and plant EnSpm families generate 3-bp TSDs.
+
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>MuDR-IS905</b>  	Count: 0 &emsp; 	Bases: 0bp &emsp; 	Percent: 0% </summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+The two-component system MuDR/Mu from maize comprises the first reported DNA transposon fam- ily that belongs to the superfamily currently recognized as MuDR or MULE (Mutator-like element) (Robertson, 1978). MuDR encodes two proteins, MURA and MURB; MURA is the transposase. MuDR families are primarily identified in plants, but have also been reported in ani- mals, fungi and stramenopiles.
+
+Transposases of MuDR elements and prokaryotic IS256 elements share some features (Eisen et al., 1994; Hua-Van and Capy, 2008).
+
+The N-terminus of MuDR contains a DNA-binding domain. The zinc-finger motif seen in the MuDRF fami- lies is called the GCM1 domain (Cantu et al., 2011).
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>PiggyBac</b>  	Count: 107 &emsp; 	Bases: 61946bp &emsp; 	Percent: .01% </summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+piggyBac was originally isolated from a baculovirus infecting a cell culture of the cabbage looper Trichoplusia ni (Fraser et al., 1983; Cary et al., 1989). The members of the piggyBac superfamily target a spe- cific sequence, TTAA. The transposases in the piggyBac superfamily have three conserved D residues and show similarity to that encoded by the bacterial IS4 family (Sarkar et al., 2003).
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>Tourist/Harbinger</b>  	Count: 7460 &emsp; 	Bases: 1910919bp &emsp; 	Percent: .4% </summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+The Harbinger superfamily, or the PIF/ Harbinger superfamily, has two founder members, Harbinger and PIF (Jurka and Kapitonov, 2001). Harbinger was described from A. thaliana (Kapitonov and Jurka, 1999), while P instability factor (PIF) was characterized in maize (Zhang et al., 2001). PIF and related autonomous TEs are responsible for the mobiliza- tion of Tourist, which is one of the two predominant non- autonomous TE groups in plants. These TEs encode two proteins, ORF1 and transposase. The transposases show similarity to those encoded by IS5 and ISL2 in bacte- ria. The ORF1 protein usually contains a Myb-like DNA- binding domain and is required for transposition besides the transposase (Sinzelle et al., 2008). HarbingerS is a group of Harbinger families that encode three proteins: DDD/E transposase, SET histone methyltransferase and an unknown protein (Kojima and Jurka, 2014b)
 </details>
 {: .notice--info}
 
@@ -419,15 +534,42 @@ repeatmasker has a tool for generating the kimura distance plots: https://github
 | ***Total interspersed  repeats:***        |        | 211184820 bp | 33.4 %  |
 
 <details>
-  <summary></summary>
+  <summary><b>Other (Mirage, P-element, Transib</b>  	Count: 235 &emsp; 	Bases: 238763bp &emsp; 	Percent: .04%</summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+
+
+The resemblance between V(D)J recombina- tion and the transposition of DNA transposons was rec- ognized just several years after V(D)J recombination was discovered (Sakano et al., 1979). The Transib super- family encodes a transposase that is most similar to the RAG1 protein, which is responsible for V(D)J recombina- tion (Kapitonov and Jurka, 2005). A protein similar to RAG2, another protein responsible for V(D)J recombina- tion, was identified in a lineage of Transib, TransibSU(Kapitonov and Koonin, 2015). A long-standing debate regarding the origin of V(D)J recombination was con- cluded upon the discovery of a Transib DNA transpo- son in the lancelet, designated ProtoRAG (Huang et al., 2016). ProtoRAG encodes two proteins that are similar to RAG1 and RAG2, and its termini resemble recombina- tion signal sequences.
+<br>
+<br>
+The representative of the P superfamily, P element, was found in the genome of D. melanogaster (O’Hare and Rubin, 1983). The P superfamily is a relatively small group, despite the long research history: fewer than 200 families belonging to the P superfamily have been depos- ited in Repbase. The P superfamily is widely distrib- uted among animals, plants, fungi and protozoans. The human genome retains a catalytically active transposase of an ancient P family member as THAP9 (Majumdar et al., 2013).
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>Rolling-circles</b>  	Count: 1207 &emsp; 	Bases: 526201bp &emsp; 	Percent: .08%</summary>
+  {% include figure image_path="assets/images/annotation/repetitive_elements/canoical_helitron_structure.png"  caption="Source: Thomas and Pritham 2015 - FIGURE 1 Structure and coding capacity of canonical animal and plant Helitrons, Helen- trons, Proto-Helentron, Helitron2 and IS91. (A) Structure of a typical animal Helitron. (B) A typical plant Helitron encoding Rep/Helicase and RPA proteins; one to three RPA genes can be found on either side of the Rep/Helicase gene. (C) Structure of a typical non- autonomous plant or animal Helitron; they do not encode the Rep/Helicase gene but share the common structural features. (D) Structure and coding capacity of a Helentron; Helentrons have sub terminal inverted repeats (subTIRs) (red), and a short palindrome at the 3′ end (stem loop). The subTIRs can either be palindromic or form a palindrome with the short inverted repeats (sideways triangle), near the subTIR, if present. (E) Structure of a Helentron-associated INterspersed Element (HINE); HINEs are nonautonomous but have the same structural features as that of the autonomous partner. (F) Structure and coding capacity of Proto-Helentron. (G) Structure and coding capacity of Helitron2 (re- drawn from reference 12). (H) Structure of a bacterial IS91 element that is proposed to transpose by rolling-circle mechanism (redrawn from references 9, 46). The genes that are occasionally carried by Helentrons are indicated with a black asterisk (*) and are in- cluded only if they were found in multiple families or across species. Sequences flanking the elements are shown in red. https://doi.org/10.1128/microbiolspec.MDNA3-0049-2014" %}
+
+ <br>
+  <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
+  <br>
+  <br>
+Helitron is a unique group of DNA transposons in eukaryotes (Kapitonov and Jurka, 2001). Helitron usually encodes one protein, which includes two enzymatic domains: one is helicase and the other is the rolling-circle replication initiator (Rep). Rep is also called a “Y2 transposase”, because the conserved residues that are essential for transposition are two tyro- sines. Upstream of these Y2 motifs is a HUH motif, in which the U is any bulky hydrophobic residue. This HUH motif, as well as the conserved tyrosines, are known in other groups of mobile genetic elements, such as the IS91 and IS605 families of bacterial DNA transposons.
+
+ <br>
+  <a href="https://pubmed.ncbi.nlm.nih.gov/26350323/">Helitrons, the Eukaryotic Rolling-circle Transposable Elements </a>
+  <br>
+  <br>
+
+</details>
+{: .notice--info}
+
+<details>
+  <summary><b>Unclassified</b>  	Count: 571376 &emsp; 	Bases: 161042674bp &emsp; 	Percent: 25.47%</summary>
   {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
 
   stuff about distribution, and structure
 </details>
 {: .notice--info}
-
-
-
 ## EDTA
 
 | Class              |               | Count  | bpMasked  | %masked |
