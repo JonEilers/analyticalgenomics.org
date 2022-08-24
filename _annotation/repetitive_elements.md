@@ -311,7 +311,13 @@ LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significant
 
 <details>
   <summary><b>RTE/Bov-B</b> Count: 1890 &emsp; 	Bases: 838698 bp &emsp; 	Percent: 0.13 %</summary>
-  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+  {% include figure image_path="assets/images/annotation/repetitive_elements/rte_structure.png" %}
+
+  {% include figure image_path="assets/images/annotation/repetitive_elements/rte_figure_legend.png"  caption="Source: Wicker 2007 - A unified classification system for eukaryotic transposable elements" %}
+  <br>
+  <a href="https://www.nature.com/articles/nrg2165">A unified classification system for eukaryotic transposable elements</a>
+  <br>
+  <br>
 
   <br>
   <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
@@ -321,6 +327,9 @@ LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significant
   <br>
   <br>
   "Bov-B from the bovine Bos taurus, Expander from the pufferfish T. rubripes, and SR2 from the blood- fluke Schistosoma mansoni belong to this clade. Ele- ments belonging to the RTE clade are generally short and encode a protein with two functional domains: APE and RT."
+
+
+  {% include figure image_path="assets/images/annotation/repetitive_elements/bov_structure.png"  caption="Source: Godakova 2015 - Structure and Distribution of the Retrotransposon Bov-B LINE. ORF2, open reading frame; AP􏰀EN, apurinic/apyrimidinic endonu􏰀 clease; RT, reverse transcriptase; UTR, untranslated region " %}
 
   <br>
   <a href="https://link.springer.com/article/10.3103/S0891416816010043">Structure and distribution of the retrotransposon Bov-B LINE</a>
@@ -334,7 +343,7 @@ LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significant
 
 <details>
   <summary><b>L1/CIN4</b> Count: 0 &emsp; 	Bases: 0 bp &emsp; 	Percent: 0 %</summary>
-  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+  {% include figure image_path="assets/images/annotation/repetitive_elements/l1_structure.jpg"  caption="Source: Beck 2011 - LINE-1 Elements in Structural Variation and Disease. Figure 1: The classes of mobile genetic elements in the human genome, showing the type of mobile element, the structure of representative elements, the percentage of each element in the human genome reference sequence (HGR), and whether each class of elements is currently active (134). Abbreviations for human endogenous retrovirus-K (HERV-K): LTR, long terminal repeat; Gag, group-specific antigen; Pol, polymerase; Env, envelope protein (dysfunctional). For LINE-1: UTR, untranslated region; CC, coiled coil; RRM, RNA recognition motif; CTD, carboxyl-terminal domain; EN, endonuclease; RT, reverse transcriptase; C, cysteine-rich domain. For Alu: A and B, component sequences of the RNA polymerase III promoter; AR, the adenosine-rich segment separating the 7SL monomers. For SINE-R/VNTR/Alu (SVA): VNTR, variable number of tandem repeats; SINE-R, domain derived from a HERV-K. An signifies a poly(A) tail." %}
 
   <br>
   <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
@@ -349,7 +358,8 @@ LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significant
 
 <details>
   <summary><b>LTR elements</b>  	Count: 28797 &emsp; 	Bases: 16024153 bp &emsp; 	Percent: 2.53 %</summary>
-  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+  {% include figure image_path="assets/images/annotation/repetitive_elements/ltr_structure.png" %}
+  {% include figure image_path="assets/images/annotation/repetitive_elements/rte_figure_legend.png"  caption="Source Wicker 2007 - A unified classification system for eukaryotic transposable elements" %}
   <br>
   <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
   <br>
