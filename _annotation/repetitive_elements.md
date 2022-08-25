@@ -359,7 +359,7 @@ LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significant
 <details>
   <summary><b>LTR elements</b>  	Count: 28797 &emsp; 	Bases: 16024153 bp &emsp; 	Percent: 2.53 %</summary>
   {% include figure image_path="assets/images/annotation/repetitive_elements/ltr_structure.png" %}
-  {% include figure image_path="assets/images/annotation/repetitive_elements/rte_figure_legend.png"  caption="Source Wicker 2007 - A unified classification system for eukaryotic transposable elements" %}
+  {% include figure image_path="assets/images/annotation/repetitive_elements/rte_figure_legend.png"  caption="Source: Wicker 2007 - A unified classification system for eukaryotic transposable elements" %}
   <br>
   <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
   <br>
@@ -370,7 +370,9 @@ LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significant
 
 <details>
   <summary><b>BEL/Pao</b>  	Count: 1598 &emsp; 	Bases: 1246057 bp &emsp; 	Percent: 0.2 %</summary>
-  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+  {% include figure image_path="assets/images/annotation/repetitive_elements/ltr_structure.png" %}
+
+  {% include figure image_path="assets/images/annotation/repetitive_elements/rte_figure_legend.png"  caption="Source: Wicker 2007 - A unified classification system for eukaryotic transposable elements" %}
 
   <br>
   <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
@@ -389,7 +391,10 @@ LINEs make a 5% of the sea cucumber genome and L2/CR1/Rex contribute significant
 
 <details>
   <summary><b>Ty1/Copia</b> Count: 122 &emsp; 	Bases: 169182 bp &emsp; 	Percent: 0.03 %</summary>
-  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+  {% include figure image_path="assets/images/annotation/repetitive_elements/ltr_structure.png" %}
+
+  {% include figure image_path="assets/images/annotation/repetitive_elements/rte_figure_legend.png"  caption="Source: Wicker 2007 - A unified classification system for eukaryotic transposable elements" %}
+
 
   <br>
   <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
@@ -403,7 +408,10 @@ One feature that distinguishes Copia from other LTR retrotransposons is the posi
 
  <details>
   <summary><b>Gypsy/DIRS1</b> Count: 13852 &emsp; 	Bases: 10059761 bp &emsp; 	Percent: 1.59 %</summary>
-  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+  {% include figure image_path="assets/images/annotation/repetitive_elements/ltr_structure.png" %}
+
+  {% include figure image_path="assets/images/annotation/repetitive_elements/rte_figure_legend.png"  caption="Source: Wicker 2007 - A unified classification system for eukaryotic transposable elements" %}
+
 
   <br>
   <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
@@ -421,7 +429,7 @@ The taxonomy of ICTV contains two genera under the family Metaviridae: Errantivi
 
 <details>
   <summary><b>Retroviral</b>  	Count: 201 &emsp; 	Bases: 114432 bp &emsp; 	Percent: 0.02 %</summary>
-  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+  {% include figure image_path="assets/images/annotation/repetitive_elements/retrovirus_structure.png"  caption="Source: Wang and Han 2022 - FIG 3 Domain architectures and secondary structure of retroviruses and retrotransposons. (A) Comparison of domain architectures of canonical retroviruses, lokiretroviruses https://doi.org/10.1128/mbio.00187-22" %}
 
   <br>
   <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
@@ -452,7 +460,10 @@ repeatmasker has a tool for generating the kimura distance plots: [createRepeatL
 
 <details>
   <summary><b>DNA transposons </b>  	Count: 40162 &emsp; 	Bases: 13472419bp &emsp; 	Percent: 2.13% </summary>
-  {% include figure image_path="assets/images/annotation/repetitive_elements/"  caption="Source -" %}
+  {% include figure image_path="assets/images/annotation/repetitive_elements/dna_transposons_structure.png" %}
+
+  {% include figure image_path="assets/images/annotation/repetitive_elements/rte_figure_legend.png"  caption="Source: Wicker 2007 - A unified classification system for eukaryotic transposable elements" %}
+
 
   <br>
   <a href="https://www.jstage.jst.go.jp/article/ggs/94/6/94_18-00024/_article/-char/ja/">Structural and sequence diversity of eukaryotic transposable elements</a>
