@@ -19,6 +19,25 @@ gallery_2:
 
 ---
 
+Some thoughts:
+
+- use dfam as the base for talking about transposable element families. 
+- use the dfam classification system when explanining how each of the repeatmasker outputs are releated and what they contains/don't contain
+- maybe make a classification tree?
+- for each transposable element create a "gene model" to represent it that is loosely similar to the papers I have found? Use genometools?
+- for each gene model include: utr, genes, relative length, any other defining characteristics
+- When talking about each transposable element - use the dfam classification/browser to determine what kingsdoms/phylums/orders they are present in
+- when talking about each transposable element cite one or two papers that contain something interesting about them - ie boobs and placentas are results of transposable element disruption
+- When talking about how it is relevant to the sea cucumber genome compare it to the heheva, lytechnius, and strongylocentrous assemblies. they don't go into specifics so this will only works for the broad groupings. For the specifics maybe list why they might be interesting from a functional or evolutionary context? IE give an example of when these evolved, what genes they tend to disrupt, or what cis regulatory elements they contain.  
+
+
+For the Introduction
+- What repetittive elements are and basic classification
+- what they do: gene regulation, genome size, gene distruption etc
+- relevance to regenome assembly: majority of genome, identification and masking
+- when talking about structure talk about the set of proteins that are commmon to all TE  - RT, DDE IN, YR, HUH/Rep, and pPolB
+- talk a little bit about evolution
+
 # Introduction
 
 Repetitive elements are integral parts of genomes and can represent a significant majority of a genome assembly. When preparing to identify genes in an assembly it is critical to first identify the repetitive elements. Once they are identified they can be studied further and annotated or "masked" so that the gene model prediction software doesn't misidentify genes found in transpons or gene fragments and other repetitive elements. 
