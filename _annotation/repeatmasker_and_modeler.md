@@ -1,10 +1,3 @@
----
-title: "RepeatModeler2 and RepeatMasker: Repetitive Element Prediction and Masking"
-toc: true
-toc_sticky: true
-layout: single
-
----
 
 ## RepeatModeler2 and RepeatMasker
 Identifying repetetive elements in genome assemblies
