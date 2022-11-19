@@ -1,10 +1,4 @@
----
-title: "GenSAS"
-toc: true
-toc_sticky: true
-layout: single
 
----
 
 ## GenSAS
 Genome annotation server

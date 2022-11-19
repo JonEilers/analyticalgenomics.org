@@ -1,10 +1,4 @@
----
-title: "Rfam/Infernal and tRNAscan-SE: Non-coding RNA Prediction"
-toc: true
-toc_sticky: true
-layout: single
 
----
 
 ## rfam/Infernal and tRNAscan-SE
 Identify non-coding rna in the genome assembly and annotate them

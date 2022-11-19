@@ -1,8 +1,3 @@
----
-title: "Interproscan: Functional Annotation"
-toc: true
-toc_sticky: true
-layout: single
 
 gallery:
   - url: /assets/images/interproscan/blast2go_statistics_20200212_0156.png
@@ -18,7 +13,6 @@ gallery:
     image_path: /assets/images/interproscan/thumbnail_image003.png
     title: "Breakdown of annotation types of the longest annotated protein"
 
----
 
 ## InterProScan
 Functional annotation of the genome

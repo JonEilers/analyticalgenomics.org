@@ -1,10 +1,3 @@
----
-title: "Braker2: Gene Prediction"
-toc: true
-toc_sticky: true
-layout: single
-
----
 
 ## Braker2
 Gene Prediction

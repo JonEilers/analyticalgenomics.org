@@ -1,10 +1,4 @@
----
-title: "Diamond Blast: Homology Based Annotation"
-toc: true
-toc_sticky: true
-layout: single
 
----
 
 ## Diamond Blastx
 Using known genes from a database to predict function/family of predicted genes 
