@@ -15,11 +15,11 @@
 # in the templates via {{ site.myvariable }}.
 title: Eilers Genomics Research
 subtitle: Sea Cucumber Genomics
-email: jon.r.eilers@outlook.com
+email: jon.eilers@analyticalgenomics.org
 description: >- # this means to ignore newlines until "baseurl:"
   This website is about sequencing, assembling, and annotating the genome of Sea Cucumbers.
 baseurl: "/"
-url: https://joneilers.github.io/
+url: https://analyticalgenomics.org/
 github_username: joneilers
 minimal_mistakes_skin: default
 search: true
@@ -71,7 +71,7 @@ author:
       url: "https://github.com/joneilers"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:jon.r.eilers@outlook.com"
+      url: "mailto:jon.eilers@analyticalgenomics.org"
     - label: "Linkedin"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/jon-eilers-a5451544"
