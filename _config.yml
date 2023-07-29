@@ -19,7 +19,7 @@ email: jon.eilers@analyticalgenomics.org
 description: >- # this means to ignore newlines until "baseurl:"
   This website is about sequencing, assembling, and annotating the genome of Sea Cucumbers.
 baseurl: "/"
-url: https://analyticalgenomics.org/
+url: https://www.analyticalgenomics.org/
 github_username: joneilers
 minimal_mistakes_skin: default
 search: true
