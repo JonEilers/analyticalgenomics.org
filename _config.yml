@@ -18,8 +18,8 @@ subtitle: Studying life through lens of genomics
 email: jon.eilers@analyticalgenomics.org
 description: >- # this means to ignore newlines until "baseurl:"
   I am a freelance bioinformatician with expertise in genomics analysis including genome assembly, annotation, and gene expression analysis
-baseurl: "/analyticalgenomics"
-url: "https://joneilers.github.io"
+baseurl: "/"
+url: "https://analyticalgenomics.org"
 github_username: joneilers
 minimal_mistakes_skin: default
 search: true
